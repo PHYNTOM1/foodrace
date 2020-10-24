@@ -26,9 +26,11 @@ public class CartController : MonoBehaviour
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteering * Input.GetAxis("Horizontal");
 
+        wheelColls[0].steerAngle = steering;
+        wheelColls[1].steerAngle = steering;
+
         foreach (WheelCollider wc in wheelColls)
         {
-            wc.steerAngle = steering;
             wc.motorTorque = motor;
 
         }
