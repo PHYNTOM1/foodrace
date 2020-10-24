@@ -48,8 +48,8 @@ public class CartController : MonoBehaviour
         for (int i = 0; i < wheelColls.Length; i++)
         {
             wheelColls[i].GetWorldPose( out pos, out rot);
-            //wheelMeshs[i].transform.position = pos;
-            //wheelMeshs[i].transform.rotation = rot;
+            wheelMeshs[i].transform.position = pos;
+            wheelMeshs[i].transform.rotation = rot;
             wheelMeshs[i].transform.eulerAngles = new Vector3(0, rot.eulerAngles.y, 90);
         }
     }
