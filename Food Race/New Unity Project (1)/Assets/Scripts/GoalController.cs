@@ -6,23 +6,10 @@ using UnityEngine.SceneManagement;
 public class GoalController : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider c)
     {
         if (c.name == "CartColl")
         {
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(0);
         }
     }

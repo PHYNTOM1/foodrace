@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CartController : MonoBehaviour
 {
 
@@ -10,31 +11,58 @@ public class CartController : MonoBehaviour
     
     [Space]
     public Transform massCenter;
+    public Rigidbody cartRB;
 
+    [Space]
+    public CartStats cartStats;
     public float maxMotorTorque;
     public float maxSteering;
 
-    // Start is called before the first frame update
+    private float motor = 0;
+    private float steering = 0;
+
     void Start()
     {
-        GetComponent<Rigidbody>().centerOfMass = massCenter.localPosition;
+        cartRB = gameObject.GetComponent<Rigidbody>();  //get cart rigidbody and set CoM
+        cartRB.centerOfMass = massCenter.localPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteering * Input.GetAxis("Horizontal");
+        motor = maxMotorTorque * cartStats.acceleration * Input.GetAxis("Vertical");  //convert input to wheelcollider variables
+        steering = maxSteering * cartStats.handling * Input.GetAxis("Horizontal");    
+    }
 
-        wheelColls[0].steerAngle = steering;
+    void FixedUpdate()
+    {
+        wheelColls[0].steerAngle = steering;    //only front wheel steering
         wheelColls[1].steerAngle = steering;
 
-        foreach (WheelCollider wc in wheelColls)
+        foreach (WheelCollider wc in wheelColls)    //four wheel drive, motor powers all wheels
         {
             wc.motorTorque = motor;
 
         }
 
+        /*
+        float speed = Vector3.Magnitude(cartRB.velocity);  //get current speed
+
+        if (speed > cartStats.topSpeed)
+        {
+            Debug.Log("OVER SPEED");
+            float brakeSpeed = speed - cartStats.topSpeed;  //calculate the speed decrease
+
+            Vector3 normalisedVelocity = cartRB.velocity.normalized;
+            Vector3 brakeVelocity = normalisedVelocity * brakeSpeed;  //make the brake Vector3 value
+            Debug.Log(brakeVelocity);
+
+            cartRB.AddForce(-brakeVelocity);  //apply "negative" brake force
+        }
+        */
+    }
+
+    void LateUpdate()
+    {
         CollToMeshRotation();
     }
 
@@ -45,7 +73,7 @@ public class CartController : MonoBehaviour
         Quaternion rot;
         Vector3 pos;
 
-        for (int i = 0; i < wheelColls.Length; i++)
+        for (int i = 0; i < wheelColls.Length; i++)     //update all wheels, get pos / rot from colliders and apply to meshs
         {
             wheelColls[i].GetWorldPose( out pos, out rot);
             wheelMeshs[i].transform.position = pos;
