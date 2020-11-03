@@ -44,6 +44,13 @@ public class CartController : MonoBehaviour
 
         }
 
+        if (cartRB.velocity.sqrMagnitude > Mathf.Pow(cartStats.topSpeed, 2))
+        {
+            //smoothness of the slowdown is controlled by the 0.99f, 
+            //0.5f is less smooth, 0.9999f is more smooth
+            cartRB.velocity *= 0.99f;
+        }
+
         /*
         float speed = Vector3.Magnitude(cartRB.velocity);  //get current speed
 
