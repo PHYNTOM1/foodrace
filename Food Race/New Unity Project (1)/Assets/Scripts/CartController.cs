@@ -8,6 +8,7 @@ public class CartController : MonoBehaviour
 
     public WheelCollider[] wheelColls;
     public GameObject[] wheelMeshs;
+    public GameObject cartMesh;
     
     [Space]
     public Transform massCenter;
@@ -20,6 +21,7 @@ public class CartController : MonoBehaviour
 
     private float motor = 0;
     private float steering = 0;
+    private bool isDrifting = false;
 
     void Start()
     {
@@ -30,11 +32,33 @@ public class CartController : MonoBehaviour
     void Update()
     {
         motor = maxMotorTorque * cartStats.acceleration * Input.GetAxis("Vertical");  //convert input to wheelcollider variables
-        steering = maxSteering * cartStats.handling * Input.GetAxis("Horizontal");    
+        steering = maxSteering * cartStats.handling * Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isDrifting = true;
+        }
+        else
+        {
+            isDrifting = false;
+        }
     }
 
     void FixedUpdate()
     {
+        if (isDrifting)
+        {
+            steering *= 2;
+            if (steering > 0)
+            {
+                cartRB.AddForce(new Vector3(1, 0, 0), ForceMode.Force);
+            }
+            else if (steering < 0)
+            {
+                cartRB.AddForce(new Vector3(-1, 0, 0), ForceMode.Force);
+            }
+        }
+
         wheelColls[0].steerAngle = steering;    //only front wheel steering
         wheelColls[1].steerAngle = steering;
 
@@ -44,28 +68,11 @@ public class CartController : MonoBehaviour
 
         }
 
-        if (cartRB.velocity.sqrMagnitude > Mathf.Pow(cartStats.topSpeed, 2))
+        if (cartRB.velocity.sqrMagnitude > Mathf.Pow(cartStats.topSpeed, 2)) //check if current speed greater than defined topSpeed
         {
-            //smoothness of the slowdown is controlled by the 0.99f, 
-            //0.5f is less smooth, 0.9999f is more smooth
-            cartRB.velocity *= 0.99f;
+            cartRB.velocity *= 0.99f;   //decrease cart speed (lower (i.e. 0.6) is less smooth)
         }
 
-        /*
-        float speed = Vector3.Magnitude(cartRB.velocity);  //get current speed
-
-        if (speed > cartStats.topSpeed)
-        {
-            Debug.Log("OVER SPEED");
-            float brakeSpeed = speed - cartStats.topSpeed;  //calculate the speed decrease
-
-            Vector3 normalisedVelocity = cartRB.velocity.normalized;
-            Vector3 brakeVelocity = normalisedVelocity * brakeSpeed;  //make the brake Vector3 value
-            Debug.Log(brakeVelocity);
-
-            cartRB.AddForce(-brakeVelocity);  //apply "negative" brake force
-        }
-        */
     }
 
     void LateUpdate()

@@ -10,7 +10,7 @@ public class GoalController : MonoBehaviour
     {
         if (c.name == "CartColl")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }

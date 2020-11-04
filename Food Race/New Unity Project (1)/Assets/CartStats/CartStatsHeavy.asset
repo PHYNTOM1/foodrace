@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topSpeed: 25
   acceleration: 0.602
-  handling: 0.752
+  handling: 0.6
   cartName: heavy

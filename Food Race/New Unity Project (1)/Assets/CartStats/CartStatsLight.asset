@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CartStatsLight
   m_EditorClassIdentifier: 
   topSpeed: 15
-  acceleration: 1.26
+  acceleration: 1.405
   handling: 1
   cartName: light
