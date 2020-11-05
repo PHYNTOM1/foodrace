@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 
@@ -9,7 +10,7 @@ public class CartController : MonoBehaviour
     public WheelCollider[] wheelColls;
     public GameObject[] wheelMeshs;
     public GameObject cartMesh;
-    
+
     [Space]
     public Transform massCenter;
     public Rigidbody cartRB;
@@ -23,6 +24,9 @@ public class CartController : MonoBehaviour
     private float steering = 0;
     private bool isDrifting = false;
 
+    public bool isPlayer = true;
+    public int lap = 1;
+
     void Start()
     {
         cartRB = gameObject.GetComponent<Rigidbody>();  //get cart rigidbody and set CoM
@@ -31,8 +35,19 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
-        motor = maxMotorTorque * cartStats.acceleration * Input.GetAxis("Vertical");  //convert input to wheelcollider variables
-        steering = maxSteering * cartStats.handling * Input.GetAxis("Horizontal");
+        if (isPlayer)
+        {
+            float VertInput = Input.GetAxis("Vertical");
+            float HorInput = Input.GetAxis("Horizontal");
+
+            SetWheelVars(VertInput, HorInput);
+        }
+        else
+        {
+            //SetWheelVars();
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -89,10 +104,17 @@ public class CartController : MonoBehaviour
 
         for (int i = 0; i < wheelColls.Length; i++)     //update all wheels, get pos / rot from colliders and apply to meshs
         {
-            wheelColls[i].GetWorldPose( out pos, out rot);
+            wheelColls[i].GetWorldPose(out pos, out rot);
             wheelMeshs[i].transform.position = pos;
             wheelMeshs[i].transform.rotation = rot;
             wheelMeshs[i].transform.eulerAngles = new Vector3(0, rot.eulerAngles.y, 90);
         }
+    }
+
+
+    public void SetWheelVars(float ver, float hor)    //convert input to wheelcollider variables
+    {
+        motor = maxMotorTorque* cartStats.acceleration * ver;  
+        steering = maxSteering* cartStats.handling * hor;
     }
 }

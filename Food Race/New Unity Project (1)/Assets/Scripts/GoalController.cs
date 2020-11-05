@@ -10,7 +10,10 @@ public class GoalController : MonoBehaviour
     {
         if (c.name == "CartColl")
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
+
+            c.gameObject.GetComponent<CartController>().lap++;
+            Debug.Log(c.gameObject.name + "completed " + c.gameObject.GetComponent<CartController>().lap + ". lap!");
         }
     }
 }
