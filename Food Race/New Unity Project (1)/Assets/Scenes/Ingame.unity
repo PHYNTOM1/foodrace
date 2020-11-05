@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 612200670}
+  m_SkySettings: {fileID: 602955444}
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -570,7 +570,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595582135}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &612200670
+--- !u!114 &602955444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6846,10 +6846,10 @@ MonoBehaviour:
   - {fileID: 2044532566}
   - {fileID: 595582135}
   - {fileID: 278709936}
-  cartMesh: {fileID: 0}
+  cartMesh: {fileID: 1918625756}
   massCenter: {fileID: 1333581761}
   cartRB: {fileID: 1896210373}
-  cartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
+  cartStats: {fileID: 11400000, guid: 5ca98d094a98a1e429ab372e8b6c8d1f, type: 2}
   maxMotorTorque: 400
   maxSteering: 20
 --- !u!1 &1918625756
