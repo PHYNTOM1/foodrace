@@ -7,25 +7,25 @@ using UnityEngine;
 public class CartController : MonoBehaviour
 {
 
-    public WheelCollider[] wheelColls;
-    public GameObject[] wheelMeshs;
-    public GameObject cartMesh;
+    public WheelCollider[] wheelColls;      //array of all wheelcolliders
+    public GameObject[] wheelMeshs;     //array of all wheel meshs (visible wheels)
+    public GameObject cartMesh;     //cart mesh object ("visible rigidbody" if you want to call it that way)
 
     [Space]
-    public Transform massCenter;
-    public Rigidbody cartRB;
+    public Transform massCenter;        //Center of mass on the cart rigidbody
+    public Rigidbody cartRB;        //rigidbody ("collider") of the cart
 
     [Space]
-    public CartStats cartStats;
-    public float maxMotorTorque;
-    public float maxSteering;
+    public CartStats cartStats;     //easily in inspector swappable cart stats
+    public float maxMotorTorque;        //simple variable for higher values through multiplication (on motor)
+    public float maxSteering;       //simple variable for higher values through multiplication (on steering)
 
-    private float motor = 0;
-    private float steering = 0;
-    private bool isDrifting = false;
+    private float motor = 0;    //"acceleration", the amount of power applied to each wheelcollider (here all 4 wheels)
+    private float steering = 0;     //"handling", the degree of turns applied to each wheelcollider (here only 2 front wheels steering)
+    private bool isDrifting = false;        //bool check for drifting; is true while holding SHIFT  => in FixedUpdate()
 
-    public bool isPlayer = true;
-    public int lap = 1;
+    public bool isPlayer = true;        //bool difference between player or AI controlled
+    public int lap = 1;     //the amount of laps this cart is currently in (not working yet)
 
     void Start()
     {
@@ -64,15 +64,7 @@ public class CartController : MonoBehaviour
         if (isDrifting)     //decrease carts turn radius and apply a sideways force, dependend on steering direction
         {
             //ACHIS SUPERDRIFTING HIER!!!!11!1
-            steering *= 2;
-            if (steering > 0)
-            {
-                cartRB.AddForce(new Vector3(1, 0, 0), ForceMode.Force);
-            }
-            else if (steering < 0)
-            {
-                cartRB.AddForce(new Vector3(-1, 0, 0), ForceMode.Force);
-            }
+            
         }
 
         wheelColls[0].steerAngle = steering;    //apply steering variable to wheelcolliders; only front wheel steering
