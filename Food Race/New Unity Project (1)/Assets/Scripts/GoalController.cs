@@ -14,6 +14,13 @@ public class GoalController : MonoBehaviour
 
             c.gameObject.GetComponent<CartController>().lap++;
             Debug.Log(c.gameObject.name + "completed " + c.gameObject.GetComponent<CartController>().lap + ". lap!");
+
+            if (c.gameObject.GetComponent<CartController>().lap == 2)
+            {
+                Debug.Log(c.gameObject.name + " has FINISHED!");
+                Destroy(c.gameObject, 1f);
+            }
         }
     }
+
 }

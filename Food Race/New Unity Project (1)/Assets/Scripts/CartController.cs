@@ -35,7 +35,7 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
-        if (isPlayer)
+        if (isPlayer)   //player controls carts with input, AI controls carts with internal logic from "CartAIExtra" script
         {
             float VertInput = Input.GetAxis("Vertical");
             float HorInput = Input.GetAxis("Horizontal");
@@ -44,12 +44,12 @@ public class CartController : MonoBehaviour
         }
         else
         {
-            //SetWheelVars();
+            SetWheelVars(gameObject.GetComponent<CartAIExtra>().AIMovementInput().y, gameObject.GetComponent<CartAIExtra>().AIMovementInput().x);
         }
 
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))    //simple NOT WORKING drift mechanic
         {
             isDrifting = true;
         }
@@ -61,8 +61,9 @@ public class CartController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDrifting)
+        if (isDrifting)     //decrease carts turn radius and apply a sideways force, dependend on steering direction
         {
+            //ACHIS SUPERDRIFTING HIER!!!!11!1
             steering *= 2;
             if (steering > 0)
             {
@@ -74,10 +75,10 @@ public class CartController : MonoBehaviour
             }
         }
 
-        wheelColls[0].steerAngle = steering;    //only front wheel steering
+        wheelColls[0].steerAngle = steering;    //apply steering variable to wheelcolliders; only front wheel steering
         wheelColls[1].steerAngle = steering;
 
-        foreach (WheelCollider wc in wheelColls)    //four wheel drive, motor powers all wheels
+        foreach (WheelCollider wc in wheelColls)    //apply motor variable to wheelcolliders; four wheel drive, motor powers all wheels
         {
             wc.motorTorque = motor;
 
@@ -90,7 +91,7 @@ public class CartController : MonoBehaviour
 
     }
 
-    void LateUpdate()
+    void LateUpdate()   //rotate wheel meshes according to wheelcollider rotations after every other logic has run -> Late
     {
         CollToMeshRotation();
     }
