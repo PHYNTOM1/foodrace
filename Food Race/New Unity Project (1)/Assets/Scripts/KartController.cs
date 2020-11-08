@@ -12,7 +12,7 @@ public class KartController : MonoBehaviour
 
     public float acceleration = 30f;
     public float steering = 80f;
-    public float gravity = 10f;
+    public float gravity = 3f;
 
     private Rigidbody kartRB;
     private float speed, currentSpeed;
