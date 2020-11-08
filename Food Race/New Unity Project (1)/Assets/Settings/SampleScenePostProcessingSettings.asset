@@ -22,12 +22,12 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.207
     min: 0
     max: 1
   m_MaxSamples:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 5
     min: 3
     max: 24
 --- !u!114 &11400000
