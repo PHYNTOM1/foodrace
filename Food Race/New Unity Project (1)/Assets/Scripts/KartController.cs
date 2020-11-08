@@ -10,9 +10,9 @@ public class KartController : MonoBehaviour
     public Transform kartNormal;
     public LayerMask layerMask;
 
-    public float acceleration = 30f;
-    public float steering = 80f;
-    public float gravity = 3f;
+    public float acceleration = 3f;
+    public float steering = 30f;
+    public float gravity = 10f;
 
     private Rigidbody kartRB;
     private float speed, currentSpeed;
@@ -33,7 +33,7 @@ public class KartController : MonoBehaviour
     void Update()
     {
         //rb pos to mesh
-        transform.position = kartRB.transform.position - new Vector3(0, -0.5f, 0);
+        transform.position = kartRB.transform.position - new Vector3(0, 0.5f, 0);
 
         //forward movement
         if (Input.GetAxisRaw("Vertical") > 0)
@@ -67,20 +67,22 @@ public class KartController : MonoBehaviour
             Boost();
         }
 
-        currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * 12f); speed = 0f;
-        currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f); rotate = 0f;
+        currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * 12f); 
+        speed = 0f;
+        currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f); 
+        rotate = 0f;
     }
 
     void FixedUpdate()
     {
         //forward Acceleration
-        if (!drifting)
+        if (drifting)
             kartRB.AddForce(-kartModel.transform.right * currentSpeed, ForceMode.Acceleration);
         else
             kartRB.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
 
         //gravity
-        kartRB.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
+        //kartRB.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
 
         //Steering
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, transform.eulerAngles.y + currentRotate, 0), Time.deltaTime * 5f);
