@@ -31,6 +31,8 @@ public class CartController : MonoBehaviour
     private bool exhaustEmitting;
     private bool driftEmitting;
 
+    public KartStats kartStats;
+
 
     void Start()
     {
@@ -38,9 +40,13 @@ public class CartController : MonoBehaviour
         exhaust = GameObject.Find("carSmoke").GetComponent<ParticleSystem>();
         GameObject driftEffects = GameObject.Find("driftEffects");
         drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
+
+        maxSpeed = kartStats.topSpeed;
+        forwardAccel = kartStats.acceleration;
+        reverseAccel = forwardAccel * 2 / 3;
+        turnStrength = kartStats.handling * 60f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -134,17 +140,13 @@ public class CartController : MonoBehaviour
             }
             else
             {
-                if (speedInput <= 3000 && speedInput >= 0 || speedInput >= -3000 && speedInput <= 0)
+                if (speedInput <= 5000 && speedInput >= 0 || speedInput >= -5000 && speedInput <= 0)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.1f, 0f));
-                }
-                else if (speedInput <= 5000 && speedInput >= 0 || speedInput >= -5000 && speedInput <= 0)
-                {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.2f, 0f));
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));
                 }
                 else if (speedInput <= 7000 && speedInput >= 0 || speedInput >= -7000 && speedInput <= 0)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.35f, 0f));
                 }
                 else
                 {

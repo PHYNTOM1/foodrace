@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6ad62c72c85bc4788d4ed68680e241, type: 3}
   m_Name: CartStatsHeavy
   m_EditorClassIdentifier: 
-  topSpeed: 25
-  acceleration: 0.602
-  handling: 0.6
-  cartName: heavy
+  topSpeed: 9
+  acceleration: 0.303
+  handling: 1.605
+  kartName: 

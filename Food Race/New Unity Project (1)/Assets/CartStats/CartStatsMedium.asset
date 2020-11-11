@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6ad62c72c85bc4788d4ed68680e241, type: 3}
   m_Name: CartStatsMedium
   m_EditorClassIdentifier: 
-  topSpeed: 20
-  acceleration: 1.238
-  handling: 0.759
-  cartName: medium
+  topSpeed: 8
+  acceleration: 0.806
+  handling: 1.852
+  kartName: 
