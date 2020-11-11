@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
 using UnityEngine;
@@ -32,6 +33,9 @@ public class CartController : MonoBehaviour
     private bool driftEmitting;
 
     public KartStats kartStats;
+    public bool isPlayer = true;
+
+    public AIExtra aiExtra;
 
 
     void Start()
@@ -49,7 +53,37 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        bool _driftInput;
+        bool _driftInputDown;
+        float _horAxis;
+        float _horAxisRaw;
+        float _verAxis;
+        float _verAxisRaw;
+
+        if (isPlayer)
+        {
+             _driftInput = Input.GetKey(KeyCode.LeftShift);
+             _driftInputDown = Input.GetKeyDown(KeyCode.LeftShift);
+            _horAxis = Input.GetAxis("Horizontal");
+            _horAxisRaw = Input.GetAxisRaw("Horizontal");
+            _verAxis = Input.GetAxis("Vertical");
+            _verAxisRaw = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            if (aiExtra == null)
+            {
+                aiExtra = gameObject.GetComponent<AIExtra>();
+            }
+            _driftInput = aiExtra.DriftOutput();
+             _driftInputDown = aiExtra.DriftDownOutput();
+            _horAxis = aiExtra.HorAxis();
+            _horAxisRaw = aiExtra.HorAxisRaw();
+             _verAxis = aiExtra.VerAxis();
+             _verAxisRaw = aiExtra.VerAxisRaw();
+        }
+
+        if (_driftInput)
         {
             drifting = true;
         }
@@ -58,16 +92,16 @@ public class CartController : MonoBehaviour
             drifting = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (_driftInputDown)
         {
-            driftForce = (int)Input.GetAxisRaw("Horizontal");
+            driftForce = (int)_horAxisRaw;
         }
 
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
+        if (_horAxisRaw == 1 || _horAxisRaw == -1)
         {
-            turnInput = Input.GetAxis("Horizontal");
+            turnInput = _horAxis;
 
-            driftInput = Input.GetAxisRaw("Horizontal");
+            driftInput = _horAxisRaw;
         }
         else
         {
@@ -88,16 +122,16 @@ public class CartController : MonoBehaviour
         }
 
 
-        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (_verAxisRaw == 1 || _verAxisRaw == -1)
         {
-            if (Input.GetAxis("Vertical") > 0)
+            if (_verAxis > 0)
             {
                 if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
                 {
                     speedInput += forwardAccel * maxSpeed * 20f;
                 }
             }
-            else if (Input.GetAxis("Vertical") < 0)
+            else if (_verAxis < 0)
             {
                 if (speedInput > 0 && speedInput <= maxSpeed * 1000f)
                 {
@@ -128,7 +162,7 @@ public class CartController : MonoBehaviour
 
         if (grounded)
         {
-            if (Input.GetAxisRaw("Vertical") == -1)
+            if (_verAxisRaw == -1)
             {
                 turnInput *= -1;
             }
