@@ -5,7 +5,6 @@ using UnityEngine;
 
     public class AIExtra : MonoBehaviour
 {
-
     public List<Transform> waypoints;
 
     public int currWP = 0;
@@ -44,8 +43,8 @@ using UnityEngine;
 
         if (distWP >= wpDist * 2)
         {
-            verAxis = 1f;
-            verAxisRaw = 1f;
+            verAxis = 0f;   //1
+            verAxisRaw = 0f;    //1
         }
         else if (distWP <= wpDist)
         {
@@ -66,12 +65,12 @@ using UnityEngine;
 
         Debug.Log(angle + " : " + gameObject.name);
 
-        if (angle > 110)
+        if (angle > 110 && angle < 180)
         {
             horAxis = 1;
             horAxisRaw = 1;
         }
-        else if (angle < -110)
+        else if (angle < -110 && angle > 180)
         {
             horAxis = -1;
             horAxisRaw = -1;
@@ -132,6 +131,7 @@ using UnityEngine;
 
     private void OnDrawGizmos()     //visualize waypoint range in editor
     {
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(gameObject.transform.position, wpDist);
         Gizmos.DrawLine(kartRB.position, waypoints[currWP].position);
         Gizmos.DrawLine(kartRB.position, kartRB.position + targetDir);

@@ -21,8 +21,11 @@ public class CartController : MonoBehaviour
     public float driftInput = 0f;
 
     public LayerMask whatIsGround;
+    public LayerMask speedGround;
     public float groundRayLenght = .5f;
     public Transform groundRayPoint;
+    public bool speeding = false;
+    public float speedMult = 1f;
 
     public Transform leftfrontwheel, rightfrontwheel;
     public float maxWheelTurn = 25f;
@@ -41,8 +44,8 @@ public class CartController : MonoBehaviour
     void Start()
     {
         theRB.transform.parent = null;
-        exhaust = GameObject.Find("carSmoke").GetComponent<ParticleSystem>();
-        GameObject driftEffects = GameObject.Find("driftEffects");
+        exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
+        GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
         drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
 
         maxSpeed = kartStats.topSpeed;
@@ -83,7 +86,7 @@ public class CartController : MonoBehaviour
              _verAxisRaw = aiExtra.VerAxisRaw();
         }
 
-        if (_driftInput)
+        if (_driftInput && speedInput >= maxSpeed * 750f)
         {
             drifting = true;
         }
@@ -122,22 +125,31 @@ public class CartController : MonoBehaviour
         }
 
 
+        if (speeding)
+        {
+            speedMult = 1.2f;
+        }
+        else
+        {
+            speedMult = 1f;
+        }
+
         if (_verAxisRaw == 1 || _verAxisRaw == -1)
         {
             if (_verAxis > 0)
             {
                 if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
                 {
-                    speedInput += forwardAccel * maxSpeed * 20f;
+                    speedInput += forwardAccel * maxSpeed * speedMult * 20f;
                 }
             }
             else if (_verAxis < 0)
             {
                 if (speedInput > 0 && speedInput <= maxSpeed * 1000f)
                 {
-                    speedInput -= forwardAccel * maxSpeed * 20f;
+                    speedInput -= forwardAccel * maxSpeed * 10f;
                 }
-                else if (speedInput >= maxSpeed * -750f && speedInput <= 0f)
+                else if (speedInput >= maxSpeed * -250f && speedInput <= 0f)
                 {
                     speedInput -= forwardAccel * maxSpeed * 5f;
                 }
@@ -145,13 +157,13 @@ public class CartController : MonoBehaviour
         }
         else
         {
-            if (speedInput <= maxSpeed * 1000f && speedInput >= maxSpeed * 50f)
+            if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 20f)
             {
                 speedInput -= 50f;
             }
-            else if (speedInput >= -maxSpeed * 1000f && speedInput <= -maxSpeed * 50f)
+            else if (speedInput >= -maxSpeed * 2000f && speedInput <= -maxSpeed * 20f)
             {
-                speedInput += 50f;
+                speedInput += 25f;
             }
             else
             {
@@ -159,13 +171,14 @@ public class CartController : MonoBehaviour
             }
         }
 
-
         if (grounded)
         {
+            
             if (_verAxisRaw == -1)
             {
                 turnInput *= -1;
             }
+            
             float _turnInput = turnInput * turnStrength * Time.deltaTime;
 
             if (drifting)
@@ -204,6 +217,14 @@ public class CartController : MonoBehaviour
         if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLenght, whatIsGround))
         {
             grounded = true;
+            speeding = false;
+
+            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+        }
+        else if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLenght, speedGround))
+        {
+            grounded = true;
+            speeding = true;
 
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
         }
@@ -221,7 +242,7 @@ public class CartController : MonoBehaviour
                 }
                 else
                 {
-                    theRB.AddForce((transform.forward * speedInput * 1.2f) + (transform.right * -driftForce * 6000f));
+                    theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
                     driftEmitting = true;
                 }
 

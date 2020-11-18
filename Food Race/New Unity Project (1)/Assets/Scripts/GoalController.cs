@@ -5,23 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GoalController : MonoBehaviour
 {
-    
     private void OnTriggerEnter(Collider c)
     {
-        if (c.name == "CartColl")
+        if (c.gameObject.GetComponent<LapTracker>() != null)
         {
-            //SceneManager.LoadScene(1);
+            Debug.Log(c.gameObject.name + " passed goal!");
+            LapTracker lt = c.gameObject.GetComponent<LapTracker>();
 
-            /*
-            c.gameObject.GetComponent<CartController>().lap++;
-            Debug.Log(c.gameObject.name + "completed " + c.gameObject.GetComponent<CartController>().lap + ". lap!");
+            if (lt.CheckAllPassed())
+            {
+                Debug.Log(c.gameObject.name + "completed " + lt.lap + ". lap!");
+                lt.lap++;
+                lt.SetAllFalse();
+            }
 
-            if (c.gameObject.GetComponent<CartController>().lap == 2)
+            if (lt.lap == 3)
             {
                 Debug.Log(c.gameObject.name + " has FINISHED!");
-                Destroy(c.gameObject, 1f);
+                c.gameObject.SetActive(false);
             }
-            */
+            
         }
     }
 
