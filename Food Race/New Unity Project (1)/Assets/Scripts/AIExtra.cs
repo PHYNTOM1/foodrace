@@ -43,8 +43,8 @@ using UnityEngine;
 
         if (distWP >= wpDist * 2)
         {
-            verAxis = 0f;   //1
-            verAxisRaw = 0f;    //1
+            verAxis = 1;
+            verAxisRaw = 1;
         }
         else if (distWP <= wpDist)
         {
@@ -60,29 +60,53 @@ using UnityEngine;
 
         //COMPARE Y AXIS ROT BETWEEN TARGETPOS & CURR .FORWARD
         targetDir = waypoints[currWP].position - kartRB.position;
-        targetDir.y = kartRB.transform.forward.y;
-        float angle = Vector3.Angle(kartRB.transform.forward, targetDir);
+        //targetDir.y = kartRB.position.y;        
 
-        Debug.Log(angle + " : " + gameObject.name);
+        float angle = Vector3.Angle(targetDir, kartRB.transform.forward);
+
+        Vector3 kartForPos = kartRB.transform.position - (kartRB.transform.forward.normalized * 5);     //remove * 5
+        kartForPos.y = kartRB.transform.position.y;
+
+        Vector3 kartToWP = kartRB.transform.position + targetDir.normalized * 5;    //remove * 5
+        kartToWP.y = kartRB.transform.position.y;
+
+        Debug.DrawLine(kartRB.transform.position, kartForPos, Color.magenta);   //JUST DEBUGGING
+        Debug.DrawLine(kartRB.transform.position, kartToWP, Color.yellow);
+
+        Vector3 xSHIT = kartToWP - kartForPos;
+
+        Debug.DrawLine(kartForPos, kartForPos + xSHIT);
+
+        if (xSHIT.x > 0)
+        {
+            Debug.Log("++++++++++++++++++++++++");
+            //angle *= -1;
+        }
+        else if (xSHIT.x < 0)
+        {
+            Debug.Log("------------------------");
+        }
+
+        Debug.Log(gameObject.name + " :angle: " + angle);
 
         if (angle > 110 && angle < 180)
         {
             horAxis = 1;
             horAxisRaw = 1;
         }
-        else if (angle < -110 && angle > 180)
+        else if (angle < -110 && angle > -180)
         {
             horAxis = -1;
             horAxisRaw = -1;
         }
-        else if (angle > 60)
+        else if (angle > 60 && angle < 180)
         {
-            horAxis = 1;
+            horAxis = 0.7f;
             horAxisRaw = 1;
         }
-        else if (angle < -60)
+        else if (angle < -60 && angle > -180)
         {
-            horAxis = -1;
+            horAxis = -0.7f;
             horAxisRaw = -1;
         }
         else if (angle <= 5 && angle > 0)
@@ -95,6 +119,8 @@ using UnityEngine;
             horAxis = 0;
             horAxisRaw = 0;
         }
+
+        Debug.Log(gameObject.name + horAxis);
 
     }
 
