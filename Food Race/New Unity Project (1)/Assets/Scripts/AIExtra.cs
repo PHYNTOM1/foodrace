@@ -12,6 +12,7 @@ using UnityEngine;
     public float wpDist = 10;
 
     private Rigidbody kartRB;
+    private GameObject kart;
 
     private bool driftInput = false;
     private bool driftInputDown = false;
@@ -27,6 +28,7 @@ using UnityEngine;
     {
         gameObject.GetComponent<CartController>().isPlayer = false;
         kartRB = gameObject.GetComponent<CartController>().theRB;
+        kart = this.gameObject;
 
         GameObject waypointsGroup = GameObject.Find("RoundWaypoints");
         Transform[] wpG = waypointsGroup.GetComponentsInChildren<Transform>();
@@ -59,19 +61,18 @@ using UnityEngine;
 
 
         //COMPARE Y AXIS ROT BETWEEN TARGETPOS & CURR .FORWARD
-        targetDir = waypoints[currWP].position - kartRB.position;
-        //targetDir.y = kartRB.position.y;        
+        targetDir = waypoints[currWP].position - kart.transform.position;
 
-        float angle = Vector3.Angle(targetDir, kartRB.transform.forward);
+        float angle = Vector3.Angle(targetDir, kart.transform.forward);
 
-        Vector3 kartForPos = kartRB.transform.position - (kartRB.transform.forward.normalized * 5);     //remove * 5
-        kartForPos.y = kartRB.transform.position.y;
+        Vector3 kartForPos = kart.transform.position - (kart.transform.forward.normalized * 5);     //remove * 5
+        kartForPos.y = kart.transform.position.y;
 
-        Vector3 kartToWP = kartRB.transform.position + targetDir.normalized * 5;    //remove * 5
-        kartToWP.y = kartRB.transform.position.y;
+        Vector3 kartToWP = kart.transform.position + targetDir.normalized * 5;    //remove * 5
+        kartToWP.y = kart.transform.position.y;
 
-        Debug.DrawLine(kartRB.transform.position, kartForPos, Color.magenta);   //JUST DEBUGGING
-        Debug.DrawLine(kartRB.transform.position, kartToWP, Color.yellow);
+        Debug.DrawLine(kart.transform.position, kartForPos, Color.magenta);   //JUST DEBUGGING
+        Debug.DrawLine(kart.transform.position, kartToWP, Color.yellow);
 
         Vector3 xSHIT = kartToWP - kartForPos;
 
@@ -79,12 +80,12 @@ using UnityEngine;
 
         if (xSHIT.x > 0)
         {
-            Debug.Log("++++++++++++++++++++++++");
-            //angle *= -1;
+            Debug.Log(gameObject.name + "++++++++++++++++++++++++");
         }
         else if (xSHIT.x < 0)
         {
-            Debug.Log("------------------------");
+            Debug.Log(gameObject.name + "------------------------");
+            angle *= -1;
         }
 
         Debug.Log(gameObject.name + " :angle: " + angle);
