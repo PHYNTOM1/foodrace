@@ -14,8 +14,6 @@ public class CartController : MonoBehaviour
 
     private bool grounded;
     private bool drifting = false;
-    private Vector3 driftingStance;
-    private float driftDir = 0f;
     public int driftForce = 0;
 
     public float driftInput = 0f;
@@ -40,6 +38,11 @@ public class CartController : MonoBehaviour
 
     public AIExtra aiExtra;
 
+    bool _driftInput;
+    float _horAxis;
+    float _horAxisRaw;
+    float _verAxis;
+    float _verAxisRaw;
 
     void Start()
     {
@@ -56,13 +59,7 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
-        bool _driftInput;
-        bool _driftInputDown;
-        float _horAxis;
-        float _horAxisRaw;
-        float _verAxis;
-        float _verAxisRaw;
-
+        /*
         if (isPlayer)
         {
              _driftInput = Input.GetKey(KeyCode.LeftShift);
@@ -85,19 +82,20 @@ public class CartController : MonoBehaviour
              _verAxis = aiExtra.VerAxis();
              _verAxisRaw = aiExtra.VerAxisRaw();
         }
+        */
 
         if (_driftInput && speedInput >= maxSpeed * 750f)
         {
             drifting = true;
+            if (driftForce == 0)
+            {
+                driftForce = (int)_horAxisRaw;
+            }
         }
         else
         {
             drifting = false;
-        }
-
-        if (_driftInputDown)
-        {
-            driftForce = (int)_horAxisRaw;
+            driftForce = 0;
         }
 
         if (_horAxisRaw == 1 || _horAxisRaw == -1)
@@ -174,7 +172,7 @@ public class CartController : MonoBehaviour
         if (grounded)
         {
             
-            if (_verAxisRaw == -1)
+            if (_verAxisRaw == -1 && speedInput < 0)
             {
                 turnInput *= -1;
             }
@@ -203,14 +201,15 @@ public class CartController : MonoBehaviour
 
         }
 
-        leftfrontwheel.localRotation = Quaternion.Euler(leftfrontwheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftfrontwheel.localRotation.eulerAngles.z);
-        rightfrontwheel.localRotation = Quaternion.Euler(rightfrontwheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightfrontwheel.localRotation.eulerAngles.z);
-
-        transform.position = theRB.transform.position;
     }
 
     private void FixedUpdate()
     {
+        leftfrontwheel.localRotation = Quaternion.Euler(leftfrontwheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftfrontwheel.localRotation.eulerAngles.z);
+        rightfrontwheel.localRotation = Quaternion.Euler(rightfrontwheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightfrontwheel.localRotation.eulerAngles.z);
+
+        transform.position = theRB.transform.position;
+
         grounded = false;
         RaycastHit hit;
 
@@ -262,5 +261,46 @@ public class CartController : MonoBehaviour
             ParticleSystem.EmissionModule ift = dr.emission;
             ift.enabled = driftEmitting;
         }
+    }
+
+    public void SteerInput(float hor)
+    {
+        _horAxis = hor;
+
+        if (_horAxis > 0)
+        {
+            _horAxisRaw = 1;
+        }
+        else if (_horAxis < 0)
+        {
+            _horAxisRaw = -1;
+        }
+        else
+        {
+            _horAxisRaw = 0;
+        }
+    }
+
+    public void AccelerationInput(float ver)
+    {
+        _verAxis = ver;
+
+        if (_verAxis > 0)
+        {
+            _verAxisRaw = 1;
+        }
+        else if (_verAxis < 0)
+        {
+            _verAxisRaw = -1;
+        }
+        else
+        {
+            _verAxisRaw = 0;
+        }
+    }
+
+    public void DriftInput( bool drift)
+    {
+        _driftInput = drift;
     }
 }

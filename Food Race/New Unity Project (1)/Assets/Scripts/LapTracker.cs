@@ -14,15 +14,23 @@ public class LapTracker : MonoBehaviour
     public List<Transform> checkpoints;
     public List<bool> checkpointsPassed;
 
+    public List<GameObject> waypoints;
+    public int currWP;
+    public bool finished;
 
     void Start()
     {
-        lap = 1;
-        goalEnabled = false;
+        ResetAll();
 
         GameObject checkpointsGroup = GameObject.Find("Checkpoints");
         Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
         goalPoint = GameObject.Find("GoalPoint").transform;
+        GameObject[] wps = GameObject.FindGameObjectsWithTag("Waypoint");
+
+        for (int i = 0; i < wps.Length; i++)
+        {
+            waypoints.Add(wps[i]);
+        }
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -101,11 +109,21 @@ public class LapTracker : MonoBehaviour
             {
                 //DO SOME FINISHING SHIT HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
+                finished = true;
             }
 
             SetAllFalse();
             goalEnabled = false;
         }
+    }
+
+    public void ResetAll()
+    {
+        lap = 1;
+        goalEnabled = false;
+        currWP = 0;
+        finished = false;
+        SetAllFalse();
     }
 
     private void OnDrawGizmos()     //visualize waypoint range in editor

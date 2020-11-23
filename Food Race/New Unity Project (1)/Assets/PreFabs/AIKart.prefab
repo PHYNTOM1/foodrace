@@ -14603,12 +14603,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8250060050855752599}
-  - component: {fileID: 8250060050855752593}
   - component: {fileID: 8250060050855752592}
   - component: {fileID: 8250060050855752594}
   - component: {fileID: 8250060050855752595}
   - component: {fileID: 8250060050855752604}
   - component: {fileID: -792601650906250146}
+  - component: {fileID: 3850682005781416108}
+  - component: {fileID: 1878919179197933027}
+  - component: {fileID: 1168055832882634127}
   m_Layer: 2
   m_Name: AIKart
   m_TagString: Untagged
@@ -14633,28 +14635,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8250060050855752593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250060050855752598}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb376ba1a130b1a4a9f147f361f8d152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
-  kartModel: {fileID: 8250060049583327686}
-  kartNormal: {fileID: 8250060051597159253}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  acceleration: 3
-  steering: 30
-  gravity: 10
-  drifting: 0
 --- !u!114 &8250060050855752592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14690,7 +14670,7 @@ MonoBehaviour:
   leftfrontwheel: {fileID: 8250060051121057143}
   rightfrontwheel: {fileID: 8250060051056925963}
   maxWheelTurn: 25
-  kartStats: {fileID: 11400000, guid: c888cc67847c22b4d807db260f6a4b88, type: 2}
+  kartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
   isPlayer: 1
   aiExtra: {fileID: 0}
 --- !u!114 &8250060050855752594
@@ -14700,7 +14680,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8250060050855752598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3492e4ff45313d44dbd6348e8a66adfc, type: 3}
   m_Name: 
@@ -14728,6 +14708,8 @@ MonoBehaviour:
   goalPoint: {fileID: 0}
   checkpoints: []
   checkpointsPassed: 
+  waypoints: []
+  currWP: 0
 --- !u!114 &8250060050855752604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14757,9 +14739,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 3
     NumStackedVectorObservations: 1
-    VectorActionSize: 02000000
+    VectorActionSize: 03000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
   m_Model: {fileID: 0}
@@ -14770,6 +14752,76 @@ MonoBehaviour:
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
+--- !u!114 &3850682005781416108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1878919179197933027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RaySensorOne
+  m_DetectableTags:
+  - Wall
+  - Waypoint
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 120
+  m_SphereCastRadius: 0
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 7987
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
+--- !u!114 &1168055832882634127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RaySensorTwo
+  m_DetectableTags:
+  - Wall
+  - Waypoint
+  m_RaysPerDirection: 1
+  m_MaxRayDegrees: 4
+  m_SphereCastRadius: 0.5
+  m_RayLength: 100
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &8250060051038052405
 GameObject:
   m_ObjectHideFlags: 0
