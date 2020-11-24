@@ -24,6 +24,7 @@ public class KartAIAgent : Agent
     public override void OnEpisodeBegin()
     {
         rBody.position = new Vector3(0, 1.5f, 0);
+        controller.gameObject.transform.eulerAngles = Vector3.zero;
         lt.ResetAll();
         wpm.ResetWPs();
     }

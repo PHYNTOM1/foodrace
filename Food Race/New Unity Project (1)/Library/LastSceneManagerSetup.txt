@@ -1,5 +1,5 @@
 sceneSetups:
-- path: E:/Github/AI-Racing-Karts/Assets/Scenes/SampleScene.unity
+- path: Assets/Scenes/Ingame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

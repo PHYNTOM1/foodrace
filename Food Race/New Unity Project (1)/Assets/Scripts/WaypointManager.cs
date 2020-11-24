@@ -26,7 +26,10 @@ public class WaypointManager : MonoBehaviour
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
+        //ENABLE JUST FOR TRAINING
+        
+        /**/
+        timeLeft -= Time.deltaTime;       
 
         if (timeLeft < 0f)
         {

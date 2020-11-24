@@ -220,6 +220,7 @@ public class CartController : MonoBehaviour
 
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
         }
+        /*
         else if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLenght, speedGround))
         {
             grounded = true;
@@ -227,6 +228,7 @@ public class CartController : MonoBehaviour
 
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
         }
+        */
 
         exhaustEmitting = false;
         driftEmitting = false;
