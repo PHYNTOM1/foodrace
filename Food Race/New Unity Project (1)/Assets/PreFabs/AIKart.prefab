@@ -14665,13 +14665,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8250060050855752599}
   - component: {fileID: 8250060050855752592}
-  - component: {fileID: 8250060050855752594}
   - component: {fileID: 8250060050855752595}
   - component: {fileID: 8250060050855752604}
   - component: {fileID: -792601650906250146}
   - component: {fileID: 3850682005781416108}
   - component: {fileID: 1878919179197933027}
   - component: {fileID: 1168055832882634127}
+  - component: {fileID: 9116070347495904323}
   m_Layer: 2
   m_Name: AIKart
   m_TagString: Untagged
@@ -14735,22 +14735,6 @@ MonoBehaviour:
   kartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
   isPlayer: 1
   aiExtra: {fileID: 0}
---- !u!114 &8250060050855752594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250060050855752598}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3492e4ff45313d44dbd6348e8a66adfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  currWP: 0
-  distWP: 0
-  wpDist: 25
 --- !u!114 &8250060050855752595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14770,8 +14754,6 @@ MonoBehaviour:
   goalPoint: {fileID: 0}
   checkpoints: []
   checkpointsPassed: 
-  waypoints: []
-  currWP: 0
   finished: 0
 --- !u!114 &8250060050855752604
 MonoBehaviour:
@@ -14885,6 +14867,22 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
+--- !u!114 &9116070347495904323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e0f79f686727d4abcf6731cf76e127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTimeToReachNextWaypoint: 30
+  timeLeft: 30
+  kartAIAgent: {fileID: 0}
+  nextWayPointToReach: {fileID: 0}
 --- !u!1 &8250060051038052405
 GameObject:
   m_ObjectHideFlags: 0

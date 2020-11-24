@@ -10,12 +10,14 @@ public class KartAIAgent : Agent
     Rigidbody rBody;
     CartController controller;
     LapTracker lt;
+    WaypointManager wpm;
 
     void Start()
     {
         controller = GetComponent<CartController>();
         rBody = controller.theRB;  //gameObject.GetComponentInChildren
         lt = GetComponent<LapTracker>();
+        wpm = GetComponent<WaypointManager>();
     }
     
     //reset
@@ -23,6 +25,7 @@ public class KartAIAgent : Agent
     {
         rBody.position = new Vector3(0, 1.5f, 0);
         lt.ResetAll();
+        wpm.ResetWPs();
     }
 
     //get extra information which isnt picked up by the raycastsensors
@@ -37,7 +40,7 @@ public class KartAIAgent : Agent
         //sensor.AddObservation(rBody.velocity.x);
         //sensor.AddObservation(rBody.velocity.z);
 
-        Vector3 diff = lt.waypoints[lt.currWP].transform.position - transform.position;
+        Vector3 diff = wpm.nextWayPointToReach.transform.position - transform.position;
         sensor.AddObservation(diff / 20f); //Divide by 20 to normalize
 
         AddReward(-0.001f); //Promote faster driving

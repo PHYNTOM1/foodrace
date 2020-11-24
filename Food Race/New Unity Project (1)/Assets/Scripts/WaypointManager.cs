@@ -19,6 +19,7 @@ public class WaypointManager : MonoBehaviour
 
     void Start()
     {
+        kartAIAgent = GetComponent<KartAIAgent>();
         Waypoints = FindObjectOfType<Waypoints>().wayPoints;
         ResetWPs();
     }
