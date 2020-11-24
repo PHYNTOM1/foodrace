@@ -6,9 +6,12 @@ public class WaypointBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<LapTracker>() != null)
-        {
-            //other.GetComponent<LapTracker>().reachedWaypoint();
+        if (other.gameObject.name == "WPCollider")
+        {        
+            if(other.gameObject.GetComponentInParent<WaypointManager>() != null)
+            {
+                other.gameObject.GetComponentInParent<WaypointManager>().ReachedWaypoint(this);
+            }
         }
     }
 }

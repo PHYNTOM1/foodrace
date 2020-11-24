@@ -1,18 +1,73 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float maxTimeToReachNextWaypoint = 30f;
+    public float timeLeft = 30f;
+
+    public KartAIAgent kartAIAgent;
+    public WaypointBehaviour nextWayPointToReach;
+
+    private int currentWaypointIndex;
+    private List<WaypointBehaviour> Waypoints;
+    private WaypointBehaviour lastWaypoint;
+
+    public event Action<WaypointBehaviour> reachedWaypoint;
+
     void Start()
     {
-        
+        Waypoints = FindObjectOfType<Waypoints>().wayPoints;
+        ResetWPs();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft < 0f)
+        {
+            kartAIAgent.AddReward(-1f);
+            kartAIAgent.EndEpisode();
+        }
+    }
+
+    public void ReachedWaypoint(WaypointBehaviour waypointBehaviour)
+    {
+        if (nextWayPointToReach != waypointBehaviour) return;
+
+        lastWaypoint = Waypoints[currentWaypointIndex];
+        reachedWaypoint?.Invoke(waypointBehaviour);
+        currentWaypointIndex++;
+
+        if (currentWaypointIndex >= Waypoints.Count)
+        {
+            kartAIAgent.AddReward(0.5f);
+            kartAIAgent.EndEpisode();
+        }
+        else
+        {
+            kartAIAgent.AddReward((0.5f) / Waypoints.Count);
+            SetNextWaypoint();
+        }
+    }
+
+    private void SetNextWaypoint()
+    {
+        if (Waypoints.Count > 0)
+        {
+            timeLeft = maxTimeToReachNextWaypoint;
+            nextWayPointToReach = Waypoints[currentWaypointIndex];
+        }
+    }
+
+    public void ResetWPs()
+    {
+        currentWaypointIndex = 0;
+        timeLeft = maxTimeToReachNextWaypoint;
+
+        SetNextWaypoint();
     }
 }
