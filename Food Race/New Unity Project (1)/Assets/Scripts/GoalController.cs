@@ -14,7 +14,7 @@ public class GoalController : MonoBehaviour
 
             if (lt.CheckAllPassed())
             {
-                Debug.Log(c.gameObject.name + "completed " + lt.lap + ". lap!");
+                Debug.Log(c.gameObject.name + " completed " + lt.lap + ". lap!");
                 lt.lap++;
                 lt.SetAllFalse();
             }

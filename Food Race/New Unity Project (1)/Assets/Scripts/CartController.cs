@@ -252,7 +252,7 @@ public class CartController : MonoBehaviour
         }
         else
         {
-            theRB.AddForce((Vector3.up * -gravityForce * 700f) + (transform.forward * speedInput * 0.8f) + (transform.right * turnInput * turnStrength * (speedInput / (maxSpeed * 1000f)) * 10f * 0.8f)); ;
+            theRB.AddForce((Vector3.up * -gravityForce * 700f) + (transform.forward * speedInput * 0.8f) + (transform.right * turnInput * turnStrength * (speedInput / (maxSpeed * 1000f)) * 10f * 0.8f));
         }
 
         ParticleSystem.EmissionModule em = exhaust.emission;
@@ -301,7 +301,7 @@ public class CartController : MonoBehaviour
         }
     }
 
-    public void DriftInput( bool drift)
+    public void DriftInput(bool drift)
     {
         _driftInput = drift;
     }
