@@ -3,7 +3,7 @@
   "Assemblies": [
     {
       "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2020-11-24T16:11:31.8077861Z"
+      "LastWriteTime": "2020-11-25T18:06:24.3401203Z"
     },
     {
       "FullName": "netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -18,16 +18,16 @@
       "LastWriteTime": "2020-10-14T04:25:06Z"
     },
     {
-      "FullName": "Unity.Barracuda, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2020-11-24T16:11:33.781721Z"
+      "FullName": "Unity.Barracuda.BurstBLAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2020-11-25T18:06:28.5900843Z"
     },
     {
       "FullName": "mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
       "LastWriteTime": "2020-10-14T04:20:22Z"
     },
     {
-      "FullName": "Unity.Barracuda.BurstBLAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2020-11-24T16:11:37.2338534Z"
+      "FullName": "Unity.Barracuda, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2020-11-25T18:06:26.2963781Z"
     }
   ],
   "Functions": [
@@ -54,30 +54,17 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1<Unity.Barracuda.BurstCPUOps/ExpJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 8794384452606821980,
-      "ModuleHash": "7c65b171e2196ce43203756011d7882b",
-      "LinkName": "53FE69074E5AFF26",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
       "FullName": "System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1<Unity.Barracuda.UnsafeMatrixBlockMultiplyUnrolled8xhJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
       "ModuleOptionsHash": 8794384452606821980,
       "ModuleHash": "85684f79bd61a959d1f77b36e55101df",
       "LinkName": "C1C6C1D457935913",
       "AssemblyDependencyIndices": [
         3,
-        6,
+        4,
         5,
         1,
         2,
-        4
+        6
       ]
     }
   ]
