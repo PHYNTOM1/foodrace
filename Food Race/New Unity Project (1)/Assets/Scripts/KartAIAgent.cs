@@ -23,7 +23,7 @@ public class KartAIAgent : Agent
     //reset
     public override void OnEpisodeBegin()
     {
-        rBody.position = new Vector3(0, 1.5f, 0);
+        rBody.position = new Vector3(1f, 3f, 16f);
         controller.gameObject.transform.eulerAngles = Vector3.zero;
         lt.ResetAll();
         wpm.ResetWPs();
@@ -57,11 +57,18 @@ public class KartAIAgent : Agent
 
         if (input[2] == 1)
         {
+            AddReward(0.0001f);
             controller.DriftInput(true);
         }
         else
         {
             controller.DriftInput(false);
+        }
+
+        if (rBody.position.y <= -5f)
+        {
+            AddReward(-0.4f);
+            EndEpisode();
         }
 
         if (lt.finished)

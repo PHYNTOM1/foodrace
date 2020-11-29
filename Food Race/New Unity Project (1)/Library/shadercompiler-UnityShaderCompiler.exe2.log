@@ -96,3 +96,6 @@ Cmd: compileComputeKernel
   api=4 insize=4442 outsize=1449 ok=1
 >>>>>>> parent of e49b355a... Track01 was builded
 Cmd: initializeCompiler
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process

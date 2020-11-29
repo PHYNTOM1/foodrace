@@ -1084,6 +1084,107 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126722457}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &136349305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 10
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxColor:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0, z: 0}
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 54a3a0570aebe8949bec4966f1376581, type: 3}
+  enableBackplate:
+    m_OverrideState: 0
+    m_Value: 0
+  backplateType:
+    m_OverrideState: 0
+    m_Value: 0
+  groundLevel:
+    m_OverrideState: 0
+    m_Value: 0
+  scale:
+    m_OverrideState: 0
+    m_Value: {x: 32, y: 32}
+  projectionDistance:
+    m_OverrideState: 0
+    m_Value: 16
+    min: 0.0000001
+  plateRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexOffset:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  blendAmount:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 100
+  shadowTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  pointLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  dirLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  rectLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &152870211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2664,7 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &303082271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2755,6 +2857,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 303082271}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 --- !u!1 &303745306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,6 +3185,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SkySettings: {fileID: 1698038766}
 =======
   m_SkySettings: {fileID: 590344894}
@@ -3091,6 +3196,9 @@ MonoBehaviour:
 =======
   m_SkySettings: {fileID: 1776951156}
 >>>>>>> parent of e49b355a... Track01 was builded
+=======
+  m_SkySettings: {fileID: 136349305}
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -4181,6 +4289,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418577296}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!1001 &420185909
 PrefabInstance:
 <<<<<<< HEAD
@@ -4258,6 +4367,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 420185909}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 --- !u!1 &423863183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,11 +5615,22 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 --- !u!1001 &515745441
 PrefabInstance:
+=======
+--- !u!4 &513384105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+    type: 3}
+  m_PrefabInstance: {fileID: 1832725391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &532246258
+GameObject:
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -8581,6 +8703,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1071480675}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &863890995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8657,6 +8780,11 @@ PrefabInstance:
 =======
 >>>>>>> parent of e49b355a... Track01 was builded
 --- !u!1 &875921084
+=======
+  m_GameObject: {fileID: 663406453}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &669518464
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9298,7 +9426,11 @@ Transform:
   m_Father: {fileID: 713229696}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &930417092
+=======
+--- !u!1 &723182611
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10412,6 +10544,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1110558802}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
@@ -10602,6 +10735,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1180499845
+=======
+  m_GameObject: {fileID: 813143225}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &842657959 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3694675931171179099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &875921084
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10824,6 +10968,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1298724886}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -10832,6 +10977,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSize: {x: 20, y: 20, z: 20}
 --- !u!1 &1304363977
+=======
+  m_GameObject: {fileID: 879317814}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &895403802
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11351,20 +11501,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2023441091}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+=======
+    - target: {fileID: -792601650906250146, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -792601650906250146, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250060049583327685, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250060050170887522, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250060050855752598, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerKart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250060050855752598, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
       objectReference: {fileID: 0}
     - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0
+=======
+      value: 3.25
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
       objectReference: {fileID: 0}
     - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: 140
+=======
+      value: 16.25
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
       objectReference: {fileID: 0}
     - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
         type: 3}
@@ -12123,6 +12318,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1443057073}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12451,6 +12647,63 @@ MonoBehaviour:
   maxDist: 4
   lerpCounter: 0
 --- !u!1 &1500827471
+=======
+  m_GameObject: {fileID: 1331413184}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 73.630295, y: 62.7, z: 201.54346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 875921088}
+  - {fileID: 1328431091}
+  - {fileID: 645502051}
+  - {fileID: 628263344}
+  - {fileID: 1922155648}
+  - {fileID: 449506345}
+  - {fileID: 534679158}
+  - {fileID: 418577297}
+  - {fileID: 4717140}
+  - {fileID: 1847282979}
+  - {fileID: 1573484456}
+  - {fileID: 53837685}
+  - {fileID: 266946865}
+  - {fileID: 2111685957}
+  - {fileID: 536239784}
+  - {fileID: 126722458}
+  - {fileID: 347138132}
+  - {fileID: 294085814}
+  - {fileID: 1853233798}
+  - {fileID: 1556954435}
+  - {fileID: 1918978709}
+  - {fileID: 444509916}
+  - {fileID: 202811293}
+  - {fileID: 1628476921}
+  - {fileID: 1110558803}
+  - {fileID: 1832858197}
+  - {fileID: 1662412849}
+  - {fileID: 1557244368}
+  - {fileID: 1416573010}
+  - {fileID: 1401664181}
+  - {fileID: 930417093}
+  - {fileID: 118285369}
+  - {fileID: 311506737}
+  - {fileID: 257521982}
+  - {fileID: 2017271100}
+  - {fileID: 685799827}
+  - {fileID: 1527313036}
+  - {fileID: 1981081123}
+  - {fileID: 785399325}
+  - {fileID: 1664827255}
+  - {fileID: 185481598}
+  - {fileID: 511021870}
+  - {fileID: 692830750}
+  - {fileID: 412577215}
+  - {fileID: 1036688758}
+  - {fileID: 309064668}
+  m_Father: {fileID: 713229696}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1346212951
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12544,12 +12797,18 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1500827471}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
 --- !u!114 &1500827476
 =======
 --- !u!1 &1422301116
+=======
+  m_GameObject: {fileID: 1346212951}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1373168341
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13476,7 +13735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6066554eeee5ea54790512ade9e219e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2116607480}
+  target: {fileID: 513384105}
   offset: {x: 0, y: 6, z: -9}
   maxDist: 4
   lerpCounter: 0
@@ -14565,81 +14824,6 @@ MeshFilter:
   m_GameObject: {fileID: 1573484455}
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1616067300
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2023441091}
-    m_Modifications:
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389390, guid: a51ce16518ee13849a270fdf10dcda3e,
-        type: 3}
-      propertyPath: m_Name
-      value: Straight (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a51ce16518ee13849a270fdf10dcda3e, type: 3}
---- !u!4 &1616067301 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1616067300}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1628476920
 GameObject:
   m_ObjectHideFlags: 0
@@ -15148,6 +15332,7 @@ MeshFilter:
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1698038766
 =======
 --- !u!1001 &1691179416
@@ -15492,6 +15677,8 @@ Transform:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
 >>>>>>> parent of e49b355a... Track01 was builded
+=======
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 --- !u!1 &1702547501
 GameObject:
   m_ObjectHideFlags: 0
@@ -16701,8 +16888,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: dafede4ae54ee59449bfa06efe9839d0,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8250060049583327685, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
       propertyPath: m_IsActive
@@ -16721,12 +16907,12 @@ PrefabInstance:
     - target: {fileID: 8250060050855752598, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2
+      value: 0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
@@ -16736,7 +16922,7 @@ PrefabInstance:
     - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16.25
       objectReference: {fileID: 0}
     - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
         type: 3}
@@ -17198,6 +17384,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1854399040
 =======
 --- !u!1001 &1870479393
@@ -17427,6 +17614,8 @@ Transform:
   m_PrefabInstance: {fileID: 1854399040}
   m_PrefabAsset: {fileID: 0}
 >>>>>>> parent of e49b355a... Track01 was builded
+=======
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 --- !u!1 &1873288590
 GameObject:
   m_ObjectHideFlags: 0
@@ -17732,111 +17921,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918978708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1920462064
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -792601650906250146, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -792601650906250146, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_BehaviorType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -792601650906250146, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_Model
-      value: 
-      objectReference: {fileID: 5022602860645237092, guid: dafede4ae54ee59449bfa06efe9839d0,
-        type: 3}
-    - target: {fileID: 8250060049583327685, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050170887522, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752598, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_Name
-      value: AIKart (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752598, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250060051597159252, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 84eb318bbf4658d4a8fc23e4cb012999, type: 3}
 --- !u!1 &1922155647
 GameObject:
   m_ObjectHideFlags: 0
@@ -18556,6 +18640,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017271099}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!1 &2023441090
 GameObject:
   m_ObjectHideFlags: 0
@@ -18637,6 +18722,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 --- !u!1 &2030577831
 GameObject:
   m_ObjectHideFlags: 0
@@ -19368,12 +19455,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111685956}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2116607480 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8250060050855752599, guid: 84eb318bbf4658d4a8fc23e4cb012999,
-    type: 3}
-  m_PrefabInstance: {fileID: 1081396412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2144749591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1295237471322344060, guid: 37c35189fd16e1f46b5ca89e46a7017c,
@@ -19600,6 +19681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c35189fd16e1f46b5ca89e46a7017c, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &3624226526771786447
 =======
     - target: {fileID: 919132149155446097, guid: 6b0a55c9a5fbf054f8fcc340088f4c6e,
@@ -19633,71 +19715,74 @@ Transform:
   m_SourcePrefab: {fileID: 100100000, guid: 37c35189fd16e1f46b5ca89e46a7017c, type: 3}
 --- !u!1001 &3624226526771786447
 >>>>>>> parent of e49b355a... Track01 was builded
+=======
+--- !u!1001 &3694675931171179099
+>>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2023441091}
+    m_TransformParent: {fileID: 215339576}
     m_Modifications:
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.35
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 51.3
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389389, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802620, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624226526118389390, guid: a51ce16518ee13849a270fdf10dcda3e,
+    - target: {fileID: 3694675930935802621, guid: 845f8d4219b434e4abb0189572adda1f,
         type: 3}
       propertyPath: m_Name
-      value: Straight
+      value: Waypoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a51ce16518ee13849a270fdf10dcda3e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 845f8d4219b434e4abb0189572adda1f, type: 3}
