@@ -14,48 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 0
-    y: 42.56604
-    width: 2318.4907
-    height: 935.5472
-<<<<<<< HEAD
+    x: 7.245283
+    y: 49.81132
+    width: 2304
+    height: 921.05664
   m_ShowMode: 4
-  m_Title: Project
-  m_RootView: {fileID: 3}
-  m_MinSize: {x: 875, y: 763}
+  m_Title: 
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
---- !u!114 &2
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    x: 1232.8
-    y: 50.4
-=======
-    x: 984
-    y: 65.6
->>>>>>> parent of aa857803... Track01 was builded with old models
-    width: 2020.8
-    height: 1035.2001
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-  m_ShowMode: 4
-  m_Title: Project
-  m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
-  m_MaxSize: {x: 10000, y: 10000}
-<<<<<<< HEAD
   m_Maximized: 0
-<<<<<<< HEAD
---- !u!114 &3
-<<<<<<< HEAD
-=======
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,103 +32,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: HDWizard
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 421
-    height: 568
-  m_MinSize: {x: 420, y: 450}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: HDWizard
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 421
-    height: 568
-  m_MinSize: {x: 420, y: 450}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-  m_EditorHideFlags: 0
+  m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
+  - {fileID: 9}
   - {fileID: 3}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 421
-    height: 568
-  m_MinSize: {x: 421, y: 473}
-  m_MaxSize: {x: 4001, y: 4023}
-  vertical: 0
-  controlID: 177
---- !u!114 &5
-=======
-=======
-  m_Maximized: 1
->>>>>>> parent of e49b355a... Track01 was builded
---- !u!114 &2
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  - {fileID: 6}
-  m_Position:
-    serializedVersion: 2
-    x: 0
     y: 30
-    width: 2319
-    height: 886
-  m_MinSize: {x: 680, y: 492}
-  m_MaxSize: {x: 14003, y: 14042}
-  vertical: 1
-  controlID: 150
+    width: 2304
+    height: 872
+  m_MinSize: {x: 678, y: 321}
+  m_MaxSize: {x: 12003, y: 8021}
+  vertical: 0
+  controlID: 105
 --- !u!114 &3
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,81 +57,102 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1837
+    y: 0
+    width: 467
+    height: 872
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 455
+    height: 527
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 527
+    width: 1837
+    height: 345
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 3}
-  - {fileID: 5}
-  - {fileID: 4}
-=======
-  - {fileID: 6}
-  - {fileID: 8}
   - {fileID: 7}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 6}
-  - {fileID: 8}
-  - {fileID: 7}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 3}
-  - {fileID: 5}
-  - {fileID: 4}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  - {fileID: 4}
   - {fileID: 2}
-  - {fileID: 5}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 2319
-    height: 936
-  m_MinSize: {x: 875, y: 763}
-  m_MaxSize: {x: 10000, y: 10000}
-<<<<<<< HEAD
---- !u!114 &3
-=======
-    width: 2021
-    height: 1036
-  m_MinSize: {x: 875, y: 542}
-  m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &6
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    width: 2021
-    height: 1036
+    width: 2304
+    height: 922
   m_MinSize: {x: 875, y: 300}
-=======
-    width: 2319
-    height: 936
-  m_MinSize: {x: 875, y: 542}
->>>>>>> parent of e49b355a... Track01 was builded
   m_MaxSize: {x: 10000, y: 10000}
-<<<<<<< HEAD
---- !u!114 &6
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &3
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &4
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,40 +169,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 2319
-=======
-    width: 2021
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    width: 2021
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    width: 2319
->>>>>>> parent of e49b355a... Track01 was builded
+    width: 2304
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &4
-=======
---- !u!114 &7
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &7
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &4
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &5
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,127 +190,12 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 916
-    width: 2319
+    y: 902
+    width: 2304
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-<<<<<<< HEAD
---- !u!114 &5
-=======
-    y: 1016
-    width: 2021
-    height: 20
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
---- !u!114 &8
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    y: 1016
-    width: 2021
-=======
-    y: 916
-    width: 2319
->>>>>>> parent of e49b355a... Track01 was builded
-    height: 20
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
-<<<<<<< HEAD
---- !u!114 &8
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &5
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &6
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 6}
-  - {fileID: 11}
-=======
-  - {fileID: 9}
-  - {fileID: 14}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 9}
-  - {fileID: 14}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 6}
-  - {fileID: 11}
->>>>>>> parent of aa857803... Track01 was builded with old models
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  - {fileID: 7}
-  - {fileID: 12}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-    width: 2319
-    height: 886
-  m_MinSize: {x: 680, y: 492}
-  m_MaxSize: {x: 14003, y: 14042}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 131
---- !u!114 &6
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    width: 2021
-    height: 986
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 82
 --- !u!114 &9
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  controlID: 132
-=======
-    width: 2319
-    height: 886
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
-  vertical: 0
-  controlID: 133
->>>>>>> parent of e49b355a... Track01 was builded
---- !u!114 &6
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  controlID: 432
---- !u!114 &7
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,78 +208,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 7}
   - {fileID: 10}
-=======
-  - {fileID: 10}
-  - {fileID: 13}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 10}
-  - {fileID: 13}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 7}
-  - {fileID: 10}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  - {fileID: 8}
-  - {fileID: 11}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+  - {fileID: 5}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1769
-    height: 886
-  m_MinSize: {x: 403, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+    width: 1837
+    height: 872
+  m_MinSize: {x: 402, y: 321}
+  m_MaxSize: {x: 8002, y: 8021}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 61
---- !u!114 &7
-=======
-    width: 1467
-    height: 986
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
-  vertical: 1
-  controlID: 83
+  controlID: 35
 --- !u!114 &10
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    width: 1467
-    height: 986
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 83
---- !u!114 &10
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  controlID: 61
-=======
-    width: 1769
-    height: 886
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
-  vertical: 1
-  controlID: 65
->>>>>>> parent of e49b355a... Track01 was builded
---- !u!114 &7
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  controlID: 62
---- !u!114 &8
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -524,136 +233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 8}
-  - {fileID: 9}
-=======
+  - {fileID: 4}
   - {fileID: 11}
-  - {fileID: 12}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 11}
-  - {fileID: 12}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  - {fileID: 8}
-  - {fileID: 9}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  - {fileID: 9}
-  - {fileID: 10}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1769
-    height: 615
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 62
---- !u!114 &8
-=======
-    width: 1467
-    height: 684
+    width: 1837
+    height: 527
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 84
+  controlID: 36
 --- !u!114 &11
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    width: 1467
-    height: 684
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 84
---- !u!114 &11
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-  controlID: 62
-=======
-    width: 1769
-    height: 615
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
-  vertical: 0
-  controlID: 66
->>>>>>> parent of e49b355a... Track01 was builded
---- !u!114 &8
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  controlID: 365
---- !u!114 &9
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 347
-    height: 615
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &9
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    width: 402
-    height: 684
-=======
-    width: 347
-    height: 615
->>>>>>> parent of e49b355a... Track01 was builded
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &12
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &9
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &10
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -668,138 +260,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 347
+    x: 455
     y: 0
-    width: 1422
-    height: 615
+    width: 1382
+    height: 527
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &10
-=======
-    x: 402
-    y: 0
-    width: 1065
-    height: 684
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &13
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    x: 402
-=======
-    x: 347
->>>>>>> parent of e49b355a... Track01 was builded
-    y: 0
-    width: 1422
-    height: 615
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 13}
-  m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &13
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-=======
-  m_LastSelected: 0
->>>>>>> parent of e49b355a... Track01 was builded
---- !u!114 &10
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &11
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 615
-    width: 1769
-    height: 271
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
+  - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 1
-<<<<<<< HEAD
---- !u!114 &11
-=======
-    y: 684
-    width: 1467
-    height: 302
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &14
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    y: 684
-    width: 1467
-    height: 302
-=======
-    y: 615
-    width: 1769
-    height: 271
->>>>>>> parent of e49b355a... Track01 was builded
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
-<<<<<<< HEAD
---- !u!114 &14
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &11
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
 --- !u!114 &12
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -808,214 +282,198 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 1769
-    y: 0
-    width: 550
-    height: 886
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &12
-=======
-    x: 1467
-    y: 0
-    width: 554
-    height: 986
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 21}
-  m_Panes:
-  - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 0
-=======
-    x: 1467
-=======
-    x: 1769
->>>>>>> parent of e49b355a... Track01 was builded
-    y: 0
-    width: 550
-    height: 886
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor:UnityEditor.Rendering.HighDefinition:HDWizard
-  m_MinSize: {x: 420, y: 450}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Render Pipeline Wizard
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 288
-    y: 464.80002
-    width: 420
-    height: 547
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &16
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &12
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &13
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000,
+    m_Text: Asset Store
+    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 346.86792
-    y: 72.452835
-    width: 1420
-    height: 594
-<<<<<<< HEAD
-=======
-    x: 1386.4
-    y: 96
-    width: 1063
-    height: 663
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
->>>>>>> parent of e49b355a... Track01 was builded
+    x: 468
+    y: 181
+    width: 973
+    height: 501
   m_ViewDataDictionary: {fileID: 0}
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
-  m_SerializedCustomFieldsNames: []
-  m_SerializedCustomFieldsValues: []
-  m_PlayModeViewName: GameView
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1567.9166, y: 632.6875}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 0
-  m_UseMipMap: 0
-  m_VSyncEnabled: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    hZoomLockedByDefault: 0
-    vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -710
-    m_HBaseRangeMax: 710
-    m_VBaseRangeMin: -286.5
-    m_VBaseRangeMax: 286.5
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
-    m_EnableSliderZoomHorizontal: 0
-    m_EnableSliderZoomVertical: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 21
-      width: 1420
-      height: 573
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 710, y: 286.5}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -710
-      y: -286.5
-      width: 1420
-      height: 573
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1567.9166, y: 655.875}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 00000000000000000000
-  m_XRRenderMode: 0
-  m_RenderTexture: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!114 &13
-=======
---- !u!114 &17
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &17
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &13
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 7.245283
+    y: 606.7925
+    width: 1836
+    height: 324
+  m_ViewDataDictionary: {fileID: 0}
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Scenes
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scenes
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: E:\Github\foodrace\Food Race\New Unity Project (1)
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: f8490000
+    m_LastClickedID: 18936
+    m_ExpandedIDs: 00000000e4490000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000e4490000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 8a4a0000
+    m_LastClickedInstanceID: 19082
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 115
 --- !u!114 &14
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1843.9246
+    y: 79.69811
+    width: 466
+    height: 851
+  m_ViewDataDictionary: {fileID: 0}
+  m_OpenAddComponentMenu: 0
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 163
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1031,72 +489,22 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 0
-    y: 72.452835
-    width: 346
-    height: 594
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    x: 1232.8
-    y: 80.8
-=======
-    x: 984
-    y: 96
->>>>>>> parent of aa857803... Track01 was builded with old models
-    width: 401
-    height: 663
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of e49b355a... Track01 was builded
+    x: 7.245283
+    y: 79.69811
+    width: 454
+    height: 506
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-      m_ExpandedIDs: 66fbffff0e4b0000
-=======
-      m_ExpandedIDs: 40fbffff
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-      m_ExpandedIDs: 40fbffff
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-      m_SelectedIDs: be9afeff
-      m_LastClickedID: -91458
-      m_ExpandedIDs: 0aacfeff24acfeff20b8feff54b8feff86c5feff5210ffff882fffffcc5affff1cabffff84bcffff2acfffffc2d7ffff1cfbffff0c4b0000
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-      m_SelectedIDs: 524f0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 66fbffff
->>>>>>> parent of e49b355a... Track01 was builded
-=======
-      m_SelectedIDs: 7e520000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 44daffff00e4fffffaeeffff66fbffff
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+      m_SelectedIDs: 4e4f0000
+      m_LastClickedID: 20302
+      m_ExpandedIDs: 84d9ffff5adcffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1112,47 +520,15 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        m_ClientGUIView: {fileID: 8}
-=======
-        m_ClientGUIView: {fileID: 11}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-        m_ClientGUIView: {fileID: 11}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-        m_ClientGUIView: {fileID: 8}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-        m_ClientGUIView: {fileID: 9}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: f632ca9c72528b740911dcad808e3237
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &14
-=======
---- !u!114 &18
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &18
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &14
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &15
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+  m_WindowGUID: 9ed817f71d5c5cb4a9dfd852e0711488
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1168,42 +544,18 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 346.86792
-    y: 72.452835
-    width: 1420
-    height: 594
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    x: 1635.2001
-    y: 80.8
-=======
-    x: 1386.4
-    y: 96
->>>>>>> parent of aa857803... Track01 was builded with old models
-    width: 1063
-    height: 663
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of e49b355a... Track01 was builded
+    x: 461.8868
+    y: 79.69811
+    width: 1380
+    height: 506
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: 48249424f5af7414980cd1ee6d8d484e
+  m_WindowGUID: 7d98eefed36681442921f36edfcba52d
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -1212,37 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 189.8488, y: 147.31274, z: -83.278275}
+    m_Target: {x: 4.7889366, y: 31.530632, z: 32.857376}
     speed: 2
-    m_Value: {x: 189.8488, y: 147.31274, z: -83.278275}
-=======
-    m_Target: {x: 4.167187, y: 66.9883, z: 75.18427}
-    speed: 2
-    m_Value: {x: 4.167187, y: 66.9883, z: 75.18427}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_Target: {x: 4.167187, y: 66.9883, z: 75.18427}
-    speed: 2
-<<<<<<< HEAD
-    m_Value: {x: 4.167187, y: 66.9883, z: 75.18427}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_Value: {x: 3.8333426, y: 66.81565, z: 75.0207}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-    m_Target: {x: 294.12238, y: -221.25371, z: 136.30476}
-    speed: 2
-    m_Value: {x: 294.12238, y: -221.25371, z: 136.30476}
->>>>>>> parent of e49b355a... Track01 was builded
-=======
-    m_Target: {x: -151.96492, y: 281.00037, z: -14.376874}
-    speed: 2
-    m_Value: {x: -151.96492, y: 281.00037, z: -14.376874}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+    m_Value: {x: 4.7889366, y: 31.530632, z: 32.857376}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1280,57 +604,21 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0, y: 0}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 0.3537941, y: 0.022950709, z: -0.009732401, w: 0.935575}
-=======
-    m_Target: {x: -0.4165858, y: -0.32453874, z: 0.16391504, w: -0.8341073}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+    m_Target: {x: -0.26184875, y: 0.7305218, z: -0.5033341, w: -0.3800381}
     speed: 2
-    m_Value: {x: -0.41502926, y: -0.32454604, z: 0.16330662, w: -0.8341172}
+    m_Value: {x: -0.26184863, y: 0.73052144, z: -0.50333387, w: -0.38003793}
   m_Size:
-    m_Target: 12.273402
+    m_Target: 10
     speed: 2
-<<<<<<< HEAD
-    m_Value: 12.2734
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-=======
-    m_Target: {x: 0.23036957, y: 0.62582505, z: -0.1997513, w: 0.71861094}
->>>>>>> parent of e49b355a... Track01 was builded
-    speed: 2
-    m_Value: {x: 0.2302511, y: 0.62550324, z: -0.19964859, w: 0.7182414}
-  m_Size:
-    m_Target: 231.87408
-    speed: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Value: 123.85558
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_Value: 129.69171
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-    m_Value: 231.87408
->>>>>>> parent of e49b355a... Track01 was builded
-=======
-    m_Value: 12.273402
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1338,7 +626,7 @@ MonoBehaviour:
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
-    m_SpeedMin: 0.001
+    m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
     m_EasingDuration: 0.4
@@ -1348,30 +636,14 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &15
-=======
---- !u!114 &19
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &19
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &15
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &16
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1380,239 +652,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000,
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 0
-    y: 687.39624
-    width: 1768
-    height: 250
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    x: 1232.8
-    y: 764.8
-=======
-    x: 984
-    y: 780
->>>>>>> parent of aa857803... Track01 was builded with old models
-    width: 1466
-    height: 281
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of e49b355a... Track01 was builded
+    x: 461.8868
+    y: 79.69811
+    width: 1380
+    height: 506
   m_ViewDataDictionary: {fileID: 0}
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SkipHidden: 0
-    m_SearchArea: 1
-    m_Folders:
-    - Assets/Scenes
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets/Scenes
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Github\foodrace\Food Race\New Unity Project (1)
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-    m_SelectedIDs: 5c4e0000
-    m_LastClickedID: 20060
-    m_ExpandedIDs: 000000005c4e0000
-=======
-    scrollPos: {x: 0, y: 107}
-<<<<<<< HEAD
-    m_SelectedIDs: e44f0000
-    m_LastClickedID: 20452
-    m_ExpandedIDs: 00000000e44f0000ea4f000000ca9a3b
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_SelectedIDs: 044d0000
-    m_LastClickedID: 19716
-    m_ExpandedIDs: 00000000dc4c0000e64c0000f44c000000ca9a3b
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 3c4e0000
-    m_LastClickedID: 20028
-    m_ExpandedIDs: 000000003c4e0000
->>>>>>> parent of e49b355a... Track01 was builded
-=======
-    m_SelectedIDs: 02520000
-    m_LastClickedID: 20994
-    m_ExpandedIDs: 00000000da510000
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000005c4e0000
-=======
-    m_ExpandedIDs: 00000000e44f0000
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_ExpandedIDs: 00000000e44f0000
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-    m_ExpandedIDs: 00000000dc4c0000
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-    m_ExpandedIDs: 000000003c4e0000
->>>>>>> parent of e49b355a... Track01 was builded
-=======
-    m_ExpandedIDs: 00000000da510000
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 10}
-=======
-      m_ClientGUIView: {fileID: 13}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-      m_ClientGUIView: {fileID: 13}
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
-      m_ClientGUIView: {fileID: 10}
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-      m_ClientGUIView: {fileID: 11}
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
-  m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 222
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &16
-=======
---- !u!114 &20
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &20
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &16
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &17
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_SerializedCustomFieldsNames: []
+  m_SerializedCustomFieldsValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1380, y: 485}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_MaximizeOnPlay: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -624.90564
+    m_HBaseRangeMax: 624.90564
+    m_VBaseRangeMin: -219.62265
+    m_VBaseRangeMax: 219.62265
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 0
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 1380
+      height: 485
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 690, y: 242.5}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -690
+      y: -242.5
+      width: 1380
+      height: 485
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1523.75, y: 558.7083}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1628,112 +751,17 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 687.39624
-    width: 1768
-    height: 250
+    x: 7.245283
+    y: 606.7925
+    width: 1836
+    height: 324
   m_ViewDataDictionary: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &17
-=======
---- !u!114 &21
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &21
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &17
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
---- !u!114 &18
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-    x: 1768.7548
-    y: 72.452835
-    width: 548
-    height: 865
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-    x: 2700
-    y: 80.8
-=======
-    x: 2451.2
-    y: 96
->>>>>>> parent of aa857803... Track01 was builded with old models
-    width: 552
-    height: 965
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of e49b355a... Track01 was builded
-  m_ViewDataDictionary: {fileID: 0}
-  m_OpenAddComponentMenu: 0
-  m_ObjectsLockedBeforeSerialization: []
-  m_InstanceIDsLockedBeforeSerialization: 
-  m_LockTracker:
-    m_IsLocked: 0
-  m_PreviewResizer:
-    m_CachedPref: 168
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LastVerticalScrollValue: 149
---- !u!114 &18
-=======
-  m_LastVerticalScrollValue: 0
-<<<<<<< HEAD
---- !u!114 &22
-<<<<<<< HEAD
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
->>>>>>> parent of 13b93cbf... now the testtrack was builded
-=======
---- !u!114 &18
->>>>>>> parent of aa857803... Track01 was builded with old models
-=======
-  m_LastVerticalScrollValue: 0
 --- !u!114 &19
->>>>>>> parent of fe52982e... Revert "added 2nd map in "ingame2" scene"
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
