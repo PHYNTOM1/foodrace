@@ -28,8 +28,7 @@ public class WaypointManager : MonoBehaviour
     {
         //ENABLE JUST FOR TRAINING
         
-        /*
-         */
+        /**/
         timeLeft -= Time.deltaTime;       
 
         if (timeLeft < 0f)
