@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":189.8488006591797,"y":147.312744140625,"z":-83.27827453613281},"rotation":{"x":0.3537940979003906,"y":0.022950708866119386,"z":-0.009732400998473168,"w":0.935575008392334},"size":12.27340030670166,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":8.70615291595459,"y":-320.0864562988281,"z":261.38482666015627},"rotation":{"x":0.43660199642181399,"y":-0.002585665788501501,"z":-0.0004837692831642926,"w":0.9002426266670227},"size":231.87408447265626,"orthographic":false}
+>>>>>>> parent of e49b355a... Track01 was builded

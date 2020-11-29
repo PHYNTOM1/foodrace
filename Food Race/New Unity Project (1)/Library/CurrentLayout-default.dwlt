@@ -17,10 +17,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 0
     y: 42.56604
     width: 2318.4907
     height: 935.5472
+<<<<<<< HEAD
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 2}
@@ -39,11 +43,14 @@ MonoBehaviour:
 >>>>>>> parent of aa857803... Track01 was builded with old models
     width: 2020.8
     height: 1035.2001
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
+<<<<<<< HEAD
   m_Maximized: 0
 <<<<<<< HEAD
 --- !u!114 &3
@@ -130,6 +137,9 @@ MonoBehaviour:
   controlID: 177
 --- !u!114 &5
 =======
+=======
+  m_Maximized: 1
+>>>>>>> parent of e49b355a... Track01 was builded
 --- !u!114 &2
 >>>>>>> parent of aa857803... Track01 was builded with old models
 MonoBehaviour:
@@ -172,6 +182,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 2319
     height: 936
   m_MinSize: {x: 875, y: 300}
@@ -188,6 +199,11 @@ MonoBehaviour:
     width: 2021
     height: 1036
   m_MinSize: {x: 875, y: 300}
+=======
+    width: 2319
+    height: 936
+  m_MinSize: {x: 875, y: 542}
+>>>>>>> parent of e49b355a... Track01 was builded
   m_MaxSize: {x: 10000, y: 10000}
 <<<<<<< HEAD
 --- !u!114 &6
@@ -213,6 +229,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 2319
 =======
     width: 2021
@@ -220,6 +237,9 @@ MonoBehaviour:
 =======
     width: 2021
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
+=======
+    width: 2319
+>>>>>>> parent of e49b355a... Track01 was builded
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -254,6 +274,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 916
     width: 2319
     height: 20
@@ -271,6 +292,10 @@ MonoBehaviour:
 =======
     y: 1016
     width: 2021
+=======
+    y: 916
+    width: 2319
+>>>>>>> parent of e49b355a... Track01 was builded
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -315,6 +340,7 @@ MonoBehaviour:
     y: 30
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 2319
     height: 886
   m_MinSize: {x: 680, y: 492}
@@ -339,6 +365,14 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
   controlID: 132
+=======
+    width: 2319
+    height: 886
+  m_MinSize: {x: 677, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
+  vertical: 0
+  controlID: 133
+>>>>>>> parent of e49b355a... Track01 was builded
 --- !u!114 &6
 >>>>>>> parent of aa857803... Track01 was builded with old models
 MonoBehaviour:
@@ -374,6 +408,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 1769
@@ -404,6 +439,14 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
   controlID: 61
+=======
+    width: 1769
+    height: 886
+  m_MinSize: {x: 402, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 65
+>>>>>>> parent of e49b355a... Track01 was builded
 --- !u!114 &7
 >>>>>>> parent of aa857803... Track01 was builded with old models
 MonoBehaviour:
@@ -441,6 +484,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1769
     height: 615
   m_MinSize: {x: 403, y: 221}
@@ -469,6 +513,14 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
   controlID: 62
+=======
+    width: 1769
+    height: 615
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
+  vertical: 0
+  controlID: 66
+>>>>>>> parent of e49b355a... Track01 was builded
 --- !u!114 &8
 >>>>>>> parent of aa857803... Track01 was builded with old models
 MonoBehaviour:
@@ -489,6 +541,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 347
     height: 615
   m_MinSize: {x: 201, y: 221}
@@ -504,6 +557,10 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
     width: 402
     height: 684
+=======
+    width: 347
+    height: 615
+>>>>>>> parent of e49b355a... Track01 was builded
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
@@ -536,6 +593,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 347
     y: 0
     width: 1422
@@ -566,9 +624,12 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
     x: 402
+=======
+    x: 347
+>>>>>>> parent of e49b355a... Track01 was builded
     y: 0
-    width: 1065
-    height: 684
+    width: 1422
+    height: 615
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -576,11 +637,15 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 12}
   m_Selected: 0
+<<<<<<< HEAD
   m_LastSelected: 1
 <<<<<<< HEAD
 --- !u!114 &13
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
+=======
+  m_LastSelected: 0
+>>>>>>> parent of e49b355a... Track01 was builded
 --- !u!114 &10
 >>>>>>> parent of aa857803... Track01 was builded with old models
 MonoBehaviour:
@@ -598,6 +663,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     y: 615
@@ -630,6 +696,11 @@ MonoBehaviour:
     y: 684
     width: 1467
     height: 302
+=======
+    y: 615
+    width: 1769
+    height: 271
+>>>>>>> parent of e49b355a... Track01 was builded
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 15}
@@ -660,6 +731,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1769
     y: 0
     width: 550
@@ -686,9 +758,12 @@ MonoBehaviour:
   m_LastSelected: 0
 =======
     x: 1467
+=======
+    x: 1769
+>>>>>>> parent of e49b355a... Track01 was builded
     y: 0
-    width: 554
-    height: 986
+    width: 550
+    height: 886
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
@@ -752,16 +827,22 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 346.86792
     y: 72.452835
     width: 1420
     height: 594
+<<<<<<< HEAD
 =======
     x: 1386.4
     y: 96
     width: 1063
     height: 663
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -865,10 +946,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 0
     y: 72.452835
     width: 346
     height: 594
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
@@ -884,10 +969,13 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -905,6 +993,11 @@ MonoBehaviour:
       m_LastClickedID: -91458
       m_ExpandedIDs: 0aacfeff24acfeff20b8feff54b8feff86c5feff5210ffff882fffffcc5affff1cabffff84bcffff2acfffffc2d7ffff1cfbffff0c4b0000
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+      m_SelectedIDs: 524f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 66fbffff
+>>>>>>> parent of e49b355a... Track01 was builded
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -976,10 +1069,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 346.86792
     y: 72.452835
     width: 1420
     height: 594
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
@@ -995,6 +1092,8 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 48249424f5af7414980cd1ee6d8d484e
@@ -1006,6 +1105,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 189.8488, y: 147.31274, z: -83.278275}
@@ -1025,6 +1125,11 @@ MonoBehaviour:
 =======
     m_Value: {x: 3.8333426, y: 66.81565, z: 75.0207}
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+    m_Target: {x: 294.12238, y: -221.25371, z: 136.30476}
+    speed: 2
+    m_Value: {x: 294.12238, y: -221.25371, z: 136.30476}
+>>>>>>> parent of e49b355a... Track01 was builded
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1072,6 +1177,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.3537941, y: 0.022950709, z: -0.009732401, w: 0.935575}
     speed: 2
     m_Value: {x: 0.35361525, y: 0.021535562, z: -0.009196678, w: 0.9350979}
@@ -1083,11 +1189,15 @@ MonoBehaviour:
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
     m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+=======
+    m_Target: {x: 0.23036957, y: 0.62582505, z: -0.1997513, w: 0.71861094}
+>>>>>>> parent of e49b355a... Track01 was builded
     speed: 2
-    m_Value: {x: 0.7071068, y: 0.000000047066997, z: -0.000000006896968, w: 0.7071069}
+    m_Value: {x: 0.2302511, y: 0.62550324, z: -0.19964859, w: 0.7182414}
   m_Size:
-    m_Target: 123.85558
+    m_Target: 231.87408
     speed: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Value: 123.85558
 <<<<<<< HEAD
@@ -1097,10 +1207,13 @@ MonoBehaviour:
 =======
     m_Value: 129.69171
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+    m_Value: 231.87408
+>>>>>>> parent of e49b355a... Track01 was builded
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -1157,10 +1270,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 0
     y: 687.39624
     width: 1768
     height: 250
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
@@ -1176,6 +1293,8 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -1190,16 +1309,17 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3D Assets/Track
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/3D Assets/Track
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Github\foodrace\Food Race\New Unity Project (1)
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
 <<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5c4e0000
@@ -1220,6 +1340,12 @@ MonoBehaviour:
     m_LastClickedID: 19716
     m_ExpandedIDs: 00000000dc4c0000e64c0000f44c000000ca9a3b
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 3c4e0000
+    m_LastClickedID: 20028
+    m_ExpandedIDs: 000000003c4e0000
+>>>>>>> parent of e49b355a... Track01 was builded
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1250,6 +1376,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000005c4e0000
 =======
     m_ExpandedIDs: 00000000e44f0000
@@ -1260,6 +1387,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000dc4c0000
 >>>>>>> parent of aa857803... Track01 was builded with old models
+=======
+    m_ExpandedIDs: 000000003c4e0000
+>>>>>>> parent of e49b355a... Track01 was builded
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1401,10 +1531,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
     x: 1768.7548
     y: 72.452835
     width: 548
     height: 865
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
@@ -1420,6 +1554,8 @@ MonoBehaviour:
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
 =======
 >>>>>>> parent of 13b93cbf... now the testtrack was builded
+=======
+>>>>>>> parent of e49b355a... Track01 was builded
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
