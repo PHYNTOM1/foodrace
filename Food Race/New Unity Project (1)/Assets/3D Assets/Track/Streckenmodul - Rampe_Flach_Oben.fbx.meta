@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97329e5bc049a1c47a2d562ffe67de1a
+guid: 8af01193881180b40a8b88868a81cbde
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -41,14 +41,14 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
-    weldVertices: 0
+    weldVertices: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
