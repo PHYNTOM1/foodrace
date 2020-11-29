@@ -181,22 +181,25 @@ public class CartController : MonoBehaviour
 
             if (drifting)
             {
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.55f, 0f));
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
             }
             else
             {
-                if (speedInput <= 5000 && speedInput >= 0 || speedInput >= -5000 && speedInput <= 0)
+                //for testing purposes commented
+                /*
+                if (speedInput <= maxSpeed * 500f && speedInput >= 0 || speedInput >= maxSpeed * -500f && speedInput <= 0)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));     //0.3f
                 }
-                else if (speedInput <= 7000 && speedInput >= 0 || speedInput >= -7000 && speedInput <= 0)
+                else if (speedInput <= maxSpeed * 950f && speedInput >= 0 || speedInput >= maxSpeed * -950f && speedInput <= 0)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.35f, 0f));
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));    //0.35f
                 }
                 else
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.4f, 0f));
-                }
+                */
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));     //0.4f
+                //}
             }
 
         }
