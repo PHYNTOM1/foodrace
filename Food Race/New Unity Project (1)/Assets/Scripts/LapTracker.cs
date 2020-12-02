@@ -111,7 +111,7 @@ public class LapTracker : MonoBehaviour
 
     public void ResetAll()
     {
-        lap = 1;
+        lap = 3;
         goalEnabled = false;
         finished = false;
         SetAllFalse();

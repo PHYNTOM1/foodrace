@@ -57,7 +57,7 @@ public class KartAIAgent : Agent
 
         if (input[2] == 1)
         {
-            AddReward(0.0001f);
+            AddReward(0.005f);     //0.0005f
             controller.DriftInput(true);
         }
         else
@@ -71,6 +71,9 @@ public class KartAIAgent : Agent
             EndEpisode();
         }
 
+        //just for AI training
+        /*
+        */
         if (lt.finished)
         {
             EndEpisode();

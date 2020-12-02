@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     {
         //lerpCounter += 0.001f;
 
-        offset = target.forward * -15;    //camera rotates and pos according to cart vector3.forward
+        offset = target.forward * -15f;    //camera rotates and pos according to cart vector3.forward
         offset.y = 12f;
 
         gameObject.transform.SetPositionAndRotation(target.position + offset, Quaternion.identity);

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GoalController : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.GetComponent<LapTracker>() != null)

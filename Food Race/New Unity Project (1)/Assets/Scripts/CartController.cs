@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Google.Protobuf.WellKnownTypes;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
@@ -15,8 +16,11 @@ public class CartController : MonoBehaviour
     private bool grounded;
     private bool drifting = false;
     public int driftForce = 0;
-
     public float driftInput = 0f;
+
+    public float driftTimer = 0f;
+    public float driftBoostTimer = 1f;
+    public int driftStage = 0;
 
     public LayerMask whatIsGround;
     public LayerMask speedGround;
@@ -30,13 +34,16 @@ public class CartController : MonoBehaviour
 
     private ParticleSystem exhaust;
     private ParticleSystem[] drift;
+    private ParticleSystem[] boost;
     private bool exhaustEmitting;
     private bool driftEmitting;
+    private bool boostEmitting;
+    public float boostEmitTime = 0f;
 
     public KartStats kartStats;
     public bool isPlayer = true;
 
-    public AIExtra aiExtra;
+    public bool notRacing = false;
 
     bool _driftInput;
     float _horAxis;
@@ -50,6 +57,8 @@ public class CartController : MonoBehaviour
         exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
         GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
         drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
+        GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
+        boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
 
         maxSpeed = kartStats.topSpeed;
         forwardAccel = kartStats.acceleration;
@@ -59,6 +68,10 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
+        if (notRacing)
+        {
+            return;
+        }
         /*
         if (isPlayer)
         {
@@ -136,14 +149,18 @@ public class CartController : MonoBehaviour
         {
             if (_verAxis > 0)
             {
-                if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
+                if (speedInput > maxSpeed * 1000f)
+                {
+                    speedInput -= forwardAccel * maxSpeed * 15f;
+                }
+                else if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
                 {
                     speedInput += forwardAccel * maxSpeed * speedMult * 20f;
                 }
             }
             else if (_verAxis < 0)
             {
-                if (speedInput > 0 && speedInput <= maxSpeed * 1000f)
+                if (speedInput > 0 && speedInput <= maxSpeed * 2000f)
                 {
                     speedInput -= forwardAccel * maxSpeed * 10f;
                 }
@@ -182,10 +199,18 @@ public class CartController : MonoBehaviour
             if (drifting)
             {
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
+
+                driftTimer += 1 * Time.deltaTime;
+                
+                if (driftTimer >= driftBoostTimer && driftStage < 2)
+                {
+                    driftStage++;
+                    driftTimer = 0;
+                }
             }
             else
             {
-                //for testing purposes commented
+                //for testing purposes commented, but works velly nice without :)
                 /*
                 if (speedInput <= maxSpeed * 500f && speedInput >= 0 || speedInput >= maxSpeed * -500f && speedInput <= 0)
                 {
@@ -200,6 +225,7 @@ public class CartController : MonoBehaviour
                 */
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));     //0.4f
                 //}
+                    driftTimer = 0f;
             }
 
         }
@@ -242,11 +268,23 @@ public class CartController : MonoBehaviour
             {
                 if (!drifting)
                 {
+                    if (driftStage > 0)
+                    {
+                        GetBoosted(driftStage);
+                    }
+
                     theRB.AddForce((transform.forward * speedInput) + (transform.right * turnInput * turnStrength * (speedInput / (maxSpeed * 1000f)) * 10f));
                 }
                 else
                 {
-                    theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
+                    if (driftForce == 0)
+                    {
+                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -1 * 6000f));
+                    }
+                    else
+                    {
+                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
+                    }
                     driftEmitting = true;
                 }
 
@@ -265,6 +303,21 @@ public class CartController : MonoBehaviour
         {
             ParticleSystem.EmissionModule ift = dr.emission;
             ift.enabled = driftEmitting;
+        }
+
+        foreach (ParticleSystem bs in boost)
+        {
+            ParticleSystem.EmissionModule oot = bs.emission;
+            oot.enabled = boostEmitting;
+
+            if (boostEmitting)
+            {
+                ParticleSystem.EmitParams emitOverride = new ParticleSystem.EmitParams
+                {
+                    startLifetime = 3f
+                };
+                bs.Emit(emitOverride, 1);
+            }
         }
     }
 
@@ -308,4 +361,20 @@ public class CartController : MonoBehaviour
     {
         _driftInput = drift;
     }
+
+    public void GetBoosted(int stage)
+    {
+        speedInput += 7000 + (2500 * stage);
+
+        driftStage = 0;
+        boostEmitting = true;
+        StartCoroutine("WaitNSetBoostPSFalse");
+    }
+
+    private IEnumerator WaitNSetBoostPSFalse()
+    {
+        yield return new WaitForSecondsRealtime(boostEmitTime);
+        boostEmitting = false;
+    }
+
 }
