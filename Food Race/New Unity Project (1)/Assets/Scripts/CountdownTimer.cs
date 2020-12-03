@@ -16,6 +16,8 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
+        placementText = GameObject.Find("PlacementText").GetComponent<Text>();
+        cdText = GameObject.Find("CountdownText").GetComponent<Text>();
         karts = GameObject.FindGameObjectsWithTag("Player");
         ResetStartTimer();
         placements.Clear();
@@ -37,7 +39,7 @@ public class CountdownTimer : MonoBehaviour
             }
         }
 
-        /*
+
         if (currentTime > -1)
         {
             currentTime -= 1 * Time.deltaTime;
@@ -59,7 +61,7 @@ public class CountdownTimer : MonoBehaviour
             cdText.text = "START";
             cdText.fontSize = 130;
         }
-        */
+
     }
 
     public void ResetStartTimer()
