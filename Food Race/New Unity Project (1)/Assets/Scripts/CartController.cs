@@ -285,10 +285,10 @@ public class CartController : MonoBehaviour
                     {
                         theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
                     }
-                    driftEmitting = true;
+                    //driftEmitting = true;        //FOR MULTI TESTING DISABLED
                 }
 
-                exhaustEmitting = true;
+                //exhaustEmitting = true;         //FOR MULTI TESTING DISABLED
             }
         }
         else
@@ -367,7 +367,7 @@ public class CartController : MonoBehaviour
         speedInput += 7000 + (2500 * stage);
 
         driftStage = 0;
-        boostEmitting = true;
+        //boostEmitting = true;         //FOR MULTI TESTING DISABLED
         StartCoroutine("WaitNSetBoostPSFalse");
     }
 

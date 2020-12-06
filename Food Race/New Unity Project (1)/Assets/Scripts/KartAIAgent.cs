@@ -11,6 +11,7 @@ public class KartAIAgent : Agent
     CartController controller;
     LapTracker lt;
     WaypointManager wpm;
+    public Transform sp;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class KartAIAgent : Agent
     //reset
     public override void OnEpisodeBegin()
     {
-        rBody.position = new Vector3(1f, 3f, 16f);
+        rBody.position = sp.position;
         controller.gameObject.transform.eulerAngles = Vector3.zero;
         lt.ResetAll();
         wpm.ResetWPs();
@@ -44,7 +45,7 @@ public class KartAIAgent : Agent
         Vector3 diff = wpm.nextWayPointToReach.transform.position - transform.position;
         sensor.AddObservation(diff / 20f); //Divide by 20 to normalize
 
-        //AddReward(-0.001f); //Promote faster driving
+        AddReward(-0.001f); //Promote faster driving
     }
 
     //process actions recieved
@@ -67,7 +68,7 @@ public class KartAIAgent : Agent
 
         if (rBody.position.y <= -5f)
         {            
-            AddReward(-0.6f);
+            AddReward(-0.5f);
             EndEpisode();
         }
 
