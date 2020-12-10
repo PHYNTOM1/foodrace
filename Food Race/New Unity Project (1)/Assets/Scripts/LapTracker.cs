@@ -16,6 +16,8 @@ public class LapTracker : MonoBehaviour
 
     public bool finished;
 
+    public KartAIAgent ka;
+
     void Start()
     {
         ResetAll();
@@ -23,6 +25,7 @@ public class LapTracker : MonoBehaviour
         GameObject checkpointsGroup = GameObject.Find("Checkpoints");
         Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
         goalPoint = GameObject.Find("GoalPoint").transform;
+        ka = GetComponent<KartAIAgent>();
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -46,6 +49,7 @@ public class LapTracker : MonoBehaviour
     public void PassCheckpoint(int s)
     {
         checkpointsPassed[s] = true;
+        ka.AddReward(0.01f);
     }
 
     public bool CheckAllPassed()
@@ -102,10 +106,12 @@ public class LapTracker : MonoBehaviour
                 //DO SOME FINISHING SHIT HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
+
             }
 
             SetAllFalse();
             goalEnabled = false;
+            ka.AddReward(0.1f);
         }
     }
 

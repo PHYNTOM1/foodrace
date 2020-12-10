@@ -19,6 +19,7 @@ public class KartAIAgent : Agent
         rBody = controller.theRB;  //gameObject.GetComponentInChildren
         lt = GetComponent<LapTracker>();
         wpm = GetComponent<WaypointManager>();
+        sp = GameObject.Find("StartPoint").GetComponent<Transform>();
     }
     
     //reset
@@ -27,21 +28,17 @@ public class KartAIAgent : Agent
         rBody.position = sp.position;
         controller.gameObject.transform.eulerAngles = Vector3.zero;
         lt.ResetAll();
+        rBody.velocity = Vector3.zero;
+        rBody.angularVelocity = Vector3.zero;
+
         wpm.ResetWPs();
     }
 
     //get extra information which isnt picked up by the raycastsensors
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Target and Agent positions
-        //sensor.AddObservation(Target.localPosition);
-        //sensor.AddObservation(this.transform.localPosition);
-        //sensor.AddObservation(this.transform.position);
-
-        // Agent velocity
-        //sensor.AddObservation(rBody.velocity.x);
-        //sensor.AddObservation(rBody.velocity.z);
-
+        /*
+        */
         Vector3 diff = wpm.nextWayPointToReach.transform.position - transform.position;
         sensor.AddObservation(diff / 20f); //Divide by 20 to normalize
 
@@ -58,7 +55,7 @@ public class KartAIAgent : Agent
 
         if (input[2] == 1)
         {
-            AddReward(0.0001f);     //0.0005f
+            AddReward(0.0002f);     //0.0005f
             controller.DriftInput(true);
         }
         else

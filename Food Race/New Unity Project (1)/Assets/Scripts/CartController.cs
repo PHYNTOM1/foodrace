@@ -10,14 +10,12 @@ public class CartController : MonoBehaviour
     public Rigidbody theRB;
 
     public float forwardAccel = 1f, reverseAccel = 0.66f, maxSpeed = 8f, turnStrength = 120, gravityForce = 10f;
-
     public float speedInput, turnInput;
 
     private bool grounded;
     private bool drifting = false;
     public int driftForce = 0;
     public float driftInput = 0f;
-
     public float driftTimer = 0f;
     public float driftBoostTimer = 1f;
     public int driftStage = 0;
@@ -42,7 +40,6 @@ public class CartController : MonoBehaviour
 
     public KartStats kartStats;
     public bool isPlayer = true;
-
     public bool notRacing = false;
 
     bool _driftInput;
@@ -286,10 +283,10 @@ public class CartController : MonoBehaviour
                     {
                         theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
                     }
-                    //driftEmitting = true;        //FOR MULTI TESTING DISABLED
+//                    driftEmitting = true;
                 }
 
-                //exhaustEmitting = true;         //FOR MULTI TESTING DISABLED
+//                exhaustEmitting = true;
             }
         }
         else
@@ -368,8 +365,8 @@ public class CartController : MonoBehaviour
         speedInput += 7000 + (2500 * stage);
 
         driftStage = 0;
-        //boostEmitting = true;         //FOR MULTI TESTING DISABLED
-        StartCoroutine("WaitNSetBoostPSFalse");
+//        boostEmitting = true;
+//        StartCoroutine("WaitNSetBoostPSFalse");
     }
 
     private IEnumerator WaitNSetBoostPSFalse()

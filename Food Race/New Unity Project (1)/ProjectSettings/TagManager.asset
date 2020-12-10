@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Waypoint
   - Wall
+  - Bullet
+  - Flamethrower
   layers:
   - Default
   - TransparentFX

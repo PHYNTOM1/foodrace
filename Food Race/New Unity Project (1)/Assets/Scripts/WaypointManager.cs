@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    public float maxTimeToReachNextWaypoint = 30f;
-    public float timeLeft = 30f;
+    public float maxTimeToReachNextWaypoint = 20f;
+    public float timeLeft = 20f;
 
     public KartAIAgent kartAIAgent;
     public WaypointBehaviour nextWayPointToReach;
@@ -14,13 +14,17 @@ public class WaypointManager : MonoBehaviour
     private int currentWaypointIndex;
     private List<WaypointBehaviour> Waypoints;
     private WaypointBehaviour lastWaypoint;
+    private LapTracker lt;
 
     public event Action<WaypointBehaviour> reachedWaypoint;
 
     void Start()
     {
+        /*
+        */
         kartAIAgent = GetComponent<KartAIAgent>();
         Waypoints = FindObjectOfType<Waypoints>().wayPoints;
+        lt = GetComponent<LapTracker>();
         ResetWPs();
     }
 
@@ -30,11 +34,20 @@ public class WaypointManager : MonoBehaviour
         
         /*
          */
-        timeLeft -= Time.deltaTime;       
+        timeLeft -= Time.deltaTime;
+
+        if (lt.finished == true)
+        {
+            ResetWPs();
+        }
 
         if (timeLeft < 0f)
         {
-            kartAIAgent.AddReward(-1f);
+            if (lt.finished == false)
+            {
+                kartAIAgent.AddReward(-1f);
+            }
+
             kartAIAgent.EndEpisode();
         }
     }
@@ -50,7 +63,7 @@ public class WaypointManager : MonoBehaviour
         if (currentWaypointIndex >= Waypoints.Count)
         {
             kartAIAgent.AddReward(0.5f);
-            kartAIAgent.EndEpisode();
+            ResetWPs();
         }
         else
         {

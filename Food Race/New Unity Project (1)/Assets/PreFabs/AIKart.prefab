@@ -4897,8 +4897,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 1}
-  m_Center: {x: 0, y: 0.8, z: 0.37}
+  m_Size: {x: 1.08, y: 0.2, z: 0.67}
+  m_Center: {x: 0, y: 0.79, z: 0.37}
 --- !u!54 &5202448045429519909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4912,9 +4912,9 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Interpolate: 2
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4913847002218080336
 GameObject:
   m_ObjectHideFlags: 0
@@ -9913,7 +9913,7 @@ Rigidbody:
   m_Mass: 70
   m_Drag: 3
   m_AngularDrag: 4
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 2
   m_Constraints: 0
@@ -24356,7 +24356,7 @@ GameObject:
   - component: {fileID: 3850682005781416108}
   - component: {fileID: 1878919179197933027}
   - component: {fileID: 1168055832882634127}
-  - component: {fileID: 9116070347495904323}
+  - component: {fileID: 2991013369224213048}
   m_Layer: 2
   m_Name: AIKart
   m_TagString: Player
@@ -24460,6 +24460,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  sp: {fileID: 0}
 --- !u!114 &-792601650906250146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24556,7 +24557,7 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
---- !u!114 &9116070347495904323
+--- !u!114 &2991013369224213048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24568,8 +24569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e0f79f686727d4abcf6731cf76e127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeToReachNextWaypoint: 30
-  timeLeft: 30
+  maxTimeToReachNextWaypoint: 20
+  timeLeft: 20
   kartAIAgent: {fileID: 0}
   nextWayPointToReach: {fileID: 0}
 --- !u!1 &8250060051038052405
