@@ -4897,8 +4897,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.08, y: 0.2, z: 0.67}
-  m_Center: {x: 0, y: 0.79, z: 0.37}
+  m_Size: {x: 1.35, y: 0.2, z: 1.87}
+  m_Center: {x: 0, y: 0.79, z: 0}
 --- !u!54 &5202448045429519909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24444,6 +24444,7 @@ MonoBehaviour:
   checkpoints: []
   checkpointsPassed: 
   finished: 0
+  ka: {fileID: 0}
 --- !u!114 &8250060050855752604
 MonoBehaviour:
   m_ObjectHideFlags: 0

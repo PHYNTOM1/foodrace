@@ -18,6 +18,8 @@ public class WaypointManager : MonoBehaviour
 
     public event Action<WaypointBehaviour> reachedWaypoint;
 
+    private int oldLapCount;
+
     void Start()
     {
         /*
@@ -26,6 +28,7 @@ public class WaypointManager : MonoBehaviour
         Waypoints = FindObjectOfType<Waypoints>().wayPoints;
         lt = GetComponent<LapTracker>();
         ResetWPs();
+        oldLapCount = lt.lap;
     }
 
     void Update()
@@ -36,10 +39,12 @@ public class WaypointManager : MonoBehaviour
          */
         timeLeft -= Time.deltaTime;
 
-        if (lt.finished == true)
+        /*
+        if (lt.lap > oldLapCount)
         {
             ResetWPs();
         }
+        */
 
         if (timeLeft < 0f)
         {
@@ -50,6 +55,8 @@ public class WaypointManager : MonoBehaviour
 
             kartAIAgent.EndEpisode();
         }
+
+        //oldLapCount = lt.lap;
     }
 
     public void ReachedWaypoint(WaypointBehaviour waypointBehaviour)

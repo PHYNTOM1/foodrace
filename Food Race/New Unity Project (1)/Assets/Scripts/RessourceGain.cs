@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RessourceGain : MonoBehaviour
 {
+    /*
     int resource;
     int maxResource;
 
@@ -46,4 +47,5 @@ public class RessourceGain : MonoBehaviour
 
         resourceBar.value = resource;
     }
+    */
 }

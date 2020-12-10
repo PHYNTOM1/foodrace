@@ -42,7 +42,7 @@ public class KartAIAgent : Agent
         Vector3 diff = wpm.nextWayPointToReach.transform.position - transform.position;
         sensor.AddObservation(diff / 20f); //Divide by 20 to normalize
 
-        AddReward(-0.001f); //Promote faster driving
+        AddReward(-0.0005f); //Promote faster driving
     }
 
     //process actions recieved
@@ -69,14 +69,6 @@ public class KartAIAgent : Agent
             EndEpisode();
         }
 
-        //just for AI training
-        /*
-        */
-        if (lt.finished)
-        {
-            SetReward(1f);
-            EndEpisode();
-        }
     }
 
     //human input

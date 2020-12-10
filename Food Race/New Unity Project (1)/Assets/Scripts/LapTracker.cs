@@ -106,6 +106,8 @@ public class LapTracker : MonoBehaviour
                 //DO SOME FINISHING SHIT HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
+                ka.SetReward(1f);
+                ka.EndEpisode();
 
             }
 
@@ -117,7 +119,7 @@ public class LapTracker : MonoBehaviour
 
     public void ResetAll()
     {
-        lap = 3;
+        lap = 1;
         goalEnabled = false;
         finished = false;
         SetAllFalse();
