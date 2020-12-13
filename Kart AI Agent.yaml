@@ -1,10 +1,10 @@
 behaviors:
-  KartAIAgent:
+  Kart AI Agent:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 2400
-      buffer_size: 24000
-      learning_rate: 0.0003
+      batch_size: 120
+      buffer_size: 4800
+      learning_rate: 0.0001
       beta: 0.001
       epsilon: 0.2
       lambd: 0.95
@@ -16,12 +16,16 @@ behaviors:
       num_layers: 2
       vis_encode_type: simple
     reward_signals:
+      gail:
+        gamma: 0.99
+        strength: 1.0
+        demo_path: E:\Github\foodrace\FirstMapStatsMED.demo
       extrinsic:
         gamma: 0.99
         strength: 1.0
     keep_checkpoints: 5
-    max_steps: 500000000
-    time_horizon: 1000
-    summary_freq: 12000
+    max_steps: 500000000000
+    time_horizon: 1500
+    summary_freq: 120000
     threaded: true
 
