@@ -14,15 +14,14 @@ public class SkillHolder : MonoBehaviour
 
     public Skills sk;
     
-    //public HealthControl hc;
-    //FOR EXAMPLE HEALTH / SHIELD
+    public HealthControl hc;
 
     void Start()
     {
         skillATK = GameObject.Find("AttackSkillImage").GetComponent<Image>();
         skillDEF = GameObject.Find("DefenseSkillImage").GetComponent<Image>();
         sk = GameObject.Find("AllSkillsHolder").GetComponent<Skills>();
-        //hc = GetComponent<HealthControl>();
+        hc = GetComponent<HealthControl>();
 
         skillATK.enabled = false;
         skillDEF.enabled = false;
@@ -87,9 +86,8 @@ public class SkillHolder : MonoBehaviour
             {
                 case "shield":
 
-                    Debug.Log("activated shield");
-                    //activate shield, for example like:
-                    //hc.ActivateShield();
+                    Debug.Log("activated shield");                    
+                    hc.Shielded(true);
                     allSkills.Remove(2);
                     break;
                 default:

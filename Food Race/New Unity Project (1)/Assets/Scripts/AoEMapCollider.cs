@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AoEMapCollider : MonoBehaviour
 {
-    private float dmg;
+    private int dmg;
 
     private void Start()
     {
@@ -18,8 +18,10 @@ public class AoEMapCollider : MonoBehaviour
         {
             Debug.Log(gameObject.name + " has damaged " + c.gameObject.name + " for " + dmg);
 
-            //Do damage here, for example like this:
-            //c.gameObject.GetComponentInParent<HealthControl>().Damage(dmg);
+            if (c.gameObject.GetComponentInParent<HealthControl>() != null)
+            {
+                c.gameObject.GetComponentInParent<HealthControl>().Damage(dmg);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AoEMapAttack : MonoBehaviour
 {
-    public float damage;
+    public int damage;
     public bool isAttacking;
 
     public float attackTime;
