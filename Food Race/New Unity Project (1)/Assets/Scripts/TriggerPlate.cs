@@ -87,6 +87,8 @@ public class TriggerPlate : MonoBehaviour
 
     private void GetTriggered()
     {
+        FindObjectOfType<SoundManagement>().Play("Triggerplate");
+
         isTriggered = true;
         triggerCounterReal = triggerCounter;
         cyl.position = new Vector3(cyl.position.x, -1f, cyl.position.z);

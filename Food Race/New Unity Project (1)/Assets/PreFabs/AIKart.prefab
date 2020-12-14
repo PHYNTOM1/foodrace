@@ -4897,8 +4897,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.35, y: 0.2, z: 1.87}
-  m_Center: {x: 0, y: 0.79, z: 0}
+  m_Size: {x: 1.69, y: 0.2, z: 2.71}
+  m_Center: {x: 0, y: 0.79, z: -0.08}
 --- !u!54 &5202448045429519909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24594,7 +24594,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  completed: 0
   isLocalPlayer: 0
 --- !u!1 &8250060051038052405
 GameObject:

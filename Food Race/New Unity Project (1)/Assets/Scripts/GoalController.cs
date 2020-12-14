@@ -20,11 +20,13 @@ public class GoalController : MonoBehaviour
                 lt.SetAllFalse();
             }
 
+            /*
             if (lt.lap == 3)
             {
                 Debug.Log(c.gameObject.name + " has FINISHED!");
                 c.gameObject.SetActive(false);
             }
+            */
             
         }
     }

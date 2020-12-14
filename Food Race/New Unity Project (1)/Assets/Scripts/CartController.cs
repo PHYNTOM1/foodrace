@@ -41,6 +41,7 @@ public class CartController : MonoBehaviour
     public KartStats kartStats;
     public bool isPlayer = true;
     public bool notRacing = false;
+    public SoundManagement sm;
 
     bool _driftInput;
     float _horAxis;
@@ -56,6 +57,7 @@ public class CartController : MonoBehaviour
         drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
         GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
         boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
+        sm = FindObjectOfType<SoundManagement>();
 
         maxSpeed = kartStats.topSpeed;
         forwardAccel = kartStats.acceleration;
@@ -97,6 +99,7 @@ public class CartController : MonoBehaviour
         if (_driftInput && speedInput >= maxSpeed * 750f)
         {
             drifting = true;
+            sm.Play("Drifting");
             if (driftForce == 0)
             {
                 driftForce = (int)_horAxisRaw;
@@ -144,6 +147,8 @@ public class CartController : MonoBehaviour
 
         if (_verAxisRaw == 1 || _verAxisRaw == -1)
         {
+            sm.Play("EngineDriving");
+
             if (_verAxis > 0)
             {
                 if (speedInput > maxSpeed * 1000f)
