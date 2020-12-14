@@ -24357,6 +24357,7 @@ GameObject:
   - component: {fileID: 1878919179197933027}
   - component: {fileID: 1168055832882634127}
   - component: {fileID: 2991013369224213048}
+  - component: {fileID: 2164755256180249942}
   m_Layer: 2
   m_Name: AIKart
   m_TagString: Player
@@ -24436,7 +24437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6e71119b4c49b41af3234e153ca605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lap: 0
+  lap: 1
   cpDist: 15
   goalEnabled: 0
   goalDist: 3
@@ -24574,6 +24575,27 @@ MonoBehaviour:
   timeLeft: 20
   kartAIAgent: {fileID: 0}
   nextWayPointToReach: {fileID: 0}
+--- !u!114 &2164755256180249942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3078466f5edfb5c45b73e3b1160664da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundTimer: 0
+  bestRound: 0
+  timerText: {fileID: 0}
+  roundTimes:
+  - 0
+  - 0
+  - 0
+  completed: 0
+  isLocalPlayer: 0
 --- !u!1 &8250060051038052405
 GameObject:
   m_ObjectHideFlags: 0

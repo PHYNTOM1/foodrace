@@ -34,18 +34,18 @@ public class HealthControl : MonoBehaviour
         cvs = GameObject.Find("Canvas");
 
         shieldImage = GameObject.Find("ShieldImage").GetComponent<Image>();
-        for (int i = 1; i < maxHealth; i++)
+        for (int i = 0; i < maxHealth -1; i++)
         {
             GameObject healthBGGOi = Instantiate(healthBGGO) as GameObject;            
-            healthBGGOi.transform.position = new Vector3(healthBGGO.transform.position.x - (i * 75f), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
+            healthBGGOi.transform.position = new Vector3(healthBGGO.transform.position.x - (i * 100f), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
             healthBGGOi.transform.SetParent(cvs.transform, false);
             healthBG.Add(healthBGGOi);
         }
 
-        for (int i = 1; i < maxHealth; i++)
+        for (int i = 0; i < maxHealth -1; i++)
         {
             GameObject healthGOi = Instantiate(healthGO) as GameObject;
-            healthGOi.transform.position = new Vector3(healthGO.transform.position.x - (i * 75f), healthGOi.transform.position.y, healthGOi.transform.position.z);
+            healthGOi.transform.position = new Vector3(healthGO.transform.position.x - (i * 100f), healthGOi.transform.position.y, healthGOi.transform.position.z);
             healthGOi.transform.SetParent(cvs.transform, false);
             health.Add(healthGOi);
         }

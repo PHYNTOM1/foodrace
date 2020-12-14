@@ -11,6 +11,7 @@ public class KartAIAgent : Agent
     CartController controller;
     LapTracker lt;
     WaypointManager wpm;
+    RoundTimer rt;
     public Transform sp;
 
     void Start()
@@ -20,6 +21,7 @@ public class KartAIAgent : Agent
         lt = GetComponent<LapTracker>();
         wpm = GetComponent<WaypointManager>();
         sp = GameObject.Find("StartPoint").GetComponent<Transform>();
+        rt = GetComponent<RoundTimer>();
     }
     
     //reset
@@ -28,6 +30,7 @@ public class KartAIAgent : Agent
         rBody.position = sp.position;
         controller.gameObject.transform.eulerAngles = Vector3.zero;
         lt.ResetAll();
+        rt.RoundTimerReset();
         rBody.velocity = Vector3.zero;
         rBody.angularVelocity = Vector3.zero;
 
