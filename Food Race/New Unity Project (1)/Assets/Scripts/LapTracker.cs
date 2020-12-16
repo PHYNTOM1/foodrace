@@ -74,6 +74,24 @@ public class LapTracker : MonoBehaviour
 
     public void UpdateCheckpointCheck()
     {
+        /*
+        PlacementManagement pm = FindObjectOfType<PlacementManagement>();
+        for (int i = 0; i < pm.racers.Count; i++)
+        {
+            if (pm.racers[i] != this.gameObject)
+            {
+                float distKart = Vector3.Distance(gameObject.transform.position, pm.racers[i].transform.position);
+
+                if (distKart <= cpDist)
+                {
+                    Debug.Log(pm.racers[i].name + " entered " + gameObject.name + "'s zone!: UPDATE PLACEMENTS");
+
+                    pm.UpdatePlacements();
+                }
+            }
+        }
+        */
+
         for (int i = 0; i < checkpoints.Count; i++)
         {
             float distWP = Vector3.Distance(gameObject.transform.position, checkpoints[i].position);

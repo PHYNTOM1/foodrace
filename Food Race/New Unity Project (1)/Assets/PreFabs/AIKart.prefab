@@ -24425,6 +24425,7 @@ MonoBehaviour:
   kartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
   isPlayer: 1
   notRacing: 0
+  sm: {fileID: 0}
 --- !u!114 &8250060050855752595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24438,7 +24439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lap: 1
-  cpDist: 15
+  cpDist: 25
   goalEnabled: 0
   goalDist: 3
   goalPoint: {fileID: 0}

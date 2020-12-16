@@ -62,7 +62,7 @@ public class SkillHolder : MonoBehaviour
                 case "flamethrower":
 
                     Debug.Log("activated flamethrower");
-                    sk.flamethrowers[Random.Range(0, sk.flamethrowers.Count)].GetComponent<AoEMapAttack>().Attack();
+                    FindNextFlamethrower().GetComponent<AoEMapAttack>().Attack();
                     allSkills.Remove(1);
                     break;
                 default:
@@ -98,5 +98,40 @@ public class SkillHolder : MonoBehaviour
 
             OnChange();
         }
+    }
+
+    public GameObject FindNextFlamethrower()
+    {
+        List<GameObject> fls = sk.flamethrowers;
+
+        PlacementManagement pm = FindObjectOfType<PlacementManagement>();
+
+        int pos;
+        int _pos = pm.GetPosition(this.gameObject);
+        if (_pos == -1)
+        {
+            Debug.Log("ERROR WHILE TRYING TO FIND A FLAMETHROWER!\nNO KART POSITION CAN BE RETURNED!");
+        }
+        else if (_pos >= 0 && _pos <= pm.racers.Count -3)
+        {
+            pos = _pos +2;
+        }
+        else
+        {
+            pos = pm.racers.Count -1;
+        }
+
+        GameObject _racer = pm.racers[_pos];
+        GameObject fl = fls[Random.Range(0, fls.Count)];
+
+        for (int i = 0; i < fls.Count; i++)
+        {
+            if (Vector3.Distance(_racer.transform.position, transform.position) >= 50)
+            {
+                
+            }            
+        }
+
+        return fl;
     }
 }
