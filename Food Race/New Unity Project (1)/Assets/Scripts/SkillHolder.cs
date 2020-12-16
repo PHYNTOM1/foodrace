@@ -111,25 +111,48 @@ public class SkillHolder : MonoBehaviour
         if (_pos == -1)
         {
             Debug.Log("ERROR WHILE TRYING TO FIND A FLAMETHROWER!\nNO KART POSITION CAN BE RETURNED!");
+            return null;
         }
-        else if (_pos >= 0 && _pos <= pm.racers.Count -3)
+        else if (_pos >= 0 && _pos <= 3)
         {
-            pos = _pos +2;
+            pos = 1;
         }
         else
         {
-            pos = pm.racers.Count -1;
+            pos = _pos -2;
         }
 
-        GameObject _racer = pm.racers[_pos];
+        GameObject _racer = pm.racers[pos -1];
         GameObject fl = fls[Random.Range(0, fls.Count)];
 
-        for (int i = 0; i < fls.Count; i++)
+        if (pos == 1)
         {
-            if (Vector3.Distance(_racer.transform.position, transform.position) >= 50)
+            float _dist = Vector3.Distance(_racer.transform.position, fls[0].transform.position);
+            for (int i = 0; i < fls.Count; i++)
             {
-                
-            }            
+                float _d = Vector3.Distance(_racer.transform.position, fls[i].transform.position);
+                if (_d < _dist)
+                {
+                    fl = fls[i];
+                    _dist = _d;
+                }
+            }
+        }
+        else
+        {
+            float _dist = Vector3.Distance(_racer.transform.position, fls[0].transform.position);
+
+            for (int i = 0; i < fls.Count; i++)
+            {
+                float _d = Vector3.Distance(_racer.transform.position, fls[i].transform.position);
+                float _d2 = Vector3.Distance(fls[i].transform.position, _racer.GetComponent<WaypointManager>().Waypoints[_racer.GetComponent<WaypointManager>().currentWaypointIndex].gameObject.transform.position);
+                float _d3 = Vector3.Distance(fls[i].transform.position, _racer.GetComponent<WaypointManager>().Waypoints[_racer.GetComponent<WaypointManager>().currentWaypointIndex -1].gameObject.transform.position);
+                if (_d < _dist && _d2 > _d3)
+                {
+                    fl = fls[i];
+                    _dist = _d;
+                }            
+            }
         }
 
         return fl;

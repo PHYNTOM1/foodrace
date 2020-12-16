@@ -37,7 +37,7 @@ public class HealthControl : MonoBehaviour
         for (int i = 0; i < maxHealth -1; i++)
         {
             GameObject healthBGGOi = Instantiate(healthBGGO) as GameObject;            
-            healthBGGOi.transform.position = new Vector3(healthBGGO.transform.position.x - (i * 100f), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
+            healthBGGOi.transform.position = new Vector3(healthBGGOi.transform.position.x - ((i+1) * Mathf.RoundToInt(healthBGGOi.GetComponent<Image>().sprite.rect.width)), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
             healthBGGOi.transform.SetParent(cvs.transform, false);
             healthBG.Add(healthBGGOi);
         }
@@ -45,7 +45,7 @@ public class HealthControl : MonoBehaviour
         for (int i = 0; i < maxHealth -1; i++)
         {
             GameObject healthGOi = Instantiate(healthGO) as GameObject;
-            healthGOi.transform.position = new Vector3(healthGO.transform.position.x - (i * 100f), healthGOi.transform.position.y, healthGOi.transform.position.z);
+            healthGOi.transform.position = new Vector3(healthGOi.transform.position.x - ((i+1) * Mathf.RoundToInt(healthGOi.GetComponent<Image>().sprite.rect.width)), healthGOi.transform.position.y, healthGOi.transform.position.z);
             healthGOi.transform.SetParent(cvs.transform, false);
             health.Add(healthGOi);
         }

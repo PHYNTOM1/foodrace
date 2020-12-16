@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 7c6a35325febc124b8a5f6444956f43a
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Attackred #1
+    second: {fileID: 2100000, guid: ac9765360b1dcab4b99409ed01d16feb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Attackred_
+    second: {fileID: 2100000, guid: 186482330abfbcf4bae27bbeeab227bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Blau 1
+    second: {fileID: 2100000, guid: 63b67866f304d034b9743edfd09089f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Bodycolor 1
+    second: {fileID: 2100000, guid: 335bd67adbaa9f24dbbdc80aa20b2d15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Copper
+    second: {fileID: 2100000, guid: 1b13e8c6f89f82846a452a5cda401e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Darkred
+    second: {fileID: 2100000, guid: 0e8acc8b55f81c44e9d7ea2a35604e1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Defenseblue
+    second: {fileID: 2100000, guid: 140f40c358252564d9ca13adb2ff750f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Donutpink
+    second: {fileID: 2100000, guid: 887459ecfef5d7946b9a9577d2285137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Glasbowl
+    second: {fileID: 2100000, guid: 9b97fb328f85e0748bf62bed57ea8153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Glossy red
+    second: {fileID: 2100000, guid: 95d7d14c847d3754a94e11e48ce15f69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Glossypink
+    second: {fileID: 2100000, guid: 56ef2a593283e154686453b4dab18eb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Limegreen
+    second: {fileID: 2100000, guid: df8fa7323d8e77d4695970e6c8c37450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Maxwhite
+    second: {fileID: 2100000, guid: 7d5ce3f076c2db54e95461d79b53f287, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Metallgrey
+    second: {fileID: 2100000, guid: 69be61e99b59565428fc95e358d14328, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Metallred
+    second: {fileID: 2100000, guid: c648e372d40497b4eac4af9a7d4522ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Mountain 1
+    second: {fileID: 2100000, guid: bb2537bd840e48e48a06148289327fad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Mountain 2
+    second: {fileID: 2100000, guid: bee5963bec0ef474692f4190723dcad0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Foodrace - Pizzak\xE4se"
+    second: {fileID: 2100000, guid: aac83ec7f84d8344693fb7ccdc68c46f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Pizzateig
+    second: {fileID: 2100000, guid: 59466a8e57c108d4ba52cd79ba952e92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Salamirot
+    second: {fileID: 2100000, guid: 4d27cc56ab30d134f92bf224df88ff3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Sand 1
+    second: {fileID: 2100000, guid: 9387091d5d157df4aac94085656d6764, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Sand 2
+    second: {fileID: 2100000, guid: 483b4cf1447f51c439c9cdebc68634f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Schokibrown
+    second: {fileID: 2100000, guid: 68fc3c51aafebcc4f8bfa698047125e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Schokidonut
+    second: {fileID: 2100000, guid: f7b0aee4a6a7e2347a698e4fcce896be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - Skincolor 1
+    second: {fileID: 2100000, guid: de5333d33c33fa345a9116abd7e02757, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - red 1
+    second: {fileID: 2100000, guid: c49d7c54326960642b02a06bde3a7d6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - red 2
+    second: {fileID: 2100000, guid: 2c91d6cba099e0f48a168afd4ed6ec55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foodrace - rotrot
+    second: {fileID: 2100000, guid: 612d7be5a325ccf41858c537dd723976, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
