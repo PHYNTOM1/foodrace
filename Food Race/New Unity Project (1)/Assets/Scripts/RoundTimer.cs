@@ -9,6 +9,7 @@ public class RoundTimer : MonoBehaviour
     public float roundTimer = 0f;
     public float bestRound = 0f;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI placementText;
 
     public float[] roundTimes = { 0f, 0f, 0f };
     public bool isLocalPlayer = false;
@@ -26,6 +27,9 @@ public class RoundTimer : MonoBehaviour
         {
             timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
             timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", 0f, 0f, 0f, 0f, 0f, 0f);
+
+            placementText = GameObject.Find("PlacementPositionText").GetComponent<TextMeshProUGUI>();
+            placementText.SetText("-.");
         }
     }
 
@@ -44,6 +48,8 @@ public class RoundTimer : MonoBehaviour
             if (isLocalPlayer)
             {
                 timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", Mathf.Abs(roundTimer), Mathf.Abs(bestRound), Mathf.Abs(roundTimes[0]), Mathf.Abs(roundTimes[1]), Mathf.Abs(roundTimes[2]), Mathf.Abs(roundTimes[0] + roundTimes[1] + roundTimes[2]));
+
+                placementText.SetText("{0}.", FindObjectOfType<PlacementManagement>().GetPosition(this.gameObject));
             }
         }
     }
