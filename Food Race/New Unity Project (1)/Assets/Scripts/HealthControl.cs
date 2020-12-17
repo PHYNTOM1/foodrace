@@ -103,6 +103,7 @@ public class HealthControl : MonoBehaviour
         }
         else
         {
+            health[0].GetComponent<Image>().enabled = false;
             Die();
         }
     }
@@ -113,6 +114,16 @@ public class HealthControl : MonoBehaviour
         //THEN RESET HEALTH AND ACTIVATE DRIVING
         Debug.Log(gameObject.name + " HAS DIED!");
 
+        GetComponent<CartController>().notRacing = true;
+        StartCoroutine("AfterDeath");
+    }
 
+    private IEnumerator AfterDeath()
+    {
+        yield return new WaitForSecondsRealtime(20f);
+
+        GetComponent<CartController>().notRacing = false;
+        currHealth = maxHealth;
+        OnHPChange();
     }
 }
