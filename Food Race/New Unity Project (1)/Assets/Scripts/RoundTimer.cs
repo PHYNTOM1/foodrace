@@ -16,10 +16,12 @@ public class RoundTimer : MonoBehaviour
 
     private LapTracker lt;
     private int oldLap;
+    private CartController cc;
 
     void Start()
     {
         lt = GetComponent<LapTracker>();
+        cc = GetComponent<CartController>();
 
         RoundTimerReset();
 
@@ -35,7 +37,7 @@ public class RoundTimer : MonoBehaviour
 
     void Update()
     {
-        if (!lt.finished)
+        if (lt.finished == false && cc.notRacing == false)
         {
             roundTimer += Time.deltaTime;
 

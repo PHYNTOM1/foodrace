@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    RankingEndscreen re;
+
+    private void Start()
+    {
+        re = FindObjectOfType<RankingEndscreen>();
+        re.gameObject.SetActive(false);    
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -14,5 +22,15 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    public void LoadRankings()
+    {
+        re = FindObjectOfType<RankingEndscreen>();
+        re.gameObject.SetActive(true);
+        re.UpdateRankings();
+        re.DisplayStats();
+        
+        gameObject.SetActive(false);
     }
 }

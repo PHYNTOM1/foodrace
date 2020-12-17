@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlacementManagement : MonoBehaviour
 {
     public List<GameObject> racers;
     public List<GameObject> finishers;
     public float bestTimeOfAll;
+    public GameObject bestRacer = null;
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
@@ -26,15 +28,46 @@ public class PlacementManagement : MonoBehaviour
     }
 
     void Start()
-    {
-        bestTimeOfAll = 0f;
-        finishers.Clear();
-        RefreshRacers();
+    {      
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-  
+
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        Debug.Log("NEW SCENE LOADED: " + aScene.name);
+        if (aScene.name == "MainMenu")
+        {
+            if (finishers.Count == racers.Count)
+            {
+                FindObjectOfType<MainMenu>().LoadRankings();
+            }
+        }
+        else if (aScene.name == "Ingame2")
+        {
+            if (finishers.Count > 0)
+            {
+                for (int i = 0; i < finishers.Count; i++)
+                {
+                    Destroy(finishers[i].gameObject);
+                }
+            }
+            bestTimeOfAll = 0f;
+            finishers.Clear();
+            RefreshRacers();            
+        }
+    }
+
     void Update()
     {
-        UpdatePlacements();
+        if (SceneManager.GetActiveScene().name == "Ingame2")
+        {
+            UpdatePlacements();
+
+            if (finishers.Count == racers.Count)
+            {
+                LoadEndscreenScene();
+            }
+        }
     }    
 
     public float GetBestTimeOverall()
@@ -48,6 +81,7 @@ public class PlacementManagement : MonoBehaviour
                 if (bestTimeOfAll == 0f || rt.bestRound < bestTimeOfAll)
                 {
                     bestTimeOfAll = rt.bestRound;
+                    bestRacer = g;
                 }
             }
         }
@@ -119,7 +153,20 @@ public class PlacementManagement : MonoBehaviour
         {
             if (racers[i] == g)
             {
-                return i +1;                
+                return i + 1;
+            }
+        }
+
+        return -1;
+    }
+
+    public int GetPositionFinishers(GameObject g)
+    {
+        for (int i = 0; i < finishers.Count; i++)
+        {
+            if (finishers[i] == g)
+            {
+                return i + 1;
             }
         }
 
@@ -278,5 +325,19 @@ public class PlacementManagement : MonoBehaviour
         {
             racers.Add(gos[i]);
         }
+    }
+
+    public void LoadEndscreenScene()
+    {
+        for (int i = 0; i < finishers.Count; i++)
+        {
+            finishers[i].GetComponent<CartController>().enabled = false;
+            finishers[i].GetComponent<KartAIAgent>().enabled = false;
+            finishers[i].GetComponent<WaypointManager>().enabled = false;
+            finishers[i].GetComponent<LapTracker>().enabled = false;
+
+            DontDestroyOnLoad(finishers[i].gameObject);
+        }
+        SceneManager.LoadScene(0);
     }
 }

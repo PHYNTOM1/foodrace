@@ -39,9 +39,10 @@ public class CartController : MonoBehaviour
     public float boostEmitTime = 0f;
 
     public KartStats kartStats;
+    public SoundManagement sm;
     public bool isPlayer = true;
     public bool notRacing = false;
-    public SoundManagement sm;
+    public bool inMinigame = false;
 
     bool _driftInput;
     float _horAxis;
@@ -71,167 +72,174 @@ public class CartController : MonoBehaviour
         {
             return;
         }
-        /*
-        if (isPlayer)
+
+        if (inMinigame)
         {
-             _driftInput = Input.GetKey(KeyCode.LeftShift);
-             _driftInputDown = Input.GetKeyDown(KeyCode.LeftShift);
-            _horAxis = Input.GetAxis("Horizontal");
-            _horAxisRaw = Input.GetAxisRaw("Horizontal");
-            _verAxis = Input.GetAxis("Vertical");
-            _verAxisRaw = Input.GetAxisRaw("Vertical");
+            //TODO: ???
+            //do minigame, handle inputs for minigame here. Control minigame in own script, through methods from here
         }
         else
         {
-            if (aiExtra == null)
+            /*
+            if (isPlayer)
             {
-                aiExtra = gameObject.GetComponent<AIExtra>();
-            }
-            _driftInput = aiExtra.DriftOutput();
-             _driftInputDown = aiExtra.DriftDownOutput();
-            _horAxis = aiExtra.HorAxis();
-            _horAxisRaw = aiExtra.HorAxisRaw();
-             _verAxis = aiExtra.VerAxis();
-             _verAxisRaw = aiExtra.VerAxisRaw();
-        }
-        */
-
-        if (_driftInput && speedInput >= maxSpeed * 750f)
-        {
-            drifting = true;
-            sm.Play("Drifting");
-            if (driftForce == 0)
-            {
-                driftForce = (int)_horAxisRaw;
-            }
-        }
-        else
-        {
-            drifting = false;
-            driftForce = 0;
-        }
-
-        if (_horAxisRaw == 1 || _horAxisRaw == -1)
-        {
-            turnInput = _horAxis;
-
-            driftInput = _horAxisRaw;
-        }
-        else
-        {
-            driftInput = 0f;
-
-            if (turnInput <= 1f && turnInput >= 0.1f)
-            {
-                turnInput -= 0.1f;
-            }
-            else if (turnInput >= -1f && turnInput <= -0.1f)
-            {
-                turnInput += 0.1f;
+                 _driftInput = Input.GetKey(KeyCode.LeftShift);
+                 _driftInputDown = Input.GetKeyDown(KeyCode.LeftShift);
+                _horAxis = Input.GetAxis("Horizontal");
+                _horAxisRaw = Input.GetAxisRaw("Horizontal");
+                _verAxis = Input.GetAxis("Vertical");
+                _verAxisRaw = Input.GetAxisRaw("Vertical");
             }
             else
             {
-                turnInput = 0;
-            }
-        }
-
-
-        if (speeding)
-        {
-            speedMult = 1.2f;
-        }
-        else
-        {
-            speedMult = 1f;
-        }
-
-        if (_verAxisRaw == 1 || _verAxisRaw == -1)
-        {
-            sm.Play("EngineDriving");
-
-            if (_verAxis > 0)
-            {
-                if (speedInput > maxSpeed * 1000f)
+                if (aiExtra == null)
                 {
-                    speedInput -= forwardAccel * maxSpeed * 15f;
+                    aiExtra = gameObject.GetComponent<AIExtra>();
                 }
-                else if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
-                {
-                    speedInput += forwardAccel * maxSpeed * speedMult * 20f;
-                }
+                _driftInput = aiExtra.DriftOutput();
+                 _driftInputDown = aiExtra.DriftDownOutput();
+                _horAxis = aiExtra.HorAxis();
+                _horAxisRaw = aiExtra.HorAxisRaw();
+                 _verAxis = aiExtra.VerAxis();
+                 _verAxisRaw = aiExtra.VerAxisRaw();
             }
-            else if (_verAxis < 0)
-            {
-                if (speedInput > 0 && speedInput <= maxSpeed * 2000f)
-                {
-                    speedInput -= forwardAccel * maxSpeed * 10f;
-                }
-                else if (speedInput >= maxSpeed * -250f && speedInput <= 0f)
-                {
-                    speedInput -= forwardAccel * maxSpeed * 5f;
-                }
-            }
-        }
-        else
-        {
-            if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 20f)
-            {
-                speedInput -= 50f;
-            }
-            else if (speedInput >= -maxSpeed * 2000f && speedInput <= -maxSpeed * 20f)
-            {
-                speedInput += 25f;
-            }
-            else
-            {
-                speedInput = 0;
-            }
-        }
+            */
 
-        if (grounded)
-        {
-            
-            if (_verAxisRaw == -1 && speedInput < 0)
+            if (_driftInput && speedInput >= maxSpeed * 750f)
             {
-                turnInput *= -1;
-            }
-            
-            float _turnInput = turnInput * turnStrength * Time.deltaTime;
-
-            if (drifting)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
-
-                driftTimer += 1 * Time.deltaTime;
-                
-                if (driftTimer >= driftBoostTimer && driftStage < 2)
+                drifting = true;
+                sm.Play("Drifting");
+                if (driftForce == 0)
                 {
-                    driftStage++;
-                    driftTimer = 0;
+                    driftForce = (int)_horAxisRaw;
                 }
             }
             else
             {
-                //for testing purposes commented, but works velly nice without :)
-                /*
-                if (speedInput <= maxSpeed * 500f && speedInput >= 0 || speedInput >= maxSpeed * -500f && speedInput <= 0)
+                drifting = false;
+                driftForce = 0;
+            }
+
+            if (_horAxisRaw == 1 || _horAxisRaw == -1)
+            {
+                turnInput = _horAxis;
+
+                driftInput = _horAxisRaw;
+            }
+            else
+            {
+                driftInput = 0f;
+
+                if (turnInput <= 1f && turnInput >= 0.1f)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));     //0.3f
+                    turnInput -= 0.1f;
                 }
-                else if (speedInput <= maxSpeed * 950f && speedInput >= 0 || speedInput >= maxSpeed * -950f && speedInput <= 0)
+                else if (turnInput >= -1f && turnInput <= -0.1f)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));    //0.35f
+                    turnInput += 0.1f;
                 }
                 else
                 {
-                */
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));     //0.4f
-                //}
-                    driftTimer = 0f;
+                    turnInput = 0;
+                }
             }
 
-        }
 
+            if (speeding)
+            {
+                speedMult = 1.2f;
+            }
+            else
+            {
+                speedMult = 1f;
+            }
+
+            if (_verAxisRaw == 1 || _verAxisRaw == -1)
+            {
+                sm.Play("EngineDriving");
+
+                if (_verAxis > 0)
+                {
+                    if (speedInput > maxSpeed * 1000f)
+                    {
+                        speedInput -= forwardAccel * maxSpeed * 15f;
+                    }
+                    else if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
+                    {
+                        speedInput += forwardAccel * maxSpeed * speedMult * 20f;
+                    }
+                }
+                else if (_verAxis < 0)
+                {
+                    if (speedInput > 0 && speedInput <= maxSpeed * 2000f)
+                    {
+                        speedInput -= forwardAccel * maxSpeed * 10f;
+                    }
+                    else if (speedInput >= maxSpeed * -250f && speedInput <= 0f)
+                    {
+                        speedInput -= forwardAccel * maxSpeed * 5f;
+                    }
+                }
+            }
+            else
+            {
+                if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 20f)
+                {
+                    speedInput -= 50f;
+                }
+                else if (speedInput >= -maxSpeed * 2000f && speedInput <= -maxSpeed * 20f)
+                {
+                    speedInput += 25f;
+                }
+                else
+                {
+                    speedInput = 0;
+                }
+            }
+
+            if (grounded)
+            {
+
+                if (_verAxisRaw == -1 && speedInput < 0)
+                {
+                    turnInput *= -1;
+                }
+
+                float _turnInput = turnInput * turnStrength * Time.deltaTime;
+
+                if (drifting)
+                {
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
+
+                    driftTimer += 1 * Time.deltaTime;
+
+                    if (driftTimer >= driftBoostTimer && driftStage < 2)
+                    {
+                        driftStage++;
+                        driftTimer = 0;
+                    }
+                }
+                else
+                {
+                    //for testing purposes commented, but works velly nice without :)
+                    /*
+                    if (speedInput <= maxSpeed * 500f && speedInput >= 0 || speedInput >= maxSpeed * -500f && speedInput <= 0)
+                    {
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));     //0.3f
+                    }
+                    else if (speedInput <= maxSpeed * 950f && speedInput >= 0 || speedInput >= maxSpeed * -950f && speedInput <= 0)
+                    {
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));    //0.35f
+                    }
+                    else
+                    {
+                    */
+                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));     //0.4f
+                                                                                                                                        //}
+                    driftTimer = 0f;
+                }
+            }
+        }
 
     }
 

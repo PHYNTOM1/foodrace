@@ -112,5 +112,7 @@ public class HealthControl : MonoBehaviour
         //START MINIGAME HERE
         //THEN RESET HEALTH AND ACTIVATE DRIVING
         Debug.Log(gameObject.name + " HAS DIED!");
+
+
     }
 }

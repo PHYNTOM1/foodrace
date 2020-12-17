@@ -2,54 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
     float startingTime = 3f;
 
-    public Text cdText;
-
-    public List<string> placements;
-    public Text placementText;
+    public TextMeshProUGUI cdText;
     public GameObject[] karts;
 
     void Start()
     {
-        placementText = GameObject.Find("PlacementText").GetComponent<Text>();
-        cdText = GameObject.Find("CountdownText").GetComponent<Text>();
+        cdText = GameObject.Find("CountdownText").GetComponent<TextMeshProUGUI>();
         karts = GameObject.FindGameObjectsWithTag("Player");
         ResetStartTimer();
-        placements.Clear();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ShowResults();
-        }
-
-        foreach (GameObject go in karts)
-        {
-            if (go.GetComponent<LapTracker>().finished)
-            {
-                placements.Add(go.name);
-                go.GetComponent<LapTracker>().finished = false;
-            }
-        }
-
-
         if (currentTime > -1)
         {
-            currentTime -= 1 * Time.deltaTime;
-            cdText.text = currentTime.ToString("0");
+            currentTime -= 1 * Time.deltaTime;            
+            cdText.SetText(currentTime.ToString("0"));
         }
 
         if (currentTime <= -1)
         {
-            cdText.text = " ";
-            cdText.fontSize = 80;
+            cdText.SetText(" ");
+            cdText.fontSize = 100;
             
             foreach (GameObject kart in GameObject.FindGameObjectsWithTag("Player"))
             {
@@ -70,8 +51,8 @@ public class CountdownTimer : MonoBehaviour
 
         if (cdText == null)
         {
-            cdText = GameObject.Find("CountdownText").GetComponent<Text>();
-            cdText.fontSize = 80;
+            cdText = GameObject.Find("CountdownText").GetComponent<TextMeshProUGUI>();
+            cdText.fontSize = 100;
         }
 
         foreach (GameObject kart in GameObject.FindGameObjectsWithTag("Player"))
@@ -79,14 +60,5 @@ public class CountdownTimer : MonoBehaviour
             kart.GetComponent<CartController>().notRacing = true;
         }
     }
-        
-    public void ShowResults()
-    {
-        placementText.text = "";
 
-        for (int i = 0; i < placements.Count; i++)
-        {
-            placementText.text += i + 1 + ". " + placements[i] + "\n";
-        }
-    }
 }

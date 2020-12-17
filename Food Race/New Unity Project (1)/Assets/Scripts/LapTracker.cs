@@ -124,6 +124,7 @@ public class LapTracker : MonoBehaviour
                 //DO SOME FINISHING SHIT HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
+                PlacementManagement.Instance.AddFinisher(this.gameObject);
                 ka.SetReward(1f);
                 ka.EndEpisode();
 
