@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   isAttacking: 0
-  attackTime: 3
+  attackTime: 6
   ps: {fileID: 7004928388629179490}
   damageArea: {fileID: 7474862004775780938}
 --- !u!1 &4567906440920585680
@@ -229,7 +229,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.2
+      scalar: 1.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5005,7 +5005,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 2, z: 4}
+  m_Size: {x: 10, y: 2, z: 4}
   m_Center: {x: 6, y: 0, z: 0}
 --- !u!114 &5098381926796885933
 MonoBehaviour:

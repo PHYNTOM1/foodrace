@@ -9,7 +9,7 @@ public class PlacementManagement : MonoBehaviour
     public List<GameObject> racers;
     public List<GameObject> finishers;
     public float bestTimeOfAll;
-    public GameObject bestRacer = null;
+    public GameObject bestRacer;
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
@@ -39,7 +39,9 @@ public class PlacementManagement : MonoBehaviour
         {
             if (finishers.Count == racers.Count)
             {
-                FindObjectOfType<MainMenu>().LoadRankings();
+                RankingEndscreen re = FindObjectOfType<RankingEndscreen>();
+                re.gameObject.SetActive(true);
+                GameObject.Find("MainMenu").GetComponent<MainMenu>().LoadRankings();
             }
         }
         else if (aScene.name == "Ingame2")
@@ -72,16 +74,21 @@ public class PlacementManagement : MonoBehaviour
 
     public float GetBestTimeOverall()
     {
-        foreach (GameObject g in racers)
+        bestTimeOfAll = 0f;
+
+        if (racers.Count > 0)
         {
-            if (g.GetComponent<RoundTimer>() != null)
+            foreach (GameObject g in racers)
             {
                 RoundTimer rt = g.GetComponent<RoundTimer>();
-                
-                if (bestTimeOfAll == 0f || rt.bestRound < bestTimeOfAll)
-                {
-                    bestTimeOfAll = rt.bestRound;
-                    bestRacer = g;
+            
+                if (rt != null)
+                {                
+                    if (bestTimeOfAll == 0f || rt.bestRound < bestTimeOfAll)
+                    {
+                        bestTimeOfAll = rt.bestRound;
+                        bestRacer = g;
+                    }
                 }
             }
         }
@@ -325,6 +332,8 @@ public class PlacementManagement : MonoBehaviour
         {
             racers.Add(gos[i]);
         }
+
+        bestRacer = racers[Random.Range(0, racers.Count)];
     }
 
     public void LoadEndscreenScene()

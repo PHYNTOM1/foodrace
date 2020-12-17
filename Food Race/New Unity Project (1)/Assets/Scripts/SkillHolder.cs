@@ -18,34 +18,42 @@ public class SkillHolder : MonoBehaviour
 
     void Start()
     {
-        skillATK = GameObject.Find("AttackSkillImage").GetComponent<Image>();
-        skillDEF = GameObject.Find("DefenseSkillImage").GetComponent<Image>();
         sk = GameObject.Find("AllSkillsHolder").GetComponent<Skills>();
         hc = GetComponent<HealthControl>();
 
-        skillATK.enabled = false;
-        skillDEF.enabled = false;
+        if (GetComponent<CartController>().isPlayer)
+        {
+            skillATK = GameObject.Find("AttackSkillImage").GetComponent<Image>();
+            skillDEF = GameObject.Find("DefenseSkillImage").GetComponent<Image>();
+
+            skillATK.enabled = false;
+            skillDEF.enabled = false;
+        }
+
         allSkills = new Dictionary<int, string>();
     }
 
     public void OnChange()
     {
-        if (allSkills.ContainsKey(1))
-        {
-            skillATK.enabled = true;
-        }
-        else
-        {
-            skillATK.enabled = false;
-        }
+        if (GetComponent<CartController>().isPlayer)
+        {          
+            if (allSkills.ContainsKey(1))
+            {
+                skillATK.enabled = true;
+            }
+            else
+            {
+                skillATK.enabled = false;
+            }
 
-        if (allSkills.ContainsKey(2))
-        {
-            skillDEF.enabled = true;
-        }
-        else
-        {
-            skillDEF.enabled = false;
+            if (allSkills.ContainsKey(2))
+            {
+                skillDEF.enabled = true;
+            }
+            else
+            {
+                skillDEF.enabled = false;
+            }
         }
     }
 

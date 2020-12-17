@@ -10,12 +10,6 @@ public class RankingEndscreen : MonoBehaviour
 
     public float bestTime = 0f;
 
-    void Start()
-    {
-        UpdateRankings();
-        DisplayStats();
-    }
-
     public void UpdateRankings()
     {
         if (bestTimeText == null)
@@ -27,13 +21,29 @@ public class RankingEndscreen : MonoBehaviour
             rankingsText = GameObject.Find("RankingsText").GetComponent<TextMeshProUGUI>();
         }
 
-        bestTime = PlacementManagement.Instance.GetBestTimeOverall();
+        float f = PlacementManagement.Instance.GetBestTimeOverall();
+        if (f == 0)
+        {
+            bestTime = 0f;
+        }
+        else
+        {
+            bestTime = f;
+        }
     }
 
     public void DisplayStats()
     {
-        bestTimeText.SetText("{0:3}s by: ", bestTime);
-        bestTimeText.text += PlacementManagement.Instance.finishers[PlacementManagement.Instance.GetPositionFinishers(PlacementManagement.Instance.bestRacer)].name;
+        string p;
+        if (PlacementManagement.Instance.finishers.Count > 0)
+        {
+            p = PlacementManagement.Instance.bestRacer.name;
+        }
+        else
+        {
+            p = "empty";
+        }
+        bestTimeText.SetText("{0:3}s by: " + p, bestTime);
 
         string t = "";
         for (int i = 0; i < PlacementManagement.Instance.finishers.Count; i++)

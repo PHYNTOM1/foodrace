@@ -22,9 +22,11 @@ public class CartController : MonoBehaviour
 
     public LayerMask whatIsGround;
     public LayerMask speedGround;
+    public LayerMask offroadGround;
     public float groundRayLenght = .5f;
     public Transform groundRayPoint;
     public bool speeding = false;
+    public bool slowed = false;
     public float speedMult = 1f;
 
     public Transform leftfrontwheel, rightfrontwheel;
@@ -40,7 +42,8 @@ public class CartController : MonoBehaviour
 
     public KartStats kartStats;
     public SoundManagement sm;
-    public bool isPlayer = true;
+    public SkillHolder sh;
+    public bool isPlayer = false;
     public bool notRacing = false;
     public bool inMinigame = false;
 
@@ -59,6 +62,7 @@ public class CartController : MonoBehaviour
         GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
         boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
+        sh = GetComponent<SkillHolder>();
 
         maxSpeed = kartStats.topSpeed;
         forwardAccel = kartStats.acceleration;
@@ -70,40 +74,27 @@ public class CartController : MonoBehaviour
     {
         if (notRacing)
         {
-            return;
-        }
-
-        if (inMinigame)
+            //this mode when "stunned" or dead or while star countdown
+        }                
+        else if (inMinigame)
         {
             //TODO: ???
             //do minigame, handle inputs for minigame here. Control minigame in own script, through methods from here
         }
         else
         {
-            /*
-            if (isPlayer)
+            if (!isPlayer)
             {
-                 _driftInput = Input.GetKey(KeyCode.LeftShift);
-                 _driftInputDown = Input.GetKeyDown(KeyCode.LeftShift);
-                _horAxis = Input.GetAxis("Horizontal");
-                _horAxisRaw = Input.GetAxisRaw("Horizontal");
-                _verAxis = Input.GetAxis("Vertical");
-                _verAxisRaw = Input.GetAxisRaw("Vertical");
-            }
-            else
-            {
-                if (aiExtra == null)
+                if (sh.allSkills.ContainsKey(1))
                 {
-                    aiExtra = gameObject.GetComponent<AIExtra>();
+                    sh.ActivateATKSkill();
                 }
-                _driftInput = aiExtra.DriftOutput();
-                 _driftInputDown = aiExtra.DriftDownOutput();
-                _horAxis = aiExtra.HorAxis();
-                _horAxisRaw = aiExtra.HorAxisRaw();
-                 _verAxis = aiExtra.VerAxis();
-                 _verAxisRaw = aiExtra.VerAxisRaw();
+                else if (sh.allSkills.ContainsKey(2))
+                {
+                    sh.ActivateDEFSkill();
+                }
             }
-            */
+
 
             if (_driftInput && speedInput >= maxSpeed * 750f)
             {
@@ -149,6 +140,10 @@ public class CartController : MonoBehaviour
             {
                 speedMult = 1.2f;
             }
+            else if (slowed)
+            {
+                speedMult = 0.6f;
+            }
             else
             {
                 speedMult = 1f;
@@ -160,13 +155,13 @@ public class CartController : MonoBehaviour
 
                 if (_verAxis > 0)
                 {
-                    if (speedInput > maxSpeed * 1000f)
+                    if (speedInput > maxSpeed * 1000f * speedMult)
                     {
                         speedInput -= forwardAccel * maxSpeed * 15f;
                     }
-                    else if (speedInput < maxSpeed * 1000f && speedInput >= maxSpeed * -1000f)
+                    else if (speedInput < maxSpeed * 1000f * speedMult && speedInput >= maxSpeed * -1000f * speedMult)
                     {
-                        speedInput += forwardAccel * maxSpeed * speedMult * 20f;
+                        speedInput += forwardAccel * maxSpeed * 20f * speedMult;
                     }
                 }
                 else if (_verAxis < 0)
@@ -177,7 +172,7 @@ public class CartController : MonoBehaviour
                     }
                     else if (speedInput >= maxSpeed * -250f && speedInput <= 0f)
                     {
-                        speedInput -= forwardAccel * maxSpeed * 5f;
+                        speedInput -= forwardAccel * maxSpeed * 5f * speedMult;
                     }
                 }
             }
@@ -257,6 +252,15 @@ public class CartController : MonoBehaviour
         {
             grounded = true;
             speeding = false;
+            slowed = false;
+
+            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+        }
+        else if (Physics.Raycast(groundRayPoint.position, -transform.up, out hit, groundRayLenght, offroadGround))
+        {
+            grounded = true;
+            speeding = false;
+            slowed = true;
 
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
         }
@@ -296,10 +300,10 @@ public class CartController : MonoBehaviour
                     {
                         theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
                     }
-//                    driftEmitting = true;
+                    driftEmitting = true;
                 }
 
-//                exhaustEmitting = true;
+                exhaustEmitting = true;
             }
         }
         else
@@ -378,8 +382,8 @@ public class CartController : MonoBehaviour
         speedInput += 7000 + (2500 * stage);
 
         driftStage = 0;
-//        boostEmitting = true;
-//        StartCoroutine("WaitNSetBoostPSFalse");
+        boostEmitting = true;
+        StartCoroutine("WaitNSetBoostPSFalse");
     }
 
     private IEnumerator WaitNSetBoostPSFalse()

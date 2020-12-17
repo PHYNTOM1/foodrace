@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         re = FindObjectOfType<RankingEndscreen>();
-        re.gameObject.SetActive(false);    
+        //re.gameObject.SetActive(false);    
     }
 
     public void PlayGame()

@@ -19,35 +19,40 @@ public class HealthControl : MonoBehaviour
     [SerializeField]
     private GameObject cvs;
 
+    private bool isplayer = false;
+
     void Start()
     {
-        shieldImage = GameObject.Find("ShieldImage").GetComponent<Image>();
-        shieldBG = GameObject.Find("ShieldBGImage").GetComponent<Image>();
-        GameObject healthBGGO = GameObject.Find("HealthBGImage");
-        GameObject healthGO = GameObject.Find("HealthImage");
-        health.Clear();
-        healthBG.Clear();
-        health.Add(healthGO);
-        healthBG.Add(healthBGGO);
+        isplayer = GetComponent<CartController>().isPlayer;
         currHealth = maxHealth;
 
-        cvs = GameObject.Find("Canvas");
-
-        shieldImage = GameObject.Find("ShieldImage").GetComponent<Image>();
-        for (int i = 0; i < maxHealth -1; i++)
+        if (isplayer)
         {
-            GameObject healthBGGOi = Instantiate(healthBGGO) as GameObject;            
-            healthBGGOi.transform.position = new Vector3(healthBGGOi.transform.position.x - ((i+1) * Mathf.RoundToInt(healthBGGOi.GetComponent<Image>().sprite.rect.width)), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
-            healthBGGOi.transform.SetParent(cvs.transform, false);
-            healthBG.Add(healthBGGOi);
-        }
+            GameObject healthBGGO = GameObject.Find("HealthBGImage");
+            GameObject healthGO = GameObject.Find("HealthImage");        
+            health.Clear();
+            healthBG.Clear();
+            shieldImage = GameObject.Find("ShieldImage").GetComponent<Image>();
+            shieldBG = GameObject.Find("ShieldBGImage").GetComponent<Image>();
+            health.Add(healthGO);
+            healthBG.Add(healthBGGO);
+            cvs = GameObject.Find("Canvas");
 
-        for (int i = 0; i < maxHealth -1; i++)
-        {
-            GameObject healthGOi = Instantiate(healthGO) as GameObject;
-            healthGOi.transform.position = new Vector3(healthGOi.transform.position.x - ((i+1) * Mathf.RoundToInt(healthGOi.GetComponent<Image>().sprite.rect.width)), healthGOi.transform.position.y, healthGOi.transform.position.z);
-            healthGOi.transform.SetParent(cvs.transform, false);
-            health.Add(healthGOi);
+            for (int i = 0; i < maxHealth - 1; i++)
+            {
+                GameObject healthBGGOi = Instantiate(healthBGGO) as GameObject;
+                healthBGGOi.transform.position = new Vector3(healthBGGOi.transform.position.x - ((i + 1) * Mathf.RoundToInt(healthBGGOi.GetComponent<Image>().sprite.rect.width)), healthBGGOi.transform.position.y, healthBGGOi.transform.position.z);
+                healthBGGOi.transform.SetParent(cvs.transform, false);
+                healthBG.Add(healthBGGOi);
+            }
+
+            for (int i = 0; i < maxHealth - 1; i++)
+            {
+                GameObject healthGOi = Instantiate(healthGO) as GameObject;
+                healthGOi.transform.position = new Vector3(healthGOi.transform.position.x - ((i + 1) * Mathf.RoundToInt(healthGOi.GetComponent<Image>().sprite.rect.width)), healthGOi.transform.position.y, healthGOi.transform.position.z);
+                healthGOi.transform.SetParent(cvs.transform, false);
+                health.Add(healthGOi);
+            }
         }
 
         Shielded(shielded);
@@ -59,15 +64,18 @@ public class HealthControl : MonoBehaviour
         if (s)
         {
             shielded = true;
-            shieldImage.enabled = true;
         }
         else
         {
             shielded = false;
-            shieldImage.enabled = false;
         }
 
-        OnHPChange();
+        if (isplayer)
+        {
+            shieldImage.enabled = s;
+        }
+
+            OnHPChange();
     }
 
     public void Damage(int d)
@@ -89,21 +97,23 @@ public class HealthControl : MonoBehaviour
     {
         if (currHealth > 0)
         {
-            for (int i = 0; i < maxHealth; i++)
+            if (isplayer)
             {
-                if (i < currHealth)
+                for (int i = 0; i < maxHealth; i++)
                 {
-                    health[i].GetComponent<Image>().enabled = true;
-                }
-                else
-                {
-                    health[i].GetComponent<Image>().enabled = false;
+                    if (i < currHealth)
+                    {
+                        health[i].GetComponent<Image>().enabled = true;
+                    }
+                    else
+                    {
+                        health[i].GetComponent<Image>().enabled = false;
+                    }
                 }
             }
         }
         else
-        {
-            health[0].GetComponent<Image>().enabled = false;
+        {            
             Die();
         }
     }
@@ -115,12 +125,19 @@ public class HealthControl : MonoBehaviour
         Debug.Log(gameObject.name + " HAS DIED!");
 
         GetComponent<CartController>().notRacing = true;
+        GetComponent<CartController>().speedInput = 0f;
         StartCoroutine("AfterDeath");
     }
 
     private IEnumerator AfterDeath()
     {
-        yield return new WaitForSecondsRealtime(20f);
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        GetComponent<CartController>().speedInput = 0f;
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        GetComponent<CartController>().speedInput = 0f;
 
         GetComponent<CartController>().notRacing = false;
         currHealth = maxHealth;

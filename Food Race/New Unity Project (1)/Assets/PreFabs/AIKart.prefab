@@ -24358,6 +24358,8 @@ GameObject:
   - component: {fileID: 1168055832882634127}
   - component: {fileID: 2991013369224213048}
   - component: {fileID: 2164755256180249942}
+  - component: {fileID: 607330519007096356}
+  - component: {fileID: 8470484027898524391}
   m_Layer: 2
   m_Name: AIKart
   m_TagString: Player
@@ -24413,19 +24415,25 @@ MonoBehaviour:
     m_Bits: 512
   speedGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
+  offroadGround:
+    serializedVersion: 2
+    m_Bits: 65536
   groundRayLenght: 0.5
   groundRayPoint: {fileID: 8250060049929823571}
   speeding: 0
+  slowed: 0
   speedMult: 1
   leftfrontwheel: {fileID: 8250060051121057143}
   rightfrontwheel: {fileID: 8250060051056925963}
   maxWheelTurn: 25
   boostEmitTime: 1
   kartStats: {fileID: 11400000, guid: ec6635652ee0fe14e989cb445c33e6c1, type: 2}
-  isPlayer: 1
-  notRacing: 0
   sm: {fileID: 0}
+  sh: {fileID: 0}
+  isPlayer: 0
+  notRacing: 0
+  inMinigame: 0
 --- !u!114 &8250060050855752595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24572,10 +24580,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e0f79f686727d4abcf6731cf76e127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeToReachNextWaypoint: 20
-  timeLeft: 20
+  maxTimeToReachNextWaypoint: 4
+  timeLeft: 4
   kartAIAgent: {fileID: 0}
   nextWayPointToReach: {fileID: 0}
+  currentWaypointIndex: 0
+  Waypoints: []
 --- !u!114 &2164755256180249942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24591,11 +24601,48 @@ MonoBehaviour:
   roundTimer: 0
   bestRound: 0
   timerText: {fileID: 0}
+  placementText: {fileID: 0}
   roundTimes:
   - 0
   - 0
   - 0
   isLocalPlayer: 0
+--- !u!114 &607330519007096356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc7ead6e94f9404d867da5535de3785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillATK: {fileID: 0}
+  skillDEF: {fileID: 0}
+  sk: {fileID: 0}
+  hc: {fileID: 0}
+--- !u!114 &8470484027898524391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250060050855752598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ea747d88a42c04faf6cea39a9c87f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldImage: {fileID: 0}
+  shieldBG: {fileID: 0}
+  maxHealth: 3
+  currHealth: 0
+  shielded: 0
+  health: []
+  healthBG: []
+  cvs: {fileID: 0}
 --- !u!1 &8250060051038052405
 GameObject:
   m_ObjectHideFlags: 0
