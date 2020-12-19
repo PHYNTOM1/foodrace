@@ -3179,4 +3179,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Ingame2.unity
-  playerPath: D:/Github/foodrace/build2/Food Race.exe
+  playerPath: D:/Github/foodrace/build3/Food Race.exe

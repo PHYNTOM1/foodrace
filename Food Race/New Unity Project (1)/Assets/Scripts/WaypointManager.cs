@@ -33,7 +33,6 @@ public class WaypointManager : MonoBehaviour
         //ENABLE JUST FOR TRAINING
         
         /*
-         */
         timeLeft -= Time.deltaTime;
 
         if (timeLeft < 0f)
@@ -45,6 +44,7 @@ public class WaypointManager : MonoBehaviour
                                                                                                                                     
             kartAIAgent.EndEpisode();
         }
+         */
     }
 
     public void ReachedWaypoint(WaypointBehaviour waypointBehaviour)
@@ -57,12 +57,12 @@ public class WaypointManager : MonoBehaviour
 
         if (currentWaypointIndex >= Waypoints.Count)
         {
-            kartAIAgent.AddReward(0.5f);
+            //kartAIAgent.AddReward(0.5f);
             ResetWPs();
         }
         else
         {
-            kartAIAgent.AddReward((0.5f) / Waypoints.Count);
+            //kartAIAgent.AddReward((0.5f) / Waypoints.Count);
             SetNextWaypoint();
         }
     }

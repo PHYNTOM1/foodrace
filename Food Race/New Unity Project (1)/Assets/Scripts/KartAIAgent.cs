@@ -45,7 +45,7 @@ public class KartAIAgent : Agent
         Vector3 diff = wpm.nextWayPointToReach.transform.position - transform.position;
         sensor.AddObservation(diff / 20f); //Divide by 20 to normalize
 
-        AddReward(-0.0005f); //Promote faster driving
+        //AddReward(-0.0005f); //Promote faster driving
     }
 
     //process actions recieved
@@ -58,7 +58,7 @@ public class KartAIAgent : Agent
 
         if (input[2] == 1)
         {
-            AddReward(0.0002f);     //0.0005f
+            //AddReward(0.0002f);     //0.0005f
             controller.DriftInput(true);
         }
         else
@@ -68,7 +68,7 @@ public class KartAIAgent : Agent
 
         if (rBody.position.y <= -5f)
         {            
-            AddReward(-0.5f);
+            //AddReward(-0.5f);
             EndEpisode();
         }
 

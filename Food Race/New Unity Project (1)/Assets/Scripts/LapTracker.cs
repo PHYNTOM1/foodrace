@@ -125,14 +125,15 @@ public class LapTracker : MonoBehaviour
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
                 PlacementManagement.Instance.AddFinisher(this.gameObject);
+                /*
                 ka.SetReward(1f);
                 ka.EndEpisode();
-
+                */
             }
 
             SetAllFalse();
             goalEnabled = false;
-            ka.AddReward(0.1f);
+            //ka.AddReward(0.1f);
         }
     }
 
