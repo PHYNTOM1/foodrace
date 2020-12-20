@@ -142,7 +142,7 @@ public class CartController : MonoBehaviour
             }
             else if (slowed)
             {
-                speedMult = 0.6f;
+                speedMult = 0.4f;
             }
             else
             {
