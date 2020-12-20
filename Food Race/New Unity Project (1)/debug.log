@@ -1,0 +1,3 @@
+[1219/213923.539:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1219/213923.544:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lukas\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\213408a1-8088-4bd1-8ac7-163f95ff8a67: The system cannot find the path specified. (0x3)
+[1219/213923.545:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lukas\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\98a8090e-7c92-422e-8e83-8b4206062d8d: The system cannot find the path specified. (0x3)
