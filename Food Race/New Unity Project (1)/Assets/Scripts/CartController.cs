@@ -8,6 +8,7 @@ using UnityEngine;
 public class CartController : MonoBehaviour
 {
     public Rigidbody theRB;
+    public Transform sp;
 
     public float forwardAccel = 1f, reverseAccel = 0.66f, maxSpeed = 8f, turnStrength = 120, gravityForce = 10f;
     public float speedInput, turnInput;
@@ -39,6 +40,8 @@ public class CartController : MonoBehaviour
     private bool driftEmitting;
     private bool boostEmitting;
     public float boostEmitTime = 0f;
+    public float boostCounter = 2f;
+    public float boostCounterReal = 0f;
 
     public KartStats kartStats;
     public SoundManagement sm;
@@ -75,14 +78,17 @@ public class CartController : MonoBehaviour
         if (notRacing)
         {
             //this mode when "stunned" or dead or while star countdown
-        }                
+        }
+        /*
         else if (inMinigame)
         {
             //TODO: ???
             //do minigame, handle inputs for minigame here. Control minigame in own script, through methods from here
         }
+        */
         else
         {
+            /*
             if (!isPlayer)
             {
                 if (sh.allSkills.ContainsKey(1))
@@ -94,7 +100,7 @@ public class CartController : MonoBehaviour
                     sh.ActivateDEFSkill();
                 }
             }
-
+            */
 
             if (_driftInput && speedInput >= maxSpeed * 750f)
             {
@@ -232,6 +238,33 @@ public class CartController : MonoBehaviour
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));     //0.4f
                                                                                                                                         //}
                     driftTimer = 0f;
+                }
+            }
+            //JUST FOR TESTING :))))) DELETE ME LATER
+            else
+            {
+                if (theRB.position.y <= -5f)
+                {
+
+                    theRB.velocity = Vector3.zero;
+                    theRB.rotation = Quaternion.identity;
+                    this.gameObject.transform.eulerAngles = Vector3.zero;
+                    theRB.position = sp.position;
+                    this.speedInput = 0f;
+                    GetComponent<LapTracker>().ResetAll();
+                    GetComponent<RoundTimer>().RoundTimerReset();
+                }
+            }
+
+            if (boostCounterReal >= 0)
+            {
+                boostCounterReal -= Time.deltaTime;
+            }
+            else
+            {
+                if (boostEmitting != false)
+                {
+                    boostEmitting = false;
                 }
             }
         }
@@ -383,13 +416,15 @@ public class CartController : MonoBehaviour
 
         driftStage = 0;
         boostEmitting = true;
-        StartCoroutine("WaitNSetBoostPSFalse");
+        boostCounterReal = boostCounter;
     }
 
+    /*
     private IEnumerator WaitNSetBoostPSFalse()
     {
         yield return new WaitForSecondsRealtime(boostEmitTime);
         boostEmitting = false;
     }
+    */
 
 }

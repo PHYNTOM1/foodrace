@@ -6,36 +6,39 @@ using UnityEngine;
 public class LapTracker : MonoBehaviour
 {
     public int lap;
-    public float cpDist;
-    public bool goalEnabled;
-    public float goalDist;
+//    public float cpDist;
+//    public bool goalEnabled;
+//    public float goalDist;
 
-    public Transform goalPoint;
+//    public Transform goalPoint;
     public List<Transform> checkpoints;
     public List<bool> checkpointsPassed;
 
-    public bool finished;
+    public bool finished = false;
 
-    public KartAIAgent ka;
+    //public KartAIAgent ka;
+    public RoundTimer rt;
 
     void Start()
     {
-        ResetAll();
-
         GameObject checkpointsGroup = GameObject.Find("Checkpoints");
         Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
-        goalPoint = GameObject.Find("GoalPoint").transform;
-        ka = GetComponent<KartAIAgent>();
+//        goalPoint = GameObject.Find("GoalPoint").transform;
+        //ka = GetComponent<KartAIAgent>();
+        rt = GetComponent<RoundTimer>();
 
         for (int i = 1; i < cpG.Length; i++)
         {
             checkpoints.Add(cpG[i]);
             checkpointsPassed.Add(false);
         }
+
+        ResetAll();
     }
 
     void Update()
     {
+        /*
         if (goalEnabled)
         {
             UpdateGoalCheck();
@@ -44,24 +47,30 @@ public class LapTracker : MonoBehaviour
         {
             UpdateCheckpointCheck();
         }
+        */
     }
 
     public void PassCheckpoint(int s)
     {
         checkpointsPassed[s] = true;
-        ka.AddReward(0.01f);
+        rt.CompletedCP(s);
+        //ka.AddReward(0.01f);
     }
 
     public bool CheckAllPassed()
     {
-        if (checkpointsPassed[0] && checkpointsPassed[1] && checkpointsPassed[2] && checkpointsPassed[3])
+        bool result = false;
+        foreach (bool b in checkpointsPassed)
         {
-            return true;
+            result = b;
+
+            if (result == false)
+            {
+                return result;
+            }
         }
-        else
-        {
-            return false;
-        }
+
+        return result;
     }
 
     public void SetAllFalse()
@@ -72,8 +81,8 @@ public class LapTracker : MonoBehaviour
         }
     }
 
-    public void UpdateCheckpointCheck()
-    {
+//    public void UpdateCheckpointCheck()
+//    {
         /*
         PlacementManagement pm = FindObjectOfType<PlacementManagement>();
         for (int i = 0; i < pm.racers.Count; i++)
@@ -92,7 +101,7 @@ public class LapTracker : MonoBehaviour
         }
         */
 
-        for (int i = 0; i < checkpoints.Count; i++)
+/*        for (int i = 0; i < checkpoints.Count; i++)
         {
             float distWP = Vector3.Distance(gameObject.transform.position, checkpoints[i].position);
 
@@ -109,7 +118,9 @@ public class LapTracker : MonoBehaviour
             goalEnabled = true;
         }
     }
+*/
 
+    /*
     public void UpdateGoalCheck()
     {
         float distWP = Vector3.Distance(gameObject.transform.position, goalPoint.position);
@@ -129,23 +140,46 @@ public class LapTracker : MonoBehaviour
                 ka.SetReward(1f);
                 ka.EndEpisode();
                 */
-            }
+/*            }
 
             SetAllFalse();
             goalEnabled = false;
             //ka.AddReward(0.1f);
         }
     }
+    */
+
+    public void PassGoal()
+    {
+        if (CheckAllPassed())
+        {
+            Debug.Log(gameObject.name + "PASSED GOAL!");
+            lap++;
+            rt.CompletedRound(lap);
+
+            if (lap == 4)
+            {               
+                Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
+                finished = true;
+                PlacementManagement.Instance.AddFinisher(this.gameObject);
+                PlacementManagement.Instance.finished = finished;
+                PlacementManagement.Instance.LoadEndscreenScene();
+            }
+
+            SetAllFalse();
+        }
+    }
 
     public void ResetAll()
     {
         lap = 1;
-        goalEnabled = false;
+        //goalEnabled = false;
         finished = false;
+        PlacementManagement.Instance.finished = finished;
         SetAllFalse();
     }
 
-
+    /*
     private void OnDrawGizmos()     //visualize waypoint range in editor
     {
         Gizmos.color = Color.cyan;
@@ -153,5 +187,6 @@ public class LapTracker : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, goalDist);
     }
+    */
 
 }

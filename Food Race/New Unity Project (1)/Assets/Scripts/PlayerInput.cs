@@ -5,14 +5,21 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     SkillHolder sh;
+    CartController cc;
 
     void Start()
     {
         sh = GetComponent<SkillHolder>();
+        cc = GetComponent<CartController>();
     }
 
     void Update()
     {
+        cc.SteerInput(Input.GetAxis("Horizontal"));
+        cc.AccelerationInput(Input.GetAxis("Vertical"));
+        cc.DriftInput(Input.GetButton("Drifting"));
+
+
         if (Input.GetKey(KeyCode.I) && Time.timeScale < 2)
         {
             Time.timeScale += Time.deltaTime;
@@ -24,6 +31,7 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("TimeScale: " + Time.timeScale);
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             sh.ActivateATKSkill();
@@ -32,5 +40,6 @@ public class PlayerInput : MonoBehaviour
         {
             sh.ActivateDEFSkill();
         }
+        */
     }
 }

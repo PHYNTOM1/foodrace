@@ -10,6 +10,7 @@ public class PlacementManagement : MonoBehaviour
     public List<GameObject> finishers;
     public float bestTimeOfAll;
     public GameObject bestRacer;
+    public bool finished = false;
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
@@ -37,7 +38,7 @@ public class PlacementManagement : MonoBehaviour
         Debug.Log("NEW SCENE LOADED: " + aScene.name);
         if (aScene.name == "MainMenu")
         {
-            if (finishers.Count == racers.Count)
+            if (finished)
             {
                 RankingEndscreen re = FindObjectOfType<RankingEndscreen>();
                 re.gameObject.SetActive(true);
@@ -46,6 +47,7 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "Ingame2")
         {
+                /*
             if (finishers.Count > 0)
             {
                 for (int i = 0; i < finishers.Count; i++)
@@ -53,9 +55,10 @@ public class PlacementManagement : MonoBehaviour
                     Destroy(finishers[i].gameObject);
                 }
             }
+                */
             bestTimeOfAll = 0f;
             finishers.Clear();
-            RefreshRacers();            
+//            RefreshRacers();            
         }
     }
 
@@ -63,12 +66,13 @@ public class PlacementManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Ingame2")
         {
-            UpdatePlacements();
-
+            //UpdatePlacements();
+/*
             if (finishers.Count == racers.Count)
             {
                 LoadEndscreenScene();
             }
+*/
         }
     }    
 
@@ -96,6 +100,7 @@ public class PlacementManagement : MonoBehaviour
         return bestTimeOfAll;
     }
 
+    /*
     public void UpdatePlacements()
     {
         RefreshRacers();
@@ -148,6 +153,7 @@ public class PlacementManagement : MonoBehaviour
             }            
         }
     }
+    */
 
     public void AddFinisher(GameObject g)
     {
@@ -194,6 +200,7 @@ public class PlacementManagement : MonoBehaviour
         
     }
 
+/*
     private List<GameObject> InsertionSort(List<GameObject> arr)
     {
         //List<GameObject> oldArr = arr;
@@ -221,10 +228,10 @@ public class PlacementManagement : MonoBehaviour
         }
         var noDupes = _noD.Distinct().ToList();
 
-        /*
+//        
         if (oldArr != arr)
         {
-        */
+//        
 
         List<GameObject> arrNew = new List<GameObject>();
 
@@ -271,7 +278,7 @@ public class PlacementManagement : MonoBehaviour
 
         }
 
-        /*
+//        
         for (int i = 0; i < arr.Count; i++)
             {
                 List<GameObject> _arr = new List<GameObject>();
@@ -318,11 +325,13 @@ public class PlacementManagement : MonoBehaviour
                 }
             }
         //}
-        */
+//        
 
             return arrNew;
     }
+*/
 
+/*
     private void RefreshRacers()
     {
         racers.Clear();
@@ -335,9 +344,11 @@ public class PlacementManagement : MonoBehaviour
 
         bestRacer = racers[Random.Range(0, racers.Count)];
     }
+*/
 
     public void LoadEndscreenScene()
     {
+        /*
         for (int i = 0; i < finishers.Count; i++)
         {
             finishers[i].GetComponent<CartController>().enabled = false;
@@ -347,6 +358,7 @@ public class PlacementManagement : MonoBehaviour
 
             DontDestroyOnLoad(finishers[i].gameObject);
         }
+        */
         SceneManager.LoadScene(0);
     }
 }
