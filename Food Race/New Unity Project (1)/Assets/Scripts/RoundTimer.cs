@@ -63,11 +63,11 @@ public class RoundTimer : MonoBehaviour
     {
         float _t = Mathf.RoundToInt(cpTimer * 1000f) / 1000f;
 
-        if (cpBestTimes[s] == 0)
+        if (cpBestTimes[s] == 0f)
         {
             cpBestTimes[s] = _t;
         }
-        else if (cpTimes[s] < cpBestTimes[s])
+        else if (_t < cpBestTimes[s])
         {
             cpBestTimes[s] = _t;
         }
@@ -79,7 +79,7 @@ public class RoundTimer : MonoBehaviour
     {
         float _t = Mathf.RoundToInt(roundTimer * 1000f) / 1000f;
 
-        if (bestRound == 0)
+        if (bestRound == 0f)
         {
             bestRound = _t;
         }

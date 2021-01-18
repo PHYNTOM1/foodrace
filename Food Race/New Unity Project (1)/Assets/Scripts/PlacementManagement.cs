@@ -47,15 +47,18 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "Ingame2")
         {
-                /*
-            if (finishers.Count > 0)
+            /*
+        if (finishers.Count > 0)
+        {
+            for (int i = 0; i < finishers.Count; i++)
             {
-                for (int i = 0; i < finishers.Count; i++)
-                {
-                    Destroy(finishers[i].gameObject);
-                }
+                Destroy(finishers[i].gameObject);
             }
-                */
+        }
+            */
+            racers.Clear();
+            racers.Add(GameObject.FindGameObjectWithTag("Player"));
+            bestRacer = racers[0];
             bestTimeOfAll = 0f;
             finishers.Clear();
 //            RefreshRacers();            
