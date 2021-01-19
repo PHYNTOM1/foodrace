@@ -56,7 +56,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:E:/Github/foodrace/ml-agents-release_10/com.unity.ml-agents",
+      "version": "file:C:/Users/ahmud/Desktop/Hochschule/3D Prototyping/foodrace/ml-agents-release_10/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
