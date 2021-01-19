@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform cameraTarget;
-    public float sSpeed = 10.0f;
+    public float sSpeed = 8.5f;
     public Vector3 dist;
     public Transform lookTarget;
 

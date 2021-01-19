@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    SkillHolder sh;
+    //    SkillHolder sh;
     CartController cc;
+    PlayerShooting ps;
 
     void Start()
     {
-        sh = GetComponent<SkillHolder>();
+        //        sh = GetComponent<SkillHolder>();
         cc = GetComponent<CartController>();
+        ps = GetComponent<PlayerShooting>();
     }
 
     void Update()
@@ -18,6 +20,8 @@ public class PlayerInput : MonoBehaviour
         cc.SteerInput(Input.GetAxis("Horizontal"));
         cc.AccelerationInput(Input.GetAxis("Vertical"));
         cc.DriftInput(Input.GetButton("Drifting"));
+
+        ps.ShootInput(Input.GetButton("Shooting"));
 
 
         if (Input.GetKey(KeyCode.I) && Time.timeScale < 2)

@@ -6,11 +6,11 @@ using UnityEngine;
 public class LapTracker : MonoBehaviour
 {
     public int lap;
-//    public float cpDist;
-//    public bool goalEnabled;
-//    public float goalDist;
+    //    public float cpDist;
+    //    public bool goalEnabled;
+    //    public float goalDist;
 
-//    public Transform goalPoint;
+    //    public Transform goalPoint;
     public List<Transform> checkpoints;
     public List<bool> checkpointsPassed;
 
@@ -23,7 +23,7 @@ public class LapTracker : MonoBehaviour
     {
         GameObject checkpointsGroup = GameObject.Find("Checkpoints");
         Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
-//        goalPoint = GameObject.Find("GoalPoint").transform;
+        //        goalPoint = GameObject.Find("GoalPoint").transform;
         //ka = GetComponent<KartAIAgent>();
         rt = GetComponent<RoundTimer>();
 
@@ -81,44 +81,44 @@ public class LapTracker : MonoBehaviour
         }
     }
 
-//    public void UpdateCheckpointCheck()
-//    {
-        /*
-        PlacementManagement pm = FindObjectOfType<PlacementManagement>();
-        for (int i = 0; i < pm.racers.Count; i++)
+    //    public void UpdateCheckpointCheck()
+    //    {
+    /*
+    PlacementManagement pm = FindObjectOfType<PlacementManagement>();
+    for (int i = 0; i < pm.racers.Count; i++)
+    {
+        if (pm.racers[i] != this.gameObject)
         {
-            if (pm.racers[i] != this.gameObject)
+            float distKart = Vector3.Distance(gameObject.transform.position, pm.racers[i].transform.position);
+
+            if (distKart <= cpDist)
             {
-                float distKart = Vector3.Distance(gameObject.transform.position, pm.racers[i].transform.position);
+                Debug.Log(pm.racers[i].name + " entered " + gameObject.name + "'s zone!: UPDATE PLACEMENTS");
 
-                if (distKart <= cpDist)
-                {
-                    Debug.Log(pm.racers[i].name + " entered " + gameObject.name + "'s zone!: UPDATE PLACEMENTS");
-
-                    pm.UpdatePlacements();
-                }
+                pm.UpdatePlacements();
             }
-        }
-        */
-
-/*        for (int i = 0; i < checkpoints.Count; i++)
-        {
-            float distWP = Vector3.Distance(gameObject.transform.position, checkpoints[i].position);
-
-            if (distWP <= cpDist)
-            {
-                Debug.Log(gameObject.name + "checked " + checkpoints[i].name);
-
-                PassCheckpoint(i);
-            }
-        }
-
-        if (CheckAllPassed())
-        {
-            goalEnabled = true;
         }
     }
-*/
+    */
+
+    /*        for (int i = 0; i < checkpoints.Count; i++)
+            {
+                float distWP = Vector3.Distance(gameObject.transform.position, checkpoints[i].position);
+
+                if (distWP <= cpDist)
+                {
+                    Debug.Log(gameObject.name + "checked " + checkpoints[i].name);
+
+                    PassCheckpoint(i);
+                }
+            }
+
+            if (CheckAllPassed())
+            {
+                goalEnabled = true;
+            }
+        }
+    */
 
     /*
     public void UpdateGoalCheck()
@@ -140,14 +140,14 @@ public class LapTracker : MonoBehaviour
                 ka.SetReward(1f);
                 ka.EndEpisode();
                 */
-/*            }
+    /*            }
 
-            SetAllFalse();
-            goalEnabled = false;
-            //ka.AddReward(0.1f);
+                SetAllFalse();
+                goalEnabled = false;
+                //ka.AddReward(0.1f);
+            }
         }
-    }
-    */
+        */
 
     public void PassGoal()
     {
@@ -158,7 +158,7 @@ public class LapTracker : MonoBehaviour
             rt.CompletedRound(lap);
 
             if (lap == 4)
-            {               
+            {
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
                 PlacementManagement.Instance.AddFinisher(this.gameObject);

@@ -46,6 +46,7 @@ public class CartController : MonoBehaviour
     public KartStats kartStats;
     public SoundManagement sm;
     public SkillHolder sh;
+    public CameraController camC;
     public bool isPlayer = false;
     public bool notRacing = false;
     public bool inMinigame = false;
@@ -58,6 +59,7 @@ public class CartController : MonoBehaviour
 
     void Start()
     {
+        camC = GameObject.Find("Camera").GetComponent<CameraController>();
         theRB.transform.parent = null;
         exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
         GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
@@ -210,6 +212,8 @@ public class CartController : MonoBehaviour
 
                 if (drifting)
                 {
+                    camC.sSpeed = 14f;
+
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
 
                     driftTimer += 1 * Time.deltaTime;
@@ -222,6 +226,8 @@ public class CartController : MonoBehaviour
                 }
                 else
                 {
+                    camC.sSpeed = 8.5f;
+
                     //for testing purposes commented, but works velly nice without :)
                     /*
                     if (speedInput <= maxSpeed * 500f && speedInput >= 0 || speedInput >= maxSpeed * -500f && speedInput <= 0)
