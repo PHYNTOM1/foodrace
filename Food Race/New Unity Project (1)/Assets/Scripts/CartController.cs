@@ -431,4 +431,9 @@ public class CartController : MonoBehaviour
     }
     */
 
+    public void GetStunned()
+    {
+        speedInput = 0f;
+        //DO STUN ANIMATION AND PARTICLES
+    }
 }

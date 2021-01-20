@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
@@ -17,7 +18,8 @@ public class EnemyBehaviour : MonoBehaviour
     public float atkSpeed = 1f;
     [SerializeField]
     private float realAtkSpeed = 0f;
-
+    public GameObject enemyBullet;
+    public float left = 2f;
 
     void Update()
     {
@@ -62,7 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void MoveInWay()
     {
-        //calculate player position + forward by certain distance, save this position and move there, then turn to face player
+        //calculate player position + forward by certain distance, save this position and move there, then turn to face player        
     }
 
     public void RandomWalking()
@@ -81,15 +83,18 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (realAtkSpeed <= 0)
         {
-            //shoot/instantiate projectile here
+            GameObject eB = Instantiate(enemyBullet, (this.gameObject.transform.position - (this.gameObject.transform.forward.normalized * 3f) + (this.gameObject.transform.right.normalized * left)), Quaternion.Euler(90f, this.gameObject.transform.eulerAngles.y + 180f, 0f));
+
+            left = -left;
+
+            eB.transform.parent = null;
             realAtkSpeed = atkSpeed;
         }
     }
 
     private void OnTriggerEnter(Collider c)
     {
-        Debug.Log(this.gameObject.name + "spotted " + c.gameObject.name + "!");
-        if (c.gameObject.tag == "Player")
+        if (c.gameObject.name == "WPCollider")
         {
             Debug.Log(this.gameObject.name + "spotted player!");
             spotted = true;
@@ -98,10 +103,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider c)
     {
-        if (c.gameObject.tag == "Player")
+        if (c.gameObject.name == "WPCollider")
         {
             Debug.Log(this.gameObject.name + "lost player!");
             spotted = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.gameObject.name == "WPCollider")
+        {
+            Debug.Log(this.gameObject.name + "collided with player!");
+            coll.collider.GetComponentInParent<CartController>().GetStunned();
         }
     }
 
