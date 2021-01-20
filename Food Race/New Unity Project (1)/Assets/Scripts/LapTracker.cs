@@ -157,6 +157,7 @@ public class LapTracker : MonoBehaviour
             lap++;
             rt.CompletedRound(lap);
 
+            //FINISH GAME!!!
             if (lap == 4)
             {
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");

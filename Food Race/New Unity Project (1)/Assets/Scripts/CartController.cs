@@ -148,7 +148,7 @@ public class CartController : MonoBehaviour
             }
             else if (slowed)
             {
-                speedMult = 0.4f;
+                speedMult = 0.5f;
             }
             else
             {
@@ -416,7 +416,7 @@ public class CartController : MonoBehaviour
 
     public void GetBoosted(int stage)
     {
-        speedInput += 7000 + (2500 * stage);
+        speedInput += 6000 + (3000 * stage);
 
         driftStage = 0;
         boostEmitting = true;
