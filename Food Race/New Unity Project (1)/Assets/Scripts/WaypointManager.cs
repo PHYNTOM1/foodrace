@@ -8,7 +8,7 @@ public class WaypointManager : MonoBehaviour
     public float maxTimeToReachNextWaypoint = 6f;
     public float timeLeft = 6f;
 
-    public KartAIAgent kartAIAgent;
+    //public KartAIAgent kartAIAgent;
     public WaypointBehaviour nextWayPointToReach;
 
     public int currentWaypointIndex;
@@ -22,7 +22,7 @@ public class WaypointManager : MonoBehaviour
     {
         /*
         */
-        kartAIAgent = GetComponent<KartAIAgent>();
+        //kartAIAgent = GetComponent<KartAIAgent>();
         Waypoints = FindObjectOfType<Waypoints>().wayPoints;
         lt = GetComponent<LapTracker>();
         ResetWPs();
