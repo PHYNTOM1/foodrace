@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 6631447342695847637}
   - component: {fileID: 6631447342695847638}
   - component: {fileID: 6631447342695847639}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: EnemyWalking
   m_TagString: Untagged
   m_Icon: {fileID: 0}

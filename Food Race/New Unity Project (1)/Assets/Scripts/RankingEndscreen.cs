@@ -22,7 +22,7 @@ public class RankingEndscreen : MonoBehaviour
         }
 
         float f = PlacementManagement.Instance.GetBestTimeOverall();
-        if (f == 0)
+        if (f == 0f)
         {
             bestTime = 0f;
         }
