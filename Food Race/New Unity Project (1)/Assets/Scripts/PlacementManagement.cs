@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlacementManagement : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
+    
+    Slider progressBar;
+    AsyncOperation loadingOperation;
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
@@ -33,6 +37,19 @@ public class PlacementManagement : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    public void StartGame()
+    {
+        loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
+
+        float loadProgress = loadingOperation.progress;
+
+
+        if (loadingOperation.isDone)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
         Debug.Log("NEW SCENE LOADED: " + aScene.name);
@@ -40,9 +57,9 @@ public class PlacementManagement : MonoBehaviour
         {
             if (finished)
             {
-                RankingEndscreen re = FindObjectOfType<RankingEndscreen>();
-                re.gameObject.SetActive(true);
-                GameObject.Find("MainMenu").GetComponent<MainMenu>().LoadRankings();
+                GameObject mm = GameObject.Find("MainMenu");
+                mm.GetComponent<MainMenu>().LoadRankings();
+                finished = false;
             }
         }
         else if (aScene.name == "Ingame2")
@@ -65,19 +82,19 @@ public class PlacementManagement : MonoBehaviour
         }
     }
 
+            /*
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Ingame2")
         {
             //UpdatePlacements();
-            /*
                         if (finishers.Count == racers.Count)
                         {
                             LoadEndscreenScene();
                         }
-            */
         }
     }
+            */
 
     public float GetBestTimeOverall()
     {
