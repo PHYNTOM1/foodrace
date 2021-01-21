@@ -12,7 +12,12 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
-    
+
+    public string LoadingScreen;
+    public string MainMenu;
+    public string Ingame2;
+
+
     Slider progressBar;
     AsyncOperation loadingOperation;
 
@@ -40,14 +45,6 @@ public class PlacementManagement : MonoBehaviour
     public void StartGame()
     {
         loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
-
-        float loadProgress = loadingOperation.progress;
-
-
-        if (loadingOperation.isDone)
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
@@ -82,19 +79,38 @@ public class PlacementManagement : MonoBehaviour
         }
     }
 
-            /*
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Ingame2")
+        if (SceneManager.GetActiveScene().name == "LoadingScreen")
         {
-            //UpdatePlacements();
-                        if (finishers.Count == racers.Count)
-                        {
-                            LoadEndscreenScene();
-                        }
+            if (progressBar == null)
+            {
+                progressBar = FindObjectOfType<Slider>();
+
+            }
+            progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+
+            if (loadingOperation.isDone)
+            {
+                SceneManager.LoadScene("Ingame2");
+            }
+
+
         }
+       
+       
+
+        /*
+          if (SceneManager.GetActiveScene().name == "Ingame2")
+          {
+              //UpdatePlacements();
+                          if (finishers.Count == racers.Count)
+                          {
+                              LoadEndscreenScene();
+                          }
+          }
+              */
     }
-            */
 
     public float GetBestTimeOverall()
     {
@@ -379,6 +395,6 @@ public class PlacementManagement : MonoBehaviour
             DontDestroyOnLoad(finishers[i].gameObject);
         }
         */
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }

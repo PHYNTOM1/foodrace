@@ -347,7 +347,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 662810308}
+      - m_Target: {fileID: 1324181071}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1515,6 +1515,9 @@ MonoBehaviour:
   bestTimeOfAll: 0
   bestRacer: {fileID: 0}
   finished: 0
+  LoadingScreen: 
+  MainMenu: 
+  Ingame2: 
 --- !u!4 &516992879
 Transform:
   m_ObjectHideFlags: 0
