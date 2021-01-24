@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 6631447342695847639}
   m_Layer: 17
   m_Name: EnemyWalking
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,3 +375,5 @@ MonoBehaviour:
   spotted: 0
   atkSpeed: 1
   realAtkSpeed: 0
+  enemyBullet: {fileID: 0}
+  left: 2

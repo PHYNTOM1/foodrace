@@ -14,27 +14,40 @@ public class EnemyBehaviour : MonoBehaviour
     public EnemyType eType;
 
     public bool spotted = false;
+    public int maxHP = 3;
+    public int currHP = 3;
+
+    public float moveSpeed = 3f;
 
     public float atkSpeed = 1f;
     [SerializeField]
     private float realAtkSpeed = 0f;
     public GameObject enemyBullet;
     public float left = 2f;
+    public bool outOfOrder = false;
+    public float oooCD = 2f;
+    [SerializeField]
+    private float oooCDReal = 0f;
+
+    public Rigidbody rb;
+    public GameObject player;
+    public Vector3 targetPos;
+
+    private void Start()
+    {
+        targetPos = gameObject.transform.position;
+        currHP = maxHP;
+        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
         switch (eType)
         {
             case EnemyType.walker:
-
-                if (spotted)
-                {
-                    MoveInWay();
-                }
-                else
-                {
-                    RandomWalking();
-                }
+                
+                Move();
                 break;
             case EnemyType.flyer:
                 
@@ -44,32 +57,49 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    RandomWalking();
+                    Move();
                 }
                 break;
             case EnemyType.turret:
 
-                if (spotted)
+                if (outOfOrder == false)
                 {
-                    DoShooting();
-                }
+                    if (spotted)
+                    {
+                        DoShooting();
+                    }
 
-                if (realAtkSpeed > 0)
+                    if (realAtkSpeed > 0)
+                    {
+                        realAtkSpeed -= Time.deltaTime;
+                    }
+                }
+                else
                 {
-                    realAtkSpeed -= Time.deltaTime;
+                    if (oooCDReal > 0)
+                    {
+                        oooCDReal -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        currHP = maxHP;
+                        oooCDReal = oooCD;
+                        outOfOrder = false;
+                    }
                 }
                 break;
         }
     }
 
-    public void MoveInWay()
+    public void Move()
     {
-        //calculate player position + forward by certain distance, save this position and move there, then turn to face player        
-    }
+        //calculate player position + forward by certain distance, save this position and move there, then turn to face player     
 
-    public void RandomWalking()
-    {
-        //wander around on track and check for player
+        if (Vector3.Distance(transform.position, targetPos) < 0.001f)
+        {
+            float step = moveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+        }
     }
 
     public void MoveToPlayer()
@@ -92,12 +122,50 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    public void GetDamaged(int d)
+    {
+        currHP -= d;
+
+        if (currHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        switch (eType)
+        {
+            case EnemyType.walker:
+
+                //DO ANIMATION AND PARTICLES
+                Destroy(this.gameObject, 0.15f);
+                break;
+            case EnemyType.flyer:
+
+                //DO ANIMATION AND PARTICLES
+                Destroy(this.gameObject, 0.15f);
+                break;
+            case EnemyType.turret:
+
+                oooCDReal = oooCD;
+                outOfOrder = true;
+                break;
+        }
+    }
+
+
     private void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.name == "WPCollider")
         {
             Debug.Log(this.gameObject.name + "spotted player!");
             spotted = true;
+
+            if (eType == EnemyType.walker)
+            {
+                targetPos = player.transform.position + (player.transform.forward * 10);
+            }
         }
     }
 

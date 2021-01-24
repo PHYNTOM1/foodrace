@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5536826316487016457}
   m_Layer: 17
   m_Name: EnemyTurret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,11 +375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c49e86c66bf57d4a93661f2c38b8620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eType: 0
+  eType: 2
   spotted: 0
-  atkSpeed: 1
+  atkSpeed: 2
   realAtkSpeed: 0
-  enemyBullet: {fileID: 0}
+  enemyBullet: {fileID: 4287958400258214179, guid: 99ab23897086ff541ac83d7647e2f348,
+    type: 3}
+  left: 3
 --- !u!1 &5536826316551295765
 GameObject:
   m_ObjectHideFlags: 0

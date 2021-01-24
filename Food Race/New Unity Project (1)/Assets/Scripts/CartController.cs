@@ -55,6 +55,11 @@ public class CartController : MonoBehaviour
     float _verAxis;
     float _verAxisRaw;
 
+    public bool stunned = false;
+    public float stunTimer = 1f;
+    [SerializeField]
+    private float stunTimerReal = 0f;
+
     void Start()
     {
         camC = GameObject.Find("Camera").GetComponent<CameraController>();
@@ -77,15 +82,21 @@ public class CartController : MonoBehaviour
     {
         if (notRacing)
         {
-            //this mode when "stunned" or dead or while star countdown
+
         }
-        /*
-        else if (inMinigame)
+        else if (stunned)
         {
-            //TODO: ???
-            //do minigame, handle inputs for minigame here. Control minigame in own script, through methods from here
+            //this mode when "stunned"
+            if (stunTimerReal <= stunTimer)
+            {
+                stunTimerReal += Time.deltaTime;
+            }
+            else
+            {
+                stunned = false;
+                stunTimerReal = 0f;
+            }
         }
-        */
         else
         {
             /*
@@ -434,6 +445,8 @@ public class CartController : MonoBehaviour
     public void GetStunned()
     {
         speedInput = 0f;
+        stunned = true;
+        stunTimerReal = 0f;
         //DO STUN ANIMATION AND PARTICLES
     }
 }

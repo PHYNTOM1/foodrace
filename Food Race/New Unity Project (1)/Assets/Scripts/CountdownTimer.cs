@@ -6,47 +6,57 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    float currentTime = 0f;
-    float startingTime = 3f;
+    [SerializeField]
+    private float currentTime = 0f;
+    public float startingTime = 3f;
+    public bool doCD = true;
 
     public TextMeshProUGUI cdText;
-    public GameObject[] karts;
+    public GameObject kart;
 
     void Start()
     {
         cdText = GameObject.Find("CountdownText").GetComponent<TextMeshProUGUI>();
-        karts = GameObject.FindGameObjectsWithTag("Player");
+        kart = GameObject.FindGameObjectWithTag("Player");
         ResetStartTimer();
     }
 
     void Update()
     {
-        if (currentTime > -1)
+        if (doCD)
         {
-            currentTime -= 1 * Time.deltaTime;            
-            cdText.SetText(currentTime.ToString("0"));
-        }
-
-        if (currentTime <= -1)
-        {
-            cdText.SetText(" ");
-            cdText.fontSize = 100;
-            
-            foreach (GameObject kart in GameObject.FindGameObjectsWithTag("Player"))
+            if (currentTime > -1)
             {
+                currentTime -= 1 * Time.deltaTime;            
+                cdText.SetText(currentTime.ToString("0"));
+            }
+
+            if (currentTime <= -1)
+            {
+                cdText.SetText(" ");
+                cdText.fontSize = 100;
+
+                /*
+                foreach (GameObject kart in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    kart.GetComponent<CartController>().notRacing = false;
+                }
+                */
+
                 kart.GetComponent<CartController>().notRacing = false;
+                doCD = false;
+            }
+            else if (currentTime <= 0.75f)
+            {
+                cdText.text = "START";
+                cdText.fontSize = 130;
             }
         }
-        else if (currentTime <= 0.5f)
-        {
-            cdText.text = "START";
-            cdText.fontSize = 130;
-        }
-
     }
 
     public void ResetStartTimer()
     {
+        doCD = true;
         currentTime = startingTime;
 
         if (cdText == null)
@@ -55,10 +65,14 @@ public class CountdownTimer : MonoBehaviour
             cdText.fontSize = 100;
         }
 
+        /*
         foreach (GameObject kart in GameObject.FindGameObjectsWithTag("Player"))
         {
             kart.GetComponent<CartController>().notRacing = true;
         }
+        */
+
+        kart.GetComponent<CartController>().notRacing = true;
     }
 
 }

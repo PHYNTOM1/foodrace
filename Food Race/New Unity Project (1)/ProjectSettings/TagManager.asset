@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Bullet
   - Flamethrower
+  - EnemyBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - KartCollisions
   - offroadGround
   - Enemies
-  - 
+  - Bullets
   - 
   - 
   - 

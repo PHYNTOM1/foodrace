@@ -19,7 +19,7 @@ public class RoundTimer : MonoBehaviour
     public bool isLocalPlayer = false;
 
     private LapTracker lt;
-    private int oldLap;
+//    private int oldLap;
     private CartController cc;
 
     void Start()
@@ -95,7 +95,7 @@ public class RoundTimer : MonoBehaviour
 
     public void RoundTimerReset()
     {
-        oldLap = 1;
+//        oldLap = 1;
         roundTimer = 0f;
         bestRound = 0f;
         cpTimer = 0f;
