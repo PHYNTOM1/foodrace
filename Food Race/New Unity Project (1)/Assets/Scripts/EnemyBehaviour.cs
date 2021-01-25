@@ -202,6 +202,10 @@ public class EnemyBehaviour : MonoBehaviour
                     transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
                 }
             }
+            else if (eType == EnemyType.flyer)
+            {
+                targetPos = player.gameObject.transform.position;
+            }
         }
     }
 

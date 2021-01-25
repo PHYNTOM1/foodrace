@@ -11,17 +11,22 @@ public class PlayerShooting : MonoBehaviour
     private float shootCDReal = 0f;
     public float distToKart = 2f;
     private float left = 1f;
+    private CartController cc;
 
     void Start()
     {
         shooting = false;
+        cc = GetComponent<CartController>();
     }
 
     void Update()
     {
-        if (shooting == true && shootCDReal <= 0)
+        if (cc.notRacing == false && cc.stunned == false)
         {
-            Shoot();            
+            if (shooting == true && shootCDReal <= 0)
+            {
+                Shoot();            
+            }
         }
 
         if (shootCDReal > 0)
