@@ -134,16 +134,27 @@ public class EnemyBehaviour : MonoBehaviour
     public void CircleAroundPlayer()
     {
         Vector3 playerPos = player.gameObject.transform.position;
+        realAtkSpeed += Time.deltaTime * atkSpeed;
 
+        float x = Mathf.Cos(realAtkSpeed);
+        float y = 0;
+        float z = Mathf.Sin(realAtkSpeed);
+        transform.position = playerPos + (player.transform.forward * oooCD/4) + (new Vector3(x, y, z).normalized * oooCD);
+
+        transform.LookAt(playerPos + ((transform.position - playerPos).normalized * oooCD));
+        /*
+        
         transform.position = (playerPos + ((transform.position - playerPos).normalized * oooCD));
 
         distPos = player.gameObject.transform.TransformDirection(Vector3.down);
         transform.RotateAround(playerPos, distPos, atkSpeed * Time.deltaTime);
                 
-        Vector3 lookPos = player.gameObject.transform.position - gameObject.transform.position;
+        Vector3 lookPos = playerPos - gameObject.transform.position;
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(-lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * atkSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * atkSpeed * 10f);
+        //transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        */
     }
 
     public void DoShooting()

@@ -31,6 +31,7 @@ public class BulletBehaviour : MonoBehaviour
             {
                 Debug.Log("PLAYER HIT " + coll.collider.gameObject.name + " WITH A BULLET!");
                 coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
+                Destroy(gameObject);
             }
         }
         else if(this.gameObject.CompareTag("EnemyBullet"))
@@ -39,6 +40,7 @@ public class BulletBehaviour : MonoBehaviour
             {
                 Debug.Log("PLAYER GOT HIT BY BULLET!");
                 coll.collider.GetComponentInParent<CartController>().GetStunned();
+                Destroy(gameObject);
             }
         }
     }

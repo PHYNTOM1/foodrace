@@ -310,14 +310,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799805860556476560}
-  m_LocalRotation: {x: -0, y: 0.7071064, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 135.2, y: 4, z: 139}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 116.860016, y: 4, z: 138.99994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 799805859464682191}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &799805860556476556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -377,12 +377,12 @@ MonoBehaviour:
   maxHP: 2
   currHP: 2
   moveSpeed: 200
-  atkSpeed: 100
+  atkSpeed: 3
   realAtkSpeed: 0
   enemyBullet: {fileID: 0}
   left: 2
   outOfOrder: 0
-  oooCD: 3
+  oooCD: 4
   oooCDReal: 0
   rb: {fileID: 0}
   player: {fileID: 0}
