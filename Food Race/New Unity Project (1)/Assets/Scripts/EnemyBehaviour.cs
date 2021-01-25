@@ -4,7 +4,7 @@ using System.ComponentModel;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
-{
+{  
     public enum EnemyType
     {
         walker,
@@ -32,8 +32,10 @@ public class EnemyBehaviour : MonoBehaviour
     public Rigidbody rb;
     public GameObject player;
     public Vector3 targetPos;
+    public Vector3 distPos = new Vector3(0f, 0f, 0f);
 
-    private void Start()
+
+    void Start()
     {
         targetPos = gameObject.transform.position;
         currHP = maxHP;
@@ -53,11 +55,18 @@ public class EnemyBehaviour : MonoBehaviour
                 
                 if (spotted)
                 {
-                    MoveToPlayer();
+                    if (Vector3.Distance(gameObject.transform.position, targetPos) < 6)
+                    {
+                        CircleAroundPlayer();
+                    }
+                    else
+                    {
+                        MoveToPlayer();
+                    }
                 }
                 else
                 {
-                    Move();
+                    //Move();
                 }
                 break;
             case EnemyType.turret:
@@ -95,18 +104,40 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //calculate player position + forward by certain distance, save this position and move there, then turn to face player     
 
-        if (Vector3.Distance(transform.position, targetPos) < 0.001f)
+        if (Vector3.Distance(transform.position, targetPos) > 0.5f)
         {
-            float step = moveSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+            rb.AddForce(-transform.forward * moveSpeed, ForceMode.Force);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+            outOfOrder = false;
         }
     }
 
     public void MoveToPlayer()
     {
+        targetPos = player.transform.position;
+        transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
         //fly straight to the player,
         //if in range, start circling around him
         //decrease player topSpeed and acceleration
+        rb.AddForce(-transform.forward * moveSpeed, ForceMode.Force);
+
+    }
+
+    public void CircleAroundPlayer()
+    {
+        Vector3 playerPos = player.gameObject.transform.position;
+
+        transform.position = (playerPos + ((gameObject.transform.position - playerPos).normalized * oooCD));
+        
+        transform.RotateAround(playerPos, Vector3.down, atkSpeed * Time.deltaTime);
+                
+        Vector3 lookPos = player.gameObject.transform.position - gameObject.transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(-lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * atkSpeed);
     }
 
     public void DoShooting()
@@ -164,7 +195,12 @@ public class EnemyBehaviour : MonoBehaviour
 
             if (eType == EnemyType.walker)
             {
-                targetPos = player.transform.position + (player.transform.forward * 10);
+                if (outOfOrder == false)
+                {
+                    outOfOrder = true;
+                    targetPos = player.transform.position + (player.transform.forward * 70f);
+                    transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
+                }
             }
         }
     }
@@ -182,10 +218,17 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (coll.collider.gameObject.name == "WPCollider")
         {
-            Debug.Log(this.gameObject.name + "collided with player!");
-            coll.collider.GetComponentInParent<CartController>().GetStunned();
+            if (eType == EnemyType.walker)
+            {
+                Debug.Log(this.gameObject.name + "collided with player!");
+                coll.collider.GetComponentInParent<CartController>().GetStunned();
+            }
         }
     }
 
 
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(gameObject.transform.position, targetPos);
+    }
 }
