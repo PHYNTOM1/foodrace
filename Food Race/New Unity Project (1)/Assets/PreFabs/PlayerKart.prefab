@@ -24103,6 +24103,7 @@ MonoBehaviour:
   stunned: 0
   stunTimer: 1
   stunTimerReal: 0
+  flyerCount: 0
 --- !u!114 &60964899228386960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24230,9 +24231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7768459862096615745, guid: a724f582698ed114381c974fd2d3a0f1, type: 3}
-  shootCD: 2
+  shootCD: 0.3
   shootCDReal: 0
-  distToKart: 1.3
+  distToKart: 1.4
 --- !u!1 &60964899850024525
 GameObject:
   m_ObjectHideFlags: 0
@@ -38868,7 +38869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3154965328043766117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: -5}
+  m_LocalPosition: {x: 0, y: 2, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964899228386964}
@@ -48801,7 +48802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277606660335389806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.11, z: 0.7}
+  m_LocalPosition: {x: 0.02, y: 0.11, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964899228386964}

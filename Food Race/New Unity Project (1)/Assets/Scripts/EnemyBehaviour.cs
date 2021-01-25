@@ -49,14 +49,19 @@ public class EnemyBehaviour : MonoBehaviour
         {
             case EnemyType.walker:
                 
-                Move();
+                //Move();
                 break;
             case EnemyType.flyer:
                 
                 if (spotted)
                 {
-                    if (Vector3.Distance(gameObject.transform.position, targetPos) < 6)
+                    if (Vector3.Distance(gameObject.transform.position, targetPos) < 10f)
                     {
+                        if (left == 2f)
+                        {
+                            player.GetComponent<CartController>().flyerCount++;
+                            left = 0f;
+                        }
                         CircleAroundPlayer();
                     }
                     else
@@ -104,7 +109,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //calculate player position + forward by certain distance, save this position and move there, then turn to face player     
 
-        if (Vector3.Distance(transform.position, targetPos) > 0.5f)
+        if (Vector3.Distance(transform.position, targetPos) > 5f)
         {
             rb.AddForce(-transform.forward * moveSpeed, ForceMode.Force);
         }
@@ -118,7 +123,7 @@ public class EnemyBehaviour : MonoBehaviour
     public void MoveToPlayer()
     {
         targetPos = player.transform.position;
-        transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
+        transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - transform.position));
         //fly straight to the player,
         //if in range, start circling around him
         //decrease player topSpeed and acceleration
@@ -130,9 +135,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         Vector3 playerPos = player.gameObject.transform.position;
 
-        transform.position = (playerPos + ((gameObject.transform.position - playerPos).normalized * oooCD));
-        
-        transform.RotateAround(playerPos, Vector3.down, atkSpeed * Time.deltaTime);
+        transform.position = (playerPos + ((transform.position - playerPos).normalized * oooCD));
+
+        distPos = player.gameObject.transform.TransformDirection(Vector3.down);
+        transform.RotateAround(playerPos, distPos, atkSpeed * Time.deltaTime);
                 
         Vector3 lookPos = player.gameObject.transform.position - gameObject.transform.position;
         lookPos.y = 0;
@@ -175,6 +181,7 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyType.flyer:
 
                 //DO ANIMATION AND PARTICLES
+                player.GetComponent<CartController>().flyerCount--;
                 Destroy(this.gameObject, 0.15f);
                 break;
             case EnemyType.turret:

@@ -60,6 +60,8 @@ public class CartController : MonoBehaviour
     [SerializeField]
     private float stunTimerReal = 0f;
 
+    public int flyerCount = 0;
+
     void Start()
     {
         camC = GameObject.Find("Camera").GetComponent<CameraController>();
@@ -164,6 +166,11 @@ public class CartController : MonoBehaviour
             else
             {
                 speedMult = 1f;
+            }
+
+            if (flyerCount > 0)
+            {
+                speedMult = 0.8f;
             }
 
             if (_verAxisRaw == 1 || _verAxisRaw == -1)
