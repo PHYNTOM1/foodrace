@@ -55,7 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
                 
                 if (spotted)
                 {
-                    if (Vector3.Distance(gameObject.transform.position, targetPos) < 10f)
+                    if (Vector3.Distance(transform.position, player.transform.position) < 9f)
                     {
                         if (left == 2f)
                         {
@@ -122,13 +122,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void MoveToPlayer()
     {
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        GetComponent<Rigidbody>().MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
+        /*
         targetPos = player.transform.position;
         transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - transform.position));
         //fly straight to the player,
         //if in range, start circling around him
         //decrease player topSpeed and acceleration
         rb.AddForce(-transform.forward * moveSpeed, ForceMode.Force);
-
+        */
     }
 
     public void CircleAroundPlayer()
@@ -141,8 +144,15 @@ public class EnemyBehaviour : MonoBehaviour
         float z = Mathf.Sin(realAtkSpeed);
         transform.position = playerPos + (player.transform.forward * oooCD/4) + (new Vector3(x, y, z).normalized * oooCD);
 
-        transform.LookAt(playerPos + ((transform.position - playerPos).normalized * oooCD));
+        transform.LookAt(transform.position + ((transform.position - playerPos).normalized * oooCD));
         /*
+        if (transform.position <= playerPos)
+        {
+        }
+        else
+        {
+            transform.LookAt(playerPos - ((transform.position - playerPos).normalized * oooCD));
+        }
         
         transform.position = (playerPos + ((transform.position - playerPos).normalized * oooCD));
 
