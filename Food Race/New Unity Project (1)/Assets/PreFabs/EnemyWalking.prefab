@@ -356,9 +356,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 25.57
-  m_Height: 108
+  m_Height: 65.79
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -30.2}
+  m_Center: {x: 0, y: 0, z: -9.4}
 --- !u!114 &6631447342695847639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
   spotted: 0
   maxHP: 3
   currHP: 3
-  moveSpeed: 3000
+  moveSpeed: 1400
   atkSpeed: 1
   realAtkSpeed: 0
   enemyBullet: {fileID: 0}
@@ -386,4 +386,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
+  targetPosT: []
+  targetPosTPos: 0
   distPos: {x: 1, y: 0, z: 1}

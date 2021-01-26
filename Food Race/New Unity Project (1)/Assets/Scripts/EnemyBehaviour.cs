@@ -32,6 +32,8 @@ public class EnemyBehaviour : MonoBehaviour
     public Rigidbody rb;
     public GameObject player;
     public Vector3 targetPos;
+    public List<Transform> targetPosT = new List<Transform>();
+    public int targetPosTPos = 0;
     public Vector3 distPos = new Vector3(0f, 0f, 0f);
 
 
@@ -41,6 +43,12 @@ public class EnemyBehaviour : MonoBehaviour
         currHP = maxHP;
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
+
+        if (eType == EnemyType.walker)
+        {
+            targetPos = targetPosT[targetPosTPos].position;
+            transform.LookAt(transform.position + ((transform.position - targetPos)));
+        }
     }
 
     void Update()
@@ -48,8 +56,15 @@ public class EnemyBehaviour : MonoBehaviour
         switch (eType)
         {
             case EnemyType.walker:
-                
-                //Move();
+
+                if (spotted)
+                {
+                    transform.LookAt(transform.position + ((transform.position - player.transform.position)));
+                }
+                else
+                {
+                    Move();
+                }
                 break;
             case EnemyType.flyer:
                 
@@ -109,15 +124,37 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //calculate player position + forward by certain distance, save this position and move there, then turn to face player     
 
-        if (Vector3.Distance(transform.position, targetPos) > 5f)
+        if (Vector3.Distance(transform.position, targetPos) > 6f)
         {
             rb.AddForce(-transform.forward * moveSpeed, ForceMode.Force);
         }
         else
         {
             rb.velocity = Vector3.zero;
-            outOfOrder = false;
+            //outOfOrder = false;
+            NextMovePoint();
         }
+    }
+
+    public void NextMovePoint()
+    {
+        targetPosTPos++;
+
+        if (targetPosTPos >= targetPosT.Count)
+        {
+            targetPosTPos = 0;
+        }
+
+        targetPos = targetPosT[targetPosTPos].position;
+
+        transform.LookAt(transform.position + ((transform.position - targetPos)));
+
+        //if (outOfOrder == false)
+        //{
+        //    outOfOrder = true;
+        //    targetPos = player.transform.position + (player.transform.forward * 70f);
+        //    transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
+        //}
     }
 
     public void MoveToPlayer()
@@ -221,6 +258,7 @@ public class EnemyBehaviour : MonoBehaviour
             Debug.Log(this.gameObject.name + "spotted player!");
             spotted = true;
 
+            /*
             if (eType == EnemyType.walker)
             {
                 if (outOfOrder == false)
@@ -230,7 +268,9 @@ public class EnemyBehaviour : MonoBehaviour
                     transform.rotation = Quaternion.FromToRotation(-transform.forward, (targetPos - gameObject.transform.position));
                 }
             }
-            else if (eType == EnemyType.flyer)
+            else 
+            */
+            if (eType == EnemyType.flyer)
             {
                 targetPos = player.gameObject.transform.position;
             }
@@ -243,6 +283,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Debug.Log(this.gameObject.name + "lost player!");
             spotted = false;
+
+            if (eType == EnemyType.walker)
+            {
+                transform.LookAt(transform.position + ((transform.position - targetPos)));
+            }
         }
     }
 
