@@ -64,7 +64,7 @@ public class CartController : MonoBehaviour
 
     void Start()
     {
-        camC = GameObject.Find("Camera").GetComponent<CameraController>();
+        camC = GameObject.Find("CameraMain").GetComponent<CameraController>();
         theRB.transform.parent = null;
         exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
         GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
