@@ -61,6 +61,7 @@ public class CartController : MonoBehaviour
     private float stunTimerReal = 0f;
 
     public int flyerCount = 0;
+    public Animator anim;
 
     void Start()
     {
@@ -73,6 +74,7 @@ public class CartController : MonoBehaviour
         boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
         sh = GetComponent<SkillHolder>();
+        anim = GetComponent<Animator>();
 
         maxSpeed = kartStats.topSpeed;
         forwardAccel = kartStats.acceleration;
@@ -216,6 +218,7 @@ public class CartController : MonoBehaviour
                 }
             }
 
+            //anim.SetBool("Grounded", grounded);
             if (grounded)
             {
 
@@ -264,7 +267,7 @@ public class CartController : MonoBehaviour
             }
             //JUST FOR TESTING :))))) DELETE ME LATER
             else
-            {
+            {              
                 if (theRB.position.y <= -5f)
                 {
 
@@ -451,6 +454,7 @@ public class CartController : MonoBehaviour
 
     public void GetStunned()
     {
+        anim.SetTrigger("Stun");
         speedInput = 0f;
         stunned = true;
         stunTimerReal = 0f;

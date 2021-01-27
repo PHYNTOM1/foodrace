@@ -24020,6 +24020,7 @@ GameObject:
   - component: {fileID: 516712187417429988}
   - component: {fileID: 8261447416123979009}
   - component: {fileID: 8925505403710909746}
+  - component: {fileID: 7622717304102175662}
   m_Layer: 2
   m_Name: PlayerKart
   m_TagString: Player
@@ -24104,6 +24105,7 @@ MonoBehaviour:
   stunTimer: 1
   stunTimerReal: 0
   flyerCount: 0
+  anim: {fileID: 7622717304102175662}
 --- !u!114 &60964899228386960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24234,6 +24236,25 @@ MonoBehaviour:
   shootCD: 0.3
   shootCDReal: 0
   distToKart: 1.4
+--- !u!95 &7622717304102175662
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60964899228386965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf0d17db7a3b36e4f9871630d5064e24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &60964899850024525
 GameObject:
   m_ObjectHideFlags: 0
