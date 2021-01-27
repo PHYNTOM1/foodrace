@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -13,21 +14,87 @@ public class PlayerShooting : MonoBehaviour
     private float left = 1f;
     private CartController cc;
 
+    public bool overheated = false;
+    public float overheatValue = 0f;
+    public float overheatShot = 10f;
+    public float ohDecayMult = 2.5f;
+
+    public Slider overheatSlider;
+    public Image ohSliderFill;
+    public Color ohColor;
+    public Color normalColor;
+
     void Start()
     {
         shooting = false;
         cc = GetComponent<CartController>();
+        if (ohSliderFill == null)
+        {
+            Slider[] sls = (Slider[]) FindObjectsOfType(typeof(Slider));
+            foreach (Slider sl in sls)
+            {
+                if (sl.gameObject.name == "Overheat")
+                {
+                    overheatSlider = sl;
+                    Transform[] ts = overheatSlider.gameObject.GetComponentsInChildren<Transform>();
+                    List<GameObject> gos = new List<GameObject>();
+                    foreach (Transform t in ts)
+                    {
+                        gos.Add(t.gameObject);
+                    }
+                    foreach  (GameObject go in gos)
+                    {
+                        if (go.name == "Fill")
+                        {
+                            ohSliderFill = go.GetComponent<Image>();
+                        }
+                    }
+                }
+            };
+        }
+        ohSliderFill.color = normalColor;
     }
+
 
     void Update()
     {
         if (cc.notRacing == false && cc.stunned == false)
         {
-            if (shooting == true && shootCDReal <= 0)
+            if (!overheated)
             {
-                Shoot();            
+                if (shooting == true && shootCDReal <= 0)
+                {
+                    Shoot();            
+                }
             }
         }
+
+        if (overheated && overheatValue > 0)
+        {
+            overheatValue -= Time.deltaTime * ohDecayMult * 5;            
+        }
+        else if (overheated)
+        {
+            overheated = false;
+            overheatValue = 0f;
+            ohSliderFill.color = normalColor;
+        }
+
+        if (!overheated)
+        {
+            if (overheatValue > 0)
+            {
+                if (cc.drifting == true)
+                {
+                    overheatValue -= Time.deltaTime * ohDecayMult * 3;
+                }
+                else
+                {
+                    overheatValue -= Time.deltaTime * ohDecayMult;
+                }
+            }
+        }
+        overheatSlider.value = (overheatValue / 100f);
 
         if (shootCDReal > 0)
     	{
@@ -58,6 +125,28 @@ public class PlayerShooting : MonoBehaviour
         b.transform.parent = null;
 
         shootCDReal = shootCD;
+        AddOverheat(overheatShot);
+    }
+
+    public void AddOverheat(float a)
+    {
+        if (!overheated)
+        {
+            overheatValue += a;
+
+            if (overheatValue >= 100f)
+            {
+                overheatValue = 100f;
+                Overheat();
+            }
+        }
+    }
+
+    public void Overheat()
+    {
+        overheated = true;
+        overheatValue = 100f;
+        ohSliderFill.color = ohColor;
     }
 
     private void OnDrawGizmos()

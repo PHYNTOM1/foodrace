@@ -24069,6 +24069,7 @@ MonoBehaviour:
   gravityForce: 10
   speedInput: 0
   turnInput: 0
+  drifting: 0
   driftForce: 0
   driftInput: 0
   driftTimer: 0
@@ -24236,6 +24237,14 @@ MonoBehaviour:
   shootCD: 0.3
   shootCDReal: 0
   distToKart: 1.4
+  overheated: 0
+  overheatValue: 0
+  overheatShot: 10
+  ohDecayMult: 6
+  overheatSlider: {fileID: 0}
+  ohSliderFill: {fileID: 0}
+  ohColor: {r: 0.6745098, g: 0, b: 0.31764707, a: 1}
+  normalColor: {r: 0.24705884, g: 0.81568635, b: 0.9607844, a: 1}
 --- !u!95 &7622717304102175662
 Animator:
   serializedVersion: 3

@@ -12,7 +12,7 @@ public class CartController : MonoBehaviour
     public float speedInput, turnInput;
 
     private bool grounded;
-    private bool drifting = false;
+    public bool drifting = false;
     public int driftForce = 0;
     public float driftInput = 0f;
     public float driftTimer = 0f;
@@ -163,7 +163,7 @@ public class CartController : MonoBehaviour
             }
             else if (slowed)
             {
-                speedMult = 0.5f;
+                speedMult = 0.4f;
             }
             else
             {
@@ -172,7 +172,7 @@ public class CartController : MonoBehaviour
 
             if (flyerCount > 0)
             {
-                speedMult = 0.8f;
+                speedMult -= 0.2f;
             }
 
             if (_verAxisRaw == 1 || _verAxisRaw == -1)
@@ -183,7 +183,7 @@ public class CartController : MonoBehaviour
                 {
                     if (speedInput > maxSpeed * 1000f * speedMult)
                     {
-                        speedInput -= forwardAccel * maxSpeed * 15f;
+                        speedInput -= forwardAccel * maxSpeed * 15f * speedMult;
                     }
                     else if (speedInput < maxSpeed * 1000f * speedMult && speedInput >= maxSpeed * -1000f * speedMult)
                     {
@@ -198,19 +198,19 @@ public class CartController : MonoBehaviour
                     }
                     else if (speedInput >= maxSpeed * -250f && speedInput <= 0f)
                     {
-                        speedInput -= forwardAccel * maxSpeed * 5f * speedMult;
+                        speedInput -= forwardAccel * maxSpeed * 5f;
                     }
                 }
             }
             else
             {
-                if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 20f)
+                if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 90f)
                 {
-                    speedInput -= 50f;
+                    speedInput -= 150f;
                 }
-                else if (speedInput >= -maxSpeed * 2000f && speedInput <= -maxSpeed * 20f)
+                else if (speedInput >= -maxSpeed * 2000f && speedInput <= -maxSpeed * 90f)
                 {
-                    speedInput += 25f;
+                    speedInput += 75f;
                 }
                 else
                 {
