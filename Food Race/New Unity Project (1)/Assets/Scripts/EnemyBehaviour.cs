@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {  
@@ -14,6 +15,10 @@ public class EnemyBehaviour : MonoBehaviour
     public EnemyType eType;
 
     public bool spotted = false;
+    public float spottedCounter = 1.5f;
+    [SerializeField]
+    public float spottedCounterReal = 0f;
+    public Image spotIcon;
     public int maxHP = 3;
     public int currHP = 3;
 
@@ -35,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
     public List<Transform> targetPosT = new List<Transform>();
     public int targetPosTPos = 0;
     public Vector3 distPos = new Vector3(0f, 0f, 0f);
+    public Animator anim;
 
 
     void Start()
@@ -44,11 +50,18 @@ public class EnemyBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
 
+        if (eType != EnemyType.turret)
+        {
+            anim = GetComponent<Animator>();
+        }
+
         if (eType == EnemyType.walker)
         {
-            targetPos = targetPosT[targetPosTPos].position;
+            targetPos = targetPosT[Random.Range(0, targetPosT.Count)].position;
             transform.LookAt(transform.position + ((transform.position - targetPos)));
         }
+
+        spotIcon.enabled = false;
     }
 
     void Update()
@@ -117,6 +130,15 @@ public class EnemyBehaviour : MonoBehaviour
                     }
                 }
                 break;
+        }
+
+        if (spottedCounterReal > 0)
+        {
+            spottedCounterReal -= Time.deltaTime;
+        }
+        else if (spotted)
+        {
+            spotIcon.enabled = false;
         }
     }
 
@@ -255,8 +277,14 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (c.gameObject.name == "WPCollider")
         {
-            Debug.Log(this.gameObject.name + "spotted player!");
             spotted = true;
+            spotIcon.enabled = true;
+            spottedCounterReal = spottedCounter;
+
+            if (eType != EnemyType.turret)
+            {
+                anim.SetTrigger("Spotted");
+            }
 
             /*
             if (eType == EnemyType.walker)
@@ -281,7 +309,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (c.gameObject.name == "WPCollider")
         {
-            Debug.Log(this.gameObject.name + "lost player!");
             spotted = false;
 
             if (eType == EnemyType.walker)
@@ -297,7 +324,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             if (eType == EnemyType.walker)
             {
-                Debug.Log(this.gameObject.name + "collided with player!");
                 coll.collider.GetComponentInParent<CartController>().GetStunned();
             }
         }

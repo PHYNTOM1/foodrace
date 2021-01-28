@@ -25,17 +25,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327757189513643869}
-  m_LocalRotation: {x: 0, y: 0, z: -0.22010161, w: 0.975477}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.10976995, y: 0.993957, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000005038481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4523492429728211335}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.43}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: -12.604001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.82, y: -0.48}
-  m_SizeDelta: {x: 2, y: 2}
+  m_AnchoredPosition: {x: 1.8, y: -0.48}
+  m_SizeDelta: {x: 2.67, y: 1.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5695753147793455004
 CanvasRenderer:
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ef64cd7f946bf9a4aa3cd62d595c1955, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1931f418f3c4ef4ea02b7f237fbba10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6631447342695847637}
   - component: {fileID: 6631447342695847638}
   - component: {fileID: 6631447342695847639}
+  - component: {fileID: 5637344117531067808}
   m_Layer: 17
   m_Name: EnemyWalking
   m_TagString: Enemy
@@ -148,10 +149,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 25.57
-  m_Height: 65.79
+  m_Radius: 27.1
+  m_Height: 68.7
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -9.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6631447342695847639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eType: 0
   spotted: 0
+  spottedCounter: 1.5
+  spottedCounterReal: 0
+  spotIcon: {fileID: 2171595995617230921}
   maxHP: 3
   currHP: 3
   moveSpeed: 1400
@@ -182,6 +186,26 @@ MonoBehaviour:
   targetPosT: []
   targetPosTPos: 0
   distPos: {x: 1, y: 0, z: 1}
+  anim: {fileID: 0}
+--- !u!95 &5637344117531067808
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6631447342695847627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa4ed31f616008f4a877a63f017b15b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7483221008889923827
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a74fa16b3d0e24faffe92257b5d7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotating: 1
+  rotating: 0
   camTransform: {fileID: 0}
 --- !u!1001 &8018150597206281190
 PrefabInstance:
