@@ -44,6 +44,9 @@ public class PlacementManagement : MonoBehaviour
 
     public void StartGame()
     {
+        //SceneManager.LoadScene("LoadingScreen");
+        //loadingOperation = SceneManager.LoadSceneAsync("Ingame2");
+
         loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
     }
 
@@ -96,9 +99,7 @@ public class PlacementManagement : MonoBehaviour
             }
 
 
-        }
-       
-       
+        }              
 
         /*
           if (SceneManager.GetActiveScene().name == "Ingame2")
