@@ -455,13 +455,13 @@ MonoBehaviour:
   spotIcon: {fileID: 3456848804745547029}
   maxHP: 2
   currHP: 2
-  moveSpeed: 200
+  moveSpeed: 33
   atkSpeed: 3
   realAtkSpeed: 0
   enemyBullet: {fileID: 0}
   left: 2
   outOfOrder: 0
-  oooCD: 4
+  oooCD: 3.75
   oooCDReal: 0
   rb: {fileID: 0}
   player: {fileID: 0}
