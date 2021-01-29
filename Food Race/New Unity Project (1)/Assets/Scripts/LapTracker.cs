@@ -18,6 +18,7 @@ public class LapTracker : MonoBehaviour
 
     //public KartAIAgent ka;
     public RoundTimer rt;
+    public EnemyRespawning er;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class LapTracker : MonoBehaviour
         //        goalPoint = GameObject.Find("GoalPoint").transform;
         //ka = GetComponent<KartAIAgent>();
         rt = GetComponent<RoundTimer>();
+        er = FindObjectOfType<EnemyRespawning>();
+        er.SpawnNewEnemies();
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -156,6 +159,7 @@ public class LapTracker : MonoBehaviour
             Debug.Log(gameObject.name + "PASSED GOAL!");
             lap++;
             rt.CompletedRound(lap);
+            er.RespawnEnemies();
 
             //FINISH GAME!!!
             if (lap == 4)

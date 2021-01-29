@@ -53,6 +53,19 @@ public class EnemyBehaviour : MonoBehaviour
         if (eType != EnemyType.turret)
         {
             anim = GetComponent<Animator>();
+
+            for (int i = 0; i < Random.Range(2, 6); i++)
+            {
+                Vector3 currPos = transform.position;
+                currPos.x += Random.Range(-20, 20);
+                currPos.z += Random.Range(-20, 20);
+
+                GameObject g = new GameObject();
+                g.transform.position = currPos;
+
+                targetPosT.Add(g.transform);
+                //Destroy(g);
+            }
         }
 
         if (eType == EnemyType.walker)
