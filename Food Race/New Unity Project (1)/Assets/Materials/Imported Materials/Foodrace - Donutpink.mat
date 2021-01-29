@@ -180,7 +180,7 @@ Material:
     - _BASE_COLOR_WEIGHT: 1
     - _BUMP_MAP_STRENGTH: 0.3
     - _BlendMode: 0
-    - _Brightness: 0.04
+    - _Brightness: 0.02
     - _COAT_IOR: 1.4
     - _COAT_ROUGHNESS: 0
     - _COAT_THICKNESS: 5
@@ -273,7 +273,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _Strength: 0.3
+    - _Strength: 0.6
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
