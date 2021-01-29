@@ -50,6 +50,11 @@ public class PlacementManagement : MonoBehaviour
         loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
         Debug.Log("NEW SCENE LOADED: " + aScene.name);

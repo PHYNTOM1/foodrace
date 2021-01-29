@@ -9,8 +9,12 @@ public class HighscoreTable : MonoBehaviour
 {
     public Transform entryContainer;
     public Transform entryTemplate;
-    private List<HighscoreEntry> highscoreEntryList;
-    private List<Transform> highscoreEntryTransformList;
+    public List<Transform> highscoreEntryTransformList;
+    //private List<HighscoreEntry> highscoreEntryList;
+    private List<HighscoreEntry> highscoreEntryList2;
+
+
+    public int n = 7;
 
 
 
@@ -24,33 +28,29 @@ public class HighscoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-        highscoreEntryList = new List<HighscoreEntry>()
-        {
-            new HighscoreEntry{score = 52123231, name = "AAA"},
-            new HighscoreEntry{score = 528723231, name = "AVA"},
-            new HighscoreEntry{score = 8971389, name = "CAA"},
-            new HighscoreEntry{score = 70910898, name = "ABC"},
-            new HighscoreEntry{score = 52231, name = "AHA"},
+        AddHighscoreEntry(5, "");
+        AddHighscoreEntry(1200, "");
+        AddHighscoreEntry(9000, "");
+        AddHighscoreEntry(1100, "");
+        
 
-        };
 
-        foreach (HighscoreEntry highscoreEntry in highscoreEntryList)
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        
+       
+
+        highscoreEntryTransformList = new List<Transform>();
+        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList2)
         {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
         }
 
-
-
     }
-
-
-
-
-
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
     {
 
-        float templateHeight = 20f;
+        float templateHeight = 35f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
@@ -86,7 +86,52 @@ public class HighscoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
+    private void AddHighscoreEntry(int  score, string name)
+    {
+        // Create Highscore Entry
+        HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name};
+        
+        // Load saved Highscores    
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
+
+
+        // Add new entry to Highscores
+        highscores.highscoreEntryList2.Add(highscoreEntry);
+
+        for (int i = 0; i < highscores.highscoreEntryList2.Count; i++)
+        {
+            for (int j = i + 1; j < highscores.highscoreEntryList2.Count; j++)
+            {
+                if (highscores.highscoreEntryList2[j].score < highscores.highscoreEntryList2[i].score)
+                {
+                    HighscoreEntry tmp = highscores.highscoreEntryList2[i];
+                    highscores.highscoreEntryList2[i] = highscores.highscoreEntryList2[j];
+                    highscores.highscoreEntryList2[j] = tmp;
+                }
+            }
+        }
+
+
+        // Save updated Highscores
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+
+
+
+
+    }
+
+    private class Highscores
+    {
+        public List<HighscoreEntry> highscoreEntryList;
+        public List<HighscoreEntry> highscoreEntryList2;
+    }
+
+
+    [System.Serializable]
     private class HighscoreEntry
     {
         public int score;
