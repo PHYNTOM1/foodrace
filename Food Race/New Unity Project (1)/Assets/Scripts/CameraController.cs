@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -12,12 +11,13 @@ public class CameraController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().name == "Ingame2")
-        {
+        if (cameraTarget = null) {
             Vector3 dpos = cameraTarget.position + dist;
             Vector3 sPos = Vector3.Lerp(transform.position, dpos, sSpeed * Time.deltaTime);
             transform.position = sPos;
             transform.LookAt(lookTarget.position);
+
+
         }
     }
 }
