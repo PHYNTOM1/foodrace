@@ -158,7 +158,7 @@ MonoBehaviour:
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
       data1: 70297877217117
-      data2: 4539628425463136256
+      data2: 4539628425194700800
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -190,12 +190,12 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderPipelineSettings:
     supportShadowMask: 1
-    supportSSR: 0
+    supportSSR: 1
     supportSSAO: 1
     supportSubsurfaceScattering: 1
     increaseSssSampleCount: 1
     supportVolumetrics: 1
-    increaseResolutionOfVolumetrics: 0
+    increaseResolutionOfVolumetrics: 1
     supportLightLayers: 0
     lightLayerName0: Light Layer default
     lightLayerName1: Light Layer 1
@@ -212,7 +212,7 @@ MonoBehaviour:
     colorBufferFormat: 74
     supportCustomPass: 1
     customBufferFormat: 12
-    supportedLitShaderMode: 1
+    supportedLitShaderMode: 3
     supportDecals: 1
     msaaSampleCount: 1
     supportMotionVectors: 1
@@ -270,7 +270,7 @@ MonoBehaviour:
       maxDirectionalShadowMapResolution: 2048
       maxPunctualShadowMapResolution: 2048
       maxAreaShadowMapResolution: 2048
-      supportScreenSpaceShadows: 0
+      supportScreenSpaceShadows: 1
       maxScreenSpaceShadowSlots: 4
       screenSpaceShadowBufferFormat: 48
     decalSettings:

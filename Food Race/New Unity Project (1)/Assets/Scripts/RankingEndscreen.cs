@@ -21,7 +21,7 @@ public class RankingEndscreen : MonoBehaviour
             rankingsText = GameObject.Find("RankingsText").GetComponent<TextMeshProUGUI>();
         }
 
-        float f = PlacementManagement.Instance.GetBestTimeOverall();
+        /*float f = PlacementManagement.Instance.GetBestTimeOverall();
         if (f == 0f)
         {
             bestTime = 0f;
@@ -30,6 +30,7 @@ public class RankingEndscreen : MonoBehaviour
         {
             bestTime = f;
         }
+        */
     }
 
     public void DisplayStats()

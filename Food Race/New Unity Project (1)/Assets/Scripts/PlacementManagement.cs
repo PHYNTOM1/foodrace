@@ -85,6 +85,10 @@ public class PlacementManagement : MonoBehaviour
             finishers.Clear();
             //            RefreshRacers();            
         }
+        else if (aScene.name == "ScoreScreen")
+        {
+
+        }
     }
 
     void Update()
@@ -118,8 +122,21 @@ public class PlacementManagement : MonoBehaviour
               */
     }
 
-    public float GetBestTimeOverall()
+    public void GetBestTimeOverall()
     {
+        bestTimeOfAll = 0f;
+
+        if (finishers.Count > 0)
+        {
+            RoundTimer rt = finishers[0].gameObject.GetComponent<RoundTimer>();
+
+            if (rt != null)
+            {
+                bestTimeOfAll = rt.bestRound;
+            }
+        }
+
+        /*
         bestTimeOfAll = 0f;
 
         if (racers.Count > 0)
@@ -140,6 +157,7 @@ public class PlacementManagement : MonoBehaviour
         }
 
         return bestTimeOfAll;
+        */
     }
 
     /*
@@ -401,6 +419,7 @@ public class PlacementManagement : MonoBehaviour
             DontDestroyOnLoad(finishers[i].gameObject);
         }
         */
+        GetBestTimeOverall();
         SceneManager.LoadScene(3);
     }
 }
