@@ -24157,6 +24157,7 @@ MonoBehaviour:
   checkpointsPassed: 
   finished: 0
   rt: {fileID: 0}
+  er: {fileID: 0}
 --- !u!114 &6567576915705513787
 MonoBehaviour:
   m_ObjectHideFlags: 0

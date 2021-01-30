@@ -12,7 +12,6 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
-    public HighscoreTable he;
 
     public string LoadingScreen;
     public string MainMenu;
@@ -24,8 +23,6 @@ public class PlacementManagement : MonoBehaviour
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
-
-    
 
     private void Awake()
     {
@@ -90,12 +87,7 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "ScoreScreen")
         {
-            if (he == null)
-            {
-                he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
-            }
-            he.AddHighscoreEntry(bestTimeOfAll, "");
-            he.RefreshHighscoreTable();
+
         }
     }
 
@@ -116,7 +108,7 @@ public class PlacementManagement : MonoBehaviour
             }
 
 
-        }
+        }              
 
         /*
           if (SceneManager.GetActiveScene().name == "Ingame2")
@@ -414,7 +406,7 @@ public class PlacementManagement : MonoBehaviour
         }
     */
 
-    public void LoadEndscreenScene(bool a)
+    public void LoadEndscreenScene()
     {
         /*
         for (int i = 0; i < finishers.Count; i++)
@@ -427,16 +419,7 @@ public class PlacementManagement : MonoBehaviour
             DontDestroyOnLoad(finishers[i].gameObject);
         }
         */
-        
-
-        if (a == true)
-        {
-            GetBestTimeOverall();
-            SceneManager.LoadScene(3);
-        }
-        else
-        {
-            SceneManager.LoadScene(3);
-        }
+        GetBestTimeOverall();
+        SceneManager.LoadScene(3);
     }
 }

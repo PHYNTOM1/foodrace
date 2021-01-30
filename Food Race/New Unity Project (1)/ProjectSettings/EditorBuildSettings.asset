@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScoreScreen.unity
     guid: 158f9a3b6e752304faa103d1b0519baf
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3f54989500df7b24ca3dad46f74e0510,
+      type: 2}
