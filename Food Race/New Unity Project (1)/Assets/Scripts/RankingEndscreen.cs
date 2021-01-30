@@ -29,8 +29,7 @@ public class RankingEndscreen : MonoBehaviour
         else
         {
             bestTime = f;
-        }
-        */
+        }*/
     }
 
     public void DisplayStats()
