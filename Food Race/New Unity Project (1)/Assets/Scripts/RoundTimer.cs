@@ -88,8 +88,6 @@ public class RoundTimer : MonoBehaviour
             bestRound = _t;
         }
 
-       
-
         roundTimes[l - 2] = _t;
         roundTimer = 0f;
         cpTimer = 0f;

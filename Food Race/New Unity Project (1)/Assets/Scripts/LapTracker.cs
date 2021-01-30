@@ -11,18 +11,13 @@ public class LapTracker : MonoBehaviour
     //    public float goalDist;
 
     //    public Transform goalPoint;
-    public RoundTimer bestTimer;
-
     public List<Transform> checkpoints;
     public List<bool> checkpointsPassed;
 
     public bool finished = false;
-    public HighscoreTable he;
-
 
     //public KartAIAgent ka;
     public RoundTimer rt;
-    public RoundTimer bt;
     public EnemyRespawning er;
 
     void Start()
@@ -34,8 +29,6 @@ public class LapTracker : MonoBehaviour
         rt = GetComponent<RoundTimer>();
         er = FindObjectOfType<EnemyRespawning>();
         er.SpawnNewEnemies();
-        he = GetComponent<HighscoreTable>();
-
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -174,10 +167,8 @@ public class LapTracker : MonoBehaviour
                 Debug.Log(gameObject.name + " HAS FINISHED THE RACE!");
                 finished = true;
                 PlacementManagement.Instance.AddFinisher(this.gameObject);
-                //he.AddHighscoreEntry(rt.bestRound, "");
                 PlacementManagement.Instance.finished = finished;
-                PlacementManagement.Instance.LoadEndscreenScene(true);
-                
+                PlacementManagement.Instance.LoadEndscreenScene();
             }
 
             SetAllFalse();
