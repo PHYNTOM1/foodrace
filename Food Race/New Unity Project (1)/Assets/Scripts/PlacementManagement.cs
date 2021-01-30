@@ -12,6 +12,7 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
+    public HighscoreTable he;
 
     public string LoadingScreen;
     public string MainMenu;
@@ -23,6 +24,8 @@ public class PlacementManagement : MonoBehaviour
 
     private static PlacementManagement _instance;
     public static PlacementManagement Instance { get { return _instance; } }
+
+    
 
     private void Awake()
     {
@@ -85,6 +88,15 @@ public class PlacementManagement : MonoBehaviour
             finishers.Clear();
             //            RefreshRacers();            
         }
+        else if (aScene.name == "ScoreScreen")
+        {
+            if (he == null)
+            {
+                he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
+            }
+            he.AddHighscoreEntry(bestTimeOfAll, "");
+            he.RefreshHighscoreTable();
+        }
     }
 
     void Update()
@@ -104,7 +116,7 @@ public class PlacementManagement : MonoBehaviour
             }
 
 
-        }              
+        }
 
         /*
           if (SceneManager.GetActiveScene().name == "Ingame2")
@@ -118,8 +130,21 @@ public class PlacementManagement : MonoBehaviour
               */
     }
 
-    public float GetBestTimeOverall()
+    public void GetBestTimeOverall()
     {
+        bestTimeOfAll = 0f;
+
+        if (finishers.Count > 0)
+        {
+            RoundTimer rt = finishers[0].gameObject.GetComponent<RoundTimer>();
+
+            if (rt != null)
+            {
+                bestTimeOfAll = rt.bestRound;
+            }
+        }
+
+        /*
         bestTimeOfAll = 0f;
 
         if (racers.Count > 0)
@@ -140,6 +165,7 @@ public class PlacementManagement : MonoBehaviour
         }
 
         return bestTimeOfAll;
+        */
     }
 
     /*
@@ -388,7 +414,7 @@ public class PlacementManagement : MonoBehaviour
         }
     */
 
-    public void LoadEndscreenScene()
+    public void LoadEndscreenScene(bool a)
     {
         /*
         for (int i = 0; i < finishers.Count; i++)
@@ -401,6 +427,16 @@ public class PlacementManagement : MonoBehaviour
             DontDestroyOnLoad(finishers[i].gameObject);
         }
         */
-        SceneManager.LoadScene(3);
+        
+
+        if (a == true)
+        {
+            GetBestTimeOverall();
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
