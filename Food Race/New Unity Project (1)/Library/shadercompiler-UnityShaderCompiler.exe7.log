@@ -1,76 +1,9 @@
 Base path: 'E:/UnityHub/Editor Versions/2019.4.13f1/Editor/Data', plugins path 'E:/UnityHub/Editor Versions/2019.4.13f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileSnippet
-  api=4 type=0 insize=1073 outsize=2530 kw=_OUTLINE_POS _IS_OUTLINE_CLIPPING_NO pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileComputeKernel
-  api=18 insize=16804 outsize=37849 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=21596 outsize=399042 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=9615 outsize=22050 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=9809 outsize=31209 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=9809 outsize=35878 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=17994 outsize=43211 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=4823 outsize=20906 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=1372 outsize=2420 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=2617 outsize=10671 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3111 outsize=7819 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=40264 outsize=190820 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=40264 outsize=190672 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3450 outsize=12140 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=22295 outsize=62544 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=2307 outsize=112958 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=8233 outsize=1740 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=6119 outsize=15771 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3095 outsize=7877 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=6745 outsize=13009 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=6745 outsize=26618 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=11559 outsize=29469 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=9103 outsize=10507 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=26542 outsize=57827 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=26542 outsize=59505 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=16295 outsize=439173 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=16295 outsize=254985 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=16295 outsize=451225 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=16295 outsize=158877 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3697 outsize=8184 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3922 outsize=18469 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=3916 outsize=14120 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=1977 outsize=19176 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=7589 outsize=5142 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=13959 outsize=16174 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=10587 outsize=44656 ok=1
+  api=4 type=0 insize=8987 outsize=1874 kw=DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST DEBUG_DISPLAY _NORMALMAP_TANGENT_SPACE _DISABLE_SSR pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1083 outsize=2530 kw=_OUTLINE_POS _IS_OUTLINE_CLIPPING_NO pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+  api=4 type=0 insize=11537 outsize=1726 kw=DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST _SURFACE_TYPE_TRANSPARENT _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1 _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3 _DISABLE_SSR _BLENDMODE_ALPHA _BLENDMODE_PRESERVE_SPECULAR_LIGHTING _ENABLE_FOG_ON_TRANSPARENT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process
