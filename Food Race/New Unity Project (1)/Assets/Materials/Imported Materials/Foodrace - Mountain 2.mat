@@ -159,7 +159,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ANISOTROPY: 1
-    - _AOPower: 3
+    - _AOPower: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -299,7 +299,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _AOColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _BASE_COLOR: {r: 0.988, g: 0.584, b: 0.392, a: 1}
     - _BaseColor: {r: 0.9882353, g: 0.58431375, b: 0.39215687, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
