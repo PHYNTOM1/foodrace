@@ -2123,4 +2123,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Ingame2.unity
   - Assets/Scenes/LoadingScreen.unity
   - Assets/Scenes/ScoreScreen.unity
-  playerPath: E:/Github/foodrace/old/Food Race.exe
+  playerPath: E:/Github/foodrace/build5 - prototype v0.5/Food Race.exe
