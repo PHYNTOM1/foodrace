@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a74fa16b3d0e24faffe92257b5d7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotating: 0
+  rotating: 1
   camTransform: {fileID: 0}
 --- !u!1001 &7234186988801878918
 PrefabInstance:
