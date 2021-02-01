@@ -270,14 +270,7 @@ public class CartController : MonoBehaviour
             {              
                 if (theRB.position.y <= -5f)
                 {
-
-                    theRB.velocity = Vector3.zero;
-                    theRB.rotation = Quaternion.identity;
-                    this.gameObject.transform.eulerAngles = Vector3.zero;
-                    theRB.position = sp.position;
-                    this.speedInput = 0f;
-                    GetComponent<LapTracker>().ResetAll();
-                    GetComponent<RoundTimer>().RoundTimerReset();
+                    ResetCart(true);
                 }
             }
 
@@ -459,5 +452,24 @@ public class CartController : MonoBehaviour
         stunned = true;
         stunTimerReal = 0f;
         //DO STUN ANIMATION AND PARTICLES
+    }
+
+    public void ResetCart(bool d)
+    {
+        if (d == true)
+        {
+            theRB.position = sp.position;
+            GetComponent<LapTracker>().ResetAll();
+            GetComponent<RoundTimer>().RoundTimerReset();
+        }
+        else
+        {
+            theRB.position += new Vector3(0f, 2f, 0f);
+        }
+
+        theRB.velocity = Vector3.zero;
+        theRB.rotation = Quaternion.identity;
+        this.gameObject.transform.eulerAngles = new Vector3(0f, this.gameObject.transform.eulerAngles.y, 0f);
+        this.speedInput = 0f;
     }
 }

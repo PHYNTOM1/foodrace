@@ -29,7 +29,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (coll.collider.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("PLAYER HIT " + coll.collider.gameObject.name + " WITH A BULLET!");
+                //Debug.Log("PLAYER HIT " + coll.collider.gameObject.name + " WITH A BULLET!");
                 coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
                 Destroy(gameObject);
             }
@@ -38,7 +38,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (coll.collider.gameObject.name == "WPCollider")
             {
-                Debug.Log("PLAYER GOT HIT BY BULLET!");
+                //Debug.Log("PLAYER GOT HIT BY BULLET!");
                 coll.collider.GetComponentInParent<CartController>().GetStunned();
                 Destroy(gameObject);
             }

@@ -7,12 +7,21 @@ public class PlayerInput : MonoBehaviour
     //    SkillHolder sh;
     CartController cc;
     PlayerShooting ps;
+    public bool paused = false;
+    private List<GameObject> gos = new List<GameObject>();
 
     void Start()
     {
         //        sh = GetComponent<SkillHolder>();
         cc = GetComponent<CartController>();
         ps = GetComponent<PlayerShooting>();
+        paused = false;
+        GameObject[] gos2 = GameObject.FindGameObjectsWithTag("Paused");
+        foreach (GameObject g in gos2)
+        {
+            gos.Add(g);
+            g.SetActive(false);
+        }
     }
 
     void Update()
@@ -23,7 +32,38 @@ public class PlayerInput : MonoBehaviour
 
         ps.ShootInput(Input.GetButton("Shooting"));
 
+        if (Input.GetButtonDown("Reset"))
+        {
+            if (paused == true)
+            {
+                PlacementManagement.Instance.BackToMenu();
+            }
+            else
+            {
+                cc.ResetCart(false);
+            }
+        }
 
+        if (Input.GetButtonDown("Pause"))
+        {
+            if (paused == true)
+            {
+                paused = false;
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                paused = true;
+                Time.timeScale = 0f;
+            }
+
+            foreach (GameObject g in gos)
+            {
+                g.SetActive(paused);
+            }
+        }
+
+        /*
         if (Input.GetKey(KeyCode.I) && Time.timeScale < 2)
         {
             Time.timeScale += Time.deltaTime;
@@ -34,7 +74,7 @@ public class PlayerInput : MonoBehaviour
             Time.timeScale -= Time.deltaTime;
             Debug.Log("TimeScale: " + Time.timeScale);
         }
-
+        */
         /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
