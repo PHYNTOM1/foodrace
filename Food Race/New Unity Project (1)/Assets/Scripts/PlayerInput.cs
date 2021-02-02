@@ -36,8 +36,11 @@ public class PlayerInput : MonoBehaviour
         {
             if (paused == true)
             {
+                paused = false;
+                Time.timeScale = 1f;
                 PlacementManagement.Instance.BackToMenu();
             }
+
             else
             {
                 cc.ResetCart(false);
@@ -48,6 +51,7 @@ public class PlayerInput : MonoBehaviour
         {
             if (paused == true)
             {
+                
                 paused = false;
                 Time.timeScale = 1f;
             }

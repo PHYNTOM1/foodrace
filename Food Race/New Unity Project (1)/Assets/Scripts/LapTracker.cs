@@ -168,7 +168,7 @@ public class LapTracker : MonoBehaviour
                 finished = true;
                 PlacementManagement.Instance.AddFinisher(this.gameObject);
                 PlacementManagement.Instance.finished = finished;
-                PlacementManagement.Instance.LoadEndscreenScene();
+                PlacementManagement.Instance.LoadEndscreenScene(true);
             }
 
             SetAllFalse();

@@ -12,6 +12,9 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
+    public bool a;
+
+    public HighscoreTable he;
 
     public string LoadingScreen;
     public string MainMenu;
@@ -55,6 +58,11 @@ public class PlacementManagement : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void GoToScore()
+    {
+        SceneManager.LoadScene("ScoreScreen");
+    }
+
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
         Debug.Log("NEW SCENE LOADED: " + aScene.name);
@@ -87,7 +95,12 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "ScoreScreen")
         {
-
+            if (he == null)
+            {
+                he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
+            }
+            he.AddHighscoreEntry(bestTimeOfAll, "");
+            he.RefreshingHighscoreTable();
         }
     }
 
@@ -406,20 +419,18 @@ public class PlacementManagement : MonoBehaviour
         }
     */
 
-    public void LoadEndscreenScene()
+    public void LoadEndscreenScene(bool a)
     {
-        /*
-        for (int i = 0; i < finishers.Count; i++)
+        if (a == true)
         {
-            finishers[i].GetComponent<CartController>().enabled = false;
-            finishers[i].GetComponent<KartAIAgent>().enabled = false;
-            finishers[i].GetComponent<WaypointManager>().enabled = false;
-            finishers[i].GetComponent<LapTracker>().enabled = false;
-
-            DontDestroyOnLoad(finishers[i].gameObject);
+            GetBestTimeOverall();
+            SceneManager.LoadScene(3);
         }
-        */
-        GetBestTimeOverall();
-        SceneManager.LoadScene(3);
+        else
+        {
+            SceneManager.LoadScene(3);
+        }
     }
+
+    
 }
