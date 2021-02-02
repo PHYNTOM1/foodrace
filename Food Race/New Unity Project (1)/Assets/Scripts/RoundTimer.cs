@@ -6,13 +6,18 @@ using TMPro;
 
 public class RoundTimer : MonoBehaviour
 {
+    public float maxTime1 = 18f;
+    public float maxTime2 = 28f;
+    public float maxTime3 = 38f;
+    public float maxTime4 = 50f;
+
     public float roundTimer = 0f;
     public float bestRound = 0f;
     public float cpTimer = 0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerCPText;
 //    public TextMeshProUGUI placementText;
-
+    
     public float[] roundTimes = { 0f, 0f, 0f };
     public float[] cpTimes = { 0f, 0f, 0f, 0f };
     public float[] cpBestTimes = { 0f, 0f, 0f, 0f };
@@ -48,6 +53,26 @@ public class RoundTimer : MonoBehaviour
         {
             roundTimer += Time.deltaTime;
             cpTimer += Time.deltaTime;
+            
+            if (lt.checkpointsPassed.Count > 0)
+            {
+                if (lt.checkpointsPassed[0] == false && cpTimer >= maxTime1)
+                {
+                    cc.ResetCart(true);
+                }
+                else if (lt.checkpointsPassed[1] == false && cpTimer >= maxTime2)
+                {
+                    cc.ResetCart(true);
+                }
+                else if (lt.checkpointsPassed[2] == false && cpTimer >= maxTime3)
+                {
+                    cc.ResetCart(true);
+                }
+                else if (lt.checkpointsPassed[3] == false && cpTimer >= maxTime4)
+                {
+                    cc.ResetCart(true);
+                }
+            }
 
 //            if (isLocalPlayer)
 //            {

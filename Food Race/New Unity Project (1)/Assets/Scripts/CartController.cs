@@ -456,20 +456,23 @@ public class CartController : MonoBehaviour
 
     public void ResetCart(bool d)
     {
+        theRB.velocity = Vector3.zero;
+        theRB.rotation = Quaternion.identity;
+        speedInput = 0f;
+
         if (d == true)
         {
+            gameObject.transform.eulerAngles = Vector3.zero;
             theRB.position = sp.position;
+            EnemyRespawning er = FindObjectOfType<EnemyRespawning>();
+            er.RespawnEnemies();
             GetComponent<LapTracker>().ResetAll();
             GetComponent<RoundTimer>().RoundTimerReset();
         }
         else
         {
+            gameObject.transform.eulerAngles = new Vector3(0f, this.gameObject.transform.eulerAngles.y, 0f);
             theRB.position += new Vector3(0f, 2f, 0f);
         }
-
-        theRB.velocity = Vector3.zero;
-        theRB.rotation = Quaternion.identity;
-        this.gameObject.transform.eulerAngles = new Vector3(0f, this.gameObject.transform.eulerAngles.y, 0f);
-        this.speedInput = 0f;
     }
 }
