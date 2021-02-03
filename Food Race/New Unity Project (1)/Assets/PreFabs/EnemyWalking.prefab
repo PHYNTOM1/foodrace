@@ -170,8 +170,8 @@ MonoBehaviour:
   spottedCounter: 1.5
   spottedCounterReal: 0
   spotIcon: {fileID: 2171595995617230921}
-  maxHP: 2
-  currHP: 2
+  maxHP: 1
+  currHP: 1
   moveSpeed: 1400
   atkSpeed: 1
   realAtkSpeed: 0

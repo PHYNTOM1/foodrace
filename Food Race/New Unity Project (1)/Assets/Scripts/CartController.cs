@@ -34,6 +34,7 @@ public class CartController : MonoBehaviour
     private ParticleSystem exhaust;
     private ParticleSystem[] drift;
     private ParticleSystem[] boost;
+    private TrailRenderer[] skid;
     private bool exhaustEmitting;
     private bool driftEmitting;
     private bool boostEmitting;
@@ -70,6 +71,7 @@ public class CartController : MonoBehaviour
         exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
         GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
         drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
+        skid = driftEffects.GetComponentsInChildren<TrailRenderer>();
         GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
         boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
@@ -345,11 +347,11 @@ public class CartController : MonoBehaviour
                 {
                     if (driftForce == 0)
                     {
-                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -1 * 6000f));
+                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -1 * 5000f));
                     }
                     else
                     {
-                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 6000f));
+                        theRB.AddForce((transform.forward * speedInput * 0.75f) + (transform.right * -driftForce * 5000f));
                     }
                     driftEmitting = true;
                 }
@@ -369,6 +371,11 @@ public class CartController : MonoBehaviour
         {
             ParticleSystem.EmissionModule ift = dr.emission;
             ift.enabled = driftEmitting;
+        }
+
+        foreach (TrailRenderer tr in skid)
+        {
+            tr.emitting = driftEmitting;
         }
 
         foreach (ParticleSystem bs in boost)
@@ -430,7 +437,7 @@ public class CartController : MonoBehaviour
 
     public void GetBoosted(int stage)
     {
-        speedInput += 6000 + (3000 * stage);
+        speedInput += 4000 + (2000 * stage);
 
         driftStage = 0;
         boostEmitting = true;
@@ -466,6 +473,7 @@ public class CartController : MonoBehaviour
             theRB.position = sp.position;
             EnemyRespawning er = FindObjectOfType<EnemyRespawning>();
             er.RespawnEnemies();
+            GetComponent<PlayerShooting>().overheatValue = 0f;
             GetComponent<LapTracker>().ResetAll();
             GetComponent<RoundTimer>().RoundTimerReset();
         }

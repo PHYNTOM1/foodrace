@@ -270,12 +270,14 @@ public class EnemyBehaviour : MonoBehaviour
 
                 //DO ANIMATION AND PARTICLES
                 Destroy(this.gameObject, 0.15f);
+                this.enabled = false;
                 break;
             case EnemyType.flyer:
 
                 //DO ANIMATION AND PARTICLES
                 player.GetComponent<CartController>().flyerCount--;
                 Destroy(this.gameObject, 0.15f);
+                this.enabled = false;
                 break;
             case EnemyType.turret:
 
