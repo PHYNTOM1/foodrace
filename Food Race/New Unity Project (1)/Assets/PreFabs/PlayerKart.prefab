@@ -19684,13 +19684,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397934849662484459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -0.4, z: 0.6}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.5, y: -0.39, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964898398229169}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!96 &1839266423562459629
 TrailRenderer:
   serializedVersion: 2
@@ -19747,13 +19747,22 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.18518516
+        inSlope: -0.7871299
+        outSlope: -0.7871299
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08365029
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
-      key1: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0.78039217}
       key3: {r: 0, g: 0, b: 0, a: 0.11764706}
       key4: {r: 0, g: 0, b: 0, a: 0.11764706}
@@ -19781,7 +19790,7 @@ TrailRenderer:
       m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
+    alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
@@ -24854,13 +24863,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898266642150107475}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.4, z: 0.6}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.5, y: -0.39, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964898398229169}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!96 &6653352821585367499
 TrailRenderer:
   serializedVersion: 2
@@ -24917,13 +24926,22 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.18518516
+        inSlope: -0.7871299
+        outSlope: -0.7871299
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08365029
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
-      key1: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0.78039217}
       key3: {r: 0, g: 0, b: 0, a: 0.11764706}
       key4: {r: 0, g: 0, b: 0, a: 0.11764706}
@@ -24951,7 +24969,7 @@ TrailRenderer:
       m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
+    alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
@@ -29924,13 +29942,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3052493491312002582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: -0.4, z: -0.3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.8, y: -0.39, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964898398229169}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!96 &6801175480765445244
 TrailRenderer:
   serializedVersion: 2
@@ -29987,13 +30005,22 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.18518516
+        inSlope: -0.7871299
+        outSlope: -0.7871299
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08365029
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
-      key1: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0.78039217}
       key3: {r: 0, g: 0, b: 0, a: 0.11764706}
       key4: {r: 0, g: 0, b: 0, a: 0.11764706}
@@ -30021,7 +30048,7 @@ TrailRenderer:
       m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
+    alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
@@ -30161,13 +30188,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3367241098282195549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: -0.4, z: -0.3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.8, y: -0.39, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 60964898398229169}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!96 &297400828079436809
 TrailRenderer:
   serializedVersion: 2
@@ -30224,13 +30251,22 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.18518516
+        inSlope: -0.7871299
+        outSlope: -0.7871299
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08365029
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
-      key1: {r: 0.21568629, g: 0.14117648, b: 0.03529412, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0.78039217}
       key3: {r: 0, g: 0, b: 0, a: 0.11764706}
       key4: {r: 0, g: 0, b: 0, a: 0.11764706}
@@ -30258,7 +30294,7 @@ TrailRenderer:
       m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
+    alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
