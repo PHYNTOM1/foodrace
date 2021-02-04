@@ -65,7 +65,7 @@ public class HighscoreTable : MonoBehaviour
     }
    public void ClearList()
    {
-      //Debug.Log("Hat mich in den Arsch gebummst");
+      Debug.Log("Hat mich in den Arsch gebummst");
       string jsonString = PlayerPrefs.GetString("highscoreTable");
       Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
         
@@ -117,14 +117,14 @@ public class HighscoreTable : MonoBehaviour
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
         // Sort entry list by Score
-        // if(highscores.highscoreEntryList1.Count != 0 && highscores.highscoreEntryList1.Count != null) { 
+        
         
         for (int i = 0; i < highscores.highscoreEntryList2.Count; i++)
         {
-            for (int j = i + 1; j > highscores.highscoreEntryList2.Count; j++)
+            for (int j = i + 1; j < highscores.highscoreEntryList2.Count; j++)
             {
-                if (highscores.highscoreEntryList2[j].score > highscores.highscoreEntryList2[i].score)
-                {
+                if (highscores.highscoreEntryList2[j].score < highscores.highscoreEntryList2[i].score)  //i
+                {                                                                                       //j    
                     // Swap
                     HighscoreEntry tmp = highscores.highscoreEntryList2[i];
                     highscores.highscoreEntryList2[i] = highscores.highscoreEntryList2[j];
@@ -152,6 +152,7 @@ public class HighscoreTable : MonoBehaviour
     {
         //public List<HighscoreEntry> highscoreEntryList;
         public List<HighscoreEntry> highscoreEntryList2;
+        
     }
 
 

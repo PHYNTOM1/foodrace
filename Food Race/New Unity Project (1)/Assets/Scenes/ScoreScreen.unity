@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 23.181112, g: 276.7751, b: 767.08356, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,6 +279,9 @@ MonoBehaviour:
   LoadingScreen: 
   MainMenu: 
   Ingame2: 
+  backButton: {fileID: 0}
+  clearButton: {fileID: 0}
+  scoreButton: {fileID: 0}
 --- !u!1 &130369447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,9 +1743,8 @@ GameObject:
   - component: {fileID: 1500234732}
   - component: {fileID: 1500234731}
   - component: {fileID: 1500234730}
-  - component: {fileID: 1500234729}
   m_Layer: 5
-  m_Name: BackButton (1)
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,18 +1770,6 @@ RectTransform:
   m_AnchoredPosition: {x: -361.12, y: -185.43}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1500234729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500234727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b456b8302c0e549aac49f226637ce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1500234730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,9 +1813,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1500234729}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1842610306}
+        m_MethodName: BackToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4944,6 +4934,9 @@ MonoBehaviour:
   LoadingScreen: 
   MainMenu: 
   Ingame2: 
+  backButton: {fileID: 0}
+  clearButton: {fileID: 0}
+  scoreButton: {fileID: 0}
 --- !u!4 &1842610307
 Transform:
   m_ObjectHideFlags: 0
@@ -5392,9 +5385,8 @@ GameObject:
   - component: {fileID: 2074297351}
   - component: {fileID: 2074297350}
   - component: {fileID: 2074297349}
-  - component: {fileID: 2074297352}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: ClearButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5417,7 +5409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 361.12, y: -185.43}
+  m_AnchoredPosition: {x: 361.12, y: -254.36}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074297349
@@ -5511,18 +5503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074297347}
   m_CullTransparentMesh: 0
---- !u!114 &2074297352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074297347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b456b8302c0e549aac49f226637ce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2076890405
 GameObject:
   m_ObjectHideFlags: 0

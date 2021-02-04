@@ -20,6 +20,8 @@ public class PlacementManagement : MonoBehaviour
     public string MainMenu;
     public string Ingame2;
 
+    public Button backButton, clearButton, scoreButton;
+
 
     Slider progressBar;
     AsyncOperation loadingOperation;
@@ -43,6 +45,7 @@ public class PlacementManagement : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     public void StartGame()
@@ -74,6 +77,9 @@ public class PlacementManagement : MonoBehaviour
                 mm.GetComponent<MainMenu>().LoadRankings();
                 finished = false;
             }
+            scoreButton = GameObject.Find("ScoreButton").GetComponent<Button>();
+            scoreButton.onClick.AddListener(GoToScore);
+            
         }
         else if (aScene.name == "Ingame2")
         {
@@ -101,6 +107,10 @@ public class PlacementManagement : MonoBehaviour
             }
             he.AddHighscoreEntry(bestTimeOfAll, "");
             he.RefreshingHighscoreTable();
+            backButton = GameObject.Find("BackButton").GetComponent<Button>();
+            backButton.onClick.AddListener(BackToMenu);
+            
+
         }
     }
 
