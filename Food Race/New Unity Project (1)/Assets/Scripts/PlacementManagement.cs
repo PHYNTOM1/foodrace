@@ -77,7 +77,7 @@ public class PlacementManagement : MonoBehaviour
                 mm.GetComponent<MainMenu>().LoadRankings();
                 finished = false;
             }
-            scoreButton = GameObject.Find("ScoreButton").GetComponent<Button>();
+            scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
             scoreButton.onClick.AddListener(GoToScore);
             
         }
@@ -107,7 +107,8 @@ public class PlacementManagement : MonoBehaviour
             }
             he.AddHighscoreEntry(bestTimeOfAll, "");
             he.RefreshingHighscoreTable();
-            backButton = GameObject.Find("BackButton").GetComponent<Button>();
+
+            backButton = GameObject.Find("BackButton").GetComponentInChildren<Button>();
             backButton.onClick.AddListener(BackToMenu);
             
 

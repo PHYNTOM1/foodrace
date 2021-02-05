@@ -11,6 +11,9 @@ public class BulletBehaviour : MonoBehaviour
     private Vector3 dir;
     public int damage = 1;
 
+    public GameObject hitImpact;
+    public GameObject hitImpact2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,23 +28,39 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (this.gameObject.CompareTag("Bullet"))
-        {
-            if (coll.collider.gameObject.CompareTag("Enemy"))
+        if (coll.collider.gameObject.name == "WPCollider")
+        {            
+            if (this.gameObject.CompareTag("EnemyBullet"))
             {
-                //Debug.Log("PLAYER HIT " + coll.collider.gameObject.name + " WITH A BULLET!");
-                coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
+                GameObject h = Instantiate(hitImpact2, coll.GetContact(0).point, Quaternion.identity);
+                Destroy(h, 2f);
+
+                coll.collider.GetComponentInParent<CartController>().GetStunned();
+
                 Destroy(gameObject);
             }
         }
-        else if(this.gameObject.CompareTag("EnemyBullet"))
+        else
         {
-            if (coll.collider.gameObject.name == "WPCollider")
+            if (this.gameObject.CompareTag("Bullet"))
             {
-                //Debug.Log("PLAYER GOT HIT BY BULLET!");
-                coll.collider.GetComponentInParent<CartController>().GetStunned();
+                GameObject h = Instantiate(hitImpact, coll.GetContact(0).point + new Vector3(0f, 0.4f, 0f), Quaternion.identity);
+                Destroy(h, 2f);
+
+                if (coll.collider.gameObject.CompareTag("Enemy"))
+                {
+                    coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
+                }
+            }
+            else if (this.gameObject.CompareTag("EnemyBullet"))
+            {
+                GameObject h = Instantiate(hitImpact2, coll.GetContact(0).point + new Vector3(0f, 0.8f, 0f), Quaternion.identity);
+                Destroy(h, 2f);
+
                 Destroy(gameObject);
             }
+
+            Destroy(gameObject);
         }
     }
 

@@ -127,3 +127,8 @@ MonoBehaviour:
   rb: {fileID: 7006473769241228826}
   moveSpeed: 3
   deathRange: 1
+  damage: 1
+  hitImpact: {fileID: 7951453961036037032, guid: fdc86f9ce3d314a43b1a42550fac9fca,
+    type: 3}
+  hitImpact2: {fileID: 7951453961036037032, guid: 4683416c3c3ff784592c39be127dcb26,
+    type: 3}
