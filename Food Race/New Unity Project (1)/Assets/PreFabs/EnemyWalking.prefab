@@ -187,6 +187,8 @@ MonoBehaviour:
   targetPosTPos: 0
   distPos: {x: 1, y: 0, z: 1}
   anim: {fileID: 0}
+  smokePoof: {fileID: 7383479392154189637, guid: 9f694a501ee52f84893744df102ea3e7,
+    type: 3}
 --- !u!95 &5637344117531067808
 Animator:
   serializedVersion: 3

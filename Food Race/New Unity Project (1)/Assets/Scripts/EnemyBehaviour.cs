@@ -41,6 +41,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int targetPosTPos = 0;
     public Vector3 distPos = new Vector3(0f, 0f, 0f);
     public Animator anim;
+    public GameObject smokePoof;
 
 
     void Start()
@@ -269,12 +270,16 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyType.walker:
 
                 //DO ANIMATION AND PARTICLES
+                GameObject sp = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
+                Destroy(sp, 1f);
                 Destroy(this.gameObject, 0.15f);
                 this.enabled = false;
                 break;
             case EnemyType.flyer:
 
                 //DO ANIMATION AND PARTICLES
+                GameObject sp2 = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
+                Destroy(sp2, 1f);
                 player.GetComponent<CartController>().flyerCount--;
                 Destroy(this.gameObject, 0.15f);
                 this.enabled = false;
