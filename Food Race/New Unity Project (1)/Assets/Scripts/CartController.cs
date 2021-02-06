@@ -35,6 +35,7 @@ public class CartController : MonoBehaviour
     private ParticleSystem[] drift;
     private ParticleSystem[] boost;
     private TrailRenderer[] skid;
+    private ParticleSystem lines;
     private bool exhaustEmitting;
     private bool driftEmitting;
     private bool boostEmitting;
@@ -74,6 +75,7 @@ public class CartController : MonoBehaviour
         skid = driftEffects.GetComponentsInChildren<TrailRenderer>();
         GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
         boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
+        lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
         sh = GetComponent<SkillHolder>();
         anim = GetComponent<Animator>();
@@ -392,6 +394,9 @@ public class CartController : MonoBehaviour
                 bs.Emit(emitOverride, 1);
             }
         }
+
+        ParticleSystem.EmissionModule ln = lines.emission;
+        ln.enabled = boostEmitting;
     }
 
     public void SteerInput(float hor)
