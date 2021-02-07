@@ -73,6 +73,7 @@ public class PlacementManagement : MonoBehaviour
         {
             if (finished)
             {
+
                 GameObject mm = GameObject.Find("MainMenu");
                 mm.GetComponent<MainMenu>().LoadRankings();
                 finished = false;
@@ -439,6 +440,7 @@ public class PlacementManagement : MonoBehaviour
         }
         else
         {
+            bestTimeOfAll = 0;
             SceneManager.LoadScene(3);
         }
     }

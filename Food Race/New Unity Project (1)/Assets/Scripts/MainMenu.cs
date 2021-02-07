@@ -27,11 +27,11 @@ public class MainMenu : MonoBehaviour
 
     public void LoadRankings()
     {
-        re = FindObjectOfType<RankingEndscreen>();
+      /*  re = FindObjectOfType<RankingEndscreen>();
         re.gameObject.SetActive(true);
         re.UpdateRankings();
         re.DisplayStats();
         
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);*/
     }
 }

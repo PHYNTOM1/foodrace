@@ -63,6 +63,17 @@ public class HighscoreTable : MonoBehaviour
 
         transformList.Add(entryTransform);
     }
+
+    public void DeleteRankLine(List<Transform> transformList)
+    {
+
+        foreach (Transform t in transformList)
+        {
+            Destroy(t.gameObject);
+        }
+
+        transformList.Clear();
+    }
    public void ClearList()
    {
       Debug.Log("Hat mich in den Arsch gebummst");
@@ -102,6 +113,7 @@ public class HighscoreTable : MonoBehaviour
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
 
+        PlacementManagement.Instance.bestTimeOfAll = 0;
 
 
 
@@ -135,10 +147,14 @@ public class HighscoreTable : MonoBehaviour
 
 
         highscoreEntryTransformList = new List<Transform>();
+
+        DeleteRankLine(highscoreEntryTransformList);
+
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList2)
         {
             if (highscoreEntry.score > 0)
             {
+               
 
                 CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
             }
