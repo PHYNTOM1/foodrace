@@ -9,7 +9,7 @@ public class HighscoreTable : MonoBehaviour
 {
     public Transform entryContainer;
     public Transform entryTemplate;
-    public List<Transform> highscoreEntryTransformList;
+    public List<Transform> highscoreEntryTransformList = new List<Transform>();
     //private List<HighscoreEntry> highscoreEntryList;
     private List<HighscoreEntry> highscoreEntryList2;
     private PlacementManagement pm;
@@ -148,7 +148,7 @@ public class HighscoreTable : MonoBehaviour
         }
 
 
-        highscoreEntryTransformList = new List<Transform>();
+        
 
         DeleteRankLine(highscoreEntryTransformList);
 

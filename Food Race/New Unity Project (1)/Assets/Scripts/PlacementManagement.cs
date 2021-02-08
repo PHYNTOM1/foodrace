@@ -455,34 +455,12 @@ public class PlacementManagement : MonoBehaviour
         
         float minutes = Mathf.Floor(a / 60);
         float seconds = Mathf.RoundToInt(a % 60);
-        float milseconds = Mathf.RoundToInt((a * 1000) % 1000) ;
+        float milseconds = Mathf.RoundToInt((a * 10) % 10) ;
 
-        float _p = Mathf.RoundToInt(a / 1000) % 1000;
-        float _m = 0;
-        float _l = (Mathf.RoundToInt(a / 100) % 100) - (_p * 10);
+        
 
-        if (_l >= 5)
-        {
-            _m = (Mathf.RoundToInt(a / 100) % 100) - 1;
-        }
-        else
-        {
-            _m = Mathf.RoundToInt(a / 100) % 100;
-
-        }
-        float _t = _m;
-        float _s = 0;
-        float _i = (Mathf.RoundToInt(a/ 10) % 10) - (_t * 10);
-
-        if (_i >= 5)
-        {
-            _s = (Mathf.RoundToInt(a/10) % 10) - 1;
-        }
-        else
-        {
-            _s = Mathf.RoundToInt(a / 10) % 10;
-
-        }
+       
+       
 
         _minutes = minutes.ToString();
         _seconds = seconds.ToString();
@@ -499,33 +477,15 @@ public class PlacementManagement : MonoBehaviour
             _seconds = "0" + Mathf.RoundToInt(seconds).ToString();
         }
 
-        if (milseconds < 1000)
+        if (milseconds < 10)
         {
-
-          if (_s == 0)
-          {      
-            if(milseconds < 10)
-            {                     
-               _milseconds = "00" + milseconds;
-            }
-                else
-                {
-                    _milseconds = "0" + milseconds;
-                }
-
-          }
-
-                else
-                {
-                    _milseconds = _s + (milseconds - _s).ToString();
-                }
-        }
-        else
-        {
-            _milseconds = "999";
+            Debug.Log("Cock");   
+            _milseconds = "0" + Mathf.RoundToInt(milseconds).ToString();
+          
         }
         
-        return _minutes + ":" + _seconds + ":" + milseconds;  
+        
+        return _minutes + ":" + _seconds + ":" + _milseconds;  
      
         
     }
