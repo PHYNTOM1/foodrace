@@ -27,10 +27,14 @@ public class RoundTimer : MonoBehaviour
 //    private int oldLap;
     private CartController cc;
 
+    private PlacementManagement pm;
+
     void Start()
     {
         lt = GetComponent<LapTracker>();
         cc = GetComponent<CartController>();
+        pm = FindObjectOfType<PlacementManagement>();
+
 
         RoundTimerReset();
 
@@ -74,10 +78,10 @@ public class RoundTimer : MonoBehaviour
                 }
             }
 
-//            if (isLocalPlayer)
-//            {
-                timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", Mathf.Abs(cpTimes[0]), Mathf.Abs(cpBestTimes[0]), Mathf.Abs(cpTimes[1]), Mathf.Abs(cpBestTimes[1]), Mathf.Abs(cpTimes[2]), Mathf.Abs(cpBestTimes[2]), Mathf.Abs(cpTimes[3]), Mathf.Abs(cpBestTimes[3]));
-                timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", Mathf.Abs(roundTimer), Mathf.Abs(bestRound), Mathf.Abs(roundTimes[0]), Mathf.Abs(roundTimes[1]), Mathf.Abs(roundTimes[2]), Mathf.Abs(roundTimes[0] + roundTimes[1] + roundTimes[2]));
+            //            if (isLocalPlayer)
+            //            {
+            timerCPText.SetText("Checkpoints:\n1:  " + pm.ConvertTimerInText(cpTimes[0]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[0]) + "\n2: " + pm.ConvertTimerInText(cpTimes[1]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[1]) + "\n3: " + pm.ConvertTimerInText(cpTimes[2]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[2]) + "\n4: " + pm.ConvertTimerInText(cpTimes[3]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[3]));
+                timerText.SetText("Current Lap: " + pm.ConvertTimerInText(roundTimer) + "\nBest Lap:" + pm.ConvertTimerInText(bestRound) + "\n\nLap 1: " + pm.ConvertTimerInText(roundTimes[0]) + " \nLap 2: " + pm.ConvertTimerInText(roundTimes[1]) + " \nLap 3: " + pm.ConvertTimerInText(roundTimes[2]) + " \nFull Course: " + pm.ConvertTimerInText(roundTimes[0] + roundTimes[1] + roundTimes[2]));
 
             //                placementText.SetText("{0}.", FindObjectOfType<PlacementManagement>().GetPosition(this.gameObject));
             //            }

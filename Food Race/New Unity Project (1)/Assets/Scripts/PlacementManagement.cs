@@ -445,5 +445,90 @@ public class PlacementManagement : MonoBehaviour
         }
     }
 
+    public string ConvertTimerInText(float a)
+    {
+        string _minutes;
+        string _seconds;
+        string _milseconds;
+        
+
+        
+        float minutes = Mathf.Floor(a / 60);
+        float seconds = Mathf.RoundToInt(a % 60);
+        float milseconds = Mathf.RoundToInt((a * 1000) % 1000) ;
+
+        float _p = Mathf.RoundToInt(a / 1000) % 1000;
+        float _m = 0;
+        float _l = (Mathf.RoundToInt(a / 100) % 100) - (_p * 10);
+
+        if (_l >= 5)
+        {
+            _m = (Mathf.RoundToInt(a / 100) % 100) - 1;
+        }
+        else
+        {
+            _m = Mathf.RoundToInt(a / 100) % 100;
+
+        }
+        float _t = _m;
+        float _s = 0;
+        float _i = (Mathf.RoundToInt(a/ 10) % 10) - (_t * 10);
+
+        if (_i >= 5)
+        {
+            _s = (Mathf.RoundToInt(a/10) % 10) - 1;
+        }
+        else
+        {
+            _s = Mathf.RoundToInt(a / 10) % 10;
+
+        }
+
+        _minutes = minutes.ToString();
+        _seconds = seconds.ToString();
+        _milseconds = milseconds.ToString();
+
+
+        if (minutes < 10)
+        {
+            _minutes = "0" + minutes;
+        }
+        
+        if (seconds < 10)
+        {
+            _seconds = "0" + Mathf.RoundToInt(seconds).ToString();
+        }
+
+        if (milseconds < 1000)
+        {
+
+          if (_s == 0)
+          {      
+            if(milseconds < 10)
+            {                     
+               _milseconds = "00" + milseconds;
+            }
+                else
+                {
+                    _milseconds = "0" + milseconds;
+                }
+
+          }
+
+                else
+                {
+                    _milseconds = _s + (milseconds - _s).ToString();
+                }
+        }
+        else
+        {
+            _milseconds = "999";
+        }
+        
+        return _minutes + ":" + _seconds + ":" + milseconds;  
+     
+        
+    }
+
     
 }

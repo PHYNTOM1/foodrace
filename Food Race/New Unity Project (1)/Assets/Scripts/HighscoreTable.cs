@@ -12,6 +12,9 @@ public class HighscoreTable : MonoBehaviour
     public List<Transform> highscoreEntryTransformList;
     //private List<HighscoreEntry> highscoreEntryList;
     private List<HighscoreEntry> highscoreEntryList2;
+    private PlacementManagement pm;
+
+
 
 
     public int n = 7;
@@ -49,14 +52,13 @@ public class HighscoreTable : MonoBehaviour
             case 3: rankString = "3RD"; break;
         }
 
-
+        
 
         entryTransform.Find("posText").gameObject.GetComponent<Text>().text = rankString;
 
         float score = highscoreEntry.score;
 
-        entryTransform.Find("scoreText").GetComponent<Text>().text = score.ToString();
-
+        entryTransform.Find("scoreText").GetComponent<Text>().text = PlacementManagement.Instance.ConvertTimerInText(score);
         string name = highscoreEntry.name;
 
         entryTransform.Find("nameText").gameObject.GetComponent<Text>().text = name;
