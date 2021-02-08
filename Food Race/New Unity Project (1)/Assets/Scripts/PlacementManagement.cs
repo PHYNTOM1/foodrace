@@ -58,6 +58,7 @@ public class PlacementManagement : MonoBehaviour
 
     public void BackToMenu()
     {
+        backButton.onClick.RemoveAllListeners();
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -71,13 +72,7 @@ public class PlacementManagement : MonoBehaviour
         Debug.Log("NEW SCENE LOADED: " + aScene.name);
         if (aScene.name == "MainMenu")
         {
-            if (finished)
-            {
-
-                GameObject mm = GameObject.Find("MainMenu");
-                mm.GetComponent<MainMenu>().LoadRankings();
-                finished = false;
-            }
+            bestTimeOfAll = 0f;
             scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
             scoreButton.onClick.AddListener(GoToScore);
             
@@ -106,11 +101,17 @@ public class PlacementManagement : MonoBehaviour
             {
                 he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
             }
-            he.AddHighscoreEntry(bestTimeOfAll, "");
+
+            if (bestTimeOfAll > 0f)
+            {
+                he.AddHighscoreEntry(bestTimeOfAll, "");
+                bestTimeOfAll = 0f;
+            }
             he.RefreshingHighscoreTable();
 
             backButton = GameObject.Find("BackButton").GetComponentInChildren<Button>();
-            backButton.onClick.AddListener(BackToMenu);
+            backButton.onClick.RemoveAllListeners();
+            backButton.onClick.AddListener(BackToMenu);            
             
 
         }

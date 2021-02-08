@@ -1,2 +1,66 @@
-Base path: 'C:/Users/ahmud/Desktop/Hochschule/3D Prototyping/2019.4.13f1/Editor/Data', plugins path 'C:/Users/ahmud/Desktop/Hochschule/3D Prototyping/2019.4.13f1/Editor/Data/PlaybackEngines'
+Base path: 'E:/UnityHub/Editor Versions/2019.4.13f1/Editor/Data', plugins path 'E:/UnityHub/Editor Versions/2019.4.13f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=7883 outsize=2542 ok=1
+Cmd: preprocess
+  insize=3642 outsize=1299 ok=1
+Cmd: preprocess
+  insize=12310 outsize=4702 ok=1
+Cmd: preprocess
+  insize=3662 outsize=2718 ok=1
+Cmd: preprocess
+  insize=4513 outsize=3751 ok=1
+Cmd: preprocess
+  insize=3640 outsize=1347 ok=1
+Cmd: preprocess
+  insize=10917 outsize=4057 ok=1
+Cmd: preprocess
+  insize=3177 outsize=2815 ok=1
+Cmd: preprocess
+  insize=2408 outsize=544 ok=1
+Cmd: preprocess
+  insize=8069 outsize=2811 ok=1
+Cmd: preprocess
+  insize=10902 outsize=4047 ok=1
+Cmd: preprocess
+  insize=3694 outsize=1723 ok=1
+Cmd: preprocess
+  insize=7914 outsize=2554 ok=1
+Cmd: preprocess
+  insize=2468 outsize=1177 ok=1
+Cmd: preprocessCompute
+  insize=6437 outsize=6439 ok=1
+Cmd: preprocessCompute
+  insize=7272 outsize=7274 ok=1
+Cmd: preprocess
+  insize=41577 outsize=600 ok=1
+Cmd: preprocessCompute
+  insize=1911 outsize=1913 ok=1
+Cmd: preprocessCompute
+  insize=5598 outsize=5600 ok=1
+Cmd: preprocessCompute
+  insize=4879 outsize=4881 ok=1
+Cmd: preprocess
+  insize=40649 outsize=620 ok=1
+Cmd: preprocessCompute
+  insize=6693 outsize=6695 ok=1
+Cmd: preprocess
+  insize=42081 outsize=620 ok=1
+Cmd: preprocessCompute
+  insize=4879 outsize=4881 ok=1
+Cmd: preprocessCompute
+  insize=7046 outsize=7048 ok=1
+Cmd: preprocess
+  insize=42459 outsize=620 ok=1
+Cmd: preprocessCompute
+  insize=7205 outsize=7207 ok=1
+Cmd: preprocessCompute
+  insize=6372 outsize=6374 ok=1
+Cmd: preprocessCompute
+  insize=4911 outsize=4913 ok=1
+Cmd: preprocess
+  insize=36009 outsize=658 ok=1
+Cmd: preprocessCompute
+  insize=1933 outsize=1935 ok=1
+Cmd: preprocess
+  insize=345212 outsize=13647 ok=1
