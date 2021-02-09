@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class EnemyBehaviour : MonoBehaviour
 {  
@@ -19,6 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     public float spottedCounterReal = 0f;
     public Image spotIcon;
+    public Image oooIcon;
     public int maxHP = 3;
     public int currHP = 3;
 
@@ -42,6 +44,7 @@ public class EnemyBehaviour : MonoBehaviour
     public Vector3 distPos = new Vector3(0f, 0f, 0f);
     public Animator anim;
     public GameObject smokePoof;
+    public VisualEffect[] destroyed;
 
 
     void Start()
@@ -67,6 +70,10 @@ public class EnemyBehaviour : MonoBehaviour
                 targetPosT.Add(g.transform);
                 //Destroy(g);
             }
+        }
+        else if (eType == EnemyType.turret)
+        {
+            oooIcon.enabled = false;
         }
 
         if (eType == EnemyType.walker)
@@ -97,7 +104,7 @@ public class EnemyBehaviour : MonoBehaviour
                 
                 if (spotted)
                 {
-                    if (Vector3.Distance(transform.position, player.transform.position) < 9f)
+                    if (Vector3.Distance(transform.position, player.transform.position) < 5f)
                     {
                         if (left == 2f)
                         {
@@ -138,6 +145,7 @@ public class EnemyBehaviour : MonoBehaviour
                     }
                     else
                     {
+                        oooIcon.enabled = false;
                         currHP = maxHP;
                         oooCDReal = oooCD;
                         outOfOrder = false;
@@ -286,6 +294,12 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case EnemyType.turret:
 
+                foreach (VisualEffect v in destroyed)
+                {
+                    v.Play();
+                }
+
+                oooIcon.enabled = true;
                 oooCDReal = oooCD;
                 outOfOrder = true;
                 break;

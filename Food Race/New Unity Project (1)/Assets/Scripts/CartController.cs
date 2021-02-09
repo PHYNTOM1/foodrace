@@ -18,7 +18,8 @@ public class CartController : MonoBehaviour
     public int driftForce = 0;
     public float driftInput = 0f;
     public float driftTimer = 0f;
-    public float driftBoostTimer = 1f;
+    public float driftBoostTimer = 0.66f;
+    public float driftBoostTimer2 = 1f;
     public int driftStage = 0;
 
     public LayerMask whatIsGround;
@@ -71,10 +72,12 @@ public class CartController : MonoBehaviour
     public ParticleSystem[] driftFlames;
     public ParticleSystem[] driftFlames2;
     public ParticleSystem[] boostFlames;
+    public Camera cam;
 
     void Start()
     {
-        camC = GameObject.Find("CameraMain").GetComponent<CameraController>();
+        camC = FindObjectOfType<CameraController>();
+        cam = camC.gameObject.GetComponent<Camera>();
         theRB.transform.parent = null;  
         lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
@@ -227,45 +230,58 @@ public class CartController : MonoBehaviour
             if (grounded)
             {
 
+                /*
                 if (_verAxisRaw == -1 && speedInput < 0)
                 {
                     turnInput *= -1;
                 }
+                */
 
                 float _turnInput = turnInput * turnStrength * Time.deltaTime;
 
                 if (drifting)
                 {
-                    camC.sSpeed = 14f;
-
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.5f, 0f));    //0.55f
-
-                    driftTimer += 1 * Time.deltaTime;
-
-                    if (driftTimer >= driftBoostTimer && driftStage < 2)
+                    if (camC.sSpeed < 14f)
                     {
-                        if (driftStage == 0)
-                        {
-                            foreach (VisualEffect v in driftIgnites)
-                            {
-                                v.Play();
-                            }
-                        }
-                        else
-                        {
-                            foreach (VisualEffect v in driftIgnites2)
-                            {
-                                v.Play();
-                            }
-                        }
+                        camC.sSpeed += Time.deltaTime * 5f;
+                    }
 
-                        driftStage++;
+                    if (_horAxisRaw != driftForce)
+                    {
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));    //0.55f
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.6f, 0f));    //0.55f
+                    }
+
+                    driftTimer += Time.deltaTime;
+
+                    if (driftTimer >= driftBoostTimer && driftStage == 0)
+                    {
+                        foreach (VisualEffect v in driftIgnites)
+                        {
+                            v.Play();
+                        }
+                        driftStage = 1;
                         driftTimer = 0;
                     }
+                    else if (driftTimer >= driftBoostTimer2 && driftStage == 1)
+                    {
+                        foreach (VisualEffect v in driftIgnites2)
+                        {
+                            v.Play();
+                        }
+                        driftStage = 2;
+                        driftTimer = 0;
+                    }                 
                 }
                 else
                 {
-                    camC.sSpeed = 8.5f;
+                    if (camC.sSpeed > 8.5f)
+                    {
+                        camC.sSpeed -= Time.deltaTime * 5f;
+                    }
 
                     //for testing purposes commented, but works velly nice without :)
                     /*
@@ -381,6 +397,16 @@ public class CartController : MonoBehaviour
         {
             theRB.AddForce((Vector3.up * -gravityForce * 700f) + (transform.forward * speedInput * 0.8f) + (transform.right * turnInput * turnStrength * (speedInput / (maxSpeed * 1000f)) * 10f * 0.8f));
         }
+
+        if (boostEmitting == true && cam.fieldOfView < 85f)
+        {
+            cam.fieldOfView += Time.fixedDeltaTime * 9f;
+        }
+        else if (boostEmitting == false && cam.fieldOfView > 70f)
+        {
+            cam.fieldOfView -= Time.fixedDeltaTime * 3f;
+        }
+
 
         ParticleSystem.EmissionModule em = exhaust.emission;
         em.enabled = exhaustEmitting;

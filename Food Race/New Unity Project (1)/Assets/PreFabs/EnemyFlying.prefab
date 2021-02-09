@@ -151,7 +151,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 36.52
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &799805860556476559
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   spotIcon: {fileID: 3456848804745547029}
   maxHP: 1
   currHP: 1
-  moveSpeed: 20
+  moveSpeed: 10
   atkSpeed: 3
   realAtkSpeed: 0
   enemyBullet: {fileID: 0}

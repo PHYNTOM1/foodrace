@@ -249,7 +249,7 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
-    - _UnlitColor: {r: 0.3160377, g: 0.94127595, b: 1, a: 0.74509805}
+    - _UnlitColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0.74509805}
 --- !u!114 &693480961217642164
 MonoBehaviour:
   m_ObjectHideFlags: 11

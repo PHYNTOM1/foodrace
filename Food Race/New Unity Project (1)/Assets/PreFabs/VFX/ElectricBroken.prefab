@@ -149,6 +149,26 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Int.m_Array.Array.data[0].m_Value
       value: 52
       objectReference: {fileID: 0}
+    - target: {fileID: 7383479392154189639, guid: 9f694a501ee52f84893744df102ea3e7,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
+      value: 0.2264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383479392154189639, guid: 9f694a501ee52f84893744df102ea3e7,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
+      value: 0.2264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383479392154189639, guid: 9f694a501ee52f84893744df102ea3e7,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
+      value: 0.2264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383479392154189639, guid: 9f694a501ee52f84893744df102ea3e7,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.w
+      value: 0.7529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f694a501ee52f84893744df102ea3e7, type: 3}
 --- !u!4 &4970766925266769726 stripped
