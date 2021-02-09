@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Net.Security;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class CartController : MonoBehaviour
 {
@@ -31,11 +33,11 @@ public class CartController : MonoBehaviour
     public Transform leftfrontwheel, rightfrontwheel;
     public float maxWheelTurn = 25f;
 
-    private ParticleSystem exhaust;
-    private ParticleSystem[] drift;
-    private ParticleSystem[] boost;
-    private TrailRenderer[] skid;
-    private ParticleSystem lines;
+    public ParticleSystem exhaust;
+    public ParticleSystem[] drift;
+    public ParticleSystem[] boost;
+    public TrailRenderer[] skid;
+    public ParticleSystem lines;
     private bool exhaustEmitting;
     private bool driftEmitting;
     private bool boostEmitting;
@@ -64,17 +66,16 @@ public class CartController : MonoBehaviour
 
     public int flyerCount = 0;
     public Animator anim;
+    public VisualEffect[] driftIgnites;
+    public VisualEffect[] driftIgnites2;
+    public ParticleSystem[] driftFlames;
+    public ParticleSystem[] driftFlames2;
+    public ParticleSystem[] boostFlames;
 
     void Start()
     {
         camC = GameObject.Find("CameraMain").GetComponent<CameraController>();
-        theRB.transform.parent = null;
-        exhaust = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/carSmoke").GetComponent<ParticleSystem>();
-        GameObject driftEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/driftEffects");
-        drift = driftEffects.GetComponentsInChildren<ParticleSystem>();
-        skid = driftEffects.GetComponentsInChildren<TrailRenderer>();
-        GameObject boostEffects = GameObject.Find(gameObject.name + "/Normal/Mesh/Effects/boostEffects");
-        boost = boostEffects.GetComponentsInChildren<ParticleSystem>();
+        theRB.transform.parent = null;  
         lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
         sh = GetComponent<SkillHolder>();
@@ -243,6 +244,21 @@ public class CartController : MonoBehaviour
 
                     if (driftTimer >= driftBoostTimer && driftStage < 2)
                     {
+                        if (driftStage == 0)
+                        {
+                            foreach (VisualEffect v in driftIgnites)
+                            {
+                                v.Play();
+                            }
+                        }
+                        else
+                        {
+                            foreach (VisualEffect v in driftIgnites2)
+                            {
+                                v.Play();
+                            }
+                        }
+
                         driftStage++;
                         driftTimer = 0;
                     }
@@ -389,14 +405,50 @@ public class CartController : MonoBehaviour
             {
                 ParticleSystem.EmitParams emitOverride = new ParticleSystem.EmitParams
                 {
-                    startLifetime = 3f
+                    //startLifetime = 3f
                 };
                 bs.Emit(emitOverride, 1);
             }
         }
 
+        foreach (ParticleSystem bf in boostFlames)
+        {
+            ParticleSystem.EmissionModule bfe = bf.emission;
+            bfe.enabled = boostEmitting;
+        }
+
         ParticleSystem.EmissionModule ln = lines.emission;
         ln.enabled = boostEmitting;
+
+        if (driftStage == 1)
+        {
+            foreach (ParticleSystem df in driftFlames)
+            {
+                ParticleSystem.EmissionModule dfe = df.emission;
+               dfe.enabled = true;
+            }
+        }
+        else if (driftStage == 2)
+        {
+            foreach (ParticleSystem df2 in driftFlames2)
+            {
+                ParticleSystem.EmissionModule df2e = df2.emission;
+                df2e.enabled = true;
+            }
+        }
+        else
+        {
+            foreach (ParticleSystem df in driftFlames)
+            {
+                ParticleSystem.EmissionModule dfe = df.emission;
+                dfe.enabled = false;
+            }
+            foreach (ParticleSystem df2 in driftFlames2)
+            {
+                ParticleSystem.EmissionModule df2e = df2.emission;
+                df2e.enabled = false;
+            }
+        }
     }
 
     public void SteerInput(float hor)
@@ -463,6 +515,7 @@ public class CartController : MonoBehaviour
         speedInput = 0f;
         stunned = true;
         stunTimerReal = 0f;
+        driftStage = 0;
         //DO STUN ANIMATION AND PARTICLES
     }
 

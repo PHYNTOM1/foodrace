@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class PlayerShooting : MonoBehaviour
     public Image ohSliderFill;
     public Color ohColor;
     public Color normalColor;
+
+    public VisualEffect muzzleFlash;
 
     void Start()
     {
@@ -111,6 +114,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
+        muzzleFlash.Play();
         GameObject b = Instantiate(bullet, (this.gameObject.transform.position + (this.gameObject.transform.forward.normalized * distToKart)), Quaternion.Euler(90f + this.gameObject.transform.eulerAngles.x, this.gameObject.transform.eulerAngles.y, this.gameObject.transform.eulerAngles.z));
         /*
         GameObject b = Instantiate(bullet, (this.gameObject.transform.position + (this.gameObject.transform.forward.normalized * distToKart) + (this.gameObject.transform.right.normalized * left * 0.5f)), Quaternion.Euler(90f + this.gameObject.transform.eulerAngles.x, this.gameObject.transform.eulerAngles.y, this.gameObject.transform.eulerAngles.z));
