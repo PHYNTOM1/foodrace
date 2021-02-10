@@ -20,9 +20,6 @@ public class HighscoreTable : MonoBehaviour
     public Button backButton;
     public Button clearButton;
     public TextMeshProUGUI selMap;
-    public string map01Name;
-    public string map02Name;
-    public string map03Name;
 
     public int n = 7;
     public int amount = 0;
@@ -30,6 +27,8 @@ public class HighscoreTable : MonoBehaviour
     public void Awake()
     {
         pm = PlacementManagement.Instance;
+        pm.CallOnAwake();
+
         selMap = GameObject.Find("MapNameText").GetComponent<TextMeshProUGUI>();
         nextButton = GameObject.Find("Next Button").GetComponent<Button>();
         prevButton = GameObject.Find("Prev Button").GetComponent<Button>();
@@ -109,7 +108,6 @@ public class HighscoreTable : MonoBehaviour
     }
    public void ClearList()
    {
-      Debug.Log("Hat mich in den Arsch gebummst");
         //string jsonString = PlayerPrefs.GetString("highscoreTable");
         string jsonString = File.ReadAllText(Application.dataPath + "/highscoreEntry.json");
 
@@ -191,15 +189,15 @@ public class HighscoreTable : MonoBehaviour
         {
             case 0:
 
-                selMap.SetText(map01Name);
+                selMap.SetText(pm.map01Name);
                 break;
             case 1:
 
-                selMap.SetText(map02Name);
+                selMap.SetText(pm.map02Name);
                 break;
             case 2:
 
-                selMap.SetText(map03Name);
+                selMap.SetText(pm.map03Name);
                 break;
         }
 

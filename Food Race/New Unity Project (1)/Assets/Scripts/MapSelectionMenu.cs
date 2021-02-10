@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,13 @@ public class MapSelectionMenu : MonoBehaviour
     public Button prevButton;
     public int currSel = 0;
     public List<Image> selImages = new List<Image>();
+    public TextMeshProUGUI mapName;
+    public PlacementManagement pm;
 
     void Start()
     {
+        pm = PlacementManagement.Instance;
+
         Image[] imgs = GetComponentsInChildren<Image>();
         foreach (Image i in imgs)
         {
@@ -26,6 +31,8 @@ public class MapSelectionMenu : MonoBehaviour
 
         nextButton = GameObject.Find("Next Button").GetComponent<Button>();
         prevButton = GameObject.Find("Prev Button").GetComponent<Button>();
+        mapName = GameObject.Find("MapName").GetComponent<TextMeshProUGUI>();
+        mapName.SetText(pm.map01Name);
     }
 
 
@@ -33,6 +40,7 @@ public class MapSelectionMenu : MonoBehaviour
     {
         if (d)
         {
+            pm.anim.SetTrigger("FlipN");
             currSel++;
             if (currSel >= selImages.Count)
             {
@@ -41,6 +49,7 @@ public class MapSelectionMenu : MonoBehaviour
         }
         else
         {
+            pm.anim.SetTrigger("FlipP");
             currSel--;
             if (currSel < 0)
             {
@@ -55,5 +64,21 @@ public class MapSelectionMenu : MonoBehaviour
 
         selImages[currSel].enabled = true;
         PlacementManagement.Instance.selectedMap = currSel;
+
+        switch (currSel)
+        {
+            case 0:
+
+                mapName.SetText(pm.map01Name);
+                break;
+            case 1:
+
+                mapName.SetText(pm.map02Name);
+                break;
+            case 2:
+
+                mapName.SetText(pm.map03Name);
+                break;
+        }
     }
 }

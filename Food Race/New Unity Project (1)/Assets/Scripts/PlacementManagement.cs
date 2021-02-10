@@ -15,7 +15,7 @@ public class PlacementManagement : MonoBehaviour
     public float bestTimeOfAll;
     public GameObject bestRacer;
     public bool finished = false;
-    public bool a;
+    public bool loadingAwake = false;
     public int selectedMap = 0;
 
     public HighscoreTable he;
@@ -24,7 +24,13 @@ public class PlacementManagement : MonoBehaviour
     public string MainMenu;
     public string Ingame2;
 
+    public string map01Name, map02Name, map03Name;
+
     public Button backButton, clearButton, scoreButton;
+
+    public GameObject bgCanvas;
+    public Animator anim;
+    public CanvasGroup cg;
 
     Slider progressBar;
     AsyncOperation loadingOperation;
@@ -47,12 +53,142 @@ public class PlacementManagement : MonoBehaviour
 
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (bgCanvas == null)
+        {
+            bgCanvas = GameObject.Find("BGCanvas");            
+        }
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
+        if (cg == null)
+        {
+            cg = bgCanvas.GetComponentInChildren<CanvasGroup>();
+        }     
+    }
+
+    public void Anim1()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SetObjCanvas("MainMenuCanvas", false);
+            
+            bestTimeOfAll = 0f;
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            if (he == null)
+            {
+                he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
+            }
+
+            if (bestTimeOfAll > 0f)
+            {
+                he.AddHighscoreEntry(bestTimeOfAll, "", selectedMap);
+                bestTimeOfAll = 0f;
+            }
+            he.RefreshingHighscoreTable();
+            SetObjCanvas("ScoreCanvas", false);
+        }
+    }
+
+    public void Anim2()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SetObjCanvas("MainMenuCanvas", true);
+
+            scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
+            scoreButton.onClick.AddListener(GoToScore);
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            SetObjCanvas("ScoreCanvas", true);
+        }
+    }
+
+    public void Anim3()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SetObjCanvas("MainMenuCanvas", false);
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            SetObjCanvas("ScoreCanvas", false);
+        }
+    }
+
+    public void Anim4()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            LoadScoreScreen();
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            LoadMainMenu();
+        }
+        else if (SceneManager.GetActiveScene().name == "Ingame2")
+        {
+            if (finished == true)
+            {
+                LoadScoreScreen();
+            }
+            else
+            {
+                LoadMainMenu();
+            }
+        }
+    }
+
+    public void Anim5()
+    {
+        if (SceneManager.GetActiveScene().name == "Ingame2")
+        {            
+            SetObjCanvas("Canvas", false);
+        }
+        else if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SetObjCanvas("MapCanvas", false);
+        }
+    }
+
+    public void Flip1()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == true)
+            {
+                SetObjCanvas("MapCanvas", false);
+            }
+            else if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == false)
+            {
+                SetObjCanvas("MapCanvas", true);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            if (GameObject.Find("ScoreCanvas").GetComponent<Canvas>().enabled == true)
+            {
+                SetObjCanvas("ScoreCanvas", false);
+            }
+            else if (GameObject.Find("ScoreCanvas").GetComponent<Canvas>().enabled == false)
+            {
+                SetObjCanvas("ScoreCanvas", true);
+            }
+        }
+    }
+
+
+    private void SetObjCanvas(string s, bool b)
+    {
+        GameObject.Find(s).GetComponent<Canvas>().enabled = b;
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LoadingScreen");
+        anim.SetTrigger("IngameI");
         //loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
     }
 
@@ -63,28 +199,68 @@ public class PlacementManagement : MonoBehaviour
 
     public void BackToMenu()
     {
+        if (SceneManager.GetActiveScene().name == "Ingame2")
+        {
+            anim.SetTrigger("IngameO");
+        }
+        else if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            anim.SetTrigger("SceneO");
+        }
+    }
+
+    public void LoadMainMenu()
+    {
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    public void LoadLoadingScreen()
     {
-        Debug.Log("NEW SCENE LOADED: " + aScene.name);
-        if (aScene.name == "MainMenu")
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
+    public void LoadScoreScreen()
+    {
+        SceneManager.LoadScene("ScoreScreen");
+    }
+
+    public void CallOnAwake()
+    {
+        if (bgCanvas == null)
         {
-            bestTimeOfAll = 0f;
-            scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
-            scoreButton.onClick.AddListener(GoToScore);
-            
+            bgCanvas = GameObject.Find("BGCanvas");
+        }
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
+        if (cg == null)
+        {
+            cg = bgCanvas.GetComponentInChildren<CanvasGroup>();
+        }
+        
+        Scene aScene = SceneManager.GetActiveScene();
+        Debug.Log("NEW SCENE LOADED: " + aScene.name);
+
+        if (aScene.name == "MainMenu" || aScene.name == "ScoreScreen")
+        {
+            cg.alpha = 1;
+            anim.SetTrigger("SceneI");
+            loadingAwake = false;
         }
         else if (aScene.name == "LoadingScreen")
         {
+            cg.alpha = 0;
             loadingOperation = SceneManager.LoadSceneAsync("Ingame2");
         }
         else if (aScene.name == "Ingame2")
         {
-                bool one = false;
-                bool two = false;
-                bool three = false;
+            cg.alpha = 0;
+            loadingAwake = false;
+
+            bool one = false;
+            bool two = false;
+            bool three = false;
 
             switch (selectedMap)
             {        
@@ -122,32 +298,18 @@ public class PlacementManagement : MonoBehaviour
             finishers.Clear();
             //            RefreshRacers();            
         }
-        else if (aScene.name == "ScoreScreen")
-        {
-            if (he == null)
-            {
-                he = (HighscoreTable)FindObjectOfType(typeof(HighscoreTable));
-            }
-
-            if (bestTimeOfAll > 0f)
-            {
-                he.AddHighscoreEntry(bestTimeOfAll, "", selectedMap);
-                bestTimeOfAll = 0f;
-            }
-            he.RefreshingHighscoreTable();
-
-            /*
-            backButton = GameObject.Find("Back Button").GetComponentInChildren<Button>();
-            backButton.onClick.RemoveAllListeners();
-            backButton.onClick.AddListener(BackToMenu);            
-            */
-        }
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "LoadingScreen")
         {
+            if (loadingAwake == false)
+            {
+                CallOnAwake();
+                loadingAwake = true;
+            }
+
             if (progressBar == null)
             {
                 progressBar = FindObjectOfType<Slider>();
@@ -464,12 +626,12 @@ public class PlacementManagement : MonoBehaviour
         if (a == true)
         {
             GetBestTimeOverall();
-            SceneManager.LoadScene(3);
+            anim.SetTrigger("IngameO");
         }
         else
         {
             bestTimeOfAll = 0;
-            SceneManager.LoadScene(3);
+            anim.SetTrigger("SceneO");
         }
     }
 

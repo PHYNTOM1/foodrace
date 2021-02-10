@@ -76,6 +76,8 @@ public class CartController : MonoBehaviour
 
     void Start()
     {
+        PlacementManagement.Instance.CallOnAwake();
+
         camC = FindObjectOfType<CameraController>();
         cam = camC.gameObject.GetComponent<Camera>();
         theRB.transform.parent = null;  
