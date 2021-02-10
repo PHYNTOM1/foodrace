@@ -12,6 +12,9 @@ TagManager:
   - Enemy
   - Paused
   - Lines
+  - Map01
+  - Map02
+  - Map03
   layers:
   - Default
   - TransparentFX

@@ -13,15 +13,14 @@ public class HighscoreTable : MonoBehaviour
     //private List<HighscoreEntry> highscoreEntryList;
     //private List<HighscoreEntry> highscoreEntryList2;
     private PlacementManagement pm;
-
-
-
+    public int currSel = 0;
+    public int maxSel = 2;
+    public TextMeshProUGUI selMap;
+    public string map01Name;
+    public string map02Name;
+    public string map03Name;
 
     public int n = 7;
-
-
-
-
     public int amount = 0;
 
     public void Awake()
@@ -87,15 +86,29 @@ public class HighscoreTable : MonoBehaviour
 
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
+        switch (currSel)
+        {
+            case 0:
 
-        highscores.highscoreEntryList2.Clear();
+                highscores.highscoreEntryList0.Clear();
+                break;
+            case 1:
+
+                highscores.highscoreEntryList1.Clear();
+                break;
+            case 2:
+
+                highscores.highscoreEntryList2.Clear();
+
+                break;
+        }
+
       string json = JsonUtility.ToJson(highscores);
         //PlayerPrefs.SetString("highscoreTable", json);
         //PlayerPrefs.Save();
-        File.WriteAllText(Application.dataPath + "/highscoreEntry.json", json);
 
+        File.WriteAllText(Application.dataPath + "/highscoreEntry.json", json);
         RefreshingHighscoreTable();
-        pm.LoadEndscreenScene(false);
 
    }
 
@@ -111,12 +124,24 @@ public class HighscoreTable : MonoBehaviour
         string jsonString = File.ReadAllText(Application.dataPath + "/highscoreEntry.json");
 
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-
+        
 
         // Add new entry to Highscores
-        highscores.highscoreEntryList2.Add(highscoreEntry);
+        switch (currSel)
+        {
+            case 0:
 
-       
+                highscores.highscoreEntryList0.Add(highscoreEntry);
+                break;
+            case 1:
+
+                highscores.highscoreEntryList1.Add(highscoreEntry);
+                break;
+            case 2:
+
+                highscores.highscoreEntryList2.Add(highscoreEntry);
+                break;
+        }
 
 
         // Save updated Highscores
@@ -124,12 +149,10 @@ public class HighscoreTable : MonoBehaviour
         //PlayerPrefs.SetString("highscoreTable", json);
         //PlayerPrefs.Save();
         File.WriteAllText(Application.dataPath + "/highscoreEntry.json", json);
-
     }
 
     public void RefreshingHighscoreTable()
-    {
-       
+    {       
         entryContainer = transform.Find("highscoreEntryContainer");
         entryTemplate = entryContainer.Find("highscoreEntryTemplate");
         entryTemplate.gameObject.SetActive(false);
@@ -137,44 +160,134 @@ public class HighscoreTable : MonoBehaviour
         //string jsonString = PlayerPrefs.GetString("highscoreTable");
         string jsonString = File.ReadAllText(Application.dataPath + "/highscoreEntry.json");
 
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-
-
-        // Sort entry list by Score
-        for (int i = 0; i < highscores.highscoreEntryList2.Count; i++)
+        switch (currSel)
         {
-            for (int j = i + 1; j < highscores.highscoreEntryList2.Count; j++)
-            {
-                if (highscores.highscoreEntryList2[j].score < highscores.highscoreEntryList2[i].score)  //i
-                {                                                                                       //j    
-                    // Swap
-                    HighscoreEntry tmp = highscores.highscoreEntryList2[i];
-                    highscores.highscoreEntryList2[i] = highscores.highscoreEntryList2[j];
-                    highscores.highscoreEntryList2[j] = tmp;
-                }
-            }
+            case 0:
+
+                selMap.SetText(map01Name);
+                break;
+            case 1:
+
+                selMap.SetText(map02Name);
+                break;
+            case 2:
+
+                selMap.SetText(map03Name);
+                break;
         }
 
-
-        
+        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
         DeleteRankLine(highscoreEntryTransformList);
 
-        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList2)
-        {
-            if (highscoreEntry.score > 0)
-            {
-               
 
-                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+        switch (currSel)
+        {
+            case 0:
+
+                // Sort entry list by Score
+                for (int i = 0; i < highscores.highscoreEntryList0.Count; i++)
+                {
+                    for (int j = i + 1; j < highscores.highscoreEntryList0.Count; j++)
+                    {
+                        if (highscores.highscoreEntryList0[j].score < highscores.highscoreEntryList0[i].score)  //i
+                        {                                                                                       //j    
+                                                                                                                // Swap
+                            HighscoreEntry tmp = highscores.highscoreEntryList0[i];
+                            highscores.highscoreEntryList0[i] = highscores.highscoreEntryList0[j];
+                            highscores.highscoreEntryList0[j] = tmp;
+                        }
+                    }
+                }
+
+                foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList0)
+                {
+                    if (highscoreEntry.score > 0)
+                    {
+                        CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                    }
+                }
+                break;
+            case 1:
+
+                // Sort entry list by Score
+                for (int i = 0; i < highscores.highscoreEntryList1.Count; i++)
+                {
+                    for (int j = i + 1; j < highscores.highscoreEntryList1.Count; j++)
+                    {
+                        if (highscores.highscoreEntryList1[j].score < highscores.highscoreEntryList1[i].score)  //i
+                        {                                                                                       //j    
+                                                                                                                // Swap
+                            HighscoreEntry tmp = highscores.highscoreEntryList1[i];
+                            highscores.highscoreEntryList1[i] = highscores.highscoreEntryList1[j];
+                            highscores.highscoreEntryList1[j] = tmp;
+                        }
+                    }
+                }
+
+                foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList1)
+                {
+                    if (highscoreEntry.score > 0)
+                    {
+                        CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                    }
+                }
+                break;
+            case 2:
+
+                // Sort entry list by Score
+                for (int i = 0; i < highscores.highscoreEntryList2.Count; i++)
+                {
+                    for (int j = i + 1; j < highscores.highscoreEntryList2.Count; j++)
+                    {
+                        if (highscores.highscoreEntryList2[j].score < highscores.highscoreEntryList2[i].score)  //i
+                        {                                                                                       //j    
+                                                                                                                // Swap
+                            HighscoreEntry tmp = highscores.highscoreEntryList2[i];
+                            highscores.highscoreEntryList2[i] = highscores.highscoreEntryList2[j];
+                            highscores.highscoreEntryList2[j] = tmp;
+                        }
+                    }
+                }
+
+                foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList2)
+                {
+                    if (highscoreEntry.score > 0)
+                    {
+                        CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                    }
+                }
+                break;
+        }
+
+    }
+
+    public void AddSelection(bool d)
+    {
+        if (d)
+        {
+            currSel++;
+            if (currSel > maxSel)
+            {
+                currSel = 0;
             }
         }
-    }    
+        else
+        {
+            currSel--;
+            if (currSel < 0)
+            {
+                currSel = maxSel;
+            }
+        }
 
+        RefreshingHighscoreTable();
+    }
 
     private class Highscores
     {
-        //public List<HighscoreEntry> highscoreEntryList;
+        public List<HighscoreEntry> highscoreEntryList0;
+        public List<HighscoreEntry> highscoreEntryList1;
         public List<HighscoreEntry> highscoreEntryList2;
         
     }

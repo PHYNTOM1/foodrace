@@ -88,6 +88,8 @@ public class CartController : MonoBehaviour
         forwardAccel = kartStats.acceleration;
         reverseAccel = forwardAccel * 2 / 3;
         turnStrength = kartStats.handling * 60f;
+
+        sp = GameObject.Find("StartPoint").transform;
     }
 
     void Update()

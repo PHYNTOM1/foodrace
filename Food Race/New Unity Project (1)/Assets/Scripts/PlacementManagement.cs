@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlacementManagement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlacementManagement : MonoBehaviour
     public GameObject bestRacer;
     public bool finished = false;
     public bool a;
+    public int selectedMap = 0;
 
     public HighscoreTable he;
 
@@ -21,7 +23,6 @@ public class PlacementManagement : MonoBehaviour
     public string Ingame2;
 
     public Button backButton, clearButton, scoreButton;
-
 
     Slider progressBar;
     AsyncOperation loadingOperation;
@@ -45,7 +46,6 @@ public class PlacementManagement : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-
     }
 
     public void StartGame()
@@ -56,15 +56,18 @@ public class PlacementManagement : MonoBehaviour
         loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
     }
 
-    public void BackToMenu()
-    {
-        backButton.onClick.RemoveAllListeners();
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void GoToScore()
     {
-        SceneManager.LoadScene("ScoreScreen");
+        LoadEndscreenScene(false);
+    }    
+
+    public void BackToMenu()
+    {
+        if (SceneManager.GetActiveScene().name == "ScoreScreen")
+        {
+            backButton.onClick.RemoveAllListeners();
+        }
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
@@ -79,6 +82,30 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "Ingame2")
         {
+                bool one = false;
+                bool two = false;
+                bool three = false;
+
+            switch (selectedMap)
+            {        
+                case 0:
+
+                    one = true;
+                    break;
+                case 1:
+
+                    two = true;
+                    break;
+                case 2:
+
+                    three = true;
+                    break;
+            }
+
+            GameObject.FindGameObjectWithTag("Map01").SetActive(one);
+            GameObject.FindGameObjectWithTag("Map02").SetActive(two);
+            GameObject.FindGameObjectWithTag("Map03").SetActive(three);
+
             /*
         if (finishers.Count > 0)
         {
