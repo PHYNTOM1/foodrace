@@ -250,7 +250,7 @@ public class CartController : MonoBehaviour
 
                     if (_horAxisRaw != driftForce)
                     {
-                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));    //0.55f
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.233f, 0f));    //0.55f
                     }
                     else
                     {
@@ -280,7 +280,7 @@ public class CartController : MonoBehaviour
                 }
                 else
                 {
-                    if (camC.sSpeed > 8.5f)
+                    if (camC.sSpeed > 11f)
                     {
                         camC.sSpeed -= Time.deltaTime * 5f;
                     }
@@ -400,13 +400,13 @@ public class CartController : MonoBehaviour
             theRB.AddForce((Vector3.up * -gravityForce * 700f) + (transform.forward * speedInput * 0.8f) + (transform.right * turnInput * turnStrength * (speedInput / (maxSpeed * 1000f)) * 10f * 0.8f));
         }
 
-        if (boostEmitting == true && cam.fieldOfView < 85f)
+        if (boostEmitting == true && cam.fieldOfView < 95f)
         {
-            cam.fieldOfView += Time.fixedDeltaTime * 9f;
+            cam.fieldOfView += Time.fixedDeltaTime * 10f;
         }
         else if (boostEmitting == false && cam.fieldOfView > 70f)
         {
-            cam.fieldOfView -= Time.fixedDeltaTime * 3f;
+            cam.fieldOfView -= Time.fixedDeltaTime * 6f;
         }
 
 
