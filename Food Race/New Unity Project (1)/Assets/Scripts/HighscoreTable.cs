@@ -46,7 +46,6 @@ public class HighscoreTable : MonoBehaviour
         backButton.onClick.AddListener(pm.BackToMenu);
         clearButton.onClick.AddListener(ClearList);
 
-    AddHighscoreEntry(0, "");
         RefreshingHighscoreTable();
     }
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
@@ -131,7 +130,7 @@ public class HighscoreTable : MonoBehaviour
 
    }
 
-    public void AddHighscoreEntry(float score, string name)
+    public void AddHighscoreEntry(float score, string name, int c)
     { 
         // Create Highscore Entry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name};
@@ -141,7 +140,7 @@ public class HighscoreTable : MonoBehaviour
         string jsonString = File.ReadAllText(Application.dataPath + "/highscoreEntry.json");
 
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-        
+        currSel = c;
 
         // Add new entry to Highscores
         switch (currSel)

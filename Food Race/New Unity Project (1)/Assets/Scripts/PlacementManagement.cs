@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Runtime.InteropServices;
 
 public class PlacementManagement : MonoBehaviour
 {
@@ -127,7 +128,7 @@ public class PlacementManagement : MonoBehaviour
 
             if (bestTimeOfAll > 0f)
             {
-                he.AddHighscoreEntry(bestTimeOfAll, "");
+                he.AddHighscoreEntry(bestTimeOfAll, "", selectedMap);
                 bestTimeOfAll = 0f;
             }
             he.RefreshingHighscoreTable();
@@ -473,23 +474,15 @@ public class PlacementManagement : MonoBehaviour
     {
         string _minutes;
         string _seconds;
-        string _milseconds;
-        
-
+        string _milseconds;      
         
         float minutes = Mathf.Floor(a / 60);
         float seconds = Mathf.RoundToInt(a % 60);
-        float milseconds = Mathf.RoundToInt((a * 10) % 10) ;
-
-        
-
-       
-       
-
+        float milseconds = Mathf.RoundToInt((a * 10) % 10) ;       
+              
         _minutes = minutes.ToString();
         _seconds = seconds.ToString();
         _milseconds = milseconds.ToString();
-
 
         if (minutes < 10)
         {
@@ -507,12 +500,8 @@ public class PlacementManagement : MonoBehaviour
             _milseconds = "0" + Mathf.RoundToInt(milseconds).ToString();
           
         }
-        
-        
-        return _minutes + ":" + _seconds + ":" + _milseconds;  
-     
-        
+                
+        return _minutes + ":" + _seconds + ":" + _milseconds;               
     }
-
     
 }
