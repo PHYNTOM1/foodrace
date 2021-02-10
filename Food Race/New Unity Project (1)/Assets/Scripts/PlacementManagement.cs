@@ -63,10 +63,6 @@ public class PlacementManagement : MonoBehaviour
 
     public void BackToMenu()
     {
-        if (SceneManager.GetActiveScene().name == "ScoreScreen")
-        {
-            backButton.onClick.RemoveAllListeners();
-        }
         SceneManager.LoadScene("MainMenu");
     }
 

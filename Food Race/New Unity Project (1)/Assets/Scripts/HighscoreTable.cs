@@ -15,6 +15,10 @@ public class HighscoreTable : MonoBehaviour
     private PlacementManagement pm;
     public int currSel = 0;
     public int maxSel = 2;
+    public Button nextButton;
+    public Button prevButton;
+    public Button backButton;
+    public Button clearButton;
     public TextMeshProUGUI selMap;
     public string map01Name;
     public string map02Name;
@@ -26,8 +30,23 @@ public class HighscoreTable : MonoBehaviour
     public void Awake()
     {
         pm = PlacementManagement.Instance;
+        selMap = GameObject.Find("MapNameText").GetComponent<TextMeshProUGUI>();
+        nextButton = GameObject.Find("Next Button").GetComponent<Button>();
+        prevButton = GameObject.Find("Prev Button").GetComponent<Button>();
+        backButton = GameObject.Find("Back Button").GetComponent<Button>();
+        clearButton = GameObject.Find("Clear Button").GetComponent<Button>();
 
-        AddHighscoreEntry(0, "");
+        nextButton.onClick.RemoveAllListeners();
+        prevButton.onClick.RemoveAllListeners();
+        backButton.onClick.RemoveAllListeners();
+        clearButton.onClick.RemoveAllListeners();
+
+        nextButton.onClick.AddListener(() => AddSelection(true));
+        prevButton.onClick.AddListener(() => AddSelection(false));
+        backButton.onClick.AddListener(pm.BackToMenu);
+        clearButton.onClick.AddListener(ClearList);
+
+    AddHighscoreEntry(0, "");
         RefreshingHighscoreTable();
     }
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
@@ -112,10 +131,8 @@ public class HighscoreTable : MonoBehaviour
 
    }
 
-    public void AddHighscoreEntry(float  score, string name)
-    {
-
-       
+    public void AddHighscoreEntry(float score, string name)
+    { 
         // Create Highscore Entry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name};
 
