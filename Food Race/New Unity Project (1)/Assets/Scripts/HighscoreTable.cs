@@ -43,8 +43,19 @@ public class HighscoreTable : MonoBehaviour
 
         nextButton.onClick.AddListener(() => AddSelection(true));
         prevButton.onClick.AddListener(() => AddSelection(false));
-        backButton.onClick.AddListener(pm.BackToMenu);
+        backButton.onClick.AddListener(GoToMenu);
         clearButton.onClick.AddListener(ClearList);
+
+        if (File.Exists(Application.dataPath + "/highscoreEntry.json") == false)
+        {
+            Highscores highscores = new Highscores();
+            highscores.highscoreEntryList0 = new List<HighscoreEntry>();
+            highscores.highscoreEntryList1 = new List<HighscoreEntry>();
+            highscores.highscoreEntryList2 = new List<HighscoreEntry>();
+
+            string json = JsonUtility.ToJson(highscores);
+            File.WriteAllText(Application.dataPath + "/highscoreEntry.json", json);
+        }
 
         RefreshingHighscoreTable();
     }
@@ -299,6 +310,16 @@ public class HighscoreTable : MonoBehaviour
 
         RefreshingHighscoreTable();
     }
+
+    public void GoToMenu()
+    {
+        nextButton.onClick.RemoveAllListeners();
+        prevButton.onClick.RemoveAllListeners();
+        clearButton.onClick.RemoveAllListeners();
+        backButton.onClick.RemoveAllListeners();
+
+        pm.BackToMenu();
+    }    
 
     private class Highscores
     {

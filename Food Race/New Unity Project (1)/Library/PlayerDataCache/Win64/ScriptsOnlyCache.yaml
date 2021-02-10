@@ -20,7 +20,6 @@ ScriptsOnlyBuild:
     - PlacementManagement
     - PlayerInput
     - PlayerShooting
-    - RankingEndscreen
     - RoundTimer
     - SkillHolder
     - Skills
@@ -532,8 +531,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15842}
     - Class: 114
       Script: {instanceID: 15854}
-    - Class: 114
-      Script: {instanceID: 15932}
     - Class: 114
       Script: {instanceID: 16006}
     - Class: 114
@@ -1678,7 +1675,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerFloatField
   - hash:
       serializedVersion: 2
-      Hash: 358278dc7e27928556c5f3a9e48fe376
+      Hash: dc12ecee7d3f072b066a07555970d303
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HighscoreTable

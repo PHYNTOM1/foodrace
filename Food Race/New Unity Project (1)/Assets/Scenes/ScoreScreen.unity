@@ -3996,10 +3996,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 8884767985039002934, guid: f75468d317119db49b62a8226cb73e54,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1842610306}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75468d317119db49b62a8226cb73e54, type: 3}

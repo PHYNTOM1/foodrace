@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8884767984548825818}
   - component: {fileID: 8884767984548825817}
   m_Layer: 5
-  m_Name: ClearButton
+  m_Name: Clear Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8884767985681900786}
+      - m_Target: {fileID: 0}
         m_MethodName: ClearList
         m_Mode: 1
         m_Arguments:
@@ -421,7 +421,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8884767984588780634}
-  m_LocalRotation: {x: 0.128607, y: 0.024388999, z: -0.016901454, w: 0.99125165}
+  m_LocalRotation: {x: 0.12860453, y: 0.024389422, z: -0.016898911, w: 0.991252}
   m_LocalPosition: {x: 0, y: 0, z: 19.75}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.010000001}
   m_Children:
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 8884767985039002935}
   - component: {fileID: 8884767985039002934}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,8 +1295,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8884767985681900786}
-        m_MethodName: AddSelection
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8884767985681900786}
+      - m_Target: {fileID: 0}
         m_MethodName: AddSelection
         m_Mode: 6
         m_Arguments:
@@ -1881,6 +1881,10 @@ MonoBehaviour:
   highscoreEntryTransformList: []
   currSel: 0
   maxSel: 2
+  nextButton: {fileID: 8884767985536481151}
+  prevButton: {fileID: 8884767985264288972}
+  backButton: {fileID: 8884767985039002934}
+  clearButton: {fileID: 8884767984548825817}
   selMap: {fileID: 8884767985242426064}
   map01Name: Choc Dessert
   map02Name: Candy Galaxy

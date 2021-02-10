@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Runtime.InteropServices;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlacementManagement : MonoBehaviour
 {
@@ -51,10 +52,8 @@ public class PlacementManagement : MonoBehaviour
 
     public void StartGame()
     {
-        //SceneManager.LoadScene("LoadingScreen");
-        //loadingOperation = SceneManager.LoadSceneAsync("Ingame2");
-
-        loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
+        SceneManager.LoadScene("LoadingScreen");
+        //loadingOperation = SceneManager.LoadSceneAsync("LoadingScreen");
     }
 
     public void GoToScore()
@@ -76,6 +75,10 @@ public class PlacementManagement : MonoBehaviour
             scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
             scoreButton.onClick.AddListener(GoToScore);
             
+        }
+        else if (aScene.name == "LoadingScreen")
+        {
+            loadingOperation = SceneManager.LoadSceneAsync("Ingame2");
         }
         else if (aScene.name == "Ingame2")
         {
@@ -133,11 +136,11 @@ public class PlacementManagement : MonoBehaviour
             }
             he.RefreshingHighscoreTable();
 
-            backButton = GameObject.Find("BackButton").GetComponentInChildren<Button>();
+            /*
+            backButton = GameObject.Find("Back Button").GetComponentInChildren<Button>();
             backButton.onClick.RemoveAllListeners();
             backButton.onClick.AddListener(BackToMenu);            
-            
-
+            */
         }
     }
 
@@ -152,12 +155,12 @@ public class PlacementManagement : MonoBehaviour
             }
             progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
 
+            /*
             if (loadingOperation.isDone)
             {
                 SceneManager.LoadScene("Ingame2");
             }
-
-
+            */
         }              
 
         /*
