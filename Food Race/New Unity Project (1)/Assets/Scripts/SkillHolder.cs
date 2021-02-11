@@ -94,7 +94,6 @@ public class SkillHolder : MonoBehaviour
                 case "shield":
 
                     Debug.Log("activated shield");
-                    FindObjectOfType<SoundManagement>().Play("SkillShield");
                     hc.Shielded(true);
                     allSkills.Remove(2);
                     break;

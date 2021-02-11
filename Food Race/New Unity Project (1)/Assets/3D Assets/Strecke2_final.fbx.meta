@@ -1,0 +1,343 @@
+fileFormatVersion: 2
+guid: 531c8181907037042b61714759ea08c7
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -2599083702776933359
+    second: Track.001|Track.001|Track.001|Track.001|Track.001|Track.001|Track|Object0
+  - first:
+      74: 5589951204550592329
+    second: Track.001|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0
+  - first:
+      74: 8412384920657957760
+    second: Track.001|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0.001
+  - first:
+      74: -1055069942170460599
+    second: Track.001|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0.002
+  - first:
+      74: -5186507639284035696
+    second: Track.001|Track.001|Track.001|Track.001|Track.001|Track|Track|Object030|T
+  - first:
+      74: -4794274361566571863
+    second: Track.001|Track.001|Track.001|Track.002|Track.002|Track.001|Track|Object0
+  - first:
+      74: -7438052940899376375
+    second: Track.001|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0
+  - first:
+      74: -2298414475232545669
+    second: Track.001|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0.001
+  - first:
+      74: -7309976405764875378
+    second: Track.001|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0.002
+  - first:
+      74: 4822813522406862861
+    second: Track.001|Track.001|Track.001|Track.002|Track.002|Track|Track|Object030|T
+  - first:
+      74: -4829754259988085750
+    second: Track.001|Track.001|Track.001|Track.003|Track.003|Track.001|Track|Object0
+  - first:
+      74: 6318510770034944401
+    second: Track.001|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0
+  - first:
+      74: -3237227021713029527
+    second: Track.001|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0.001
+  - first:
+      74: -2086345827459005863
+    second: Track.001|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0.002
+  - first:
+      74: -8571785601596219470
+    second: Track.001|Track.001|Track.001|Track.003|Track.003|Track|Track|Object030|T
+  - first:
+      74: 6099584663614836261
+    second: Track.001|Track.001|Track.001|Track|Track|Object030|Take 001|BaseLayer|Tr
+  - first:
+      74: -1897293571622228059
+    second: Track.001|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object03
+  - first:
+      74: 3728033762662105341
+    second: Track.001|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object03.001
+  - first:
+      74: -8108683963997681460
+    second: Track.001|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object030|Ta
+  - first:
+      74: 6271821380466113690
+    second: Track.001|Track|Track|Object030|Take 001|BaseLayer|Track|Object030|Ta
+  - first:
+      74: -5810949725731236248
+    second: Track.001|Track|Track|Object030|Take 001|BaseLayer|Track|Object030|Take
+      0
+  - first:
+      74: -4116730065435357318
+    second: Track.001|Track|Track|Track.001|Track.001|Track.001|Track|Object030|Tak_b
+  - first:
+      74: -7527156506920472568
+    second: Track.001|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_1
+  - first:
+      74: -1311026657717699010
+    second: Track.001|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_2
+  - first:
+      74: -6746865911670272253
+    second: Track.001|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_a
+  - first:
+      74: 3567980790591601641
+    second: Track.001|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_c
+  - first:
+      74: -132271813031968701
+    second: Track.001|Track|Track|Track.002|Track.002|Track.001|Track|Object030|Tak_1
+  - first:
+      74: -5531095996328802924
+    second: 'Track.001|Track|Track|Track.002|Track.002|Track|Track|Object030|Take '
+  - first:
+      74: 1071737043534029851
+    second: Track.001|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_3
+  - first:
+      74: -4293459754941899134
+    second: Track.001|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_7
+  - first:
+      74: -3882962465008658823
+    second: Track.001|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_a
+  - first:
+      74: -4721616211027779452
+    second: Track.001|Track|Track|Track.003|Track.003|Track.001|Track|Object030|Tak_4
+  - first:
+      74: 2824681836454545110
+    second: Track.001|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_7
+  - first:
+      74: 2254109085350390495
+    second: Track.001|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_9
+  - first:
+      74: -5562816733483294303
+    second: Track.001|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_c
+  - first:
+      74: -3148063556571526010
+    second: Track.001|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_d
+  - first:
+      74: -8622690776168722967
+    second: Track.001|Track|Track|Track|Track|Object030|Take 001|BaseLayer|Track|Ob_d
+  - first:
+      74: 6413578690177449467
+    second: Track.002|Track.001|Track.001|Track.001|Track.001|Track.001|Track|Object0
+  - first:
+      74: 2537747772906378881
+    second: Track.002|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0
+  - first:
+      74: 3675733411679749026
+    second: Track.002|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0.001
+  - first:
+      74: 3814916515892593257
+    second: Track.002|Track.001|Track.001|Track.001|Track.001|Track|Track|Object0.002
+  - first:
+      74: 4463567628628806871
+    second: Track.002|Track.001|Track.001|Track.001|Track.001|Track|Track|Object030|T
+  - first:
+      74: 1869428884518325360
+    second: Track.002|Track.001|Track.001|Track.002|Track.002|Track.001|Track|Object0
+  - first:
+      74: 7307336590738507820
+    second: Track.002|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0
+  - first:
+      74: 5175153230028138400
+    second: Track.002|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0.001
+  - first:
+      74: 2986755417353787332
+    second: Track.002|Track.001|Track.001|Track.002|Track.002|Track|Track|Object0.002
+  - first:
+      74: 3184421571046919870
+    second: Track.002|Track.001|Track.001|Track.002|Track.002|Track|Track|Object030|T
+  - first:
+      74: -2446228870691328513
+    second: Track.002|Track.001|Track.001|Track.003|Track.003|Track.001|Track|Object0
+  - first:
+      74: -8831715499054382894
+    second: Track.002|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0
+  - first:
+      74: -6824509297863629426
+    second: Track.002|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0.001
+  - first:
+      74: 2486788445374054108
+    second: Track.002|Track.001|Track.001|Track.003|Track.003|Track|Track|Object0.002
+  - first:
+      74: -8553757385216876774
+    second: Track.002|Track.001|Track.001|Track.003|Track.003|Track|Track|Object030|T
+  - first:
+      74: -5911925521655306011
+    second: Track.002|Track.001|Track.001|Track|Track|Object030|Take 001|BaseLayer|Tr
+  - first:
+      74: 8555748964320622704
+    second: Track.002|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object03
+  - first:
+      74: -4668498013667299748
+    second: Track.002|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object03.001
+  - first:
+      74: 8156736898506571726
+    second: Track.002|Track.002|Track|Object030|Take 001|BaseLayer|Track|Object030|Ta
+  - first:
+      74: -1175309628388772842
+    second: Track.002|Track|Track|Object030|Take 001|BaseLayer|Track|Object030|Ta
+  - first:
+      74: 2051165282270484649
+    second: Track.002|Track|Track|Object030|Take 001|BaseLayer|Track|Object030|Take
+      0
+  - first:
+      74: 5166997819365979107
+    second: Track.002|Track|Track|Track.001|Track.001|Track.001|Track|Object030|Tak_b
+  - first:
+      74: 8918439736450911370
+    second: Track.002|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_1
+  - first:
+      74: -3935971976006596653
+    second: Track.002|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_2
+  - first:
+      74: 6431984086488973995
+    second: Track.002|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_a
+  - first:
+      74: -1721629833030072580
+    second: Track.002|Track|Track|Track.001|Track.001|Track|Track|Object030|Take
+      00_c
+  - first:
+      74: -272654196271082925
+    second: Track.002|Track|Track|Track.002|Track.002|Track.001|Track|Object030|Tak_1
+  - first:
+      74: -426151389360727782
+    second: 'Track.002|Track|Track|Track.002|Track.002|Track|Track|Object030|Take '
+  - first:
+      74: 825840143934965515
+    second: Track.002|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_3
+  - first:
+      74: 3232420067728991529
+    second: Track.002|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_7
+  - first:
+      74: -6058314899417077457
+    second: Track.002|Track|Track|Track.002|Track.002|Track|Track|Object030|Take
+      00_a
+  - first:
+      74: -2190880640740749775
+    second: Track.002|Track|Track|Track.003|Track.003|Track.001|Track|Object030|Tak_4
+  - first:
+      74: 1314305422113635637
+    second: Track.002|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_7
+  - first:
+      74: 4739425954672839081
+    second: Track.002|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_9
+  - first:
+      74: -193867773591810682
+    second: Track.002|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_c
+  - first:
+      74: -6674015012484423100
+    second: Track.002|Track|Track|Track.003|Track.003|Track|Track|Object030|Take
+      00_d
+  - first:
+      74: -8581037363560033836
+    second: Track.002|Track|Track|Track|Track|Object030|Take 001|BaseLayer|Track|Ob_d
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

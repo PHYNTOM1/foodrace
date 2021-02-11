@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 5851351943799810634}
   - component: {fileID: 5851351943799810635}
   - component: {fileID: 516992879}
+  - component: {fileID: 265315315178895670}
   m_Layer: 0
   m_Name: PlacementManager
   m_TagString: Untagged
@@ -239,7 +240,7 @@ MonoBehaviour:
   bestTimeOfAll: 0
   bestRacer: {fileID: 0}
   finished: 0
-  a: 0
+  loadingAwake: 0
   selectedMap: 0
   he: {fileID: 0}
   LoadingScreen: 
@@ -273,6 +274,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &265315315178895670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851351943799810632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c76f0b74739d30478f8a641ef3580ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
+  sounds: []
 --- !u!1 &5851351944256529870
 GameObject:
   m_ObjectHideFlags: 0

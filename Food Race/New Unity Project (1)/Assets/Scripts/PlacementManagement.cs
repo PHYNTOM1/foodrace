@@ -47,7 +47,7 @@ public class PlacementManagement : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(_instance);
+            DontDestroyOnLoad(_instance.gameObject);
         }
     }
 

@@ -77,6 +77,7 @@ public class CartController : MonoBehaviour
     void Start()
     {
         PlacementManagement.Instance.CallOnAwake();
+        sm = PlacementManagement.Instance.gameObject.GetComponent<SoundManagement>();
 
         camC = FindObjectOfType<CameraController>();
         cam = camC.gameObject.GetComponent<Camera>();
@@ -132,7 +133,6 @@ public class CartController : MonoBehaviour
             if (_driftInput && speedInput >= maxSpeed * 750f)
             {
                 drifting = true;
-                sm.Play("Drifting");
                 if (driftForce == 0)
                 {
                     driftForce = (int)_horAxisRaw;
@@ -189,8 +189,6 @@ public class CartController : MonoBehaviour
 
             if (_verAxisRaw == 1 || _verAxisRaw == -1)
             {
-                sm.Play("EngineDriving");
-
                 if (_verAxis > 0)
                 {
                     if (speedInput > maxSpeed * 1000f * speedMult)

@@ -47,8 +47,6 @@ public class AoEMapAttack : MonoBehaviour
 
     public void Attack()
     {
-        FindObjectOfType<SoundManagement>().Play("Flamethrower");
-
         isAttacking = true;
         attackTimeReal = attackTime;
     }
