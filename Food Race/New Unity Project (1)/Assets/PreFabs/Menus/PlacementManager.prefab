@@ -246,9 +246,9 @@ MonoBehaviour:
   LoadingScreen: 
   MainMenu: 
   Ingame2: 
-  map01Name: Choc Dessert
-  map02Name: Candy Galaxy
-  map03Name: Winter Sugar
+  map01Name: Pancake Park
+  map02Name: Sweet Snow
+  map03Name: Chocolate Canyon
   backButton: {fileID: 0}
   clearButton: {fileID: 0}
   scoreButton: {fileID: 0}

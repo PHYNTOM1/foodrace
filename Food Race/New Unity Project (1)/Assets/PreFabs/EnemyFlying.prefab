@@ -122,7 +122,7 @@ Rigidbody:
   m_Mass: 100
   m_Drag: 2
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
@@ -170,6 +170,7 @@ MonoBehaviour:
   spottedCounter: 1.5
   spottedCounterReal: 0
   spotIcon: {fileID: 3456848804745547029}
+  oooIcon: {fileID: 0}
   maxHP: 1
   currHP: 1
   moveSpeed: 10
@@ -189,6 +190,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   smokePoof: {fileID: 7383479392154189637, guid: 9f694a501ee52f84893744df102ea3e7,
     type: 3}
+  destroyed: []
 --- !u!95 &6867823801692295864
 Animator:
   serializedVersion: 3

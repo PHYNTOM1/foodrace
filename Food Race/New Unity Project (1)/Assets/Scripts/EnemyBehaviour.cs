@@ -252,7 +252,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (realAtkSpeed <= 0)
         {
-            GameObject eB = Instantiate(enemyBullet, (this.gameObject.transform.position - (this.gameObject.transform.forward.normalized * 3f) + (this.gameObject.transform.right.normalized * left)), Quaternion.Euler(90f, this.gameObject.transform.eulerAngles.y + 180f, 0f));
+            GameObject eB = Instantiate(enemyBullet, (this.gameObject.transform.position + new Vector3(0f, 1f, 0f) - (this.gameObject.transform.forward.normalized * 3f) + (this.gameObject.transform.right.normalized * left)), Quaternion.Euler(90f, this.gameObject.transform.eulerAngles.y + 180f, 0f));
 
             left = -left;
 

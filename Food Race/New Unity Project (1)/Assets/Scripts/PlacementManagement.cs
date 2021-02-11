@@ -32,7 +32,7 @@ public class PlacementManagement : MonoBehaviour
     public Animator anim;
     public CanvasGroup cg;
 
-    Slider progressBar;
+    //Slider progressBar;
     AsyncOperation loadingOperation;
 
     private static PlacementManagement _instance;
@@ -64,7 +64,7 @@ public class PlacementManagement : MonoBehaviour
         if (cg == null)
         {
             cg = bgCanvas.GetComponentInChildren<CanvasGroup>();
-        }     
+        }
     }
 
     public void Anim1()
@@ -145,7 +145,11 @@ public class PlacementManagement : MonoBehaviour
     public void Anim5()
     {
         if (SceneManager.GetActiveScene().name == "Ingame2")
-        {            
+        {
+            if (cg.alpha == 0)
+            {
+                cg.alpha = 1;
+            }
             SetObjCanvas("Canvas", false);
         }
         else if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -278,9 +282,19 @@ public class PlacementManagement : MonoBehaviour
                     break;
             }
 
-            GameObject.FindGameObjectWithTag("Map01").SetActive(one);
-            GameObject.FindGameObjectWithTag("Map02").SetActive(two);
-            GameObject.FindGameObjectWithTag("Map03").SetActive(three);
+            GameObject m01 = GameObject.FindGameObjectWithTag("Map01");
+            GameObject m02 = GameObject.FindGameObjectWithTag("Map02");
+            GameObject m03 = GameObject.FindGameObjectWithTag("Map03");
+            m01.SetActive(one);
+            m02.SetActive(two);
+            m03.SetActive(three);
+
+            racers.Clear();
+            racers.Add(GameObject.FindGameObjectWithTag("Player"));
+            bestRacer = racers[0];
+            bestTimeOfAll = 0f;
+            finishers.Clear();
+            bestRacer.GetComponent<RoundTimer>().SetResetTimes(selectedMap);
 
             /*
         if (finishers.Count > 0)
@@ -291,11 +305,6 @@ public class PlacementManagement : MonoBehaviour
             }
         }
             */
-            racers.Clear();
-            racers.Add(GameObject.FindGameObjectWithTag("Player"));
-            bestRacer = racers[0];
-            bestTimeOfAll = 0f;
-            finishers.Clear();
             //            RefreshRacers();            
         }
     }
@@ -310,12 +319,14 @@ public class PlacementManagement : MonoBehaviour
                 loadingAwake = true;
             }
 
+            /*
             if (progressBar == null)
             {
                 progressBar = FindObjectOfType<Slider>();
 
             }
             progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+            */
 
             /*
             if (loadingOperation.isDone)

@@ -48,7 +48,7 @@ public class CartController : MonoBehaviour
 
     public KartStats kartStats;
     public SoundManagement sm;
-    public SkillHolder sh;
+    //public SkillHolder sh;
     public CameraController camC;
     public bool isPlayer = false;
     public bool notRacing = false;
@@ -84,7 +84,7 @@ public class CartController : MonoBehaviour
         theRB.transform.parent = null;  
         lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
         sm = FindObjectOfType<SoundManagement>();
-        sh = GetComponent<SkillHolder>();
+        //sh = GetComponent<SkillHolder>();
         anim = GetComponent<Animator>();
 
         maxSpeed = kartStats.topSpeed;
@@ -306,7 +306,7 @@ public class CartController : MonoBehaviour
             //JUST FOR TESTING :))))) DELETE ME LATER
             else
             {              
-                if (theRB.position.y <= -5f)
+                if (theRB.position.y <= -10f)
                 {
                     ResetCart(true);
                 }

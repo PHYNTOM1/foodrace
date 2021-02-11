@@ -10,7 +10,8 @@ public class EnemyRespawning : MonoBehaviour
 
     public List<Transform> walkerTs;
     public List<Transform> flyerTs;
-    
+
+
     public void SpawnNewEnemies()
     {
         foreach (Transform tf in walkerTs)

@@ -6,18 +6,19 @@ using TMPro;
 
 public class RoundTimer : MonoBehaviour
 {
-    public float maxTime1 = 18f;
-    public float maxTime2 = 28f;
-    public float maxTime3 = 38f;
-    public float maxTime4 = 50f;
+    private float maxTime1 = 18f;
+    private float maxTime2 = 28f;
+    private float maxTime3 = 38f;
+    private float maxTime4 = 50f;
 
     public float roundTimer = 0f;
     public float bestRound = 0f;
     public float cpTimer = 0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerCPText;
-//    public TextMeshProUGUI placementText;
-    
+    public TextMeshProUGUI timerMaxText;
+    //    public TextMeshProUGUI placementText;
+
     public float[] roundTimes = { 0f, 0f, 0f };
     public float[] cpTimes = { 0f, 0f, 0f, 0f };
     public float[] cpBestTimes = { 0f, 0f, 0f, 0f };
@@ -35,17 +36,18 @@ public class RoundTimer : MonoBehaviour
         cc = GetComponent<CartController>();
         pm = FindObjectOfType<PlacementManagement>();
 
-
         RoundTimerReset();
 
 //        if (isLocalPlayer)
 //        {
             timerCPText = GameObject.Find("CPTimerText").GetComponent<TextMeshProUGUI>();
             timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
-            
+            timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
+
             timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f);
             timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", 0f, 0f, 0f, 0f, 0f, 0f);
-
+            timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
+          
 //            placementText = GameObject.Find("PlacementPositionText").GetComponent<TextMeshProUGUI>();
 //            placementText.SetText("-.");
 //        }
@@ -141,4 +143,35 @@ public class RoundTimer : MonoBehaviour
             cpBestTimes[i] = 0f;
         }
     }
+
+    public void SetResetTimes(int i)
+    {
+        switch (i)
+        {
+            case 0:
+
+                maxTime1 = 18f;
+                maxTime2 = 28f;
+                maxTime3 = 38f;
+                maxTime4 = 50f;
+                break;
+            case 1:
+
+                maxTime1 = 99f;
+                maxTime2 = 99f;
+                maxTime3 = 99f;
+                maxTime4 = 99f;
+                break;
+            case 2:
+
+                maxTime1 = 99f;
+                maxTime2 = 99f;
+                maxTime3 = 99f;
+                maxTime4 = 99f;
+                break;
+        }
+
+        timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
+    }
+
 }

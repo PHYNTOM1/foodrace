@@ -18,7 +18,9 @@ public class LapTracker : MonoBehaviour
 
     //public KartAIAgent ka;
     public RoundTimer rt;
-    public EnemyRespawning er;
+    public EnemyRespawning er1;
+    public EnemyRespawning er2;
+    public EnemyRespawning er3;
 
     void Start()
     {
@@ -27,8 +29,9 @@ public class LapTracker : MonoBehaviour
         //        goalPoint = GameObject.Find("GoalPoint").transform;
         //ka = GetComponent<KartAIAgent>();
         rt = GetComponent<RoundTimer>();
-        er = FindObjectOfType<EnemyRespawning>();
-        er.SpawnNewEnemies();
+        er1 = GameObject.Find("Map01").GetComponentInChildren<EnemyRespawning>();
+        er2 = GameObject.Find("Map02").GetComponentInChildren<EnemyRespawning>();
+        er3 = GameObject.Find("Map03").GetComponentInChildren<EnemyRespawning>();
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -159,7 +162,22 @@ public class LapTracker : MonoBehaviour
             Debug.Log(gameObject.name + "PASSED GOAL!");
             lap++;
             rt.CompletedRound(lap);
-            er.RespawnEnemies();
+            
+            switch (PlacementManagement.Instance.selectedMap)
+            {
+                case 0:
+
+                    er1.RespawnEnemies();
+                    break;
+                case 1:
+
+                    er2.RespawnEnemies();
+                    break;
+                case 2:
+
+                    er3.RespawnEnemies();
+                    break;
+            }
 
             //FINISH GAME!!!
             if (lap == 4)
@@ -181,6 +199,23 @@ public class LapTracker : MonoBehaviour
         //goalEnabled = false;
         finished = false;
         PlacementManagement.Instance.finished = finished;
+
+        switch (PlacementManagement.Instance.selectedMap)
+        {
+            case 0:
+
+                er1.RespawnEnemies();
+                break;
+            case 1:
+
+                er2.RespawnEnemies();
+                break;
+            case 2:
+
+                er3.RespawnEnemies();
+                break;
+        }
+
         SetAllFalse();
     }
 

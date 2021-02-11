@@ -40,6 +40,8 @@ public class HighscoreTable : MonoBehaviour
         backButton.onClick.RemoveAllListeners();
         clearButton.onClick.RemoveAllListeners();
 
+        nextButton.onClick.AddListener(() => pm.anim.SetTrigger("FlipN"));
+        prevButton.onClick.AddListener(() => pm.anim.SetTrigger("FlipN"));
         nextButton.onClick.AddListener(() => AddSelection(true));
         prevButton.onClick.AddListener(() => AddSelection(false));
         backButton.onClick.AddListener(GoToMenu);
