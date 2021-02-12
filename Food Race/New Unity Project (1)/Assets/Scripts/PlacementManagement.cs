@@ -585,6 +585,22 @@ public class PlacementManagement : MonoBehaviour
             m02.SetActive(two);
             m03.SetActive(three);
 
+            switch (selectedMap)
+            {
+                case 0:
+
+                    m01.GetComponentInChildren<EnemyRespawning>().RespawnEnemies();
+                    break;
+                case 1:
+
+                    m02.GetComponentInChildren<EnemyRespawning>().RespawnEnemies();
+                    break;
+                case 2:
+
+                    m03.GetComponentInChildren<EnemyRespawning>().RespawnEnemies();
+                    break;
+            }
+
             racers.Clear();
             racers.Add(GameObject.FindGameObjectWithTag("Player"));
             bestRacer = racers[0];

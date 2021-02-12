@@ -61,6 +61,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.HighDefinition.Bloom
     - UnityEngine.Rendering.HighDefinition.ColorAdjustments
     - UnityEngine.Rendering.HighDefinition.ContactShadows
+    - UnityEngine.Rendering.HighDefinition.DepthOfField
     - UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings
     - UnityEngine.Rendering.HighDefinition.Exposure
     - UnityEngine.Rendering.HighDefinition.Fog
@@ -75,6 +76,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky
     - UnityEngine.Rendering.HighDefinition.RenderPipelineResources
     - UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection
+    - UnityEngine.Rendering.HighDefinition.ShadowsMidtonesHighlights
     - UnityEngine.Rendering.HighDefinition.SplitToning
     - UnityEngine.Rendering.HighDefinition.StaticLightingSky
     - UnityEngine.Rendering.HighDefinition.Tonemapping
@@ -179,15 +181,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11744}
     - Class: 114
+      Script: {instanceID: 11772}
+    - Class: 114
       Script: {instanceID: 11906}
     - Class: 114
       Script: {instanceID: 11914}
     - Class: 114
       Script: {instanceID: 12138}
     - Class: 114
+      Script: {instanceID: 12176}
+    - Class: 114
       Script: {instanceID: 12338}
     - Class: 114
       Script: {instanceID: 12370}
+    - Class: 114
+      Script: {instanceID: 12382}
     - Class: 114
       Script: {instanceID: 12430}
     - Class: 114
@@ -236,6 +244,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15586}
     - Class: 114
       Script: {instanceID: 15694}
+    - Class: 114
+      Script: {instanceID: 15696}
     - Class: 114
       Script: {instanceID: 15898}
     - Class: 114
@@ -862,7 +872,7 @@ ScriptsOnlyBuild:
     className: VFXInputTouchBinder
   - hash:
       serializedVersion: 2
-      Hash: ffb88a5b69986916e8af2babb9814e00
+      Hash: 41f7b2b3345391de07376006afc9730d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerInput
@@ -1306,7 +1316,7 @@ ScriptsOnlyBuild:
     className: LightCluster
   - hash:
       serializedVersion: 2
-      Hash: 5ee1b57b19258625fd3376edc60e3a2f
+      Hash: e2977bbcb484a37f8e3fae2986de6fc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoundManagement

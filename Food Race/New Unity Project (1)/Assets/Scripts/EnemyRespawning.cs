@@ -35,7 +35,6 @@ public class EnemyRespawning : MonoBehaviour
             }
         }
     }
-        
 
     public void RespawnEnemies()
     {

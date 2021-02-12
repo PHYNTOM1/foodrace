@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d877ec3e844f2ca46830012e8e79319b, type: 3}
   m_Name: PhysicallyBasedSky
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 0
@@ -21,13 +21,13 @@ MonoBehaviour:
     max: 360
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   exposure:
     m_OverrideState: 1
     m_Value: 2.11
   multiplier:
     m_OverrideState: 1
-    m_Value: 1.35
+    m_Value: 2.6
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 20000
   updateMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   updatePeriod:
     m_OverrideState: 0
@@ -59,29 +59,29 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: -50
   planetaryRadius:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 70000
     min: 0
   planetCenterPosition:
     m_OverrideState: 0
     m_Value: {x: 0, y: -6378100, z: 0}
   airDensityR:
-    m_OverrideState: 0
-    m_Value: 0.062
+    m_OverrideState: 1
+    m_Value: 0.414
     min: 0
     max: 1
   airDensityG:
-    m_OverrideState: 0
-    m_Value: 0.135
+    m_OverrideState: 1
+    m_Value: 0.538
     min: 0
     max: 1
   airDensityB:
-    m_OverrideState: 0
-    m_Value: 0.112
+    m_OverrideState: 1
+    m_Value: 0.691
     min: 0
     max: 1
   airTint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0.504717, g: 1, b: 0.8714096, a: 1}
     hdr: 0
     showAlpha: 0
@@ -92,12 +92,12 @@ MonoBehaviour:
     min: 0
   aerosolDensity:
     m_OverrideState: 1
-    m_Value: 0.007
+    m_Value: 0.709
     min: 0
     max: 1
   aerosolTint:
-    m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 0
+    m_Value: {r: 0.8204432, g: 0.9191258, b: 0.9716981, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -107,17 +107,17 @@ MonoBehaviour:
     min: 0
   aerosolAnisotropy:
     m_OverrideState: 1
-    m_Value: 0.945
+    m_Value: -1
     min: -1
     max: 1
   numberOfBounces:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 10
     min: 1
     max: 10
   groundTint:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0.025318636, b: 0.122641504, a: 1}
+    m_Value: {r: 1, g: 0.9103774, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
   colorSaturation:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
     min: 0
     max: 1
   alphaSaturation:
@@ -156,7 +156,7 @@ MonoBehaviour:
     max: 1
   alphaMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.1
     min: 0
     max: 1
   horizonTint:
@@ -173,7 +173,7 @@ MonoBehaviour:
     showEyeDropper: 0
   horizonZenithShift:
     m_OverrideState: 1
-    m_Value: -1
+    m_Value: 1
     min: -1
     max: 1
 --- !u!114 &-1658960478407648048
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 4
   skyAmbientMode:
     m_OverrideState: 1
     m_Value: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81bcacc415a1f743bfdf703afc52027, type: 3}
   m_Name: GradientSky
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 0
@@ -459,22 +459,22 @@ MonoBehaviour:
     m_Value: 0
   top:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.12929837, g: 0, b: 0.7924528, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.02286178, g: 0, b: 0.18039216, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   bottom:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.012703, g: 0, b: 0.05660379, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   gradientDiffusion:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1.5

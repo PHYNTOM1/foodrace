@@ -306,7 +306,7 @@ MonoBehaviour:
   musicM: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
   soundsM: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
     type: 2}
-  mav: 0.5
+  mav: 0.75
   muv: 0.35
   sov: 0.5
   sounds:
@@ -390,7 +390,7 @@ MonoBehaviour:
   - name: check
     clip: {fileID: 8300000, guid: 210a2fb5b70ebc44cb8944fffcbe9b05, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -401,7 +401,7 @@ MonoBehaviour:
   - name: check2
     clip: {fileID: 8300000, guid: 51bea950c77fc9341af6f803dd558409, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -412,7 +412,7 @@ MonoBehaviour:
   - name: check3
     clip: {fileID: 8300000, guid: 06da6652ab43e424fbaf4a583dd66b9a, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -423,7 +423,7 @@ MonoBehaviour:
   - name: check4
     clip: {fileID: 8300000, guid: 0e7fce91daeceeb458e2fe35e9610aa8, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -434,7 +434,7 @@ MonoBehaviour:
   - name: check5
     clip: {fileID: 8300000, guid: 0d681af7f484d6c43a6ad9151ea75e7a, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -445,7 +445,7 @@ MonoBehaviour:
   - name: check6
     clip: {fileID: 8300000, guid: 30a146d25b8e32a46be4846f106cef93, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -456,7 +456,7 @@ MonoBehaviour:
   - name: check7
     clip: {fileID: 8300000, guid: 6518595146aa41b45bc991a763b97d2b, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -467,7 +467,7 @@ MonoBehaviour:
   - name: check8
     clip: {fileID: 8300000, guid: a2e255e94683f3d4ba3e935b1980d4dd, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -533,10 +533,10 @@ MonoBehaviour:
   - name: engine
     clip: {fileID: 8300000, guid: 9ce60f4d66eb7c74c88764272c0a26b4, type: 3}
     song: 0
-    volume: 0.25
-    volumeVariance: 0.15
+    volume: 0.1
+    volumeVariance: 0.05
     pitch: 1
-    pitchVariance: 0.1
+    pitchVariance: 0.15
     loop: 1
     mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
       type: 2}

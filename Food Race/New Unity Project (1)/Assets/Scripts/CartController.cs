@@ -205,9 +205,9 @@ public class CartController : MonoBehaviour
                 
                 if (_verAxis > 0)
                 {
-                    if (speedInput > maxSpeed * 1000f * speedMult)
+                    if (speedInput > maxSpeed * 1005f * speedMult)
                     {
-                        speedInput -= forwardAccel * maxSpeed * 15f * speedMult;
+                        speedInput -= forwardAccel * maxSpeed * 22.5f * speedMult;
                     }
                     else if (speedInput < maxSpeed * 1000f * speedMult && speedInput >= maxSpeed * -1000f * speedMult)
                     {
@@ -267,7 +267,7 @@ public class CartController : MonoBehaviour
                     {
                         sm.Play("drifting");
                     }
-                    else if (sm.IsPlaying("drifting") == true)
+                    else if (sm.IsPlaying("drifting") == true && driftStage >= 2)
                     {
                         sm.Stop("drifting");
                     }                                        
@@ -279,7 +279,7 @@ public class CartController : MonoBehaviour
 
                     if (_horAxisRaw != driftForce)
                     {
-                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.233f, 0f));    //0.55f
+                        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, _turnInput * 0.3f, 0f));    //0.55f
                     }
                     else
                     {
@@ -568,7 +568,7 @@ public class CartController : MonoBehaviour
         sm.Play("boostair3");
         sm.Play("boostair");
         sm.Play("boostair2", 0.15f);
-        speedInput += 4000 + (2000 * stage);
+        speedInput += 3500 + (1500 * stage);
 
         driftStage = 0;
         boostEmitting = true;

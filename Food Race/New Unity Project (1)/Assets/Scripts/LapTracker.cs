@@ -26,15 +26,18 @@ public class LapTracker : MonoBehaviour
 
     void Start()
     {
-        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
-        GameObject checkpointsGroup = GameObject.Find("Checkpoints");
-        Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
-        //        goalPoint = GameObject.Find("GoalPoint").transform;
+        //goalPoint = GameObject.Find("GoalPoint").transform;
         //ka = GetComponent<KartAIAgent>();
+        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         rt = GetComponent<RoundTimer>();
         er1 = GameObject.Find("Map01").GetComponentInChildren<EnemyRespawning>();
         er2 = GameObject.Find("Map02").GetComponentInChildren<EnemyRespawning>();
         er3 = GameObject.Find("Map03").GetComponentInChildren<EnemyRespawning>();
+
+        checkpoints.Clear();
+        checkpointsPassed.Clear();
+        GameObject checkpointsGroup = GameObject.Find("Checkpoints");
+        Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
 
         for (int i = 1; i < cpG.Length; i++)
         {
@@ -47,21 +50,44 @@ public class LapTracker : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (goalEnabled)
+        if (sm == null)
         {
-            UpdateGoalCheck();
+            sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         }
-        else
+        if (rt == null)
         {
-            UpdateCheckpointCheck();
+            rt = GetComponent<RoundTimer>();
         }
-        */
+        if (er1 == null)
+        {
+            er1 = GameObject.Find("Map01").GetComponentInChildren<EnemyRespawning>();
+        }
+        if (er2 == null)
+        {
+            er2 = GameObject.Find("Map02").GetComponentInChildren<EnemyRespawning>();
+        }
+        if (er3 == null)
+        {
+            er3 = GameObject.Find("Map03").GetComponentInChildren<EnemyRespawning>();
+        }
+        if (checkpoints.Count <= 0)
+        {
+            checkpoints.Clear();
+            checkpointsPassed.Clear();
+            GameObject checkpointsGroup = GameObject.Find("Checkpoints");
+            Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
+
+            for (int i = 1; i < cpG.Length; i++)
+            {
+                checkpoints.Add(cpG[i]);
+                checkpointsPassed.Add(false);
+            }
+        }
     }
 
     public void PassCheckpoint(int s)
     {
-        sm.PlayOneShot("check5");
+        sm.PlayOneShot("check6");
         checkpointsPassed[s] = true;
         rt.CompletedCP(s);
         //ka.AddReward(0.01f);
@@ -166,7 +192,7 @@ public class LapTracker : MonoBehaviour
             Debug.Log(gameObject.name + "PASSED GOAL!");
             lap++;
             rt.CompletedRound(lap);
-            sm.PlayOneShot("check6");
+            sm.PlayOneShot("check");
 
             switch (PlacementManagement.Instance.selectedMap)
             {

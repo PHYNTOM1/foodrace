@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     CartController cc;
     PlayerShooting ps;
     public bool paused = false;
-    private List<GameObject> gos = new List<GameObject>();
+    public GameObject pausedPanel;
 
     void Start()
     {
@@ -16,12 +16,7 @@ public class PlayerInput : MonoBehaviour
         cc = GetComponent<CartController>();
         ps = GetComponent<PlayerShooting>();
         paused = false;
-        GameObject[] gos2 = GameObject.FindGameObjectsWithTag("Paused");
-        foreach (GameObject g in gos2)
-        {
-            gos.Add(g);
-            g.SetActive(false);
-        }
+        pausedPanel = GameObject.Find("PausedText");
     }
 
     void Update()
@@ -61,10 +56,17 @@ public class PlayerInput : MonoBehaviour
                 Time.timeScale = 0f;
             }
 
-            foreach (GameObject g in gos)
+            /*
+            if (paused)
             {
-                g.SetActive(paused);
+                pausedPanel.GetComponent<CanvasGroup>().alpha = 1;
             }
+            else
+            {
+                pausedPanel.GetComponent<CanvasGroup>().alpha = 0;
+            }
+            */
+            pausedPanel.SetActive(paused);
         }
 
         /*

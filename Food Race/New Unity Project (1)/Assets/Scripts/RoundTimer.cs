@@ -34,7 +34,7 @@ public class RoundTimer : MonoBehaviour
     {
         lt = GetComponent<LapTracker>();
         cc = GetComponent<CartController>();
-        pm = FindObjectOfType<PlacementManagement>();
+        pm = PlacementManagement.Instance;
 
         RoundTimerReset();
 
@@ -55,6 +55,35 @@ public class RoundTimer : MonoBehaviour
 
     void Update()
     {
+        if (lt == null)
+        {
+            lt = GetComponent<LapTracker>();
+        }
+        if (cc == null)
+        {
+            cc = GetComponent<CartController>();
+        }
+        if (pm == null)
+        {
+            pm = PlacementManagement.Instance;
+        }
+        if (timerCPText == null)
+        {
+            timerCPText = GameObject.Find("CPTimerText").GetComponent<TextMeshProUGUI>();
+            timerCPText.SetText("Checkpoints:\n1:  " + pm.ConvertTimerInText(cpTimes[0]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[0]) + "\n2: " + pm.ConvertTimerInText(cpTimes[1]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[1]) + "\n3: " + pm.ConvertTimerInText(cpTimes[2]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[2]) + "\n4: " + pm.ConvertTimerInText(cpTimes[3]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[3]));
+        }
+        if (timerText == null)
+        {
+            timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
+            timerText.SetText("Current Lap: " + pm.ConvertTimerInText(roundTimer) + "\nBest Lap:" + pm.ConvertTimerInText(bestRound) + "\n\nLap 1: " + pm.ConvertTimerInText(roundTimes[0]) + " \nLap 2: " + pm.ConvertTimerInText(roundTimes[1]) + " \nLap 3: " + pm.ConvertTimerInText(roundTimes[2]) + " \nFull Course: " + pm.ConvertTimerInText(roundTimes[0] + roundTimes[1] + roundTimes[2]));
+        }
+        if (timerMaxText == null)
+        {
+            timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
+            SetResetTimes(pm.selectedMap);
+        }
+
+
         if (lt.finished == false && cc.notRacing == false)
         {
             roundTimer += Time.deltaTime;
@@ -83,7 +112,7 @@ public class RoundTimer : MonoBehaviour
             //            if (isLocalPlayer)
             //            {
             timerCPText.SetText("Checkpoints:\n1:  " + pm.ConvertTimerInText(cpTimes[0]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[0]) + "\n2: " + pm.ConvertTimerInText(cpTimes[1]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[1]) + "\n3: " + pm.ConvertTimerInText(cpTimes[2]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[2]) + "\n4: " + pm.ConvertTimerInText(cpTimes[3]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[3]));
-                timerText.SetText("Current Lap: " + pm.ConvertTimerInText(roundTimer) + "\nBest Lap:" + pm.ConvertTimerInText(bestRound) + "\n\nLap 1: " + pm.ConvertTimerInText(roundTimes[0]) + " \nLap 2: " + pm.ConvertTimerInText(roundTimes[1]) + " \nLap 3: " + pm.ConvertTimerInText(roundTimes[2]) + " \nFull Course: " + pm.ConvertTimerInText(roundTimes[0] + roundTimes[1] + roundTimes[2]));
+            timerText.SetText("Current Lap: " + pm.ConvertTimerInText(roundTimer) + "\nBest Lap:" + pm.ConvertTimerInText(bestRound) + "\n\nLap 1: " + pm.ConvertTimerInText(roundTimes[0]) + " \nLap 2: " + pm.ConvertTimerInText(roundTimes[1]) + " \nLap 3: " + pm.ConvertTimerInText(roundTimes[2]) + " \nFull Course: " + pm.ConvertTimerInText(roundTimes[0] + roundTimes[1] + roundTimes[2]));
 
             //                placementText.SetText("{0}.", FindObjectOfType<PlacementManagement>().GetPosition(this.gameObject));
             //            }
@@ -150,10 +179,10 @@ public class RoundTimer : MonoBehaviour
         {
             case 0:
 
-                maxTime1 = 18f;
-                maxTime2 = 28f;
-                maxTime3 = 38f;
-                maxTime4 = 50f;
+                maxTime1 = 99f;
+                maxTime2 = 99f;
+                maxTime3 = 99f;
+                maxTime4 = 99f;
                 break;
             case 1:
 
@@ -164,10 +193,10 @@ public class RoundTimer : MonoBehaviour
                 break;
             case 2:
 
-                maxTime1 = 99f;
-                maxTime2 = 99f;
-                maxTime3 = 99f;
-                maxTime4 = 99f;
+                maxTime1 = 18f;
+                maxTime2 = 28f;
+                maxTime3 = 38f;
+                maxTime4 = 50f;
                 break;
         }
 

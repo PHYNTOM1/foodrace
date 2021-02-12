@@ -13,7 +13,7 @@ public class SoundManagement : MonoBehaviour
     public AudioMixerGroup soundsM;
 
     [Range(0.0001f, 1f)]
-    public float mav = 0.5f;
+    public float mav = 0.75f;
     [Range(0.0001f, 1f)]
     public float muv = 0.35f;
     [Range(0.0001f, 1f)]
