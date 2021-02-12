@@ -48,6 +48,7 @@ public class CountdownTimer : MonoBehaviour
             }
             else if (currentTime <= 0.75f)
             {
+                PlacementManagement.Instance.GetComponent<SoundManagement>().PlayOneShot("check3");
                 cdText.text = "START";
                 cdText.fontSize = 130;
             }

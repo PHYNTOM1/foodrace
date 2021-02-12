@@ -13,9 +13,11 @@ public class BulletBehaviour : MonoBehaviour
 
     public GameObject hitImpact;
     public GameObject hitImpact2;
+    public SoundManagement sm;
 
     void Start()
     {
+        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         rb = GetComponent<Rigidbody>();
         Destroy(this.gameObject, deathRange);
         dir = this.gameObject.transform.up;
@@ -28,6 +30,8 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
+        sm.PlayOneShot("impact");
+
         if (coll.collider.gameObject.name == "WPCollider")
         {            
             if (this.gameObject.CompareTag("EnemyBullet"))

@@ -45,10 +45,12 @@ public class EnemyBehaviour : MonoBehaviour
     public Animator anim;
     public GameObject smokePoof;
     public VisualEffect[] destroyed;
+    public SoundManagement sm;
 
 
     void Start()
     {
+        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         targetPos = gameObject.transform.position;
         currHP = maxHP;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -278,6 +280,8 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyType.walker:
 
                 //DO ANIMATION AND PARTICLES
+                sm.PlayOneShot("pop");
+                sm.PlayOneShot("poof");
                 GameObject sp = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
                 Destroy(sp, 1f);
                 Destroy(this.gameObject, 0.15f);
@@ -286,6 +290,8 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyType.flyer:
 
                 //DO ANIMATION AND PARTICLES
+                sm.PlayOneShot("pop");
+                sm.PlayOneShot("poof");
                 GameObject sp2 = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
                 Destroy(sp2, 1f);
                 player.GetComponent<CartController>().flyerCount--;
@@ -294,11 +300,12 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case EnemyType.turret:
 
+                sm.PlayOneShot("hithard");
+                sm.PlayOneShot("enemyshutdown");
                 foreach (VisualEffect v in destroyed)
                 {
                     v.Play();
                 }
-
                 oooIcon.enabled = true;
                 oooCDReal = oooCD;
                 outOfOrder = true;
@@ -317,6 +324,12 @@ public class EnemyBehaviour : MonoBehaviour
 
             if (eType != EnemyType.turret)
             {
+                if (eType == EnemyType.walker)
+                {
+                    sm.PlayOneShot("enemysurprise2");
+                }
+
+                sm.PlayOneShot("enemysurprise");
                 anim.SetTrigger("Spotted");
             }
 

@@ -26,9 +26,11 @@ public class PlayerShooting : MonoBehaviour
     public Color normalColor;
 
     public VisualEffect muzzleFlash;
+    public SoundManagement sm;
 
     void Start()
     {
+        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         shooting = false;
         cc = GetComponent<CartController>();
         if (ohSliderFill == null)
@@ -78,6 +80,7 @@ public class PlayerShooting : MonoBehaviour
         }
         else if (overheated)
         {
+            sm.PlayOneShot("clickcheckswoosh");
             overheated = false;
             overheatValue = 0f;
             ohSliderFill.color = normalColor;
@@ -114,6 +117,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
+        sm.PlayOneShot("laser2");
         muzzleFlash.Play();
         GameObject b = Instantiate(bullet, (this.gameObject.transform.position + (this.gameObject.transform.forward.normalized * distToKart)), Quaternion.Euler(90f + this.gameObject.transform.eulerAngles.x, this.gameObject.transform.eulerAngles.y, this.gameObject.transform.eulerAngles.z));
         /*
@@ -151,6 +155,8 @@ public class PlayerShooting : MonoBehaviour
 
     public void Overheat()
     {
+        sm.PlayOneShot("heavyswitch");
+        sm.PlayOneShot("impact");
         overheated = true;
         overheatValue = 100f;
         ohSliderFill.color = ohColor;

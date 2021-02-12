@@ -22,8 +22,11 @@ public class LapTracker : MonoBehaviour
     public EnemyRespawning er2;
     public EnemyRespawning er3;
 
+    public SoundManagement sm;
+
     void Start()
     {
+        sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         GameObject checkpointsGroup = GameObject.Find("Checkpoints");
         Transform[] cpG = checkpointsGroup.GetComponentsInChildren<Transform>();
         //        goalPoint = GameObject.Find("GoalPoint").transform;
@@ -58,6 +61,7 @@ public class LapTracker : MonoBehaviour
 
     public void PassCheckpoint(int s)
     {
+        sm.PlayOneShot("check5");
         checkpointsPassed[s] = true;
         rt.CompletedCP(s);
         //ka.AddReward(0.01f);
@@ -162,7 +166,8 @@ public class LapTracker : MonoBehaviour
             Debug.Log(gameObject.name + "PASSED GOAL!");
             lap++;
             rt.CompletedRound(lap);
-            
+            sm.PlayOneShot("check6");
+
             switch (PlacementManagement.Instance.selectedMap)
             {
                 case 0:

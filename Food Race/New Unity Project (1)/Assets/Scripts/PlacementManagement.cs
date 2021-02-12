@@ -36,6 +36,7 @@ public class PlacementManagement : MonoBehaviour
     public GameObject bgCanvas;
     public Animator anim;
     public CanvasGroup cg;
+    public SoundManagement sm;
 
     //Slider progressBar;
     AsyncOperation loadingOperation;
@@ -58,6 +59,10 @@ public class PlacementManagement : MonoBehaviour
 
     void Start()
     {
+        if (sm == null)
+        {
+            sm = GetComponent<SoundManagement>();
+        }
         if (bgCanvas == null)
         {
             bgCanvas = GameObject.Find("BGCanvas");            
@@ -71,6 +76,119 @@ public class PlacementManagement : MonoBehaviour
             cg = bgCanvas.GetComponentInChildren<CanvasGroup>();
         }
 
+        if (sm.IsPlaying("menusong") == false)
+        {
+            sm.Play("menusong");
+        }
+
+        if (mainMenu == null)
+        {
+            mainMenu = FindObjectOfType<MainMenu>().gameObject;
+        }
+        if (optionsMenu == null)
+        {
+            optionsMenu = GameObject.Find("OptionsMenu");
+        }
+        if (creditsMenu == null)
+        {
+            creditsMenu = GameObject.Find("CreditsMenu");
+        }
+        if (mapMenu == null)
+        {
+            mapMenu = GameObject.Find("MapMenu");
+        }
+
+        if (mainCanvas == null)
+        {
+            mainCanvas = GameObject.Find("MainMenuCanvas").GetComponent<Canvas>();
+        }
+        if (optionsCanvas == null)
+        {
+            optionsCanvas = GameObject.Find("OptionsCanvas").GetComponent<Canvas>();
+        }
+        if (creditsCanvas == null)
+        {
+            creditsCanvas = GameObject.Find("CreditsCanvas").GetComponent<Canvas>();
+        }
+        if (mapCanvas == null)
+        {
+            mapCanvas = GameObject.Find("MapCanvas").GetComponent<Canvas>();
+        }
+
+        Button[] _b = mainMenu.GetComponentsInChildren<Button>();
+        foreach (Button b in _b)
+        {
+            if (b.gameObject.name == "StartButton")
+            {
+                if (startButton == null)
+                {
+                    startButton = b;
+                    startButton.onClick.RemoveAllListeners();
+                    startButton.onClick.AddListener(() => mapMenu.SetActive(true));
+                    startButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                    startButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                }
+            }
+            else if (b.gameObject.name == "CreditsButton")
+            {
+                if (creditsButton == null)
+                {
+                    creditsButton = b;
+                    creditsButton.onClick.RemoveAllListeners();
+                    creditsButton.onClick.AddListener(() => creditsMenu.SetActive(true));
+                    creditsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                    creditsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                }
+            }
+            else if (b.gameObject.name == "OptionsButton")
+            {
+                if (optionsButton == null)
+                {
+                    optionsButton = b;
+                    optionsButton.onClick.RemoveAllListeners();
+                    optionsButton.onClick.AddListener(() => optionsMenu.SetActive(true));
+                    optionsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                    optionsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                }
+            }
+        }
+
+        if (mbButton == null)
+        {
+            Button[] _b2 = mapMenu.GetComponentsInChildren<Button>();
+            foreach (Button b in _b2)
+            {
+                if (b.gameObject.name == "MapBackButton")
+                {
+                    mbButton = b;
+                    mbButton.onClick.RemoveAllListeners();
+                    mbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+                    mbButton.onClick.AddListener(() => mapMenu.SetActive(false));
+                    mbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+                }
+            }
+        }
+        if (obButton == null)
+        {
+            obButton = optionsMenu.GetComponentInChildren<Button>();
+            obButton.onClick.RemoveAllListeners();
+            obButton.onClick.AddListener(() => mainMenu.SetActive(true));
+            obButton.onClick.AddListener(() => optionsMenu.SetActive(false));
+            obButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+        }
+        if (cbButton == null)
+        {
+            cbButton = creditsMenu.GetComponentInChildren<Button>();
+            cbButton.onClick.RemoveAllListeners();
+            cbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+            cbButton.onClick.AddListener(() => creditsMenu.SetActive(false));
+            cbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+        }
+
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+        mapMenu.SetActive(false);
     }
 
     public void Anim1()
@@ -381,6 +499,8 @@ public class PlacementManagement : MonoBehaviour
 
     public void CallOnAwake()
     {
+        //sm.ReloadSounds();
+
         if (bgCanvas == null)
         {
             bgCanvas = GameObject.Find("BGCanvas");
@@ -402,6 +522,24 @@ public class PlacementManagement : MonoBehaviour
             cg.alpha = 1;
             anim.SetTrigger("SceneI");
             loadingAwake = false;
+            if (aScene.name == "MainMenu")
+            {
+                sm.Stop("ingamesong");
+                sm.Stop("scoresong");
+                if (sm.IsPlaying("menusong") == false)
+                {
+                    sm.Play("menusong");
+                }
+            }
+            else if (aScene.name == "ScoreScreen")
+            {
+                sm.Stop("ingamesong");
+                sm.Stop("menusong");
+                if (sm.IsPlaying("scoresong") == false)
+                {
+                    sm.Play("scoresong");
+                }
+            }
         }
         else if (aScene.name == "LoadingScreen")
         {
@@ -410,6 +548,13 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (aScene.name == "Ingame2")
         {
+            sm.Stop("scoresong");
+            sm.Stop("menusong");
+            if (sm.IsPlaying("ingamesong") == false)
+            {
+                sm.Play("ingamesong");
+            }
+
             cg.alpha = 0;
             loadingAwake = false;
 

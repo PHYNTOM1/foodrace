@@ -93,6 +93,8 @@ public class CartController : MonoBehaviour
         turnStrength = kartStats.handling * 60f;
 
         sp = GameObject.Find("StartPoint").transform;
+        sm.Play("engine");
+        sm.TogglePause("engine");
     }
 
     void Update()
@@ -189,6 +191,12 @@ public class CartController : MonoBehaviour
 
             if (_verAxisRaw == 1 || _verAxisRaw == -1)
             {
+                
+                //if (sm.IsPlaying("engine") == false)
+                //{
+                //    sm.TogglePause("engine", true);
+                //}
+                
                 if (_verAxis > 0)
                 {
                     if (speedInput > maxSpeed * 1000f * speedMult)
@@ -214,6 +222,12 @@ public class CartController : MonoBehaviour
             }
             else
             {
+                
+                //if (sm.IsPlaying("engine") == true)
+                //{
+                //    sm.TogglePause("engine", true);
+                //}
+                
                 if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 90f)
                 {
                     speedInput -= 150f;
@@ -231,7 +245,6 @@ public class CartController : MonoBehaviour
             //anim.SetBool("Grounded", grounded);
             if (grounded)
             {
-
                 /*
                 if (_verAxisRaw == -1 && speedInput < 0)
                 {
@@ -243,6 +256,13 @@ public class CartController : MonoBehaviour
 
                 if (drifting)
                 {
+                    
+                    //if (sm.IsPlaying("drifting") == false)
+                    //{
+                    //    sm.Play("drifting");
+                    //}
+                    
+
                     if (camC.sSpeed < 14f)
                     {
                         camC.sSpeed += Time.deltaTime * 5f;
@@ -261,6 +281,9 @@ public class CartController : MonoBehaviour
 
                     if (driftTimer >= driftBoostTimer && driftStage == 0)
                     {
+                        //sm.PlayOneShot("check3");
+                        //sm.PlayOneShot("clickcheckswoosh");
+
                         foreach (VisualEffect v in driftIgnites)
                         {
                             v.Play();
@@ -270,6 +293,10 @@ public class CartController : MonoBehaviour
                     }
                     else if (driftTimer >= driftBoostTimer2 && driftStage == 1)
                     {
+                        //sm.PlayOneShot("check3");
+                        //sm.PlayOneShot("check7");
+                        //sm.PlayOneShot("clickcheckswoosh");
+
                         foreach (VisualEffect v in driftIgnites2)
                         {
                             v.Play();
@@ -280,6 +307,13 @@ public class CartController : MonoBehaviour
                 }
                 else
                 {
+                    
+                    //if (sm.IsPlaying("drifting") == true)
+                    //{
+                    //    sm.Stop("drifting");
+                    //}
+                    
+
                     if (camC.sSpeed > 11f)
                     {
                         camC.sSpeed -= Time.deltaTime * 5f;
@@ -305,7 +339,7 @@ public class CartController : MonoBehaviour
             }
             //JUST FOR TESTING :))))) DELETE ME LATER
             else
-            {              
+            {
                 if (theRB.position.y <= -10f)
                 {
                     ResetCart(true);
@@ -522,6 +556,9 @@ public class CartController : MonoBehaviour
 
     public void GetBoosted(int stage)
     {
+        //sm.Play("boostair3");
+        //sm.Play("boostair");
+        //sm.Play("boostair2", 0.2f);
         speedInput += 4000 + (2000 * stage);
 
         driftStage = 0;
@@ -539,6 +576,8 @@ public class CartController : MonoBehaviour
 
     public void GetStunned()
     {
+        sm.PlayOneShot("punch");
+        sm.PlayOneShot("wheeeoow");
         anim.SetTrigger("Stun");
         speedInput = 0f;
         stunned = true;
@@ -555,6 +594,7 @@ public class CartController : MonoBehaviour
 
         if (d == true)
         {
+            sm.PlayOneShot("error");
             gameObject.transform.eulerAngles = Vector3.zero;
             theRB.position = sp.position;
             EnemyRespawning er = FindObjectOfType<EnemyRespawning>();
