@@ -31,6 +31,7 @@ public class PlacementManagement : MonoBehaviour
     public GameObject mainMenu, optionsMenu, creditsMenu, mapMenu;
     public Button startButton, creditsButton, optionsButton;
     public Button obButton, cbButton, mbButton;
+    public Canvas mainCanvas, optionsCanvas, creditsCanvas, mapCanvas;
 
     public GameObject bgCanvas;
     public Animator anim;
@@ -92,68 +93,99 @@ public class PlacementManagement : MonoBehaviour
                 mapMenu = GameObject.Find("MapMenu");
             }
 
+            if (mainCanvas == null)
+            {
+                mainCanvas = GameObject.Find("MainMenuCanvas").GetComponent<Canvas>();
+            }
+            if (optionsCanvas == null)
+            {
+                optionsCanvas = GameObject.Find("OptionsCanvas").GetComponent<Canvas>();
+            }
+            if (creditsCanvas == null)
+            {
+                creditsCanvas = GameObject.Find("CreditsCanvas").GetComponent<Canvas>();
+            }
+            if (mapCanvas == null)
+            {
+                mapCanvas = GameObject.Find("MapCanvas").GetComponent<Canvas>();
+            }
+
             Button[] _b = mainMenu.GetComponentsInChildren<Button>();
             foreach (Button b in _b)
             {
                 if (b.gameObject.name == "StartButton")
                 {
-                    startButton = b;
+                    if (startButton == null)
+                    {
+                        startButton = b;
+                        startButton.onClick.RemoveAllListeners();
+                        startButton.onClick.AddListener(() => mapMenu.SetActive(true));
+                        startButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                        startButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                    }
                 }
                 else if (b.gameObject.name == "CreditsButton")
                 {
-                    creditsButton = b;
+                    if (creditsButton == null)
+                    {
+                        creditsButton = b;
+                        creditsButton.onClick.RemoveAllListeners();
+                        creditsButton.onClick.AddListener(() => creditsMenu.SetActive(true));
+                        creditsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                        creditsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                    }
                 }
                 else if (b.gameObject.name == "OptionsButton")
                 {
-                    optionsButton = b;
+                    if (optionsButton == null)
+                    {
+                        optionsButton = b;
+                        optionsButton.onClick.RemoveAllListeners();
+                        optionsButton.onClick.AddListener(() => optionsMenu.SetActive(true));
+                        optionsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+                        optionsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+                    }
                 }
             }
 
-            Button[] _b2 = mapMenu.GetComponentsInChildren<Button>();
-            foreach (Button b in _b2)
+            if (mbButton == null)
             {
-                if (b.gameObject.name == "MapBackButton")
+                Button[] _b2 = mapMenu.GetComponentsInChildren<Button>();
+                foreach (Button b in _b2)
                 {
-                    mbButton = b;
+                    if (b.gameObject.name == "MapBackButton")
+                    {
+                        mbButton = b;
+                        mbButton.onClick.RemoveAllListeners();
+                        mbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+                        mbButton.onClick.AddListener(() => mapMenu.SetActive(false));
+                        mbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+                    }
                 }
             }
-
-            obButton = optionsMenu.GetComponentInChildren<Button>();
-            cbButton = creditsMenu.GetComponentInChildren<Button>();
-
-            startButton.onClick.RemoveAllListeners();
-            creditsButton.onClick.RemoveAllListeners();
-            optionsButton.onClick.RemoveAllListeners();
-            obButton.onClick.RemoveAllListeners();
-            cbButton.onClick.RemoveAllListeners();
-            mbButton.onClick.RemoveAllListeners();
-
-            startButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
-            creditsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
-            optionsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
-            obButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
-            cbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
-            mbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
-
-            startButton.onClick.AddListener(() => mapMenu.SetActive(true));
-            startButton.onClick.AddListener(() => mainMenu.SetActive(false));
-            creditsButton.onClick.AddListener(() => creditsMenu.SetActive(true));
-            creditsButton.onClick.AddListener(() => mainMenu.SetActive(false));
-            optionsButton.onClick.AddListener(() => optionsMenu.SetActive(true));
-            optionsButton.onClick.AddListener(() => mainMenu.SetActive(false));
-            obButton.onClick.AddListener(() => mainMenu.SetActive(true));
-            obButton.onClick.AddListener(() => optionsMenu.SetActive(false));
-            cbButton.onClick.AddListener(() => mainMenu.SetActive(true));
-            cbButton.onClick.AddListener(() => creditsMenu.SetActive(false));
-            mbButton.onClick.AddListener(() => mainMenu.SetActive(true));
-            mbButton.onClick.AddListener(() => mapMenu.SetActive(false));
+            if (obButton == null)
+            {
+                obButton = optionsMenu.GetComponentInChildren<Button>();
+                obButton.onClick.RemoveAllListeners();
+                obButton.onClick.AddListener(() => mainMenu.SetActive(true));
+                obButton.onClick.AddListener(() => optionsMenu.SetActive(false));
+                obButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+            }
+            if (cbButton == null)
+            {
+                cbButton = creditsMenu.GetComponentInChildren<Button>();
+                cbButton.onClick.RemoveAllListeners();
+                cbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+                cbButton.onClick.AddListener(() => creditsMenu.SetActive(false));
+                cbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+            }
 
             mainMenu.SetActive(true);
             optionsMenu.SetActive(false);
             creditsMenu.SetActive(false);
             mapMenu.SetActive(false);
 
-            SetObjCanvas("MainMenuCanvas", false);
+            mainCanvas.enabled = false;
             bestTimeOfAll = 0f;
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")
@@ -177,9 +209,10 @@ public class PlacementManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            SetObjCanvas("MainMenuCanvas", true);
+            mainCanvas.enabled = true;
 
             scoreButton = GameObject.Find("ScoreButton").GetComponentInChildren<Button>();
+            scoreButton.onClick.RemoveAllListeners();
             scoreButton.onClick.AddListener(GoToScore);
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")
@@ -192,7 +225,7 @@ public class PlacementManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            SetObjCanvas("MainMenuCanvas", false);
+            mainCanvas.enabled = false;
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")
         {
@@ -235,7 +268,7 @@ public class PlacementManagement : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            SetObjCanvas("MapCanvas", false);
+            mapCanvas.enabled = false;
         }
     }
 
@@ -245,46 +278,46 @@ public class PlacementManagement : MonoBehaviour
         {
             if (mainMenu.activeInHierarchy)
             {
-                if (GameObject.Find("MainMenuCanvas").GetComponent<Canvas>().enabled == true)
+                if (mainCanvas.enabled == true)
                 {
-                    SetObjCanvas("MainMenuCanvas", false);
+                    mainCanvas.enabled = false;
                 }
-                else if (GameObject.Find("MainMenuCanvas").GetComponent<Canvas>().enabled == false)
+                else if (mainCanvas.enabled == false)
                 {
-                    SetObjCanvas("MainMenuCanvas", true);
-                }
-            }
-            else if (optionsMenu.activeInHierarchy)
-            {
-                if (GameObject.Find("OptionsCanvas").GetComponent<Canvas>().enabled == true)
-                {
-                    SetObjCanvas("OptionsCanvas", false);
-                }
-                else if (GameObject.Find("OptionsCanvas").GetComponent<Canvas>().enabled == false)
-                {
-                    SetObjCanvas("OptionsCanvas", true);
+                    mainCanvas.enabled = true;
                 }
             }
-            else if (creditsMenu.activeInHierarchy)
+            if (optionsMenu.activeInHierarchy)
             {
-                if (GameObject.Find("CreditsCanvas").GetComponent<Canvas>().enabled == true)
+                if (optionsCanvas.enabled == true)
                 {
-                    SetObjCanvas("CreditsCanvas", false);
+                    optionsCanvas.enabled = false;
                 }
-                else if (GameObject.Find("CreditsCanvas").GetComponent<Canvas>().enabled == false)
+                else if (optionsCanvas.enabled == false)
                 {
-                    SetObjCanvas("CreditsCanvas", true);
+                    optionsCanvas.enabled = true;
                 }
             }
-            else if (mapMenu.activeInHierarchy)
+            if (creditsMenu.activeInHierarchy)
             {
-                if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == true)
+                if (creditsCanvas.enabled == true)
                 {
-                    SetObjCanvas("MapCanvas", false);
+                    creditsCanvas.enabled = false;
                 }
-                else if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == false)
+                else if (creditsCanvas.enabled == false)
                 {
-                    SetObjCanvas("MapCanvas", true);
+                    creditsCanvas.enabled = true;
+                }
+            }
+            if (mapMenu.activeInHierarchy)
+            {
+                if (mapCanvas.enabled == true)
+                {
+                    mapCanvas.enabled = false;
+                }
+                else if (mapCanvas.enabled == false)
+                {
+                    mapCanvas.enabled = true;
                 }
             }
         }
@@ -789,7 +822,6 @@ public class PlacementManagement : MonoBehaviour
 
         if (milseconds < 10)
         {
-            Debug.Log("Cock");   
             _milseconds = "0" + Mathf.RoundToInt(milseconds).ToString();
           
         }

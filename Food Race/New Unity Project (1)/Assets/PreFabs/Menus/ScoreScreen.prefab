@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3738544004068006938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7599544556448613758}
+  - component: {fileID: 3552763390216354373}
+  - component: {fileID: 3851083788619893736}
+  m_Layer: 5
+  m_Name: TrophyRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7599544556448613758
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738544004068006938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8884767985681900791}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 308}
+  m_SizeDelta: {x: 400, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3552763390216354373
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738544004068006938}
+  m_CullTransparentMesh: 0
+--- !u!114 &3851083788619893736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738544004068006938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: c33a83a1ece5aad47b97e28d847ae023, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &8884767984546110457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1889,7 @@ RectTransform:
   - {fileID: 8884767985536481150}
   - {fileID: 8884767985264288979}
   - {fileID: 8884767985242426071}
+  - {fileID: 7599544556448613758}
   m_Father: {fileID: 8884767984932308466}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1856,9 +1928,6 @@ MonoBehaviour:
   backButton: {fileID: 8884767985039002934}
   clearButton: {fileID: 8884767984548825817}
   selMap: {fileID: 8884767985242426064}
-  map01Name: Choc Dessert
-  map02Name: Candy Galaxy
-  map03Name: Winter Sugar
   n: 0
   amount: 0
 --- !u!1 &8884767986220366996
@@ -2225,15 +2294,28 @@ MonoBehaviour:
   bestTimeOfAll: 0
   bestRacer: {fileID: 0}
   finished: 0
-  a: 0
+  loadingAwake: 0
   selectedMap: 0
   he: {fileID: 0}
   LoadingScreen: 
   MainMenu: 
   Ingame2: 
+  map01Name: 
+  map02Name: 
+  map03Name: 
   backButton: {fileID: 0}
   clearButton: {fileID: 0}
   scoreButton: {fileID: 0}
+  mainMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  creditsMenu: {fileID: 0}
+  mapMenu: {fileID: 0}
+  startButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  obButton: {fileID: 0}
+  cbButton: {fileID: 0}
+  mbButton: {fileID: 0}
   bgCanvas: {fileID: 0}
   anim: {fileID: 0}
   cg: {fileID: 0}

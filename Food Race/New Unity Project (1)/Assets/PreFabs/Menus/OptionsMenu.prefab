@@ -659,15 +659,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Music:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -762,8 +763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264, y: 25}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -563, y: -376}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1492995601092118885
 CanvasRenderer:
@@ -792,7 +793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 132fb511d180517439d9e5a5df2d79cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f303108655d4eb04baf310685b6f8b7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -801,7 +802,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 95.03
 --- !u!114 &1492995601092118887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,10 +831,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6,
+    m_HighlightedSprite: {fileID: 21300000, guid: 4d2df6bf31691d646a7f9777af010035,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f303108655d4eb04baf310685b6f8b7a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 4d2df6bf31691d646a7f9777af010035, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -877,6 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492995601175322815}
+  - component: {fileID: 4918096916230124795}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -904,6 +906,18 @@ RectTransform:
   m_AnchoredPosition: {x: -17, y: 4.1}
   m_SizeDelta: {x: 1500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4918096916230124795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492995601175322814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66f70dd7032c584bb308d33bf229699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1492995601270971411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,15 +1455,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sounds:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

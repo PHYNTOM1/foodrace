@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264, y: 25}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -563, y: -376}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8528845520165355578
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 132fb511d180517439d9e5a5df2d79cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f303108655d4eb04baf310685b6f8b7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -104,10 +104,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6,
+    m_HighlightedSprite: {fileID: 21300000, guid: 4d2df6bf31691d646a7f9777af010035,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: e5b43982912b59c4ca10aeb2d4a432d6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f303108655d4eb04baf310685b6f8b7a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 4d2df6bf31691d646a7f9777af010035, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -320,17 +320,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lukas R\xFChle"
+  m_text: Lukas Ruehle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -504,15 +505,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ahmed Hussein
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -637,15 +639,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: Carolin Fritz
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -770,15 +773,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: Marco Beck
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7226a2acce2a6c489cc8f5c89b9f86f, type: 2}
+  m_sharedMaterial: {fileID: 3486494446585874027, guid: e7226a2acce2a6c489cc8f5c89b9f86f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190212
+  m_fontColor: {r: 0.5188679, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

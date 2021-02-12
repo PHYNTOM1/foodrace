@@ -8,7 +8,7 @@ public class CountdownTimer : MonoBehaviour
 {
     [SerializeField]
     private float currentTime = 0f;
-    public float startingTime = 3f;
+    public float startingTime = 5f;
     public bool doCD = true;
 
     public TextMeshProUGUI cdText;

@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &516992878 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5851351943799810635, guid: 1051cb836fb15a04b8fce635e3b2ca6e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5851351943752582437}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c16ec86b3e9dad43ba88568264e2b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &561576490
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,12 +372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1319892033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8528845521673905621, guid: 12f9fba26f0556144bcfce61ad9b3600,
-    type: 3}
-  m_PrefabInstance: {fileID: 8528845520358478228}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324181071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354054744998622501, guid: 3972b226f1fe08b438f4eb224a07dbb7,
@@ -491,7 +473,7 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
-  clearColorMode: 0
+  clearColorMode: 2
   backgroundColorHDR: {r: 0, g: 1, b: 0.9903989, a: 1}
   clearDepth: 1
   volumeLayerMask:
@@ -773,9 +755,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5342936020220645205, guid: ca32f9a7c83645c44851bf9d27675152,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1319892033}
+      objectReference: {fileID: 710988372}
     - target: {fileID: 5342936020304629555, guid: ca32f9a7c83645c44851bf9d27675152,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -790,7 +772,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 516992878}
+      objectReference: {fileID: 710988372}
     - target: {fileID: 5342936021314004440, guid: ca32f9a7c83645c44851bf9d27675152,
         type: 3}
       propertyPath: m_LocalPosition.x
