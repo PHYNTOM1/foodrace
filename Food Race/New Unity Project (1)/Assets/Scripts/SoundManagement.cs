@@ -6,7 +6,11 @@ using UnityEngine.Audio;
 
 public class SoundManagement : MonoBehaviour
 {
-    public AudioMixerGroup mixerGroup;
+    public AudioMixer generalM;
+
+    public AudioMixerGroup masterM;
+    public AudioMixerGroup musicM;
+    public AudioMixerGroup soundsM;
 
     public Sound[] sounds;
 
@@ -18,7 +22,14 @@ public class SoundManagement : MonoBehaviour
             s.source.clip = s.clip;
             s.source.loop = s.loop;
 
-            s.source.outputAudioMixerGroup = mixerGroup;
+            if (s.song == true)
+            {
+                s.source.outputAudioMixerGroup = musicM;
+            }
+            else
+            {
+                s.source.outputAudioMixerGroup = soundsM;
+            }
         }
     }
 

@@ -252,6 +252,20 @@ MonoBehaviour:
   backButton: {fileID: 0}
   clearButton: {fileID: 0}
   scoreButton: {fileID: 0}
+  mainMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  creditsMenu: {fileID: 0}
+  mapMenu: {fileID: 0}
+  startButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  obButton: {fileID: 0}
+  cbButton: {fileID: 0}
+  mbButton: {fileID: 0}
+  mainCanvas: {fileID: 0}
+  optionsCanvas: {fileID: 0}
+  creditsCanvas: {fileID: 0}
+  mapCanvas: {fileID: 0}
   bgCanvas: {fileID: 5851351943316292822}
   anim: {fileID: 516992879}
   cg: {fileID: 5851351944256529866}
@@ -286,7 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c76f0b74739d30478f8a641ef3580ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 24300002, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
+  generalM: {fileID: 24100000, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
+  masterM: {fileID: 24300002, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
+  musicM: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
+  soundsM: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+    type: 2}
   sounds: []
 --- !u!1 &5851351944256529870
 GameObject:

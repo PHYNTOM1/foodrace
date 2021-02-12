@@ -70,6 +70,7 @@ public class PlacementManagement : MonoBehaviour
         {
             cg = bgCanvas.GetComponentInChildren<CanvasGroup>();
         }
+
     }
 
     public void Anim1()
