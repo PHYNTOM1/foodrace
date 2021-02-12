@@ -117,7 +117,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        sm.PlayOneShot("laser2");
+        sm.PlayOneShot("laser3");
         muzzleFlash.Play();
         GameObject b = Instantiate(bullet, (this.gameObject.transform.position + (this.gameObject.transform.forward.normalized * distToKart)), Quaternion.Euler(90f + this.gameObject.transform.eulerAngles.x, this.gameObject.transform.eulerAngles.y, this.gameObject.transform.eulerAngles.z));
         /*

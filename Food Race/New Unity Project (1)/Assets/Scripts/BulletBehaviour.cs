@@ -30,8 +30,6 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        sm.PlayOneShot("impact");
-
         if (coll.collider.gameObject.name == "WPCollider")
         {            
             if (this.gameObject.CompareTag("EnemyBullet"))
@@ -54,6 +52,10 @@ public class BulletBehaviour : MonoBehaviour
                 if (coll.collider.gameObject.CompareTag("Enemy"))
                 {
                     coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
+                }
+                else
+                {
+                    sm.PlayOneShot("impact");
                 }
             }
             else if (this.gameObject.CompareTag("EnemyBullet"))

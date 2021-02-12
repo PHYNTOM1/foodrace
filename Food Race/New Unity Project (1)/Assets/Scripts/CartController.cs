@@ -83,7 +83,6 @@ public class CartController : MonoBehaviour
         cam = camC.gameObject.GetComponent<Camera>();
         theRB.transform.parent = null;  
         lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
-        sm = FindObjectOfType<SoundManagement>();
         //sh = GetComponent<SkillHolder>();
         anim = GetComponent<Animator>();
 
@@ -99,6 +98,13 @@ public class CartController : MonoBehaviour
 
     void Update()
     {
+        if (sm == null)
+        {
+            sm = PlacementManagement.Instance.gameObject.GetComponent<SoundManagement>();
+            sm.Play("engine");
+            sm.TogglePause("engine");
+        }
+
         if (notRacing)
         {
 
@@ -192,10 +198,10 @@ public class CartController : MonoBehaviour
             if (_verAxisRaw == 1 || _verAxisRaw == -1)
             {
                 
-                //if (sm.IsPlaying("engine") == false)
-                //{
-                //    sm.TogglePause("engine", true);
-                //}
+                if (sm.IsPlaying("engine") == false)
+                {
+                    sm.TogglePause("engine", false);
+                }
                 
                 if (_verAxis > 0)
                 {
@@ -223,10 +229,10 @@ public class CartController : MonoBehaviour
             else
             {
                 
-                //if (sm.IsPlaying("engine") == true)
-                //{
-                //    sm.TogglePause("engine", true);
-                //}
+                if (sm.IsPlaying("engine") == true)
+                {
+                    sm.TogglePause("engine", true);
+                }
                 
                 if (speedInput <= maxSpeed * 2000f && speedInput >= maxSpeed * 90f)
                 {
@@ -257,11 +263,14 @@ public class CartController : MonoBehaviour
                 if (drifting)
                 {
                     
-                    //if (sm.IsPlaying("drifting") == false)
-                    //{
-                    //    sm.Play("drifting");
-                    //}
-                    
+                    if (sm.IsPlaying("drifting") == false && driftStage < 2)
+                    {
+                        sm.Play("drifting");
+                    }
+                    else if (sm.IsPlaying("drifting") == true)
+                    {
+                        sm.Stop("drifting");
+                    }                                        
 
                     if (camC.sSpeed < 14f)
                     {
@@ -281,8 +290,8 @@ public class CartController : MonoBehaviour
 
                     if (driftTimer >= driftBoostTimer && driftStage == 0)
                     {
-                        //sm.PlayOneShot("check3");
-                        //sm.PlayOneShot("clickcheckswoosh");
+                        sm.PlayOneShot("check3");
+                        sm.PlayOneShot("clickcheckswoosh");
 
                         foreach (VisualEffect v in driftIgnites)
                         {
@@ -293,9 +302,9 @@ public class CartController : MonoBehaviour
                     }
                     else if (driftTimer >= driftBoostTimer2 && driftStage == 1)
                     {
-                        //sm.PlayOneShot("check3");
-                        //sm.PlayOneShot("check7");
-                        //sm.PlayOneShot("clickcheckswoosh");
+                        sm.PlayOneShot("check3");
+                        sm.PlayOneShot("check7");
+                        sm.PlayOneShot("clickcheckswoosh");
 
                         foreach (VisualEffect v in driftIgnites2)
                         {
@@ -308,10 +317,10 @@ public class CartController : MonoBehaviour
                 else
                 {
                     
-                    //if (sm.IsPlaying("drifting") == true)
-                    //{
-                    //    sm.Stop("drifting");
-                    //}
+                    if (sm.IsPlaying("drifting") == true)
+                    {
+                        sm.Stop("drifting");
+                    }
                     
 
                     if (camC.sSpeed > 11f)
@@ -556,9 +565,9 @@ public class CartController : MonoBehaviour
 
     public void GetBoosted(int stage)
     {
-        //sm.Play("boostair3");
-        //sm.Play("boostair");
-        //sm.Play("boostair2", 0.2f);
+        sm.Play("boostair3");
+        sm.Play("boostair");
+        sm.Play("boostair2", 0.15f);
         speedInput += 4000 + (2000 * stage);
 
         driftStage = 0;
@@ -576,14 +585,13 @@ public class CartController : MonoBehaviour
 
     public void GetStunned()
     {
-        sm.PlayOneShot("punch");
         sm.PlayOneShot("wheeeoow");
+        sm.PlayOneShot("punch");
         anim.SetTrigger("Stun");
         speedInput = 0f;
         stunned = true;
         stunTimerReal = 0f;
         driftStage = 0;
-        //DO STUN ANIMATION AND PARTICLES
     }
 
     public void ResetCart(bool d)
@@ -594,7 +602,6 @@ public class CartController : MonoBehaviour
 
         if (d == true)
         {
-            sm.PlayOneShot("error");
             gameObject.transform.eulerAngles = Vector3.zero;
             theRB.position = sp.position;
             EnemyRespawning er = FindObjectOfType<EnemyRespawning>();
@@ -602,6 +609,7 @@ public class CartController : MonoBehaviour
             GetComponent<PlayerShooting>().overheatValue = 0f;
             GetComponent<LapTracker>().ResetAll();
             GetComponent<RoundTimer>().RoundTimerReset();
+            sm.PlayOneShot("error");
         }
         else
         {

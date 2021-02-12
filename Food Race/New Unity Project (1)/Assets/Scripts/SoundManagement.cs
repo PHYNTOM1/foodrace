@@ -12,6 +12,13 @@ public class SoundManagement : MonoBehaviour
     public AudioMixerGroup musicM;
     public AudioMixerGroup soundsM;
 
+    [Range(0.0001f, 1f)]
+    public float mav = 0.5f;
+    [Range(0.0001f, 1f)]
+    public float muv = 0.35f;
+    [Range(0.0001f, 1f)]
+    public float sov = 0.5f;
+
     public Sound[] sounds;
 
     void Awake()
@@ -34,10 +41,18 @@ public class SoundManagement : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        generalM.SetFloat("MasterVolume", (Mathf.Log10(mav) * 20f));
+        generalM.SetFloat("MusicVolume", (Mathf.Log10(muv) * 20f));
+        generalM.SetFloat("SoundsVolume", (Mathf.Log10(sov) * 20f));
+    }
+
+
     public void Play(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -54,7 +69,7 @@ public class SoundManagement : MonoBehaviour
     public void Play(string sound, float delay)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -71,7 +86,7 @@ public class SoundManagement : MonoBehaviour
     public void PlayOneShot(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -88,7 +103,7 @@ public class SoundManagement : MonoBehaviour
     public void Stop(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -104,7 +119,7 @@ public class SoundManagement : MonoBehaviour
     public void TogglePause(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -125,7 +140,7 @@ public class SoundManagement : MonoBehaviour
     public void TogglePause(string sound, bool d)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
@@ -146,7 +161,7 @@ public class SoundManagement : MonoBehaviour
     public bool IsPlaying(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
-        if (s == null)
+        if (s == null || s.source == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return false;
@@ -158,6 +173,7 @@ public class SoundManagement : MonoBehaviour
 
     }
 
+    /*
     public void ReloadSounds()
     {
         AudioSource[] _as = gameObject.GetComponentsInChildren<AudioSource>();
@@ -186,5 +202,6 @@ public class SoundManagement : MonoBehaviour
             }
         }
     }
+    */
 
 }

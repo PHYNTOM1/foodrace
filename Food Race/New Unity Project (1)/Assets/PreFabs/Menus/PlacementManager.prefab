@@ -269,6 +269,7 @@ MonoBehaviour:
   bgCanvas: {fileID: 5851351943316292822}
   anim: {fileID: 516992879}
   cg: {fileID: 5851351944256529866}
+  sm: {fileID: 265315315178895670}
 --- !u!95 &516992879
 Animator:
   serializedVersion: 3
@@ -305,14 +306,17 @@ MonoBehaviour:
   musicM: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
   soundsM: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
     type: 2}
+  mav: 0.5
+  muv: 0.35
+  sov: 0.5
   sounds:
   - name: bookclose
     clip: {fileID: 8300000, guid: 4f5771badad74d048b5dd8b45e147b44, type: 3}
     song: 0
-    volume: 1
-    volumeVariance: 0.03
+    volume: 0.66
+    volumeVariance: 0.05
     pitch: 1
-    pitchVariance: 0
+    pitchVariance: 0.05
     loop: 0
     mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
       type: 2}
@@ -320,7 +324,7 @@ MonoBehaviour:
   - name: bookflip
     clip: {fileID: 8300000, guid: e2e41699049b3374d892e0d1a103dd12, type: 3}
     song: 0
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.2
@@ -485,7 +489,7 @@ MonoBehaviour:
   - name: drifting
     clip: {fileID: 8300000, guid: bbfb0d5c169105645a3edffbf131012d, type: 3}
     song: 0
-    volume: 1
+    volume: 0.4
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.2
@@ -507,8 +511,8 @@ MonoBehaviour:
   - name: enemysurprise
     clip: {fileID: 8300000, guid: e690d87033a406b43a062a5800ec2a18, type: 3}
     song: 0
-    volume: 1
-    volumeVariance: 0
+    volume: 0.2
+    volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
     loop: 0
@@ -518,7 +522,7 @@ MonoBehaviour:
   - name: enemysurprise2
     clip: {fileID: 8300000, guid: 46c3b68a180cda747b5454092677e269, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.1
@@ -529,7 +533,7 @@ MonoBehaviour:
   - name: engine
     clip: {fileID: 8300000, guid: 9ce60f4d66eb7c74c88764272c0a26b4, type: 3}
     song: 0
-    volume: 1
+    volume: 0.25
     volumeVariance: 0.15
     pitch: 1
     pitchVariance: 0.1
@@ -573,7 +577,7 @@ MonoBehaviour:
   - name: impact
     clip: {fileID: 8300000, guid: 7a2473ffe9ef54e478140bad25f87d9d, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.05
     pitch: 1
     pitchVariance: 0.1
@@ -584,7 +588,7 @@ MonoBehaviour:
   - name: ingamesong
     clip: {fileID: 8300000, guid: 86f31aa11918c5a459b6c1099552c5fc, type: 3}
     song: 1
-    volume: 1
+    volume: 0.3
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -595,7 +599,7 @@ MonoBehaviour:
   - name: laser
     clip: {fileID: 8300000, guid: f383deb1c3cd0104087b89f8252e8a83, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.15
     pitch: 1
     pitchVariance: 0.2
@@ -606,7 +610,7 @@ MonoBehaviour:
   - name: laser2
     clip: {fileID: 8300000, guid: c1058feb253b6f246a677add6cbcd5ed, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.15
     pitch: 1
     pitchVariance: 0.2
@@ -617,7 +621,7 @@ MonoBehaviour:
   - name: laser3
     clip: {fileID: 8300000, guid: 558b1d933e73d794893acfa2cabc8570, type: 3}
     song: 0
-    volume: 1
+    volume: 0.5
     volumeVariance: 0.15
     pitch: 1
     pitchVariance: 0.2
@@ -628,7 +632,7 @@ MonoBehaviour:
   - name: menusong
     clip: {fileID: 8300000, guid: 69d15772887195844b24d73d1c91b9e7, type: 3}
     song: 1
-    volume: 1
+    volume: 0.3
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -705,7 +709,7 @@ MonoBehaviour:
   - name: scoresong
     clip: {fileID: 8300000, guid: b18ea17487b60d94c872d3bacb6bb47b, type: 3}
     song: 1
-    volume: 1
+    volume: 0.3
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
