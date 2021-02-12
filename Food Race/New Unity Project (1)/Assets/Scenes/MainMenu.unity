@@ -630,7 +630,7 @@ PrefabInstance:
     - target: {fileID: 1492995600066307086, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1492995601092118887, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
@@ -641,11 +641,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OptionsMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492995601175322814, guid: 489beee159bb162468b0855f63ec737e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1492995601175322815, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
@@ -755,17 +750,17 @@ PrefabInstance:
     - target: {fileID: 1492995601660881107, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1739890549844207812, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8594180552648511491, guid: 489beee159bb162468b0855f63ec737e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489beee159bb162468b0855f63ec737e, type: 3}
@@ -919,11 +914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlacementManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5851351943799810632, guid: 1051cb836fb15a04b8fce635e3b2ca6e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5851351943799810634, guid: 1051cb836fb15a04b8fce635e3b2ca6e,
         type: 3}
@@ -1127,11 +1117,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CreditsMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8528845521673905621, guid: 12f9fba26f0556144bcfce61ad9b3600,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8528845521673905622, guid: 12f9fba26f0556144bcfce61ad9b3600,
         type: 3}

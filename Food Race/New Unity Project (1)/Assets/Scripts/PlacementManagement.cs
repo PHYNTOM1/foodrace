@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Runtime.InteropServices;
 using UnityEngine.SocialPlatforms.Impl;
+using System.Net;
 
 public class PlacementManagement : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PlacementManagement : MonoBehaviour
     public string map01Name, map02Name, map03Name;
 
     public Button backButton, clearButton, scoreButton;
+    public GameObject mainMenu, optionsMenu, creditsMenu, mapMenu;
+    public Button startButton, creditsButton, optionsButton;
+    public Button obButton, cbButton, mbButton;
 
     public GameObject bgCanvas;
     public Animator anim;
@@ -71,8 +75,85 @@ public class PlacementManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
+            if (mainMenu == null)
+            {
+                mainMenu = FindObjectOfType<MainMenu>().gameObject;                
+            }
+            if (optionsMenu == null)
+            {
+                optionsMenu = GameObject.Find("OptionsMenu");
+            }
+            if (creditsMenu == null)
+            {
+                creditsMenu = GameObject.Find("CreditsMenu");
+            }
+            if (mapMenu == null)
+            {
+                mapMenu = GameObject.Find("MapMenu");
+            }
+
+            Button[] _b = mainMenu.GetComponentsInChildren<Button>();
+            foreach (Button b in _b)
+            {
+                if (b.gameObject.name == "StartButton")
+                {
+                    startButton = b;
+                }
+                else if (b.gameObject.name == "CreditsButton")
+                {
+                    creditsButton = b;
+                }
+                else if (b.gameObject.name == "OptionsButton")
+                {
+                    optionsButton = b;
+                }
+            }
+
+            Button[] _b2 = mapMenu.GetComponentsInChildren<Button>();
+            foreach (Button b in _b2)
+            {
+                if (b.gameObject.name == "MapBackButton")
+                {
+                    mbButton = b;
+                }
+            }
+
+            obButton = optionsMenu.GetComponentInChildren<Button>();
+            cbButton = creditsMenu.GetComponentInChildren<Button>();
+
+            startButton.onClick.RemoveAllListeners();
+            creditsButton.onClick.RemoveAllListeners();
+            optionsButton.onClick.RemoveAllListeners();
+            obButton.onClick.RemoveAllListeners();
+            cbButton.onClick.RemoveAllListeners();
+            mbButton.onClick.RemoveAllListeners();
+
+            startButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+            creditsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+            optionsButton.onClick.AddListener(() => anim.SetTrigger("FlipN"));
+            obButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+            cbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+            mbButton.onClick.AddListener(() => anim.SetTrigger("FlipP"));
+
+            startButton.onClick.AddListener(() => mapMenu.SetActive(true));
+            startButton.onClick.AddListener(() => mainMenu.SetActive(false));
+            creditsButton.onClick.AddListener(() => creditsMenu.SetActive(true));
+            creditsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+            optionsButton.onClick.AddListener(() => optionsMenu.SetActive(true));
+            optionsButton.onClick.AddListener(() => mainMenu.SetActive(false));
+            obButton.onClick.AddListener(() => mainMenu.SetActive(true));
+            obButton.onClick.AddListener(() => optionsMenu.SetActive(false));
+            cbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+            cbButton.onClick.AddListener(() => creditsMenu.SetActive(false));
+            mbButton.onClick.AddListener(() => mainMenu.SetActive(true));
+            mbButton.onClick.AddListener(() => mapMenu.SetActive(false));
+
+            mainMenu.SetActive(true);
+            optionsMenu.SetActive(false);
+            creditsMenu.SetActive(false);
+            mapMenu.SetActive(false);
+
             SetObjCanvas("MainMenuCanvas", false);
-            
             bestTimeOfAll = 0f;
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")
@@ -162,13 +243,49 @@ public class PlacementManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == true)
+            if (mainMenu.activeInHierarchy)
             {
-                SetObjCanvas("MapCanvas", false);
+                if (GameObject.Find("MainMenuCanvas").GetComponent<Canvas>().enabled == true)
+                {
+                    SetObjCanvas("MainMenuCanvas", false);
+                }
+                else if (GameObject.Find("MainMenuCanvas").GetComponent<Canvas>().enabled == false)
+                {
+                    SetObjCanvas("MainMenuCanvas", true);
+                }
             }
-            else if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == false)
+            else if (optionsMenu.activeInHierarchy)
             {
-                SetObjCanvas("MapCanvas", true);
+                if (GameObject.Find("OptionsCanvas").GetComponent<Canvas>().enabled == true)
+                {
+                    SetObjCanvas("OptionsCanvas", false);
+                }
+                else if (GameObject.Find("OptionsCanvas").GetComponent<Canvas>().enabled == false)
+                {
+                    SetObjCanvas("OptionsCanvas", true);
+                }
+            }
+            else if (creditsMenu.activeInHierarchy)
+            {
+                if (GameObject.Find("CreditsCanvas").GetComponent<Canvas>().enabled == true)
+                {
+                    SetObjCanvas("CreditsCanvas", false);
+                }
+                else if (GameObject.Find("CreditsCanvas").GetComponent<Canvas>().enabled == false)
+                {
+                    SetObjCanvas("CreditsCanvas", true);
+                }
+            }
+            else if (mapMenu.activeInHierarchy)
+            {
+                if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == true)
+                {
+                    SetObjCanvas("MapCanvas", false);
+                }
+                else if (GameObject.Find("MapCanvas").GetComponent<Canvas>().enabled == false)
+                {
+                    SetObjCanvas("MapCanvas", true);
+                }
             }
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")

@@ -247,7 +247,7 @@ MonoBehaviour:
   MainMenu: 
   Ingame2: 
   map01Name: Pancake Park
-  map02Name: Sweet Snow
+  map02Name: Vanilla Valley
   map03Name: Chocolate Canyon
   backButton: {fileID: 0}
   clearButton: {fileID: 0}
