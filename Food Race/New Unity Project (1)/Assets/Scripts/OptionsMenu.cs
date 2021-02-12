@@ -10,6 +10,8 @@ public class OptionsMenu : MonoBehaviour
     public Slider musicS;
     public Slider soundsS;
 
+    public Toggle fsT;
+
     public AudioMixer generalAM;
 
     void Start()
@@ -37,6 +39,12 @@ public class OptionsMenu : MonoBehaviour
             soundsS.minValue = 0.0001f;
             soundsS.maxValue = 1f;
         }
+
+        if (fsT == null)
+        {
+            fsT = GameObject.Find("FullscreenToggle").GetComponent<Toggle>();
+            fsT.isOn = false;
+        }
     }
 
     public void SetMasterVolume(float vol)
@@ -53,4 +61,9 @@ public class OptionsMenu : MonoBehaviour
     {
         generalAM.SetFloat("SoundsVolume", (Mathf.Log10(vol) * 20));
     }
+
+    public void SetFullscreen(bool n)
+    {
+        Screen.fullScreen = n;
+    }    
 }

@@ -305,7 +305,436 @@ MonoBehaviour:
   musicM: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b, type: 2}
   soundsM: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
     type: 2}
-  sounds: []
+  sounds:
+  - name: bookclose
+    clip: {fileID: 8300000, guid: 4f5771badad74d048b5dd8b45e147b44, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.03
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: bookflip
+    clip: {fileID: 8300000, guid: e2e41699049b3374d892e0d1a103dd12, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: boostair
+    clip: {fileID: 8300000, guid: fc2cecd26e6e12945a8b2f9ffc8287c6, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: boostair2
+    clip: {fileID: 8300000, guid: 1bf03ccb8d3d90247a95db3f0b695648, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: boostair3
+    clip: {fileID: 8300000, guid: e0bb9502fddb2c24e8e327fef50071d9, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: button
+    clip: {fileID: 8300000, guid: 40cbc121ac7d50c4f935afeefd45181f, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: button2
+    clip: {fileID: 8300000, guid: 953917a2da86c7545b2b83d1a54bda6a, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check
+    clip: {fileID: 8300000, guid: 210a2fb5b70ebc44cb8944fffcbe9b05, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check2
+    clip: {fileID: 8300000, guid: 51bea950c77fc9341af6f803dd558409, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check3
+    clip: {fileID: 8300000, guid: 06da6652ab43e424fbaf4a583dd66b9a, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check4
+    clip: {fileID: 8300000, guid: 0e7fce91daeceeb458e2fe35e9610aa8, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check5
+    clip: {fileID: 8300000, guid: 0d681af7f484d6c43a6ad9151ea75e7a, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check6
+    clip: {fileID: 8300000, guid: 30a146d25b8e32a46be4846f106cef93, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check7
+    clip: {fileID: 8300000, guid: 6518595146aa41b45bc991a763b97d2b, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: check8
+    clip: {fileID: 8300000, guid: a2e255e94683f3d4ba3e935b1980d4dd, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: clickcheckswoosh
+    clip: {fileID: 8300000, guid: f7fd7f0724d85454fa6240aaef59f9cb, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: drifting
+    clip: {fileID: 8300000, guid: bbfb0d5c169105645a3edffbf131012d, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: enemyshutdown
+    clip: {fileID: 8300000, guid: 1f02738a5f4383342a8eab363d036e54, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: enemysurprise
+    clip: {fileID: 8300000, guid: e690d87033a406b43a062a5800ec2a18, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: enemysurprise2
+    clip: {fileID: 8300000, guid: 46c3b68a180cda747b5454092677e269, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: engine
+    clip: {fileID: 8300000, guid: 9ce60f4d66eb7c74c88764272c0a26b4, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.15
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: error
+    clip: {fileID: 8300000, guid: c97c938033ebeb74f9075b5ba0eea315, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: heavyswitch
+    clip: {fileID: 8300000, guid: c64bf2feb85864d4e9c0d4cfb1f4089e, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: hithard
+    clip: {fileID: 8300000, guid: 07bcb7265ad519247a68d6485b3d6e32, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: impact
+    clip: {fileID: 8300000, guid: 7a2473ffe9ef54e478140bad25f87d9d, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: ingamesong
+    clip: {fileID: 8300000, guid: 86f31aa11918c5a459b6c1099552c5fc, type: 3}
+    song: 1
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: laser
+    clip: {fileID: 8300000, guid: f383deb1c3cd0104087b89f8252e8a83, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.15
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: laser2
+    clip: {fileID: 8300000, guid: c1058feb253b6f246a677add6cbcd5ed, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.15
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: laser3
+    clip: {fileID: 8300000, guid: 558b1d933e73d794893acfa2cabc8570, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.15
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: menusong
+    clip: {fileID: 8300000, guid: 69d15772887195844b24d73d1c91b9e7, type: 3}
+    song: 1
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: poof
+    clip: {fileID: 8300000, guid: 40a479c07f3581b449ec0307ed880f3f, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: pop
+    clip: {fileID: 8300000, guid: efe514ffb66526e4bac10e570eb4164f, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: pop2
+    clip: {fileID: 8300000, guid: 2cbd4f952eff6864882dcd3b479da749, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: popsqueaky
+    clip: {fileID: 8300000, guid: 4892f1b49eb7fd54bb237e7eb3da8a1b, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: punch
+    clip: {fileID: 8300000, guid: a284ef4aa412c9a4c8b327861deb7f71, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: punch2
+    clip: {fileID: 8300000, guid: e546a2d32b995284183bc90b484529eb, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: scoresong
+    clip: {fileID: 8300000, guid: b18ea17487b60d94c872d3bacb6bb47b, type: 3}
+    song: 1
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 6331485983550742995, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: swoosh
+    clip: {fileID: 8300000, guid: 773b0caad85555e4f995a36be209b228, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.15
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
+  - name: wheeeoow
+    clip: {fileID: 8300000, guid: 70fe37c44144c224394099ca9905899c, type: 3}
+    song: 0
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &5851351944256529870
 GameObject:
   m_ObjectHideFlags: 0
