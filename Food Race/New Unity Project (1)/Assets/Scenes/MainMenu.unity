@@ -1170,6 +1170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8528845521673905621, guid: 12f9fba26f0556144bcfce61ad9b3600,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8528845521673905622, guid: 12f9fba26f0556144bcfce61ad9b3600,
         type: 3}
       propertyPath: m_LocalPosition.x
