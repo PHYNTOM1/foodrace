@@ -43,8 +43,9 @@ public class RoundTimer : MonoBehaviour
             timerCPText = GameObject.Find("CPTimerText").GetComponent<TextMeshProUGUI>();
             timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
             timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
+            //SetResetTimes(pm.selectedMap);
 
-            timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f);
+        timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f);
             timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", 0f, 0f, 0f, 0f, 0f, 0f);
             timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
           
@@ -80,7 +81,7 @@ public class RoundTimer : MonoBehaviour
         if (timerMaxText == null)
         {
             timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
-            SetResetTimes(pm.selectedMap);
+            //SetResetTimes(pm.selectedMap);
         }
 
 
@@ -179,17 +180,17 @@ public class RoundTimer : MonoBehaviour
         {
             case 0:
 
-                maxTime1 = 99f;
-                maxTime2 = 99f;
-                maxTime3 = 99f;
-                maxTime4 = 99f;
+                maxTime1 = 8f;
+                maxTime2 = 16f;
+                maxTime3 = 22f;
+                maxTime4 = 30f;
                 break;
             case 1:
 
-                maxTime1 = 99f;
-                maxTime2 = 99f;
-                maxTime3 = 99f;
-                maxTime4 = 99f;
+                maxTime1 = 12f;
+                maxTime2 = 24f;
+                maxTime3 = 40f;
+                maxTime4 = 50f;
                 break;
             case 2:
 

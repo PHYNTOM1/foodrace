@@ -2975,6 +2975,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4340608366394219330, guid: f2406b8e39baefe4eba58c1c2f0d8881,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4703447086315703133, guid: f2406b8e39baefe4eba58c1c2f0d8881,
         type: 3}
       propertyPath: m_Name
@@ -4015,6 +4020,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4340608366394219330, guid: f2406b8e39baefe4eba58c1c2f0d8881,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4703447086315703133, guid: f2406b8e39baefe4eba58c1c2f0d8881,
         type: 3}
       propertyPath: m_Name
@@ -4130,6 +4140,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4340608366394219330, guid: f2406b8e39baefe4eba58c1c2f0d8881,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4703447086315703133, guid: f2406b8e39baefe4eba58c1c2f0d8881,
         type: 3}
       propertyPath: m_Name
@@ -4244,6 +4259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340608366394219330, guid: f2406b8e39baefe4eba58c1c2f0d8881,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoint
       objectReference: {fileID: 0}
     - target: {fileID: 4703447086315703133, guid: f2406b8e39baefe4eba58c1c2f0d8881,
         type: 3}

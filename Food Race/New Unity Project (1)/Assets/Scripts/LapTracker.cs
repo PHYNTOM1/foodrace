@@ -11,8 +11,8 @@ public class LapTracker : MonoBehaviour
     //    public float goalDist;
 
     //    public Transform goalPoint;
-    public List<Transform> checkpoints;
-    public List<bool> checkpointsPassed;
+    public List<Transform> checkpoints = new List<Transform>();
+    public List<bool> checkpointsPassed = new List<bool>();
 
     public bool finished = false;
 
@@ -25,14 +25,11 @@ public class LapTracker : MonoBehaviour
     public SoundManagement sm;
 
     void Start()
-    {
+    { 
         //goalPoint = GameObject.Find("GoalPoint").transform;
         //ka = GetComponent<KartAIAgent>();
         sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         rt = GetComponent<RoundTimer>();
-        er1 = GameObject.Find("Map01").GetComponentInChildren<EnemyRespawning>();
-        er2 = GameObject.Find("Map02").GetComponentInChildren<EnemyRespawning>();
-        er3 = GameObject.Find("Map03").GetComponentInChildren<EnemyRespawning>();
 
         checkpoints.Clear();
         checkpointsPassed.Clear();
@@ -44,8 +41,7 @@ public class LapTracker : MonoBehaviour
             checkpoints.Add(cpG[i]);
             checkpointsPassed.Add(false);
         }
-
-        ResetAll();
+        
     }
 
     void Update()
@@ -57,18 +53,6 @@ public class LapTracker : MonoBehaviour
         if (rt == null)
         {
             rt = GetComponent<RoundTimer>();
-        }
-        if (er1 == null)
-        {
-            er1 = GameObject.Find("Map01").GetComponentInChildren<EnemyRespawning>();
-        }
-        if (er2 == null)
-        {
-            er2 = GameObject.Find("Map02").GetComponentInChildren<EnemyRespawning>();
-        }
-        if (er3 == null)
-        {
-            er3 = GameObject.Find("Map03").GetComponentInChildren<EnemyRespawning>();
         }
         if (checkpoints.Count <= 0)
         {

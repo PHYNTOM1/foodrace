@@ -607,6 +607,9 @@ public class PlacementManagement : MonoBehaviour
             bestTimeOfAll = 0f;
             finishers.Clear();
             bestRacer.GetComponent<RoundTimer>().SetResetTimes(selectedMap);
+            bestRacer.GetComponent<LapTracker>().er1 = m01.GetComponentInChildren<EnemyRespawning>();
+            bestRacer.GetComponent<LapTracker>().er2 = m02.GetComponentInChildren<EnemyRespawning>();
+            bestRacer.GetComponent<LapTracker>().er3 = m03.GetComponentInChildren<EnemyRespawning>();
 
             /*
         if (finishers.Count > 0)

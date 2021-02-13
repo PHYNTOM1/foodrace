@@ -489,7 +489,7 @@ MonoBehaviour:
   - name: drifting
     clip: {fileID: 8300000, guid: bbfb0d5c169105645a3edffbf131012d, type: 3}
     song: 0
-    volume: 0.4
+    volume: 0.6
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.2

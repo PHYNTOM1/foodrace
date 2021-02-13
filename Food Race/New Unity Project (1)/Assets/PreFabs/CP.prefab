@@ -316,6 +316,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be7c7b3fd52f04e48901407feecddc64,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be7c7b3fd52f04e48901407feecddc64, type: 3}
 --- !u!4 &6921170413177239264 stripped
@@ -390,6 +395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312488866321626910, guid: 7f749913fa91ee148b689c17e7c22dfb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f749913fa91ee148b689c17e7c22dfb, type: 3}

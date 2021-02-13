@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
         ps = GetComponent<PlayerShooting>();
         paused = false;
         pausedPanel = GameObject.Find("PausedText");
+        pausedPanel.SetActive(paused);
     }
 
     void Update()

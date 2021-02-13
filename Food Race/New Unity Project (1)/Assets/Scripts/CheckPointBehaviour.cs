@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CheckPointBehaviour : MonoBehaviour
 {
-    public int cpNum = 0;
+    public int cpNum;
 
-    private void OnTriggerEnter(Collider c)
+    public void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.name == "WPCollider")
         {
             if (c.gameObject.GetComponentInParent<LapTracker>() != null)
             {
                 c.gameObject.GetComponentInParent<LapTracker>().PassCheckpoint(cpNum);
+            }
+            else
+            {
             }
         }
     }
