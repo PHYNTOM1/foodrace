@@ -19,6 +19,7 @@ public class HighscoreTable : MonoBehaviour
     public Button prevButton;
     public Button backButton;
     public Button clearButton;
+    public Button againButton;
     public TextMeshProUGUI selMap;
 
     public int n = 7;
@@ -34,16 +35,19 @@ public class HighscoreTable : MonoBehaviour
         prevButton = GameObject.Find("Prev Button").GetComponent<Button>();
         backButton = GameObject.Find("Back Button").GetComponent<Button>();
         clearButton = GameObject.Find("Clear Button").GetComponent<Button>();
+        againButton = GameObject.Find("Again Button").GetComponent<Button>();
 
         nextButton.onClick.RemoveAllListeners();
         prevButton.onClick.RemoveAllListeners();
         backButton.onClick.RemoveAllListeners();
         clearButton.onClick.RemoveAllListeners();
+        againButton.onClick.RemoveAllListeners();
 
         nextButton.onClick.AddListener(() => pm.anim.SetTrigger("FlipN"));
         prevButton.onClick.AddListener(() => pm.anim.SetTrigger("FlipP"));
         nextButton.onClick.AddListener(() => AddSelection(true));
         prevButton.onClick.AddListener(() => AddSelection(false));
+        againButton.onClick.AddListener(() => pm.StartGame());
         backButton.onClick.AddListener(GoToMenu);
         clearButton.onClick.AddListener(ClearList);
 

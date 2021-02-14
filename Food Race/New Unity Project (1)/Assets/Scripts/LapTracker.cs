@@ -219,15 +219,24 @@ public class LapTracker : MonoBehaviour
         {
             case 0:
 
-                er1.RespawnEnemies();
+                //if (er1 != null)
+                //{
+                    er1.RespawnEnemies();
+                //}
                 break;
             case 1:
 
-                er2.RespawnEnemies();
+                //if (er2 != null)
+                //{
+                    er2.RespawnEnemies();
+                //}
                 break;
             case 2:
 
-                er3.RespawnEnemies();
+                //if (er3 != null)
+                //{
+                    er3.RespawnEnemies();
+                //}
                 break;
         }
 

@@ -104,6 +104,18 @@ public class CartController : MonoBehaviour
             sm.Play("engine");
             sm.TogglePause("engine");
         }
+        if (camC == null)
+        {
+            camC = FindObjectOfType<CameraController>();
+            if (cam == null)
+            {
+                cam = camC.gameObject.GetComponent<Camera>();
+            }
+        }
+        if (lines == null)
+        {
+            lines = GameObject.FindGameObjectWithTag("Lines").GetComponent<ParticleSystem>();
+        }
 
         if (notRacing)
         {

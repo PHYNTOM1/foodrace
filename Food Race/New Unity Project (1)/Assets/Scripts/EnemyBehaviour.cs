@@ -284,7 +284,7 @@ public class EnemyBehaviour : MonoBehaviour
                 sm.PlayOneShot("poof");
                 GameObject sp = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
                 Destroy(sp, 1f);
-                Destroy(this.gameObject, 0.15f);
+                Destroy(this.gameObject);
                 this.enabled = false;
                 break;
             case EnemyType.flyer:
@@ -295,7 +295,7 @@ public class EnemyBehaviour : MonoBehaviour
                 GameObject sp2 = Instantiate(smokePoof, gameObject.transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
                 Destroy(sp2, 1f);
                 player.GetComponent<CartController>().flyerCount--;
-                Destroy(this.gameObject, 0.15f);
+                Destroy(this.gameObject);
                 this.enabled = false;
                 break;
             case EnemyType.turret:

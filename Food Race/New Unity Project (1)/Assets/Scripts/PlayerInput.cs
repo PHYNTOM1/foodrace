@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     CartController cc;
     PlayerShooting ps;
     public bool paused = false;
-    public GameObject pausedPanel;
+    public CanvasGroup pausedPanel;
 
     void Start()
     {
@@ -16,8 +16,8 @@ public class PlayerInput : MonoBehaviour
         cc = GetComponent<CartController>();
         ps = GetComponent<PlayerShooting>();
         paused = false;
-        pausedPanel = GameObject.Find("PausedText");
-        pausedPanel.SetActive(paused);
+        pausedPanel = GameObject.Find("PausedPanel").GetComponentInChildren<CanvasGroup>();
+        pausedPanel.alpha = 0f;
     }
 
     void Update()
@@ -57,17 +57,16 @@ public class PlayerInput : MonoBehaviour
                 Time.timeScale = 0f;
             }
 
-            /*
+            
             if (paused)
             {
-                pausedPanel.GetComponent<CanvasGroup>().alpha = 1;
+                pausedPanel.alpha = 1;
             }
             else
             {
-                pausedPanel.GetComponent<CanvasGroup>().alpha = 0;
+                pausedPanel.alpha = 0;
             }
-            */
-            pausedPanel.SetActive(paused);
+            
         }
 
         /*

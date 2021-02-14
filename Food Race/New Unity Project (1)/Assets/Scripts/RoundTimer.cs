@@ -17,6 +17,9 @@ public class RoundTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerCPText;
     public TextMeshProUGUI timerMaxText;
+    public TextMeshProUGUI roundNum;
+    public Image cpResetFill;
+    public TextMeshProUGUI cpTimeLeft;
     //    public TextMeshProUGUI placementText;
 
     public float[] roundTimes = { 0f, 0f, 0f };
@@ -43,12 +46,15 @@ public class RoundTimer : MonoBehaviour
             timerCPText = GameObject.Find("CPTimerText").GetComponent<TextMeshProUGUI>();
             timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
             timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
-            //SetResetTimes(pm.selectedMap);
+            roundNum = GameObject.Find("RoundNumber").GetComponent<TextMeshProUGUI>();
+            cpResetFill = GameObject.Find("CPResetFill").GetComponent<Image>();
+            cpTimeLeft = GameObject.Find("CPTimeLeft").GetComponent<TextMeshProUGUI>();
+        //SetResetTimes(pm.selectedMap);
 
-        timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f);
+            timerCPText.SetText("Checkpoints:\n1: {0:3} | Best: {1:3}\n2: {2:3} | Best: {3:3}\n3: {4:3} | Best: {5:3}\n4: {6:3} | Best: {7:3}", 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f);
             timerText.SetText("Current Lap: {0:3}\nBest Lap: {1:3}\n\nLap 1: {2:3} \nLap 2: {3:3} \nLap 3: {4:3} \nFull Course: {5:3}", 0f, 0f, 0f, 0f, 0f, 0f);
             timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
-          
+            UpdateRound();
 //            placementText = GameObject.Find("PlacementPositionText").GetComponent<TextMeshProUGUI>();
 //            placementText.SetText("-.");
 //        }
@@ -83,6 +89,19 @@ public class RoundTimer : MonoBehaviour
             timerMaxText = GameObject.Find("TimerMaxText").GetComponent<TextMeshProUGUI>();
             //SetResetTimes(pm.selectedMap);
         }
+        if (roundNum == null)
+        {
+            roundNum = GameObject.Find("RoundNumber").GetComponent<TextMeshProUGUI>();
+            UpdateRound();
+        }
+        if (cpResetFill == null)
+        {
+            cpResetFill = GameObject.Find("CPResetFill").GetComponent<Image>();
+        }
+        if (cpTimeLeft == null)
+        {
+            cpTimeLeft = GameObject.Find("CPTimeLeft").GetComponent<TextMeshProUGUI>();
+        }
 
 
         if (lt.finished == false && cc.notRacing == false)
@@ -114,7 +133,7 @@ public class RoundTimer : MonoBehaviour
             //            {
             timerCPText.SetText("Checkpoints:\n1:  " + pm.ConvertTimerInText(cpTimes[0]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[0]) + "\n2: " + pm.ConvertTimerInText(cpTimes[1]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[1]) + "\n3: " + pm.ConvertTimerInText(cpTimes[2]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[2]) + "\n4: " + pm.ConvertTimerInText(cpTimes[3]) + " | Best: " + pm.ConvertTimerInText(cpBestTimes[3]));
             timerText.SetText("Current Lap: " + pm.ConvertTimerInText(roundTimer) + "\nBest Lap:" + pm.ConvertTimerInText(bestRound) + "\n\nLap 1: " + pm.ConvertTimerInText(roundTimes[0]) + " \nLap 2: " + pm.ConvertTimerInText(roundTimes[1]) + " \nLap 3: " + pm.ConvertTimerInText(roundTimes[2]) + " \nFull Course: " + pm.ConvertTimerInText(roundTimes[0] + roundTimes[1] + roundTimes[2]));
-
+            UpdateResetFill();
             //                placementText.SetText("{0}.", FindObjectOfType<PlacementManagement>().GetPosition(this.gameObject));
             //            }
         }
@@ -152,6 +171,15 @@ public class RoundTimer : MonoBehaviour
         roundTimes[l - 2] = _t;
         roundTimer = 0f;
         cpTimer = 0f;
+        if (roundNum != null)
+        {
+            UpdateRound();
+        }
+        else
+        {
+            roundNum = GameObject.Find("RoundNumber").GetComponent<TextMeshProUGUI>();
+            UpdateRound();
+        }
     }
 
     public void RoundTimerReset()
@@ -172,6 +200,16 @@ public class RoundTimer : MonoBehaviour
         {
             cpBestTimes[i] = 0f;
         }
+
+        if (roundNum != null)
+        {
+            UpdateRound();
+        }
+        else
+        {
+            roundNum = GameObject.Find("RoundNumber").GetComponent<TextMeshProUGUI>();
+            UpdateRound();
+        }
     }
 
     public void SetResetTimes(int i)
@@ -189,8 +227,8 @@ public class RoundTimer : MonoBehaviour
 
                 maxTime1 = 12f;
                 maxTime2 = 24f;
-                maxTime3 = 40f;
-                maxTime4 = 50f;
+                maxTime3 = 42f;
+                maxTime4 = 52f;
                 break;
             case 2:
 
@@ -201,7 +239,45 @@ public class RoundTimer : MonoBehaviour
                 break;
         }
 
-        timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
+        if (timerMaxText != null)
+        {
+            timerMaxText.SetText("/{0:0}\n/{1:0}\n/{2:0}\n/{3:0}", maxTime1, maxTime2, maxTime3, maxTime4);
+        }
+    }
+
+    public void UpdateRound()
+    {
+        roundNum.SetText("{0:0}", lt.lap);
+    }
+
+    public void UpdateResetFill()
+    {
+        if (lt.checkpointsPassed[0] == false)
+        {
+            cpResetFill.fillAmount = (cpTimer / maxTime1);
+            cpTimeLeft.SetText(pm.ConvertTimerInText(maxTime1 - cpTimer));
+        }
+        else if (lt.checkpointsPassed[1] == false)
+        {
+            cpResetFill.fillAmount = (cpTimer / (maxTime2 - maxTime1));
+            cpTimeLeft.SetText(pm.ConvertTimerInText(maxTime2 - cpTimer));
+        }
+        else if (lt.checkpointsPassed[2] == false)
+        {
+            cpResetFill.fillAmount = (cpTimer / (maxTime3 - maxTime1 - maxTime2));
+            cpTimeLeft.SetText(pm.ConvertTimerInText(maxTime3 - cpTimer));
+        }
+        else if (lt.checkpointsPassed[3] == false)
+        {
+            cpResetFill.fillAmount = (cpTimer / (maxTime4 - maxTime1 - maxTime2 - maxTime3));
+            cpTimeLeft.SetText(pm.ConvertTimerInText(maxTime4 - cpTimer));
+        }
+        else
+        {
+            cpResetFill.fillAmount = 0f;
+            cpTimeLeft.SetText("GOAL");
+
+        }
     }
 
 }

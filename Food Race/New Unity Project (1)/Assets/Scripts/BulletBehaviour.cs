@@ -53,6 +53,10 @@ public class BulletBehaviour : MonoBehaviour
                 {
                     coll.collider.GetComponentInParent<EnemyBehaviour>().GetDamaged(damage);
                 }
+                else if (coll.collider.gameObject.CompareTag("EnemyBullet"))
+                {
+                    Destroy(coll.collider.gameObject);
+                }
                 else
                 {
                     sm.PlayOneShot("impact");
@@ -62,8 +66,6 @@ public class BulletBehaviour : MonoBehaviour
             {
                 GameObject h = Instantiate(hitImpact2, coll.GetContact(0).point + new Vector3(0f, 0.8f, 0f), Quaternion.identity);
                 Destroy(h, 2f);
-
-                Destroy(gameObject);
             }
 
             Destroy(gameObject);

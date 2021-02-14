@@ -42,8 +42,8 @@ public class OptionsMenu : MonoBehaviour
 
         if (fsT == null)
         {
-            fsT = GameObject.Find("FullscreenToggle").GetComponent<Toggle>();
-            fsT.isOn = false;
+            //fsT = GameObject.Find("FullscreenToggle").GetComponent<Toggle>();
+            //fsT.isOn = false;
         }
     }
 
@@ -62,8 +62,10 @@ public class OptionsMenu : MonoBehaviour
         generalAM.SetFloat("SoundsVolume", (Mathf.Log10(vol) * 20));
     }
 
+    /*
     public void SetFullscreen(bool n)
     {
         Screen.fullScreen = n;
-    }    
+    } 
+    */
 }

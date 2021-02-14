@@ -739,6 +739,17 @@ MonoBehaviour:
     mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
       type: 2}
     source: {fileID: 0}
+  - name: carstart
+    clip: {fileID: 8300000, guid: ab8fb97b3c1846e43af2e125a28d3c3d, type: 3}
+    song: 0
+    volume: 0.25
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -2760948365480986475, guid: 990b8feac7fe3b845a516b1f4083104b,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &5851351944256529870
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +825,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.5
+  m_PixelsPerUnitMultiplier: 0.52
 --- !u!225 &5851351944256529866
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -885,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.97418344, b: 0.9292453, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:

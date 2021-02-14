@@ -405,6 +405,13 @@ public class PlacementManagement : MonoBehaviour
                 {
                     mainCanvas.enabled = true;
                 }
+
+                optionsCanvas.enabled = true;
+                optionsMenu.SetActive(false);
+                creditsCanvas.enabled = true;
+                creditsMenu.SetActive(false);
+                mapCanvas.enabled = true;
+                mapMenu.SetActive(false);
             }
             if (optionsMenu.activeInHierarchy)
             {
@@ -416,6 +423,13 @@ public class PlacementManagement : MonoBehaviour
                 {
                     optionsCanvas.enabled = true;
                 }
+
+                mainCanvas.enabled = true;
+                mainMenu.SetActive(false);
+                creditsCanvas.enabled = true;
+                creditsMenu.SetActive(false);
+                mapCanvas.enabled = true;
+                mapMenu.SetActive(false);
             }
             if (creditsMenu.activeInHierarchy)
             {
@@ -427,6 +441,13 @@ public class PlacementManagement : MonoBehaviour
                 {
                     creditsCanvas.enabled = true;
                 }
+
+                optionsCanvas.enabled = true;
+                optionsMenu.SetActive(false);
+                mainCanvas.enabled = true;
+                mainMenu.SetActive(false);
+                mapCanvas.enabled = true;
+                mapMenu.SetActive(false);
             }
             if (mapMenu.activeInHierarchy)
             {
@@ -438,6 +459,13 @@ public class PlacementManagement : MonoBehaviour
                 {
                     mapCanvas.enabled = true;
                 }
+
+                optionsCanvas.enabled = true;
+                optionsMenu.SetActive(false);
+                creditsCanvas.enabled = true;
+                creditsMenu.SetActive(false);
+                mainCanvas.enabled = true;
+                mainMenu.SetActive(false);
             }
         }
         else if (SceneManager.GetActiveScene().name == "ScoreScreen")
@@ -467,6 +495,14 @@ public class PlacementManagement : MonoBehaviour
 
     public void GoToScore()
     {
+        if (optionsMenu != null)
+        {
+            if (optionsCanvas != null)
+            {
+                optionsCanvas.enabled = true;
+                optionsMenu.SetActive(false);
+            }
+        }
         LoadEndscreenScene(false);
     }    
 
@@ -581,9 +617,6 @@ public class PlacementManagement : MonoBehaviour
             GameObject m01 = GameObject.FindGameObjectWithTag("Map01");
             GameObject m02 = GameObject.FindGameObjectWithTag("Map02");
             GameObject m03 = GameObject.FindGameObjectWithTag("Map03");
-            m01.SetActive(one);
-            m02.SetActive(two);
-            m03.SetActive(three);
 
             switch (selectedMap)
             {
@@ -611,6 +644,9 @@ public class PlacementManagement : MonoBehaviour
             bestRacer.GetComponent<LapTracker>().er2 = m02.GetComponentInChildren<EnemyRespawning>();
             bestRacer.GetComponent<LapTracker>().er3 = m03.GetComponentInChildren<EnemyRespawning>();
 
+            m01.SetActive(one);
+            m02.SetActive(two);
+            m03.SetActive(three);
             /*
         if (finishers.Count > 0)
         {

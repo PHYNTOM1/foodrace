@@ -20,8 +20,9 @@ public class PlayerShooting : MonoBehaviour
     public float overheatShot = 10f;
     public float ohDecayMult = 2.5f;
 
-    public Slider overheatSlider;
-    public Image ohSliderFill;
+    //public Slider overheatSlider;
+    //public Image ohSliderFill;
+    public Image ohFill;
     public Color ohColor;
     public Color normalColor;
 
@@ -33,6 +34,7 @@ public class PlayerShooting : MonoBehaviour
         sm = PlacementManagement.Instance.GetComponent<SoundManagement>();
         shooting = false;
         cc = GetComponent<CartController>();
+        /*
         if (ohSliderFill == null)
         {
             Slider[] sls = (Slider[]) FindObjectsOfType(typeof(Slider));
@@ -58,6 +60,9 @@ public class PlayerShooting : MonoBehaviour
             };
         }
         ohSliderFill.color = normalColor;
+        */
+        ohFill = GameObject.Find("HUD_Fill").GetComponent<Image>();
+        normalColor = ohFill.color;
     }
 
 
@@ -83,7 +88,8 @@ public class PlayerShooting : MonoBehaviour
             sm.PlayOneShot("clickcheckswoosh");
             overheated = false;
             overheatValue = 0f;
-            ohSliderFill.color = normalColor;
+            //ohSliderFill.color = normalColor;
+            ohFill.color = normalColor;
         }
 
         if (!overheated)
@@ -100,7 +106,8 @@ public class PlayerShooting : MonoBehaviour
                 }
             }
         }
-        overheatSlider.value = (overheatValue / 100f);
+        //overheatSlider.value = (overheatValue / 100f);
+        ohFill.fillAmount = (overheatValue / 100f);
 
         if (shootCDReal > 0)
     	{
@@ -159,7 +166,8 @@ public class PlayerShooting : MonoBehaviour
         sm.PlayOneShot("impact");
         overheated = true;
         overheatValue = 100f;
-        ohSliderFill.color = ohColor;
+        //ohSliderFill.color = ohColor;
+        ohFill.color = ohColor;
     }
 
 }
