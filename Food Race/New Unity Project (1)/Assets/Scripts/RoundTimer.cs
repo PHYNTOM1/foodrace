@@ -232,10 +232,10 @@ public class RoundTimer : MonoBehaviour
                 break;
             case 2:
 
-                maxTime1 = 18f;
-                maxTime2 = 28f;
-                maxTime3 = 38f;
-                maxTime4 = 50f;
+                maxTime1 = 15f;
+                maxTime2 = 25f;
+                maxTime3 = 35f;
+                maxTime4 = 49f;
                 break;
         }
 
